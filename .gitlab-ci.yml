@@ -1,0 +1,12 @@
+image: epitechcontent/epitest-docker
+
+unit_tests:
+  script:
+   - make unit_tests
+  except:
+   - bastien
+   - antoine
+   - paul
+   - lucas
+   - gabriel
+   - valentin
