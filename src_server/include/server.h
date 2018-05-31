@@ -104,7 +104,8 @@
 	*/
 	typedef struct egg_s
 	{
-		tile_t *tile;
+		uint tile_x;
+		uint tile_y;
 		team_t *team;
 		uint tick_left;
 	} egg_t;
@@ -118,6 +119,7 @@
 		uint inventory[NB_RESSOURCE];
 		egg_t *egg;
 	} tile_t;
+
 
 	/**
 	*@brief Game Structure
@@ -141,6 +143,7 @@
 		socket_t socket;
 		struct epoll_event ev;
 		struct epoll_event events[MAX_EVENTS];
+		uint port;
 		int epollfd;
 	} epoll_t;
 
@@ -150,7 +153,10 @@
 	typedef struct server_s
 	{
 		epoll_t srv_epoll;
-		game_t *game;
+		game_t game;
 	} server_t;
+
+	bool handle_help(int argc, char **argv);
+	bool handle_args(server_t *server, int argc, char **argv);
 
 #endif /* !SERVER_H_ */
