@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import sockets
 from sys import argv
 
@@ -8,6 +10,10 @@ def init_socket(port, ip):
         exit(84)
     return (0)
 
+def get_command(fd):
+    command = list()
+    while (1):
+        command.append(sockets.get_fd_activity(fd))
 
 def main():
     nb_args = len(argv) - 1
@@ -21,7 +27,8 @@ def main():
     except ValueError as e:
         print(e)
         exit(84)
-    init_socket(port, ip)
+    fd = init_socket(port, ip)
+    get_command(fd)
     return (0)
 
 if __name__ == "__main__":

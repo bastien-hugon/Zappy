@@ -21,15 +21,16 @@ GFX_OBJS = $(GFX_SRCS:.c=.o)
 
 OBJS	= $(SRCS:.c=.o)
 
-CFLAGS = -W -Wall -Wextra -fpic --shared -I/usr/include/python3.6m
+CFLAGS = -W -Wall -Wextra
 
+CFLAGS += -fpic --shared -I/usr/include/python3.6m -I./src_client_gfx/include
 
 all: gfx
 
 gfx: $(GFX_NAME)
 
 $(GFX_NAME): $(GFX_OBJS)
-	$(CC) $(CFLAGS) $(GFX_OBJS) -o sockets.so
+	$(CC) -fpic --shared -I/usr/include/python3.6m -I./src_client_gfx/include $(GFX_OBJS) -o sockets.so
 	cp src_client_gfx/hello.py .
 
 clean:
