@@ -19,12 +19,16 @@ NAME_UT	= units
 
 SRCS_UT_IRC =
 
-SRCS_UT_SERV	= ./tests/server/arguments/test_argument_handling.c \
-		  ./src_server/src/argument_handling.c
+SRCS_UT_SERV	=	./tests/server/arguments/test_argument_handling.c \
+			./tests/server/list/test_list_create.c \
+			./tests/server/list/test_list_next_prev.c \
+			./tests/server/mocking/mock_malloc.c \
+			./src_server/src/argument_handling.c \
+			./src_server/src/list.c
 
 SRCS_UT_CLIENT  =
 
-SERV_SRCS	= ./src_server/src/argument_handling.c \
+SERV_SRCS	=	./src_server/src/argument_handling.c \
 			./src_server/src/main.c
 
 SERV_OBJS  = $(SERV_SRCS:.c=.o)
@@ -37,7 +41,7 @@ CFLAGS = -I ./src_server/include/
 
 CFLAGS += -W -Wall -Wextra
 
-TUFLAGS = -lcriterion -lgcov --coverage -DSTESTS -DCTESTS
+TUFLAGS = -lcriterion -lgcov --coverage -DSTESTS -I ./tests/server/include
 
 all: server
 
