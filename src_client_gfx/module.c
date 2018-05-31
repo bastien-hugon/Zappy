@@ -27,6 +27,7 @@ PyObject *create_socket(PyObject *self, PyObject *args)
 	const char *ip;
 	const int port;
 
+	(void)self;
 	if (!PyArg_ParseTuple(args, "s|i", &ip, &port)){
 		return (Py_BuildValue("i" , -1));
 	}
@@ -52,7 +53,11 @@ static struct PyModuleDef sockets =
 	"sockets",
 	"",
 	-1,
-	SocketMethods
+	SocketMethods,
+	NULL,
+	NULL,
+	NULL,
+	NULL
 };
 
 PyMODINIT_FUNC PyInit_sockets(void)

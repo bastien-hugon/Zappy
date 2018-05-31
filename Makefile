@@ -7,7 +7,7 @@
 
 NAME	= program
 
-GFX_NAME	=	client_gfx
+GFX_NAME	=	sockets.so
 
 CC	= gcc
 
@@ -21,24 +21,22 @@ GFX_OBJS = $(GFX_SRCS:.c=.o)
 
 OBJS	= $(SRCS:.c=.o)
 
-CFLAGS = $(python3-config --includes)
-CFLAGS += -W -Wall -Wextra -fpic --shared
+CFLAGS = -W -Wall -Wextra -fpic --shared -I/usr/include/python3.6m
+
+
+all: gfx
 
 gfx: $(GFX_NAME)
 
 $(GFX_NAME): $(GFX_OBJS)
-	$(CC) -fPIC --shared $(GFX_OBJS) -o sockets.abi3.so
-
-all: $(NAME)
-
-$(NAME): $(OBJS)
-	 $(CC) $(OBJS) -o $(NAME) $(LDFLAGS)
+	$(CC) $(CFLAGS) $(GFX_OBJS) -o sockets.so
+	cp src_client_gfx/hello.py .
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(GFX_OBJS)
 
 fclean: clean
-	$(RM) $(NAME)
+	$(RM) $(NAME) $(GFX_NAME) hello.py
 
 re: fclean all
 
