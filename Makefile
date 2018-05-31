@@ -7,16 +7,27 @@
 
 NAME	= program
 
-CC	= 
+GFX_NAME	=	client_gfx
+
+CC	= gcc
 
 RM	= rm -f
 
+GFX_SRCS = ./src_client_gfx/module.c
+
 SRCS	= 
 
-OBJS	= $(SRCS:=.o)
+GFX_OBJS = $(GFX_SRCS:.c=.o)
 
-CFLAGS = -I 
-CFLAGS += -W -Wall -Wextra
+OBJS	= $(SRCS:.c=.o)
+
+CFLAGS = $(python3-config --includes)
+CFLAGS += -W -Wall -Wextra -fpic --shared
+
+gfx: $(GFX_NAME)
+
+$(GFX_NAME): $(GFX_OBJS)
+	$(CC) -fPIC --shared $(GFX_OBJS) -o sockets.abi3.so
 
 all: $(NAME)
 
