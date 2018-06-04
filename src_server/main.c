@@ -33,4 +33,5 @@ int main(int argc, char **argv)
 		return (EXIT_SUCCESS);
 	if (handle_args(&server, argc, argv) == false)
 		return (EXIT_FAILURE);
+	return (EXIT_SUCCESS);
 }
