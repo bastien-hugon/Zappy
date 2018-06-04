@@ -1,34 +1,80 @@
 ##
 ## EPITECH PROJECT, 2018
-## Zappy
+## PSU_zappy_2017
 ## File description:
 ## Makefile
 ##
 
-NAME	= program
-
-CC	= 
+CC	= gcc
 
 RM	= rm -f
 
-SRCS	= 
+DOC_NAME	= my_irc.html
 
-OBJS	= $(SRCS:=.o)
+NAME_SERVER	= "server"
 
-CFLAGS = -I 
+NAME_CLIENT	= "client"
+
+NAME_UT	= units
+
+SRCS_UT_IRC =
+
+SRCS_UT_SERV	=	./tests/server/arguments/test_argument_handling.c \
+			./tests/server/list/test_list_create.c \
+			./tests/server/list/test_list_next_prev.c \
+			./tests/server/mocking/mock_malloc.c \
+			./src_server/src/argument_handling.c \
+			./src_server/src/list.c
+
+SRCS_UT_CLIENT  =
+
+SERV_SRCS	=	./src_server/src/argument_handling.c \
+			./src_server/src/main.c
+
+SERV_OBJS  = $(SERV_SRCS:.c=.o)
+
+CLIENT_SRCS  = 
+
+CLIENT_OBJS  = $(CLIENT_SRCS:.c=.o)
+
+CFLAGS = -I ./src_server/include/
+
 CFLAGS += -W -Wall -Wextra
 
-all: $(NAME)
+TUFLAGS = -lcriterion -lgcov --coverage -DSTESTS -I ./tests/server/include
 
-$(NAME): $(OBJS)
-	 $(CC) $(OBJS) -o $(NAME) $(LDFLAGS)
+all: server
+
+server: $(NAME_SERVER)
+
+$(NAME_SERVER): $(SERV_OBJS)
+	$(CC) $(SERV_OBJS) -o $(NAME_SERVER) $(CFLAGS) $(LDFLAGS)
+
+client: $(NAME_CLIENT)
+
+$(NAME_CLIENT): $(CLIENT_OBJS) $(IRC_OBJS)
+	$(CC) $(IRC_OBJS) $(CLIENT_OBJS) -o $(NAME_CLIENT) $(CFLAGS) $(LDFLAGS)
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(SERV_OBJS) $(CLIENT_OBJS) $(IRC_OBJS)
+	$(RM) *.g*
 
 fclean: clean
-	$(RM) $(NAME)
+	$(RM) $(NAME_SERVER) $(NAME_CLIENT)
+	$(RM) $(NAME_UT)
+
+tests_run: $(NAME_UT)
+
+$(NAME_UT):
+	gcc -o $(NAME_UT) $(SRCS_UT_IRC) $(SRCS_UT_CLIENT) $(SRCS_UT_SERV) $(CFLAGS) $(TUFLAGS)
+	./units
+	gcov *.gcda
+
+doc: $(DOC_NAME)
+
+$(DOC_NAME):
+	doxygen
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: server client tests_run doc all clean fclean re
