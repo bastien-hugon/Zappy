@@ -159,8 +159,6 @@
 
 	#include "logs.h"
 	#include "list.h"
-
-	bool handle_help(int argc, char **argv);
-	bool handle_args(server_t *server, int argc, char **argv);
+	#include "arguments_handling.h"
 
 #endif /* !SERVER_H_ */

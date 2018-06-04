@@ -24,6 +24,7 @@ SRCS_UT_SERV	=	./tests/server/arguments/test_argument_handling.c \
 			./tests/server/list/test_list_next_prev.c \
 			./tests/server/mocking/mock_malloc.c \
 			./src_server/argument_handling/argument_handling.c \
+			./src_server/argument_handling/help.c \
 			./src_server/list/list.c \
 			./src_server/logs/logs.c
 
@@ -35,7 +36,7 @@ SERV_SRCS	=	./src_server/argument_handling/argument_handling.c \
 
 SERV_OBJS  = $(SERV_SRCS:.c=.o)
 
-CLIENT_SRCS  = 
+CLIENT_SRCS  =
 
 CLIENT_OBJS  = $(CLIENT_SRCS:.c=.o)
 

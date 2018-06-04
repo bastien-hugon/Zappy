@@ -15,6 +15,7 @@ Test(list, next)
 	int *elem = NULL;
 	int i;
 
+	cr_assert_eq(list_next(&elem), false);
 	for (i = 0; i <= 5; i++) {
 		list_push(&elem, &i);
 	}
@@ -32,6 +33,7 @@ Test(list, prev)
 	int *elem = NULL;
 	int i;
 
+	cr_assert_eq(list_prev(&elem), false);
 	for (i = 0; i <= 5; i++) {
 		list_push(&elem, &i);
 	}
