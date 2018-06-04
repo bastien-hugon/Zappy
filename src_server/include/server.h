@@ -17,6 +17,7 @@
 	#include <sys/stat.h>
 	#include <signal.h>
 	#include <time.h>
+	#include <stdarg.h>
 
 	#include <sys/socket.h>
 	#include <netdb.h>
@@ -155,6 +156,9 @@
 		epoll_t srv_epoll;
 		game_t game;
 	} server_t;
+
+	#include "logs.h"
+	#include "list.h"
 
 	bool handle_help(int argc, char **argv);
 	bool handle_args(server_t *server, int argc, char **argv);

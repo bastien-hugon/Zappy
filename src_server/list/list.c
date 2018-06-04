@@ -13,7 +13,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
-#include "list.h"
+#include "server.h"
 
 /**
 * @brief add an item the end of a list
@@ -29,7 +29,7 @@ bool list_add_item(void **list, void *data, size_t data_size)
 	list_t *node = (list_t *) ((*list == NULL) ? NULL : ((list_t *)(*list) - 1));
 
 	if (new_node == NULL) {
-		fprintf(stderr, "Error while allocating memory\n");
+		ERROR("Error while allocating memory");
 		return (false);
 	}
 	memcpy((((char *)new_node) + sizeof(list_t)), data, data_size);
