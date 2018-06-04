@@ -16,15 +16,15 @@ Test(list, next)
 	int i;
 
 	for (i = 0; i <= 5; i++) {
-		list_add_item((void **)&elem, &i, sizeof(i));
+		list_push(&elem, &i);
 	}
 	for (i = 0; i <= 5; i++) {
 		cr_assert_eq(*elem, i);
-		list_next((void **)&elem);
+		list_next(&elem);
 	}
-	cr_assert_eq(list_next((void **)&elem), false);
+	cr_assert_eq(list_next(&elem), false);
 	cr_assert_eq(*elem, 5);
-	list_delete((void **)&elem);
+	list_delete(&elem);
 }
 
 Test(list, prev)
@@ -33,16 +33,16 @@ Test(list, prev)
 	int i;
 
 	for (i = 0; i <= 5; i++) {
-		list_add_item((void **)&elem, &i, sizeof(i));
+		list_push(&elem, &i);
 	}
 	for (i = 0; i < 4; i++) {
-		list_next((void **)&elem);
+		list_next(&elem);
 	}
 	for (i = 4; i >= 0; i--) {
 		cr_assert_eq(*elem, i);
-		list_prev((void **)&elem);
+		list_prev(&elem);
 	}
-	cr_assert_eq(list_prev((void **)&elem), false);
+	cr_assert_eq(list_prev(&elem), false);
 	cr_assert_eq(*elem, 0);
-	list_delete((void **)&elem);
+	list_delete(&elem);
 }

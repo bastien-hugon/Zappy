@@ -22,7 +22,7 @@
 *@brief print the executable help message
 *
 */
-void print_help()
+void print_help(void)
 {
 	printf("USAGE: ./zappy_server -p port -x width -y height -n name1");
 	printf(" name2 ... -c clientsNb -f freq\n");
