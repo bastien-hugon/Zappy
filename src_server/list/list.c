@@ -54,7 +54,7 @@ bool list_add_item(void **list, void *data, size_t data_size)
 *@return true on success
 *@return false on error (ex: no next element)
 */
-bool list_next(void **list) {
+bool list_next_item(void **list) {
 	list_t *node = ((list_t *)(*list)) - 1;
 
 	if (node->next == NULL) {
@@ -72,7 +72,7 @@ bool list_next(void **list) {
 *@return true on success
 *@return false on error (ex: no previous element)
 */
-bool list_prev(void **list) {
+bool list_prev_item(void **list) {
 	list_t *node = ((list_t *)(*list)) - 1;
 
 	if (node->prev == NULL) {
@@ -88,7 +88,7 @@ bool list_prev(void **list) {
 *
 * @param list first element in the list
 */
-void list_delete(void **list)
+void list_delete_all(void **list)
 {
 	list_t *node = ((list_t *)(*list)) - 1;
 	list_t *tmp_node;
