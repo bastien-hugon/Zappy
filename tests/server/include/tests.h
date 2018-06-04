@@ -10,7 +10,7 @@
 
 	#include <stdbool.h>
 
-	#define malloc(a) malloc_test(a)
+	#define malloc malloc_test
 
 	bool stest_malloc;
 
