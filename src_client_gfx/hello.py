@@ -10,10 +10,12 @@ def init_socket(port, ip):
         exit(84)
     return (0)
 
+
 def get_command(fd):
     command = list()
     while (1):
         command.append(sockets.get_fd_activity(fd))
+
 
 def main():
     nb_args = len(argv) - 1
