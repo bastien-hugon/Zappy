@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # coding: utf-8
 
-import socket
+import sockets
 import sys
 import time
 import errno
@@ -13,7 +13,7 @@ class FTPSocket:
         self.port = port
         self.host = host
 
-        self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.socket = sockets.create_socket(sleft.)
         self.socket.connect((self.host, self.port))
 
     def TeamName(self, name):
@@ -233,16 +233,5 @@ ftp = FTPSocket(4242, "127.0.0.1")
 name = "Yellow"
 ftp.TeamName(name)
 ftp.Look()
-ftp.Forward()
-ftp.Right()
-ftp.Left()
-ftp.Look()
-ftp.Forward()
-ftp.Look()
-ftp.Inventory()
 time.sleep(1)
 print(ftp.SocketRecv())
-ftp.Inventory()
-time.sleep(1)
-ftp.Forward()
-time.sleep(0.1)
