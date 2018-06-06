@@ -55,7 +55,6 @@ PyObject *get_fd_activity(PyObject *self, PyObject *args)
 	if (FD_ISSET(fd, &fds)) {
 		fgets(command, 1025, file_d);
 	}
-	printf("%s", command);
 	return (Py_BuildValue("s" , command));
 }
 

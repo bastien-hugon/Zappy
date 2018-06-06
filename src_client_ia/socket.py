@@ -10,6 +10,7 @@
 import sockets
 import time
 import signal
+import queue
 from threading import Thread, RLock
 
 lock = RLock()
@@ -17,17 +18,18 @@ lock = RLock()
 
 class ReadOnServer(Thread):
 
-    def __init__(self, fd):
+    def __init__(self, fd, queue):
         Thread.__init__(self)
         self.fd = fd
+        self.queue = queue
 
     def run(self):
         allCommand = list()
-        while (True):
-            with lock:
+        with lock:
+            while (True):
                 allCommand = sockets.get_fd_activity(self.fd).split('\n')
                 allCommand = list(filter(None, allCommand))
-                print("allCommand = ", allCommand)
+                self.queue.put_nowait(allCommand)
                 time.sleep(0.1)
 
 
@@ -37,11 +39,14 @@ class Socket:
         self.port = port
         self.host = host
         self.name = name
+        self.queue = queue.Queue()
         self.init_socket()
-        self.ReadingThread = ReadOnServer(self.fd)
+        self.ReadingThread = ReadOnServer(self.fd, self.queue)
         self.ReadingThread.setDaemon(True)
         self.ReadingThread.start()
         self.TeamName()
+        for i in range(self.queue.qsize()):
+            print(self.queue.get())
 
     def init_socket(self):
         self.fd = sockets.create_socket(self.host, self.port)
@@ -88,10 +93,17 @@ class Socket:
     def Incantation(self):
         sockets.send_command("Incantation", self.fd)
 
+    def GetServerResponse(self):
+        return (self.queue.get_nowait())
 
 if __name__ == "__main__":
-    socket = Socket("127.0.0.1", 4242, "Yellow")
-    while (True):
-        socket.Inventory()
-        socket.Forward()
-        time.sleep(0.1)
+    try:
+        socket = Socket("127.0.0.1", 4242, "Yellow")
+        while (True):
+            socket.Inventory()
+            socket.Forward()
+            time.sleep(0.2)
+            print(socket.GetServerResponse())
+    except KeyboardInterrupt as e:
+        print("\nProgram interrupt with CTRL+C")
+        exit(0)
