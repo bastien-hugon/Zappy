@@ -9,7 +9,6 @@
 
 import sockets
 import time
-import signal
 import queue
 from threading import Thread
 
@@ -77,15 +76,3 @@ class Socket:
 
     def GetServerResponse(self):
         return (self.queue.get_nowait())
-
-if __name__ == "__main__":
-    try:
-        socket = Socket("127.0.0.1", 4242, "Yellow")
-        while (True):
-            socket.Inventory()
-            socket.Forward()
-            time.sleep(0.2)
-            print(socket.GetServerResponse())
-    except KeyboardInterrupt as e:
-        print("\nProgram interrupt with CTRL+C")
-        exit(0)
