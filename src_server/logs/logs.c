@@ -81,10 +81,10 @@ bool log_error(char *file, int line, char *format, ...)
 
 	va_start(args, format);
 	print_current_info(stderr, file, line, "\x1B[31m");
-	printf("\x1B[31m");
-	vfprintf(stdout, format, args);
+	fprintf(stderr, "\x1B[31m");
+	vfprintf(stderr, format, args);
 	va_end(args);
-	printf("\n\x1B[37m");
+	fprintf(stderr, "\n\x1B[37m");
 	return (true);
 }
 
@@ -102,11 +102,11 @@ bool log_perror(char *file, int line, char *format, ...)
 
 	va_start(args, format);
 	print_current_info(stderr, file, line, "\x1B[31m");
-	printf("\x1B[31m");
-	vfprintf(stdout, format, args);
+	fprintf(stderr, "\x1B[31m");
+	vfprintf(stderr, format, args);
 	write(2, ": ", 2);
 	perror(NULL);
 	va_end(args);
-	printf("\n\x1B[37m");
+	fprintf(stderr, "\n\x1B[37m");
 	return (true);
 }
