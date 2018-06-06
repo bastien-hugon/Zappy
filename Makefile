@@ -7,27 +7,37 @@
 
 NAME	= program
 
-CC	= 
+GFX_NAME	=	sockets.so
+
+CC	= gcc
 
 RM	= rm -f
 
+GFX_SRCS = ./src_client_gfx/module.c
+
 SRCS	= 
 
-OBJS	= $(SRCS:=.o)
+GFX_OBJS = $(GFX_SRCS:.c=.o)
 
-CFLAGS = -I 
-CFLAGS += -W -Wall -Wextra
+OBJS	= $(SRCS:.c=.o)
 
-all: $(NAME)
+CFLAGS = -W -Wall -Wextra
 
-$(NAME): $(OBJS)
-	 $(CC) $(OBJS) -o $(NAME) $(LDFLAGS)
+CFLAGS += -fpic --shared -I/usr/include/python3.6m -I./src_client_gfx/include
+
+all: gfx
+
+gfx: $(GFX_NAME)
+
+$(GFX_NAME): $(GFX_OBJS)
+	$(CC) -fpic --shared -I/usr/include/python3.6m -I./src_client_gfx/include $(GFX_OBJS) -o sockets.so
+	cp src_client_gfx/hello.py .
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(GFX_OBJS)
 
 fclean: clean
-	$(RM) $(NAME)
+	$(RM) $(NAME) $(GFX_NAME) hello.py
 
 re: fclean all
 
