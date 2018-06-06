@@ -16,11 +16,13 @@
 
 PyObject *create_socket(PyObject *self, PyObject *args);
 PyObject *get_fd_activity(PyObject *self, PyObject *args);
+PyObject *send_command(PyObject *self, PyObject *args);
 
 
 static PyMethodDef SocketMethods[] = {
 	{"create_socket", create_socket, METH_VARARGS, "Socket creation."},
 	{"get_fd_activity", get_fd_activity, METH_VARARGS, "FD selection."},
+	{"send_command", send_command, METH_VARARGS, "Send command to serv."},
 	{NULL, NULL, 0, NULL}
 };
 
