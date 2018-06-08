@@ -22,13 +22,5 @@
 */
 void call_worker(server_t *srv, int fd)
 {
-	users_t *curr = get_user_by_fd(srv, fd);
-	char buffer[BUFF_SIZE];
-	int rd = read(fd, &buffer, BUFF_SIZE - 1);
-
-	if (rd != -1) {
-		buffer[rd] = '\0';
-		if (cb_add_data(curr, buffer))
-			exec_user_command(srv, curr);
-	}
+	LOG("Event on fd: %d", fd);
 }

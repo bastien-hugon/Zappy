@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2018
-** MyIRC - Server
+** Zappy - Server
 ** File description:
 ** Initialise epoll events
 */
@@ -21,12 +21,13 @@
 */
 void init_epoll(server_t *srv)
 {
-	srv->epollfd = epoll_create1(0);
-	if (srv->epollfd == -1)
+	INFO("Initialising the epoll system...");
+	srv->srv_epoll.epollfd = epoll_create1(0);
+	if (srv->srv_epoll.epollfd == -1)
 		exit(close_and_msg(srv, "error: epoll_create1"));
-	srv->ev.events = EPOLLIN;
-	srv->ev.data.fd = srv->sock.s_fd;
-	if (epoll_ctl(srv->epollfd, EPOLL_CTL_ADD, srv->sock.s_fd, \
-	&(srv->ev)) == -1)
+	srv->srv_epoll.ev.events = EPOLLIN;
+	srv->srv_epoll.ev.data.fd = srv->srv_epoll.socket.fd;
+	if (epoll_ctl(srv->srv_epoll.epollfd, EPOLL_CTL_ADD, \
+	srv->srv_epoll.socket.fd, &(srv->srv_epoll.ev)) == -1)
 		exit(close_and_msg(srv, "error: epoll_ctl"));
 }

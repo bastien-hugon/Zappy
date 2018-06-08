@@ -30,7 +30,18 @@ SRCS_UT_SERV	=	./tests/server/arguments/test_argument_handling.c \
 SRCS_UT_CLIENT  =
 
 SERV_SRCS	=	./src_server/argument_handling/argument_handling.c \
+			./src_server/list/list.c \
 			./src_server/logs/logs.c \
+			./src_server/socket_manager/init_epoll.c \
+			./src_server/socket_manager/init_server.c \
+			./src_server/socket_manager/close_and_msg.c \
+			./src_server/socket_manager/call_worker.c \
+			./src_server/socket_manager/socket_manager.c \
+			./src_server/client_manager/create_user.c \
+			./src_server/client_manager/exec_client_actions.c \
+			./src_server/map_manager/generate_map.c \
+			./src_server/map_manager/fill_refill.c \
+			./src_server/map_manager/get_rareness.c \
 			./src_server/main.c
 
 SERV_OBJS  = $(SERV_SRCS:.c=.o)
@@ -41,7 +52,7 @@ CLIENT_OBJS  = $(CLIENT_SRCS:.c=.o)
 
 CFLAGS = -I ./src_server/include/
 
-CFLAGS += -W -Wall -Wextra
+CFLAGS += -W -Wall -Wextra -lm -g3
 
 TUFLAGS = -lcriterion -lgcov --coverage -DSTESTS -I ./tests/server/include
 
