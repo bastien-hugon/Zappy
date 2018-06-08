@@ -1,0 +1,5 @@
+#!/usr/bin/env python3
+
+
+def survive_mode():
+    return (1)

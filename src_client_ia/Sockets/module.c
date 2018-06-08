@@ -6,7 +6,7 @@
 */
 
 /**
-* @brief C module use by python to connect him by C networks functions 
+* @brief C module use by python to connect him by C networks functions
 *
 * @file module.c
 * @author your name
@@ -105,7 +105,7 @@ PyObject *create_socket(PyObject *self, PyObject *args)
 /**
 * @brief Init py functions
 *
-* @return PyMODINIT_FUNC 
+* @return PyMODINIT_FUNC
 */
 PyMODINIT_FUNC PyInit_sockets(void)
 {
