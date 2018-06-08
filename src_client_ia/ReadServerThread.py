@@ -14,6 +14,7 @@ from threading import Thread, RLock
 
 lock = RLock()
 
+
 class ReadOnServer(Thread):
 
     def __init__(self, fd, queue):
