@@ -6,18 +6,27 @@ def look_inventory():
 
 
 def enough_food(level, inventory):
-    # parse inventory
-    return (True)
+    # food = parse inventory
+    if (food >= (level + 1)):
+        return (True)
+    else:
+        return (False)
 
 
 def enough_food_incant(level, inventory):
-    # parse inventory
-    return (True)
+    # food = parse inventory
+    if (food >= (level + 3)):
+        return (True)
+    else:
+        return (False)
 
 
 def enough_stone(level, inventory):
-    # parse inventory
-    return (True)
+    # linemate = parse inventory
+    if (linemate >= (level + 3)):
+        return (True)
+    else:
+        return (False)
 
 
 def base_state(level):
