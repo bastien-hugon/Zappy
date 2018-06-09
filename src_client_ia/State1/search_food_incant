@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
 
 
-def search_food_invoc():
+def search_food_incant_mode():
     return (1)
