@@ -14,7 +14,9 @@
 */
 
 #include "module.h"
-
+#include <string.h>
+#include <unistd.h>
+#include <fcntl.h>
 
 /**
 * @brief Set connexion between client and server
@@ -39,7 +41,7 @@ PyObject *get_fd_activity(PyObject *self, PyObject *args)
 {
 	int fd;
 	FILE *file_d;
-	char command[1025] = {0};
+	char command[4096] = {0};
 	fd_set fds;
 
 	(void)self;
@@ -53,7 +55,11 @@ PyObject *get_fd_activity(PyObject *self, PyObject *args)
 		return (Py_BuildValue("s" , NULL));
 	}
 	if (FD_ISSET(fd, &fds)) {
-		fgets(command, 4096, file_d);
+		while (read(fd, command, sizeof(command)) != 0) {
+			printf("%s", command);
+		}
+		// while (fgets(command, 4096, file_d))
+		// 	printf("FGETS COMMAND: %s\n", command);
 	}
 	return (Py_BuildValue("s" , command));
 }
@@ -61,7 +67,7 @@ PyObject *get_fd_activity(PyObject *self, PyObject *args)
 /**
 * @brief Send command to server
 *
-* @return int -> 0 for true and 1 for false 
+* @return int -> 0 for true and 1 for false
 */
 PyObject *send_command(PyObject *self, PyObject *args)
 {
@@ -71,8 +77,8 @@ PyObject *send_command(PyObject *self, PyObject *args)
 	(void)self;
 	if (!PyArg_ParseTuple(args, "s|i", &to_send, &fd))
 		return (Py_BuildValue("i" , -1));
-	printf("%s\n", to_send);
-	dprintf(fd, "%s\n", to_send);
+	printf("COMMAND : %s\n", to_send);
+	printf("WRITE RETURN: %ld\n", write(fd, to_send, strlen(to_send)));
 	return (Py_BuildValue("i", 0));
 }
 
