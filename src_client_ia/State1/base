@@ -3,10 +3,17 @@
 
 def look_inventory(socket):
     socket.Inventory()
-    resp = "ok"
-    while (resp == "ok"):
+    resp = []
+    while (resp == NONE):
         resp = socket.GetServerResponse()
+        time.sleep(0.05)
     return (resp)
+
+
+def get_food(inventory):
+    for i in range(len(inventory)):
+        if (i[0] == '['):
+            pass
 
 
 def enough_food(level, inventory):
@@ -37,6 +44,7 @@ def base_state(level, socket):
     actual_level = level
     while (actual_level == level):
         inventory = look_inventory(socket)
+        food = get_food(inventory)
         if (not enough_food(level, food)):
             survive_mode(actual_level)
         elif (not enough_food_incant(level, food)):

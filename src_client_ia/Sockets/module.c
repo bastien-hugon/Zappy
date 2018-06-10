@@ -53,7 +53,7 @@ PyObject *get_fd_activity(PyObject *self, PyObject *args)
 		return (Py_BuildValue("s" , NULL));
 	}
 	if (FD_ISSET(fd, &fds)) {
-		fgets(command, 1025, file_d);
+		fgets(command, 4096, file_d);
 	}
 	return (Py_BuildValue("s" , command));
 }
@@ -71,6 +71,7 @@ PyObject *send_command(PyObject *self, PyObject *args)
 	(void)self;
 	if (!PyArg_ParseTuple(args, "s|i", &to_send, &fd))
 		return (Py_BuildValue("i" , -1));
+	printf("%s\n", to_send);
 	dprintf(fd, "%s\n", to_send);
 	return (Py_BuildValue("i", 0));
 }

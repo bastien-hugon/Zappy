@@ -26,10 +26,13 @@ class Socket:
         self.ReadingThread = ReadOnServer(self.fd, self.queue)
         self.ReadingThread.setDaemon(True)
         self.ReadingThread.start()
+        response = []
+        while (len(response) == 0):
+            response = self.GetServerResponse()
         self.TeamName()
-        time.sleep(0.1)
-        for i in range(self.queue.qsize()):
-            self.queue.get()
+        response = []
+        while (len(response) == 0):
+            response = self.GetServerResponse()
 
     def init_socket(self):
         self.fd = sockets.create_socket(self.host, self.port)
@@ -78,9 +81,9 @@ class Socket:
 
     def GetServerResponse(self):
         ret = []
-        if self.queue.empty():
-            return (None)
+        if (self.queue.empty()):
+            return ([])
         else:
             while (not self.queue.empty()):
-                ret.append(self.queue.get())
+                ret.append(self.queue.get_nowait())
             return (ret)
