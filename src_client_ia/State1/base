@@ -1,0 +1,44 @@
+#!/usr/bin/env python3
+
+
+def look_inventory():
+    return (look inventory)
+
+
+def enough_food(level, inventory):
+    # food = parse inventory
+    if (food >= (level + 1)):
+        return (True)
+    else:
+        return (False)
+
+
+def enough_food_incant(level, inventory):
+    # food = parse inventory
+    if (food >= (level + 3)):
+        return (True)
+    else:
+        return (False)
+
+
+def enough_stone(level, inventory):
+    # linemate = parse inventory
+    if (linemate >= (level + 3)):
+        return (True)
+    else:
+        return (False)
+
+
+def base_state(level):
+    actual_level = level
+    while (actual_level == level):
+        inventory = look_inventory()
+        if (not enough_food(level, food)):
+            survive_mode(actual_level)
+        elif (not enough_food_incant(level, food)):
+            search_food_incant_mode(actual_level)
+        elif (not enough_stone(level)):
+            search_stone_mode()
+        else:
+            actual_level = incant()
+    return (actual_level)

@@ -1,0 +1,56 @@
+#!/usr/bin/env python3
+
+from sys import *
+import getopt
+
+
+def connection(port, name, machine):
+    print(port)
+    print(name)
+    print(machine)
+
+
+def print_usage():
+    print("USAGE: ./zappy_ai -p port -n name -h machine")
+    print("\tport\tis the port number")
+    print("\tname\tis the name of the team")
+    print("\tmachine\tis the name of the machine; localhost by default")
+
+
+def main():
+    my_argv = argv[1:]
+    port = 0
+    name = ""
+    machine = "localhost"
+    try:
+        optlist, args = getopt.getopt(my_argv, "p:n:h:", ["help"])
+    except getopt.GetoptError as err:
+        print(err)
+        print_usage()
+        exit(84)
+    if (args != []):
+        print_usage()
+        exit(84)
+    for opt, val in optlist:
+        if opt == "--help":
+            print_usage()
+            exit(0)
+        if opt == "-p":
+            try:
+                port = int(val)
+            except:
+                print_usage()
+                exit(84)
+        elif opt == "-n":
+            name = val
+        elif opt == "-h":
+            machine = val
+        else:
+            assert False, "unhandled option"
+    if (port == 0 or name == ""):
+        print_usage()
+        exit(84)
+    connection(port, name, machine)
+
+if __name__ == '__main__':
+    main()

@@ -1,0 +1,21 @@
+#!/usr/bin/env python3
+
+
+def go_to_tile(nb_forward, nb_side):
+    for i in range(1, (nb_forward) + 1):
+        go_forward
+    if (nb_side < 0):
+        turn_left
+    else:
+        turn_right
+    nb_side = abs(nb_side)
+    for i in range(1, (nb_side) + 1):
+        go_forward
+
+
+def mov_to_tile(tile, level):
+    for x in range(1, (level + 1)):
+        if (tile >= (x * (x + 1) - x) and tile <= (x * (x + 1) + x)):
+            nb_forward = x
+    nb_side = tile - (nb_level * (nb_level + 1) - nb_level)
+    go_to_tile(nb_forward, nb_side)
