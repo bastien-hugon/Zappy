@@ -28,5 +28,5 @@ class ReadOnServer(Thread):
             while (True):
                 allCommand = sockets.get_fd_activity(self.fd).split('\n')
                 allCommand = list(filter(None, allCommand))
-                self.queue.put_nowait(allCommand)
+                self.queue.put(allCommand)
                 time.sleep(0.1)

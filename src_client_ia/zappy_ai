@@ -2,8 +2,10 @@
 
 from sys import *
 import getopt
+import time
 
 from socket import Socket
+
 
 def connection(port, name, machine):
     return (Socket(str(machine), port, str(name)))
@@ -50,6 +52,7 @@ def main():
         print_usage()
         exit(84)
     socket = connection(port, name, machine)
+
 
 if __name__ == '__main__':
     main()

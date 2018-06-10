@@ -27,8 +27,9 @@ class Socket:
         self.ReadingThread.setDaemon(True)
         self.ReadingThread.start()
         self.TeamName()
+        time.sleep(0.1)
         for i in range(self.queue.qsize()):
-            print(self.queue.get())
+            self.queue.get()
 
     def init_socket(self):
         self.fd = sockets.create_socket(self.host, self.port)
@@ -76,4 +77,10 @@ class Socket:
         sockets.send_command("Incantation", self.fd)
 
     def GetServerResponse(self):
-        return (self.queue.get_nowait())
+        ret = []
+        if self.queue.empty():
+            return (None)
+        else:
+            while (not self.queue.empty()):
+                ret.append(self.queue.get())
+            return (ret)
