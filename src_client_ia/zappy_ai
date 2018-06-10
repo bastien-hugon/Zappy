@@ -3,11 +3,10 @@
 from sys import *
 import getopt
 
+from socket import Socket
 
 def connection(port, name, machine):
-    print(port)
-    print(name)
-    print(machine)
+    return (Socket(str(machine), port, str(name)))
 
 
 def print_usage():
@@ -50,7 +49,7 @@ def main():
     if (port == 0 or name == ""):
         print_usage()
         exit(84)
-    connection(port, name, machine)
+    socket = connection(port, name, machine)
 
 if __name__ == '__main__':
     main()

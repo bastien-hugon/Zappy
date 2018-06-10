@@ -14,6 +14,7 @@ from threading import Thread
 
 from ReadServerThread import ReadOnServer
 
+
 class Socket:
 
     def __init__(self, host, port, name):
