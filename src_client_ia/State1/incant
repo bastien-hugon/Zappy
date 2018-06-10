@@ -2,4 +2,8 @@
 
 
 def incant():
-    return (1)
+    # look
+    if (not_in_free_space()):
+        mov_to_tile(free)
+    else:
+        return (incant)
