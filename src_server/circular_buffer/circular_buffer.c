@@ -55,7 +55,7 @@ void circular_buffer_init(circular_buffer_t *buffer)
 */
 bool circular_buffer_read(circular_buffer_t *buffer, int fd)
 {
-	const char *buff_end = (char *)(&buffer->buffer + sizeof(buffer->buffer));
+	const char *buff_end = (((char *)&buffer->buffer) + BUFF_SIZE);
 	int readed = 0;
 
 	if (buffer->head == NULL)
@@ -67,8 +67,9 @@ bool circular_buffer_read(circular_buffer_t *buffer, int fd)
 		if (readed == -1 && errno != EAGAIN)
 			return (false);
 		buffer->head += readed;
-		if (buffer->head == buff_end)
+		if (buffer->head == buff_end) {
 			buffer->head = (char *)&buffer->buffer;
+		}
 	} else {
 		readed = read(fd, buffer->buffer, buffer->tail - buffer->head);
 		if (readed == -1 && errno != EAGAIN)
@@ -91,20 +92,25 @@ char *circular_buffer_get_to(circular_buffer_t *buffer, char *to)
 {
 	char *str;
 	char *ret;
-	const char *buff_end = (char *)(&buffer->buffer + sizeof(buffer->buffer));
+	const char *buff_end = (((char *)&buffer->buffer) + BUFF_SIZE);
 
 	if (buffer->head == NULL)
 		return (CIRCULAR_BUFFER_NOT_FOUND);
 	if ((str = sstrstr(buffer->tail, to, (int)(buff_end - buffer->tail))) != NULL) {
-			ret = strndup(buffer->tail, buffer->tail - str);
+		ret = strndup(buffer->tail, buffer->tail - str);
+		if (ret == NULL)
+			return (CIRCULAR_BUFFER_ALLOCATION_ERROR);
 		buffer->tail = (char *)(str + strlen(to));
 		return (ret);
 	}
 	if ((str = sstrstr((char *)&buffer->buffer, to, sizeof(buffer->buffer)))) {
-			ret = malloc((buff_end - buffer->tail) + buffer->buffer - str);
+		ret = malloc((size_t)(buff_end - buffer->tail + (size_t)((buff_end - buffer->tail) + str - (((char *)&buffer->buffer)) + 1)));
+		if (ret == NULL)
+			return (CIRCULAR_BUFFER_ALLOCATION_ERROR);
 		memcpy(ret, buffer->tail, (buff_end - buffer->tail));
-		((char *)memcpy(ret + (buff_end - buffer->tail), \
-			&buffer->buffer, str - ((char *)&buffer->buffer)))[1] = '\0';
+		memcpy(ret + (buff_end - buffer->tail), \
+			&buffer->buffer, str - ((char *)&buffer->buffer));
+		ret[((size_t)((buff_end - buffer->tail) + str - (((char *)&buffer->buffer))))] = '\0';
 		buffer->tail = str + strlen(to);
 		return (ret);
 	}
