@@ -9,11 +9,11 @@
 
 import sockets
 import time
-import signal
 import queue
 from threading import Thread
 
 from ReadServerThread import ReadOnServer
+
 
 class Socket:
 
@@ -26,9 +26,13 @@ class Socket:
         self.ReadingThread = ReadOnServer(self.fd, self.queue)
         self.ReadingThread.setDaemon(True)
         self.ReadingThread.start()
+        response = []
+        while (len(response) == 0):
+            response = self.GetServerResponse()
         self.TeamName()
-        for i in range(self.queue.qsize()):
-            print(self.queue.get())
+        response = []
+        while (len(response) == 0):
+            response = self.GetServerResponse()
 
     def init_socket(self):
         self.fd = sockets.create_socket(self.host, self.port)
@@ -76,16 +80,10 @@ class Socket:
         sockets.send_command("Incantation", self.fd)
 
     def GetServerResponse(self):
-        return (self.queue.get_nowait())
-
-if __name__ == "__main__":
-    try:
-        socket = Socket("127.0.0.1", 4242, "Yellow")
-        while (True):
-            socket.Inventory()
-            socket.Forward()
-            time.sleep(0.2)
-            print(socket.GetServerResponse())
-    except KeyboardInterrupt as e:
-        print("\nProgram interrupt with CTRL+C")
-        exit(0)
+        ret = []
+        if (self.queue.empty()):
+            return ([])
+        else:
+            while (not self.queue.empty()):
+                ret.append(self.queue.get_nowait())
+            return (ret)
