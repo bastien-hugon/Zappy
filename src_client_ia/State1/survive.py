@@ -10,6 +10,7 @@ def is_there_food(socket):
     resp = []
     while (len(resp) == 0):
         resp = socket.ReadSocket()
+    check_dead(resp)
     resp = resp[:1]
     if len(resp) > 0 and resp[0] != "ko":
         resp = resp[0][2:-2].split(',')
@@ -37,6 +38,7 @@ def survive_mode(level, food, socket):
             resp = []
             while (len(resp) == 0):
                 resp = socket.ReadSocket()
+            check_dead(resp)
             inventory = look_inventory(socket)
             food = get_food(inventory)
             print ("SURVIVE: food i got: " + str(food))
@@ -45,3 +47,4 @@ def survive_mode(level, food, socket):
             resp = []
             while (len(resp) == 0):
                 resp = socket.ReadSocket()
+            check_dead(resp)

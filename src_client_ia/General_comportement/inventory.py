@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
 
+from check_dead import check_dead
+
 
 def look_inventory(socket):
     socket.Inventory()
     resp = []
     while (len(resp) == 0):
         resp = socket.ReadSocket()
+    check_dead(resp)
     if len(resp) > 0 and resp[0] != "ko":
         resp[0] = resp[0][2:-2].split(', ')
     return (resp)
