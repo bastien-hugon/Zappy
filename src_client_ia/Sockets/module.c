@@ -82,7 +82,6 @@ PyObject *send_command(PyObject *self, PyObject *args)
 		return (Py_BuildValue("i" , -1));
 	printf("COMMAND : %s\n", to_send);
 	printf("dprintf: %d\n", dprintf(fd, "%s\n", to_send));
-	// printf("WRITE RETURN: %ld\n", write(fd, to_send, strlen(to_send)));
 	return (Py_BuildValue("i", 0));
 }
 

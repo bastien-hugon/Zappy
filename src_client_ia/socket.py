@@ -74,7 +74,7 @@ class Socket:
         sockets.send_command(("Take " + item), self.fd)
 
     def Set(self, item):
-        sockets.send_command(("Take " + item), self.fd)
+        sockets.send_command(("Set " + item), self.fd)
 
     def Incantation(self):
         sockets.send_command("Incantation", self.fd)

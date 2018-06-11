@@ -1,28 +1,51 @@
 #!/usr/bin/env python3
 
+from General_comportement.inventory import look_inventory
+from General_comportement.inventory import get_food
+from General_comportement.inventory import get_linemate
+from General_comportement.mov_to_tile import mov_to_tile
+from General_comportement.check_dead import check_dead
+from General_comportement.ressources import is_there_food
+from General_comportement.ressources import is_there_linemate
 
-def is_there_food():
-    # look
-    # check_if_food
-    return (index)
 
-
-def enough_food(level, inventory):
-    # food = parse inventory
+def enough_food(level, food):
     if (food >= (level + 1)):
-        return (True)
-    elif (food <= level):
         return (True)
     else:
         return (False)
 
 
-def search_stone_mode():
-    while (not enough_food(level)):
-        food_location = is_there_food()
-    if (food_location >= 0):
-        mov_to_tile(food_location)
-        # take food
-    else:
-        forward(1)
-    return (1)
+def search_stone_mode(level, food, linemate, socket):
+    while (enough_food(level, food) and linemate < 1):
+        food_location = is_there_food(socket)
+        stone_location = is_there_linemate(socket)
+        if (stone_location >= 0):
+            mov_to_tile(stone_location, level, socket)
+            socket.Take('linemate')
+            resp = []
+            while (len(resp) == 0):
+                resp = socket.ReadSocket()
+                print ("take: " + str(resp))
+                check_dead(resp)
+            inventory = look_inventory(socket)
+            food = get_food(inventory)
+            linemate = get_linemate(inventory)
+            print ("Stone search: stone i got: " + str(food))
+        elif (food_location >= 0):
+            mov_to_tile(food_location, level, socket)
+            socket.Take('food')
+            resp = []
+            while (len(resp) == 0):
+                resp = socket.ReadSocket()
+                print ("take: " + str(resp))
+                check_dead(resp)
+            inventory = look_inventory(socket)
+            food = get_food(inventory)
+            print ("Stone search: food i got: " + str(food))
+        else:
+            socket.Forward()
+            resp = []
+            while (len(resp) == 0):
+                resp = socket.ReadSocket()
+                check_dead(resp)

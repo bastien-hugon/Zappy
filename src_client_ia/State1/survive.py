@@ -4,24 +4,7 @@ from General_comportement.inventory import look_inventory
 from General_comportement.inventory import get_food
 from General_comportement.mov_to_tile import mov_to_tile
 from General_comportement.check_dead import check_dead
-
-
-def is_there_food(socket):
-    socket.Look()
-    resp = []
-    while (len(resp) == 0):
-        resp = socket.ReadSocket()
-        print ("look: " + str(resp))
-    check_dead(resp)
-    resp = resp[:1]
-    if len(resp) > 0 and resp[0] != "ko":
-        resp = resp[0][2:-2].split(',')
-    for tile in range(len(resp)):
-        content = resp[tile].split(' ')
-        for item in content:
-            if item == 'food':
-                return (tile)
-    return (-1)
+from General_comportement.ressources import is_there_food
 
 
 def enough_food(level, food):
@@ -41,7 +24,7 @@ def survive_mode(level, food, socket):
             while (len(resp) == 0):
                 resp = socket.ReadSocket()
                 print ("take: " + str(resp))
-            check_dead(resp)
+                check_dead(resp)
             inventory = look_inventory(socket)
             food = get_food(inventory)
             print ("SURVIVE: food i got: " + str(food))
@@ -50,4 +33,4 @@ def survive_mode(level, food, socket):
             resp = []
             while (len(resp) == 0):
                 resp = socket.ReadSocket()
-            check_dead(resp)
+                check_dead(resp)
