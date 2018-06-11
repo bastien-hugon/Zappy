@@ -19,44 +19,6 @@
 */
 
 /**
-*@brief print the executable help message
-*
-*/
-void print_help(void)
-{
-	printf("USAGE: ./zappy_server -p port -x width -y height -n name1");
-	printf(" name2 ... -c clientsNb -f freq\n");
-	printf("\tport\tis the port number\n");
-	printf("\twidth\tis the width of the world\n");
-	printf("\theight\tis the height of the world\n");
-	printf("\tnameX\tis the name of the team X\n");
-	printf("\tclientsNb\tis the number of authorized clients per team\n");
-	printf("\tfreq\tis the reciprocal of time unit for execution ");
-	printf("of actions\n");
-}
-
-/**
-*@brief search if the option -help is used
-*
-* @param argc the arguments count
-* @param argv the arguments values
-* @return true if the option -help was found
-* @return false othwerwise
-*/
-bool handle_help(int argc, char **argv)
-{
-	int i = 0;
-
-	for (i = 1; i < argc; i++) {
-		if (strcmp(argv[i], "-help") == 0) {
-			print_help();
-			return (true);
-		}
-	}
-	return (false);
-}
-
-/**
 * @brief handle the options of the program
 *
 * @param server the server to modify
@@ -64,26 +26,63 @@ bool handle_help(int argc, char **argv)
 * @param opt the option
 * @return false in case of an error
 */
-bool handle_option(server_t *server, int option, char *opt)
+bool handle_option(server_t *server, int option, char *opt, uint *nb_players)
 {
 	switch (option) {
 		case 'p':
 			sscanf(opt, "%d", (int *)&server->srv_epoll.port);
-			break;
+			return (true);
 		case 'x':
 			sscanf(opt, "%d", (int *)&server->game.width);
-			break;
+			return (true);
 		case 'y':
 			sscanf(opt, "%d", (int *)&server->game.height);
-			break;
+			return (true);
 		case 'f':
 			sscanf(opt, "%d", (int *)&server->game.frequence);
-			break;
-		case '?':
+			return (true);
+		case 'c':
+			sscanf(opt, "%d", (int *)nb_players);
+			return (true);
+		default:
 			fprintf(stderr, "Unknown option `-%c'.\n", option);
 			return (false);
 	}
-	return (true);
+}
+
+/**
+*@brief handle the teams option
+*
+*@param server the server to init
+*@param argc the arguments count
+*@param argv the arguments values
+*/
+void handle_teams(server_t *server, int argc, char **argv)
+{
+	team_t team;
+
+	optind--;
+	for (;optind < argc && *argv[optind] != '-'; optind++){
+		team.name = argv[optind];
+		list_push(&server->game.teams, &team);
+	}
+}
+
+/**
+*@brief set the free slot of the team to the -c argument
+*
+*@param server the server
+*@param nb_player_by_team the nb of free slot by team
+*/
+static void init_nb_client_by_team(server_t *server, uint nb_player_by_team)
+{
+	team_t *team = server->game.teams;
+
+	do {
+		if (team != NULL) {
+			team->free_slots = nb_player_by_team;
+		}
+	} while (list_next(&team));
 }
 
 /**
@@ -97,10 +96,17 @@ bool handle_option(server_t *server, int option, char *opt)
 */
 bool handle_args(server_t *server, int argc, char **argv) {
 	int c;
+	uint nb_client_by_team = 0;
 
-	while ((c = getopt (argc, argv, "p:x:y:n:c:f:")) != -1) {
-		if (handle_option(server, c, optarg) == false)
+	memset(server, 0, sizeof(server_t));
+	while ((c = getopt(argc, argv, "p:x:y:n:c:f:")) != -1) {
+		if (c == 'n')
+			handle_teams(server, argc, argv);
+		else if (false == \
+			handle_option(server, c, optarg, &nb_client_by_team)) {
 			return (false);
+		}
 	}
+	init_nb_client_by_team(server, nb_client_by_team);
 	return (true);
 }

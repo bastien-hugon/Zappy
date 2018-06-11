@@ -26,7 +26,8 @@
 bool list_add_item(void **list, void *data, size_t data_size)
 {
 	list_t *new_node = malloc(sizeof(list_t) + data_size);
-	list_t *node = (list_t *) ((*list == NULL) ? NULL : ((list_t *)(*list) - 1));
+	list_t *node = (list_t *) ((*list == NULL) ? NULL : ((list_t *)\
+		(*list) - 1));
 
 	if (new_node == NULL) {
 		ERROR("Error while allocating memory");
@@ -38,9 +39,8 @@ bool list_add_item(void **list, void *data, size_t data_size)
 		*list = ((char *)new_node + sizeof(list_t));
 		new_node->prev = NULL;
 	} else {
-		while (node->next != NULL) {
+		while (node->next != NULL)
 			node = node->next;
-		}
 		node->next = new_node;
 		new_node->prev = node;
 	}
@@ -57,7 +57,7 @@ bool list_add_item(void **list, void *data, size_t data_size)
 bool list_next_item(void **list) {
 	list_t *node = ((list_t *)(*list)) - 1;
 
-	if (node->next == NULL) {
+	if (*list == NULL || node->next == NULL) {
 		return (false);
 	}
 	node = node->next;
@@ -75,7 +75,7 @@ bool list_next_item(void **list) {
 bool list_prev_item(void **list) {
 	list_t *node = ((list_t *)(*list)) - 1;
 
-	if (node->prev == NULL) {
+	if (*list == NULL || node->prev == NULL) {
 		return (false);
 	}
 	node = node->prev;

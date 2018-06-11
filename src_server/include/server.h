@@ -29,11 +29,12 @@
 	#include <arpa/inet.h>
 	#include <sys/epoll.h>
 
+	#include "circular_buffer.h"
+
 	#undef EXIT_FAILURE
 
 	#define EXIT_FAILURE (84)
 	#define MAX_EVENTS (1024)
-	#define BUFF_SIZE (1024)
 	#define NB_CMD_QUEUE (10)
 
 	typedef unsigned int uint;
@@ -165,11 +166,9 @@
 
 	#include "logs.h"
 	#include "list.h"
+	#include "arguments_handling.h"
 	#include "socket_manager.h"
 	#include "client_manager.h"
 	#include "map_manager.h"
-
-	bool handle_help(int argc, char **argv);
-	bool handle_args(server_t *server, int argc, char **argv);
 
 #endif /* !SERVER_H_ */

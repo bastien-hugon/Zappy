@@ -6,8 +6,10 @@
 */
 
 #include <criterion/criterion.h>
+#include <criterion/redirect.h>
 #include <sys/types.h>
 #include <unistd.h>
+#include <stdio.h>
 #include "list.h"
 
 Test(list, add_item)
@@ -32,7 +34,13 @@ Test(list, add_item_memory_error) {
 	int a = 5;
 	int *elem = NULL;
 
+	char buffer[2000];
+	cr_redirect_stderr();
+	FILE *ferr = cr_get_redirected_stderr();
 	cr_assert_eq(list_push(&elem, &a), false);
 	cr_assert_null(elem);
 	stest_malloc = false;
+	fread(buffer, sizeof(buffer), sizeof(char), ferr);
+	cr_assert_not_null(strstr(buffer, \
+		"Error while allocating memory\n"));
 }
