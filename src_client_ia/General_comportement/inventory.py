@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from check_dead import check_dead
+from General_comportement.check_dead import check_dead
 
 
 def look_inventory(socket):
@@ -8,6 +8,7 @@ def look_inventory(socket):
     resp = []
     while (len(resp) == 0):
         resp = socket.ReadSocket()
+        print ("look_inventory: " + str(resp))
     check_dead(resp)
     if len(resp) > 0 and resp[0] != "ko":
         resp[0] = resp[0][2:-2].split(', ')

@@ -1,37 +1,39 @@
 #!/usr/bin/env python3
 
+from General_comportement.check_dead import check_dead
+
 
 def go_to_tile(nb_forward, nb_side, socket):
-    for i in range(1, (nb_forward) + 1):
+    for i in range(nb_forward):
         socket.Forward()
+        resp = []
+        while (len(resp) == 0):
+            resp = socket.ReadSocket()
+        check_dead(resp)
     if (nb_side < 0):
         socket.Left()
-        nb_forward += 1
+        resp = []
+        while (len(resp) == 0):
+            resp = socket.ReadSocket()
+        check_dead(resp)
     elif (nb_side > 0):
         socket.Right()
-        nb_forward += 1
-    if (nb_forward > 0):
         resp = []
-        while (len(resp) == 0 and nb_forward != 0):
+        while (len(resp) == 0):
             resp = socket.ReadSocket()
-            resp = resp[:1]
-            if (len(resp) != 0):
-                check_dead(resp)
-                nb_forward -= len(resp)
+        check_dead(resp)
     nb_side = abs(nb_side)
-    for i in range(1, (nb_side) + 1):
+    for i in range(nb_side):
         socket.Forward()
-    if (nb_side > 0):
         resp = []
-        while (len(resp) == 0 and nb_side != 0):
+        while (len(resp) == 0):
             resp = socket.ReadSocket()
-            resp = resp[:1]
-            if (len(resp) != 0):
-                check_dead(resp)
-                nb_side -= len(resp)
+        check_dead(resp)
 
 
 def mov_to_tile(tile, level, socket):
+    if (tile == 0):
+        return
     nb_forward = 0
     for x in range(1, (level + 1)):
         if (tile >= (x * (x + 1) - x) and tile <= (x * (x + 1) + x)):
