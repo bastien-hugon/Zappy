@@ -12,6 +12,7 @@
 *@author Hugon Bastien
 *@date 06-05-2018
 */
+
 #include "server.h"
 
 /**
@@ -22,5 +23,20 @@
 */
 void call_worker(server_t *srv, int fd)
 {
+	client_t *client = get_client_for_fd(srv, fd);
+	char *str = NULL;
+
 	LOG("Event on fd: %d", fd);
+	if (client == NULL)
+		return;
+	if (circular_buffer_read(&client->buffer, fd) == false) {
+		WARN("Error while reading in the buffer from fd: %d", fd);
+		return;
+	}
+	while (true) {
+		str = circular_buffer_get_to(&client->buffer, "\r\n");
+		if (str == NULL)
+			return;
+		register_command(client, str);
+	}
 }

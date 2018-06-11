@@ -102,7 +102,7 @@
 		dir_e dir;
 		socklen_t size;
 		uint inventory[NB_RESSOURCE];
-		char buffer[BUFF_SIZE];
+		circular_buffer_t buffer;
 		char *cmd_queue[NB_CMD_QUEUE];
 		uint tick_left;
 	} client_t;
@@ -170,5 +170,6 @@
 	#include "socket_manager.h"
 	#include "client_manager.h"
 	#include "map_manager.h"
+	#include "commands.h"
 
 #endif /* !SERVER_H_ */

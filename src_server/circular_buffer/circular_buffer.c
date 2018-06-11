@@ -78,7 +78,8 @@ bool circular_buffer_read(circular_buffer_t *buffer, int fd)
 }
 
 static char *circular_buffer_get_end(circular_buffer_t *buffer, char *to, \
-	const char *buff_end, char *str) {
+	const char *buff_end, char *str)
+{
 	char *ret = malloc((size_t)(buff_end - buffer->tail + \
 		(size_t)((buff_end - buffer->tail) + str - \
 		(((char *)&buffer->buffer)) + 1)));

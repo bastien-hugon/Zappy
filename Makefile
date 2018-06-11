@@ -24,16 +24,19 @@ SRCS_UT_SERV	=	./tests/server/arguments/test_argument_handling.c \
 			./tests/server/list/test_list_next_prev.c \
 			./tests/server/circular_buffer/test_circular_buffer_get.c \
 			./tests/server/circular_buffer/test_circular_buffer_read.c \
+			./tests/server/commands/tests_command_queue.c \
 			./tests/server/mocking/mock_malloc.c \
 			./src_server/argument_handling/argument_handling.c \
 			./src_server/argument_handling/help.c \
 			./src_server/circular_buffer/circular_buffer.c \
+			./src_server/commands/command_queue.c \
 			./src_server/list/list.c \
 			./src_server/logs/logs.c
 
 SRCS_UT_CLIENT  =
 
 SERV_SRCS	=	./src_server/argument_handling/argument_handling.c \
+			./src_server/argument_handling/help.c \
 			./src_server/list/list.c \
 			./src_server/logs/logs.c \
 			./src_server/socket_manager/init_epoll.c \
@@ -42,6 +45,8 @@ SERV_SRCS	=	./src_server/argument_handling/argument_handling.c \
 			./src_server/socket_manager/call_worker.c \
 			./src_server/socket_manager/socket_manager.c \
 			./src_server/client_manager/create_user.c \
+			./src_server/commands/command_queue.c \
+			./src_server/circular_buffer/circular_buffer.c \
 			./src_server/client_manager/exec_client_actions.c \
 			./src_server/map_manager/generate_map.c \
 			./src_server/map_manager/fill_refill.c \
