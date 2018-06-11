@@ -1,26 +1,8 @@
 #!/usr/bin/env python3
 
-
-def look_inventory(socket):
-    socket.Inventory()
-    resp = []
-    while (len(resp) == 0):
-        resp = socket.ReadSocket()
-    print ("RESP: " + str(resp))
-    if len(resp) > 0 and resp[0] != "ko":
-        resp[0] = resp[0][2:-2].split(', ')
-    return (resp)
-
-
-def get_food(inventory):
-    ret = []
-    for i in (inventory):
-        if (i[:4] == 'food'):
-            ret = [int(s) for s in i if s.isdigit()]
-    if len(ret) > 0:
-        return (ret[0])
-    else:
-        return (0)
+from State1.survive import survive_mode
+from General_comportement.inventory import look_inventory
+from General_comportement.inventory import get_food
 
 
 def enough_food(level, food):
@@ -48,19 +30,18 @@ def base_state(level, socket):
     actual_level = level
     stone = 0
     while (actual_level == level):
-        print ('NEW LOOP')
         inventory = look_inventory(socket)
         food = get_food(inventory)
         print ("food i got: " + str(food))
         if (not enough_food(level, food)):
-            print('MODE: survive mode')
-           # survive_mode(actual_level)
+            print('MODE: survive')
+            survive_mode(actual_level, food, socket)
         elif (not enough_food_incant(level, food)):
             print('MODE: search food incant')
-          #  search_food_incant_mode(actual_level)
+#           search_food_incant_mode(actual_level)
         elif (not enough_stone(level, stone)):
             print('MODE: search stone')
-         #   search_stone_mode()
+#           search_stone_mode()
         else:
             print('MODE: INCANT')
         #    actual_level = incant()
