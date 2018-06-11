@@ -1,29 +1,37 @@
 #!/usr/bin/env python3
 
+from General_comportement.inventory import look_inventory
+from General_comportement.inventory import get_food
+from General_comportement.mov_to_tile import mov_to_tile
+from General_comportement.check_dead import check_dead
+from General_comportement.ressources import is_there_food
 
-def is_there_food():
-    # look
-    # check_if_food
-    return (index)
 
-
-def enough_food(level, inventory):
-    # food = parse inventory
-    # linemate = parse inventory
-    if (linemate >= 1):
-        return (True)
-    elif (food <= level):
+def enough_food(level, food):
+    if (food >= (level + 4)):
         return (True)
     else:
         return (False)
 
 
-def search_food_incant_mode():
-    while (not enough_stone(level)):
-        food_location = is_there_food()
-    if (food_location >= 0):
-        mov_to_tile(food_location)
-        # take food
-    else:
-        forward(1)
-    return (1)
+def search_food_incant_mode(level, food, socket):
+    while (not enough_food(level, food)):
+        food_location = is_there_food(socket)
+        if (food_location >= 0):
+            mov_to_tile(food_location, level, socket)
+            socket.Take('food')
+            resp = []
+            while (len(resp) == 0):
+                resp = socket.ReadSocket()
+                print ("take: " + str(resp))
+            check_dead(resp)
+            inventory = look_inventory(socket)
+            food = get_food(inventory)
+            print ("serach food incant: food i got: " + str(food))
+        else:
+            for i in range(level):
+                socket.Forward()
+                resp = []
+                while (len(resp) == 0):
+                    resp = socket.ReadSocket()
+                check_dead(resp)
