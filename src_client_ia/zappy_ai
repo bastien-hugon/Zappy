@@ -5,6 +5,12 @@ import getopt
 import time
 
 from socket import Socket
+from State1.base import base_state
+
+
+def go_in_state(socket):
+    base_state(1, socket)
+    print ("LEVEL 2: REACHED")
 
 
 def connection(port, name, machine):
@@ -52,6 +58,12 @@ def main():
         print_usage()
         exit(84)
     socket = connection(port, name, machine)
+    socket.Inventory()
+    socket.Forward()
+    socket.Look()
+    time.sleep(10)
+    print(socket.ReadSocket())
+    # go_in_state(socket)
 
 
 if __name__ == '__main__':
