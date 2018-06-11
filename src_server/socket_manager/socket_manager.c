@@ -12,6 +12,7 @@
 *@author Hugon Bastien
 *@date 06-05-2018
 */
+#include <sys/time.h>
 #include "server.h"
 
 /**
@@ -46,16 +47,15 @@ static void manage_events(server_t *srv, int i)
 /**
 *@brief Get the time object
 *
-*@return long The current timestamp in ms
+*@return long long The current timestamp in ms
 */
-static long get_time(void)
-{
-	long ms;
-	struct timespec spec;
+static long long get_time(void) {
+	struct timeval te;
+	long long milliseconds;
 
-	clock_gettime(CLOCK_REALTIME, &spec);
-	ms = round(spec.tv_nsec / 1.0e6);
-	return (ms);
+	gettimeofday(&te, NULL);
+	milliseconds = te.tv_sec * 1000LL + te.tv_usec / 1000;
+	return (milliseconds);
 }
 
 /**
@@ -63,32 +63,25 @@ static long get_time(void)
 *
 *@param srv The main server_t struct
 */
+
 static void loop_manager(server_t *srv)
 {
 	int nfds = 0;
-	long tick_b = get_time();
-	static long tick_e = 0;
-	int timeout = (tick_e != 0) ? (TICKS - (tick_e - tick_b)) : (-1);
+	long long tick_b = get_time();
+	static long long tick_e = 0;
+	const long long timeout = (tick_e) ? (tick_b + (TICKS - \
+	(tick_e - tick_b))) : (tick_b + TICKS);
 
-	if ((tick_e - tick_b) < TICKS) {
+	while (get_time() < timeout) {
 		nfds = epoll_wait(srv->srv_epoll.epollfd, \
-		srv->srv_epoll.events, MAX_EVENTS, timeout);
+		srv->srv_epoll.events, MAX_EVENTS, (int) timeout - get_time());
 		if (nfds == -1)
 			close_and_msg(srv, "error: epoll_wait");
 		for (int i = 0; i < nfds; ++i)
 			manage_events(srv, i);
 	}
-	exec_client_actions(srv);
 	tick_e = get_time();
-}
-
-static void print_map(tile_t **map)
-{
-	for (int y = 0; y < 10; y++) {
-		for (int x = 0; x < 10; x++)
-			printf("%d%d%d%d%d%d%d ", map[y][x].inventory[0], map[y][x].inventory[1], map[y][x].inventory[2], map[y][x].inventory[3], map[y][x].inventory[4], map[y][x].inventory[5], map[y][x].inventory[6]);
-		printf("\n");
-	}
+	exec_client_actions(srv);
 }
 
 /**
@@ -99,11 +92,8 @@ static void print_map(tile_t **map)
 void socket_manager(server_t *srv)
 {
 	INFO("Server's ready !");
-	srv->game.height = 10;
-	srv->game.width = 10;
 	srand(time(NULL));
 	generate_map(&(srv->game));
-	print_map(srv->game.map);
 	while (true)
 		loop_manager(srv);
 }
