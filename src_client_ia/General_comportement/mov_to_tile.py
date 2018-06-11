@@ -16,6 +16,7 @@ def go_to_tile(nb_forward, nb_side, socket):
             resp = socket.ReadSocket()
             resp = resp[:1]
             if (len(resp) != 0):
+                check_dead(resp)
                 nb_forward -= len(resp)
     nb_side = abs(nb_side)
     for i in range(1, (nb_side) + 1):
@@ -26,6 +27,7 @@ def go_to_tile(nb_forward, nb_side, socket):
             resp = socket.ReadSocket()
             resp = resp[:1]
             if (len(resp) != 0):
+                check_dead(resp)
                 nb_side -= len(resp)
 
 
