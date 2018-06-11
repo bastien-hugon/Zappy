@@ -8,6 +8,10 @@
 #ifndef SERVER_H_
 	#define SERVER_H_
 
+	#define _POSIX_C_SOURCE 200809L
+
+	#include <inttypes.h>
+	#include <math.h>
 	#include <stdio.h>
 	#include <stdlib.h>
 	#include <unistd.h>
@@ -75,6 +79,7 @@
 		MENDIANE, \
 		PHIRAS, \
 		THYSTAME, \
+		FOOD, \
 		NB_RESSOURCE
 	} ressource_e;
 
@@ -95,6 +100,7 @@
 		socket_t socket;
 		team_t *team;
 		dir_e dir;
+		socklen_t size;
 		uint inventory[NB_RESSOURCE];
 		char buffer[BUFF_SIZE];
 		char *cmd_queue[NB_CMD_QUEUE];
@@ -161,5 +167,8 @@
 	#include "logs.h"
 	#include "list.h"
 	#include "arguments_handling.h"
+	#include "socket_manager.h"
+	#include "client_manager.h"
+	#include "map_manager.h"
 
 #endif /* !SERVER_H_ */
