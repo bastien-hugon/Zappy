@@ -67,15 +67,30 @@ bool circular_buffer_read(circular_buffer_t *buffer, int fd)
 		if (readed == -1 && errno != EAGAIN)
 			return (false);
 		buffer->head += readed;
-		if (buffer->head == buff_end) {
+		if (buffer->head == buff_end)
 			buffer->head = (char *)&buffer->buffer;
-		}
 	} else {
 		readed = read(fd, buffer->buffer, buffer->tail - buffer->head);
 		if (readed == -1 && errno != EAGAIN)
 			return (false);
 	}
 	return (true);
+}
+
+static char *circular_buffer_get_end(circular_buffer_t *buffer, char *to, \
+	const char *buff_end, char *str) {
+	char *ret = malloc((size_t)(buff_end - buffer->tail + \
+		(size_t)((buff_end - buffer->tail) + str - \
+		(((char *)&buffer->buffer)) + 1)));
+	if (ret == NULL)
+		return (CIRCULAR_BUFFER_ALLOCATION_ERROR);
+	memcpy(ret, buffer->tail, (buff_end - buffer->tail));
+	memcpy(ret + (buff_end - buffer->tail), \
+		&buffer->buffer, str - ((char *)&buffer->buffer));
+	ret[((size_t)((buff_end - buffer->tail) + str - \
+		(((char *)&buffer->buffer))))] = '\0';
+	buffer->tail = str + strlen(to);
+	return (ret);
 }
 
 /**
@@ -96,23 +111,16 @@ char *circular_buffer_get_to(circular_buffer_t *buffer, char *to)
 
 	if (buffer->head == NULL)
 		return (CIRCULAR_BUFFER_NOT_FOUND);
-	if ((str = sstrstr(buffer->tail, to, (int)(buff_end - buffer->tail))) != NULL) {
+	if ((str = sstrstr(buffer->tail, to, (int)(buff_end - buffer->tail))) \
+		!= NULL) {
 		ret = strndup(buffer->tail, buffer->tail - str);
 		if (ret == NULL)
 			return (CIRCULAR_BUFFER_ALLOCATION_ERROR);
 		buffer->tail = (char *)(str + strlen(to));
 		return (ret);
 	}
-	if ((str = sstrstr((char *)&buffer->buffer, to, sizeof(buffer->buffer)))) {
-		ret = malloc((size_t)(buff_end - buffer->tail + (size_t)((buff_end - buffer->tail) + str - (((char *)&buffer->buffer)) + 1)));
-		if (ret == NULL)
-			return (CIRCULAR_BUFFER_ALLOCATION_ERROR);
-		memcpy(ret, buffer->tail, (buff_end - buffer->tail));
-		memcpy(ret + (buff_end - buffer->tail), \
-			&buffer->buffer, str - ((char *)&buffer->buffer));
-		ret[((size_t)((buff_end - buffer->tail) + str - (((char *)&buffer->buffer))))] = '\0';
-		buffer->tail = str + strlen(to);
-		return (ret);
-	}
+	if ((str = sstrstr((char *)&buffer->buffer, to, \
+		sizeof(buffer->buffer))))
+		return (circular_buffer_get_end(buffer, to, buff_end, str));
 	return (CIRCULAR_BUFFER_NOT_FOUND);
 }

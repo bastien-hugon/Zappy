@@ -22,7 +22,8 @@ SRCS_UT_IRC =
 SRCS_UT_SERV	=	./tests/server/arguments/test_argument_handling.c \
 			./tests/server/list/test_list_create.c \
 			./tests/server/list/test_list_next_prev.c \
-			./tests/server/circular_buffer/test_circular_buffer.c \
+			./tests/server/circular_buffer/test_circular_buffer_get.c \
+			./tests/server/circular_buffer/test_circular_buffer_read.c \
 			./tests/server/mocking/mock_malloc.c \
 			./src_server/argument_handling/argument_handling.c \
 			./src_server/argument_handling/help.c \
