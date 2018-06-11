@@ -4,8 +4,8 @@
 def look_inventory(socket):
     socket.Inventory()
     resp = []
-    # while (len(resp) == 0):
-    #     resp = socket.GetServerResponse()
+    while (len(resp) == 0):
+        resp = socket.ReadSocket()
     print ("RESP: " + str(resp))
     if len(resp) > 0 and resp[0] != "ko":
         resp[0] = resp[0][2:-2].split(', ')
