@@ -55,11 +55,8 @@ PyObject *get_fd_activity(PyObject *self, PyObject *args)
 		return (Py_BuildValue("s" , NULL));
 	}
 	if (FD_ISSET(fd, &fds)) {
-		while (read(fd, command, sizeof(command)) != 0) {
-			printf("%s", command);
-		}
-		// while (fgets(command, 4096, file_d))
-		// 	printf("FGETS COMMAND: %s\n", command);
+		read(fd, command, 4096);
+		// fgets(command, 4096, file_d);
 	}
 	return (Py_BuildValue("s" , command));
 }
