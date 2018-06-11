@@ -28,7 +28,7 @@ def main():
     my_argv = argv[1:]
     port = 0
     name = ""
-    machine = "localhost"
+    machine = "127.0.0.1"
     try:
         optlist, args = getopt.getopt(my_argv, "p:n:h:", ["help"])
     except getopt.GetoptError as err:
@@ -58,12 +58,7 @@ def main():
         print_usage()
         exit(84)
     socket = connection(port, name, machine)
-    socket.Inventory()
-    socket.Forward()
-    socket.Look()
-    time.sleep(10)
-    print(socket.ReadSocket())
-    # go_in_state(socket)
+    go_in_state(socket)
 
 
 if __name__ == '__main__':
