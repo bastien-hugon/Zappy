@@ -41,6 +41,7 @@ PyObject *get_fd_activity(PyObject *self, PyObject *args)
 {
 	int fd;
 	FILE *file_d;
+	int nb_read;
 	char command[4096] = {0};
 	fd_set fds;
 
@@ -55,9 +56,10 @@ PyObject *get_fd_activity(PyObject *self, PyObject *args)
 		return (Py_BuildValue("s" , NULL));
 	}
 	if (FD_ISSET(fd, &fds)) {
-		read(fd, command, 4096);
-		// fgets(command, 4096, file_d);
+		nb_read = read(fd, command, 4096);
 	}
+	printf("nb_read = %d\n", nb_read);
+	command[nb_read] = '\0';
 	return (Py_BuildValue("s" , command));
 }
 
@@ -75,7 +77,8 @@ PyObject *send_command(PyObject *self, PyObject *args)
 	if (!PyArg_ParseTuple(args, "s|i", &to_send, &fd))
 		return (Py_BuildValue("i" , -1));
 	printf("COMMAND : %s\n", to_send);
-	printf("WRITE RETURN: %ld\n", write(fd, to_send, strlen(to_send)));
+	dprintf(fd, "%s\n", to_send);
+	// printf("WRITE RETURN: %ld\n", write(fd, to_send, strlen(to_send)));
 	return (Py_BuildValue("i", 0));
 }
 

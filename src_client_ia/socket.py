@@ -26,13 +26,13 @@ class Socket:
         # self.ReadingThread = ReadOnServer(self.fd, self.queue)
         # self.ReadingThread.setDaemon(True)
         # self.ReadingThread.start()
-        # response = []
-        # while (len(response) == 0):
-        #     response = self.GetServerResponse()
+        response = []
+        while (len(response) == 0):
+            response = self.ReadSocket()
         self.TeamName()
-        # response = []
-        # while (len(response) == 0):
-        #     response = self.GetServerResponse()
+        response = []
+        while (len(response) == 0):
+            response = self.ReadSocket()
 
     def init_socket(self):
         self.fd = sockets.create_socket(self.host, self.port)
@@ -90,5 +90,4 @@ class Socket:
 
     def ReadSocket(self):
         command = sockets.get_fd_activity(self.fd).split('\n')
-        command = list(filter(None, command))
         return (command)
