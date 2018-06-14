@@ -1,34 +1,20 @@
 #!/usr/bin/env python3
 
-from General_comportement.check_dead import check_dead
-
 
 def go_to_tile(nb_forward, nb_side, socket):
     for i in range(nb_forward):
         socket.Forward()
-        resp = []
-        while (len(resp) == 0):
-            resp = socket.ReadSocket()
-            check_dead(resp)
+        socket.EmptyCache()
     if (nb_side < 0):
         socket.Left()
-        resp = []
-        while (len(resp) == 0):
-            resp = socket.ReadSocket()
-        check_dead(resp)
+        socket.EmptyCache()
     elif (nb_side > 0):
         socket.Right()
-        resp = []
-        while (len(resp) == 0):
-            resp = socket.ReadSocket()
-            check_dead(resp)
+        socket.EmptyCache()
     nb_side = abs(nb_side)
     for i in range(nb_side):
         socket.Forward()
-        resp = []
-        while (len(resp) == 0):
-            resp = socket.ReadSocket()
-            check_dead(resp)
+        socket.EmptyCache()
 
 
 def mov_to_tile(tile, level, socket):

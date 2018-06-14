@@ -5,11 +5,7 @@ from General_comportement.check_dead import check_dead
 
 def look_inventory(socket):
     socket.Inventory()
-    resp = []
-    while (len(resp) == 0):
-        resp = socket.ReadSocket()
-        print ("look_inventory: " + str(resp))
-        check_dead(resp)
+    resp = socket.EmptyCache()
     if len(resp) > 0 and resp[0] != "ko":
         resp[0] = resp[0][2:-2].split(', ')
     return (resp)

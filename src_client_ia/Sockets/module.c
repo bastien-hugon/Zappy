@@ -81,7 +81,7 @@ PyObject *send_command(PyObject *self, PyObject *args)
 	if (!PyArg_ParseTuple(args, "s|i", &to_send, &fd))
 		return (Py_BuildValue("i" , -1));
 	printf("COMMAND : %s\n", to_send);
-	printf("dprintf: %d\n", dprintf(fd, "%s\n", to_send));
+	dprintf(fd, "%s\n", to_send);
 	return (Py_BuildValue("i", 0));
 }
 

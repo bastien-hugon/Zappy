@@ -13,6 +13,7 @@ import queue
 from threading import Thread
 
 from ReadServerThread import ReadOnServer
+from General_comportement.check_dead import check_dead
 
 
 class Socket:
@@ -91,3 +92,11 @@ class Socket:
     def ReadSocket(self):
         command = sockets.get_fd_activity(self.fd).split('\n')
         return (command)
+
+    def EmptyCache(self):
+        resp = []
+        while (len(resp) == 0):
+            resp = self.ReadSocket()
+            check_dead(resp)
+        print(resp)
+        return (resp)

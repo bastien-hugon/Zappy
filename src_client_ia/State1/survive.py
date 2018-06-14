@@ -3,7 +3,6 @@
 from General_comportement.inventory import look_inventory
 from General_comportement.inventory import get_food
 from General_comportement.mov_to_tile import mov_to_tile
-from General_comportement.check_dead import check_dead
 from General_comportement.ressources import is_there_food
 
 
@@ -20,17 +19,10 @@ def survive_mode(level, food, socket):
         if (food_location >= 0):
             mov_to_tile(food_location, level, socket)
             socket.Take('food')
-            resp = []
-            while (len(resp) == 0):
-                resp = socket.ReadSocket()
-                print ("take: " + str(resp))
-                check_dead(resp)
+            socket.EmptyCache()
             inventory = look_inventory(socket)
             food = get_food(inventory)
             print ("SURVIVE: food i got: " + str(food))
         else:
             socket.Forward()
-            resp = []
-            while (len(resp) == 0):
-                resp = socket.ReadSocket()
-                check_dead(resp)
+            socket.EmptyCache()

@@ -1,15 +1,9 @@
 #!/usr/bin/env python3
 
-from General_comportement.check_dead import check_dead
-
 
 def is_there_food(socket):
     socket.Look()
-    resp = []
-    while (len(resp) == 0):
-        resp = socket.ReadSocket()
-        print ("look: " + str(resp))
-    check_dead(resp)
+    resp = socket.EmptyCache()
     resp = resp[:1]
     if len(resp) > 0 and resp[0] != "ko":
         resp = resp[0][2:-2].split(',')
@@ -23,11 +17,7 @@ def is_there_food(socket):
 
 def is_there_linemate(socket):
     socket.Look()
-    resp = []
-    while (len(resp) == 0):
-        resp = socket.ReadSocket()
-        print ("look: " + str(resp))
-    check_dead(resp)
+    resp = socket.EmptyCache()
     resp = resp[:1]
     if len(resp) > 0 and resp[0] != "ko":
         resp = resp[0][2:-2].split(',')
@@ -53,8 +43,4 @@ def get_all_item_here(socket, here):
     for item in tile:
         if (item != 'player'):
             socket.Take(item)
-            resp = []
-            while (len(resp) == 0):
-                resp = socket.ReadSocket()
-                print ("take: " + str(resp))
-            check_dead(resp)
+            socket.EmptyCache()
