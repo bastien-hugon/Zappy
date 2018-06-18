@@ -60,6 +60,5 @@ def main():
     socket = connection(port, name, machine)
     go_in_state(socket)
 
-
 if __name__ == '__main__':
     main()

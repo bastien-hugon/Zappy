@@ -1,6 +1,18 @@
 #!/usr/bin/env python3
 
 
+#
+# @brief: Function that looks for one of the items demanded by the player.
+# The smallest index tile where one of the requested item is situated will
+# be returned
+#
+# @param: socket [in], variable of type class Socket
+# @param: requested_item [in], a list with all the requested item needed by
+# the player
+#
+# @return: tile, item [], returns 2 elements, the first one is the position
+# of the tile where the requested item is situated
+#
 def IsThereItem(socket, requested_item):
     socket.Look()
     resp = socket.EmptyCache()
@@ -10,14 +22,15 @@ def IsThereItem(socket, requested_item):
     for tile in range(len(resp)):
         content = resp[tile].split(' ')
         for item in content:
-            if item in requested_item:
-                return (tile)
+            for req_item in requested_item:
+                if item in req_item.split(' '):
+                    return (tile, item)
     for tile in range(len(resp)):
         content = resp[tile].split(' ')
         for item in content:
             if item == "food":
-                return (tile)
-    return (-1)
+                return (tile, item)
+    return (-1, "None")
 
 
 def nb_player_here(look_result):

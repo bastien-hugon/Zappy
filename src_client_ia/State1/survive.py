@@ -15,10 +15,10 @@ def enough_food(level, food):
 
 def survive_mode(level, food, socket):
     while (not enough_food(level, food)):
-        food_location = IsThereItem(socket, ["food"])
-        if (food_location >= 0):
-            mov_to_tile(food_location, level, socket)
-            socket.Take('food')
+        location, item = IsThereItem(socket, ["food"])
+        if (location >= 0):
+            mov_to_tile(location, level, socket)
+            socket.Take(item)
             socket.EmptyCache()
             inventory = look_inventory(socket)
             food = get_food(inventory)
