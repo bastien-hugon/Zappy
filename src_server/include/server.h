@@ -92,6 +92,11 @@
 		NB_CMDS
 	} cmd_e;
 
+	/*
+	** forwarded declared command_t in orderto avoid recursive include
+	*/
+	typedef struct command_s command_t;
+
 	/**
 	*@brief Client Structure
 	*/
@@ -105,6 +110,7 @@
 		circular_buffer_t buffer;
 		char *cmd_queue[NB_CMD_QUEUE];
 		uint tick_left;
+		command_t *cmd;
 	} client_t;
 
 	/**

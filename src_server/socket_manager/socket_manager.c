@@ -81,7 +81,7 @@ static void loop_manager(server_t *srv)
 			manage_events(srv, i);
 	}
 	tick_e = get_time();
-	exec_client_actions(srv);
+	exec_clients_actions(srv);
 }
 
 /**

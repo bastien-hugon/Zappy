@@ -42,14 +42,14 @@ Test(circular_buffer, readgetandread)
 		write(fd[1], (i != (BUFF_SIZE / 2)) ? "a" : "\n", 1);
 	circular_buffer_read(&buff, fd[0]);
 	str = circular_buffer_get_to(&buff, "\n");
-	for (int i = 0; i < 1023; i++)
+	for (int i = 0; i < BUFF_SIZE / 2; i++)
 		cr_assert_eq('a', str[i]);
 	free(str);
-	for (int i = 0; i < 1025; i++)
+	for (int i = 0; i < BUFF_SIZE / 2 + 1; i++)
 		write(fd[1], "b", 1);
 	circular_buffer_read(&buff, fd[0]);
 	for (int i = 0; i < BUFF_SIZE; i++)
-		cr_assert_eq(buff.buffer[i], (i < 1025) ? 'b': 'a');
+		cr_assert_eq(buff.buffer[i], (i <= (BUFF_SIZE / 2)) ? 'b': 'a');
 	close(fd[0]);
 	close(fd[1]);
 }
@@ -97,6 +97,8 @@ Test(circular_buffer, get_hard)
 	free(str);
 	circular_buffer_read(&buff, fd[0]);
 	str = circular_buffer_get_to(&buff, "\n");
-	for (int i = 0; i < BUFF_SIZE - 1; i++)
+	for (int i = 0; i < BUFF_SIZE - 1; i++) {
+		ERROR("i: %d", i);
 		cr_assert_eq(str[i], (i < (BUFF_SIZE / 2 - 61)) ? 'a' : 'b');
+	}
 }

@@ -28,6 +28,8 @@ bool register_command(client_t *client, char *command)
 	for (int i = 0; i < NB_CMD_QUEUE; i++) {
 		if (client->cmd_queue[i] == NULL) {
 			client->cmd_queue[i] = command;
+			LOG("Command registered [placement=%d]: %s", \
+				i, command);
 			return (true);
 		}
 	}

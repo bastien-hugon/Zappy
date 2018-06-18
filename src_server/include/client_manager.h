@@ -11,7 +11,7 @@
 	#include "server.h"
 
 	void create_user(client_t *user);
-	void exec_client_actions(server_t *srv);
+	void exec_clients_actions(server_t *srv);
 	client_t *get_client_for_fd(server_t *srv, int fd);
 
 #endif /* !CLIENT_MANAGER_H_ */
