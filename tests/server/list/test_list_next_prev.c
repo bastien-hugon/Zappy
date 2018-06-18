@@ -48,3 +48,29 @@ Test(list, prev)
 	cr_assert_eq(*elem, 0);
 	list_delete(&elem);
 }
+
+Test(list, remove)
+{
+	int *elem = NULL;
+	int *first = NULL;
+	int i;
+
+	cr_assert_eq(list_next(&elem), false);
+	for (i = 0; i <= 5; i++) {
+		list_push(&elem, &i);
+	}
+	first = elem;
+	for (i = 0; i <= 3; i++) {
+		cr_assert_eq(*elem, i);
+		list_next(&elem);
+	}
+	list_remove(&elem);
+	cr_assert_eq(*elem, 5);
+	for (i = 0; i <= 4; i++) {
+		cr_assert_eq(*first, (i != 4) ? i : 5);
+		list_next(&first);
+	}
+	cr_assert_eq(list_next(&elem), false);
+	cr_assert_eq(*elem, 5);
+	list_delete(&elem);
+}
