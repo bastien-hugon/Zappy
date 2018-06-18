@@ -28,10 +28,10 @@ void call_worker(server_t *srv, int fd)
 
 	LOG("Event on fd: %d", fd);
 	if (client == NULL)
-		return;
+		return ;
 	if (circular_buffer_read(&client->buffer, fd) == false) {
 		WARN("Error while reading in the buffer from fd: %d", fd);
-		return;
+		return ;
 	}
 	while (true) {
 		str = circular_buffer_get_to(&client->buffer, "\r\n");

@@ -15,8 +15,8 @@
 */
 uint get_rareness(ressource_e res)
 {
-	uint ressources[NB_RESSOURCE] = {R_LINEMATE, R_DERAUMERE, \
-	R_SIBUR, R_MENDIANE, R_PHIRAS, R_THYSTAME, R_FOOD};
+	uint ressources[NB_RESSOURCE] = {R_FOOD, R_LINEMATE, R_DERAUMERE, \
+	R_SIBUR, R_MENDIANE, R_PHIRAS, R_THYSTAME};
 
 	return (ressources[res]);
 }

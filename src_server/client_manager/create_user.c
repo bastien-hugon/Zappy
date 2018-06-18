@@ -10,12 +10,14 @@
 /**
 *@brief Create a user object
 *
-*@param user The user to initialise
+*@param user [in] The user to initialise
+*@param srv [in] The main server_t struct
 */
-void create_user(client_t *user)
+void create_user(const client_t *user, const server_t *srv)
 {
 	memset(user, 0, sizeof(client_t));
 	circular_buffer_init(&user->buffer);
 	user->team = NULL;
 	user->size = sizeof(user->socket.s_in);
+	user->id = srv->game.nb_players++;
 }
