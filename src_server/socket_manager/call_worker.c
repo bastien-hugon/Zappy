@@ -35,7 +35,8 @@ void call_worker(server_t *srv, int fd)
 	}
 	while (true) {
 		str = circular_buffer_get_to(&client->buffer, "\r\n");
-		if (str == NULL)
+		if (str == CIRCULAR_BUFFER_NOT_FOUND || \
+			str == CIRCULAR_BUFFER_ALLOCATION_ERROR)
 			return;
 		register_command(client, str);
 	}

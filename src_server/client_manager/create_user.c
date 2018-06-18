@@ -14,6 +14,8 @@
 */
 void create_user(client_t *user)
 {
+	memset(user, 0, sizeof(client_t));
+	circular_buffer_init(&user->buffer);
 	user->team = NULL;
 	user->size = sizeof(user->socket.s_in);
 }

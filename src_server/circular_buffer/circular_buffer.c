@@ -112,16 +112,16 @@ char *circular_buffer_get_to(circular_buffer_t *buffer, char *to)
 
 	if (buffer->head == NULL)
 		return (CIRCULAR_BUFFER_NOT_FOUND);
-	if ((str = sstrstr(buffer->tail, to, (int)(buff_end - buffer->tail))) \
+	if ((buffer->head > buffer->tail || buffer->head == (char *)&buffer->buffer) && (str = sstrstr(buffer->tail, to, ((int)(((buffer->head == (char *)&buffer->buffer) ? buff_end : buffer->head) - buffer->tail)))) \
 		!= NULL) {
-		ret = strndup(buffer->tail, buffer->tail - str);
+		ret = strndup(buffer->tail, str - buffer->tail);
 		if (ret == NULL)
 			return (CIRCULAR_BUFFER_ALLOCATION_ERROR);
 		buffer->tail = (char *)(str + strlen(to));
 		return (ret);
 	}
-	if ((str = sstrstr((char *)&buffer->buffer, to, \
-		sizeof(buffer->buffer))))
+	if (buffer->head < buffer->tail && (str = sstrstr((char *)&buffer->buffer, to, \
+		buffer->head - (char *)&buffer->buffer)))
 		return (circular_buffer_get_end(buffer, to, buff_end, str));
 	return (CIRCULAR_BUFFER_NOT_FOUND);
 }
