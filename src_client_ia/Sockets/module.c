@@ -32,6 +32,12 @@ int connection(int fd, struct sockaddr_in *s_in)
 	return (fd);
 }
 
+/**
+* @brief check for a '\n' in the recieved message
+*
+* @param command [In], the command line
+* @return int if '\n then 0 else -1
+*/
 int check_carriage_return(char *command)
 {
 	if (strlen(command) > 4000 || command[strlen(command) - 1] == '\n')

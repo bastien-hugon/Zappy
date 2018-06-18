@@ -3,7 +3,7 @@
 from General_comportement.inventory import look_inventory
 from General_comportement.inventory import get_food
 from General_comportement.mov_to_tile import mov_to_tile
-from General_comportement.ressources import is_there_food
+from General_comportement.ressources import IsThereItem
 
 
 def enough_food(level, food):
@@ -15,14 +15,14 @@ def enough_food(level, food):
 
 def search_food_incant_mode(level, food, socket):
     while (not enough_food(level, food)):
-        food_location = is_there_food(socket)
-        if (food_location >= 0):
-            mov_to_tile(food_location, level, socket)
-            socket.Take('food')
+        location, item = IsThereItem(socket, ["food"])
+        if (location >= 0):
+            mov_to_tile(location, level, socket)
+            socket.Take(item)
             socket.EmptyCache()
             inventory = look_inventory(socket)
             food = get_food(inventory)
-            print ("serach food incant: food i got: " + str(food))
+            print ("search food incant: food i got: " + str(food))
         else:
             for i in range(level):
                 socket.Forward()

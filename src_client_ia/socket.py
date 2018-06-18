@@ -9,10 +9,8 @@
 
 import sockets
 import time
-import queue
 from threading import Thread
 
-from ReadServerThread import ReadOnServer
 from General_comportement.check_dead import check_dead
 
 
@@ -22,11 +20,7 @@ class Socket:
         self.port = port
         self.host = host
         self.name = name
-        self.queue = queue.Queue()
         self.init_socket()
-        # self.ReadingThread = ReadOnServer(self.fd, self.queue)
-        # self.ReadingThread.setDaemon(True)
-        # self.ReadingThread.start()
         response = []
         while (len(response) == 0):
             response = self.ReadSocket()
@@ -79,15 +73,6 @@ class Socket:
 
     def Incantation(self):
         sockets.send_command("Incantation", self.fd)
-
-    def GetServerResponse(self):
-        ret = []
-        if (self.queue.empty()):
-            return ([])
-        else:
-            while (not self.queue.empty()):
-                ret.append(self.queue.get_nowait())
-            return (ret)
 
     def ReadSocket(self):
         command = sockets.get_fd_activity(self.fd).split('\n')

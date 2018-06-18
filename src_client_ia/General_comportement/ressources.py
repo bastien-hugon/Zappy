@@ -1,7 +1,19 @@
 #!/usr/bin/env python3
 
 
-def is_there_food(socket):
+#
+# @brief: Function that looks for one of the items demanded by the player.
+# The smallest index tile where one of the requested item is situated will
+# be returned
+#
+# @param: socket [in], variable of type class Socket
+# @param: requested_item [in], a list with all the requested item needed by
+# the player
+#
+# @return: tile, item [], returns 2 elements, the first one is the position
+# of the tile where the requested item is situated
+#
+def IsThereItem(socket, requested_item):
     socket.Look()
     resp = socket.EmptyCache()
     resp = resp[:1]
@@ -10,23 +22,15 @@ def is_there_food(socket):
     for tile in range(len(resp)):
         content = resp[tile].split(' ')
         for item in content:
-            if item == 'food':
-                return (tile)
-    return (-1)
-
-
-def is_there_linemate(socket):
-    socket.Look()
-    resp = socket.EmptyCache()
-    resp = resp[:1]
-    if len(resp) > 0 and resp[0] != "ko":
-        resp = resp[0][2:-2].split(',')
+            for req_item in requested_item:
+                if item in req_item.split(' '):
+                    return (tile, item)
     for tile in range(len(resp)):
         content = resp[tile].split(' ')
         for item in content:
-            if item == 'linemate':
-                return (tile)
-    return (-1)
+            if item == "food":
+                return (tile, item)
+    return (-1, "None")
 
 
 def nb_player_here(look_result):
