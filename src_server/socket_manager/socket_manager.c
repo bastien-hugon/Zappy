@@ -26,7 +26,7 @@ static void manage_events(server_t *srv, int i)
 	client_t user;
 
 	if (srv->srv_epoll.events[i].data.fd == srv->srv_epoll.socket.fd) {
-		create_user(&user);
+		create_user(&user, srv);
 		user.socket.fd = accept(srv->srv_epoll.socket.fd, \
 		(struct sockaddr *) &(user.socket.s_in), &(user.size));
 		if (user.socket.fd == -1)
@@ -63,7 +63,6 @@ static long long get_time(void) {
 *
 *@param srv The main server_t struct
 */
-
 static void loop_manager(server_t *srv)
 {
 	int nfds = 0;
@@ -92,7 +91,6 @@ static void loop_manager(server_t *srv)
 void socket_manager(server_t *srv)
 {
 	INFO("Server's ready !");
-	srand(time(NULL));
 	generate_map(&(srv->game));
 	while (true)
 		loop_manager(srv);
