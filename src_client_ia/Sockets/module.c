@@ -32,6 +32,14 @@ int connection(int fd, struct sockaddr_in *s_in)
 	return (fd);
 }
 
+int check_carriage_return(char *command)
+{
+	if (strlen(command) > 4000 || command[strlen(command) - 1] == '\n')
+		return (0);
+	else
+		return (-1);
+}
+
 /**
 * @brief Check if there is activity on server file descriptor
 *
@@ -40,15 +48,12 @@ int connection(int fd, struct sockaddr_in *s_in)
 PyObject *get_fd_activity(PyObject *self, PyObject *args)
 {
 	int fd;
-	FILE *file_d;
-	int nb_read;
 	char command[4096] = {0};
 	fd_set fds;
 
 	(void)self;
 	if (!PyArg_ParseTuple(args, "i", &fd))
 		return (Py_BuildValue("i" , -1));
-	file_d = fdopen(fd, "r");
 	FD_ZERO(&fds);
 	FD_SET(fd, &fds);
 	if (select(fd+1, &fds, NULL, NULL, NULL) == -1) {
@@ -56,10 +61,9 @@ PyObject *get_fd_activity(PyObject *self, PyObject *args)
 		return (Py_BuildValue("s" , NULL));
 	}
 	if (FD_ISSET(fd, &fds)) {
-		nb_read = read(fd, command, 4096);
+		while (check_carriage_return(command) != 0)
+		read(fd, command, 4096);
 	}
-	printf("nb_read = %d\n", nb_read);
-	command[nb_read] = '\0';
 	return (Py_BuildValue("s" , command));
 }
 
@@ -78,7 +82,6 @@ PyObject *send_command(PyObject *self, PyObject *args)
 		return (Py_BuildValue("i" , -1));
 	printf("COMMAND : %s\n", to_send);
 	dprintf(fd, "%s\n", to_send);
-	// printf("WRITE RETURN: %ld\n", write(fd, to_send, strlen(to_send)));
 	return (Py_BuildValue("i", 0));
 }
 
