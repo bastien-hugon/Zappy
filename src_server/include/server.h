@@ -73,13 +73,13 @@
 	*/
 	typedef enum
 	{
+		FOOD, \
 		LINEMATE, \
 		DERAUMERE, \
 		SIBUR, \
 		MENDIANE, \
 		PHIRAS, \
 		THYSTAME, \
-		FOOD, \
 		NB_RESSOURCE
 	} ressource_e;
 
@@ -102,6 +102,7 @@
 	*/
 	typedef struct client_s
 	{
+		uint id;
 		socket_t socket;
 		team_t *team;
 		dir_e dir;
@@ -143,6 +144,7 @@
 		uint width;
 		uint height;
 		tile_t **map;
+		uint nb_players;
 		uint frequence;
 		client_t *clients;
 		team_t *teams;

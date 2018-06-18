@@ -10,8 +10,10 @@
 
 	#include "server.h"
 
-	void create_user(client_t *user);
 	void exec_clients_actions(server_t *srv);
+	void create_user(const client_t *user, const server_t *srv);
 	client_t *get_client_for_fd(server_t *srv, int fd);
+	bool send_message(const int fd, const char *format, ...);
+	bool broadcast(const server_t *srv, const char *format, ...);
 
 #endif /* !CLIENT_MANAGER_H_ */

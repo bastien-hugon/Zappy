@@ -40,4 +40,5 @@ void init_server(server_t *srv)
 	if (listen(srv->srv_epoll.socket.fd, MAX_EVENTS))
 		exit(close_and_msg(srv, "Cannot listen"));
 	srv->game.clients = NULL;
+	srv->game.nb_players = 0;
 }

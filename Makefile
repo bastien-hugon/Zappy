@@ -49,6 +49,8 @@ SERV_SRCS	=	./src_server/argument_handling/argument_handling.c \
 			./src_server/commands/command.c \
 			./src_server/circular_buffer/circular_buffer.c \
 			./src_server/client_manager/exec_client_actions.c \
+			./src_server/client_manager/send_message.c \
+			./src_server/gfx_protocole/map_info.c \
 			./src_server/map_manager/generate_map.c \
 			./src_server/map_manager/fill_refill.c \
 			./src_server/map_manager/get_rareness.c \
