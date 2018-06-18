@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python3
 
 from General_comportement.check_dead import check_dead
