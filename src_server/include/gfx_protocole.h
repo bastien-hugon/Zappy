@@ -16,5 +16,7 @@
 	const char * const *cmd);
 	bool gfx_map_tile(const server_t *srv, const client_t *user, \
 	const char * const *cmd);
+	bool gfx_ppo(const server_t *srv, const client_t *user, \
+	const char * const *cmd);
 
 #endif /* !GFX_PROTOCOLE_H_ */
