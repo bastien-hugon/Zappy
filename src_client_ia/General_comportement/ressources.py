@@ -29,6 +29,27 @@ def is_there_linemate(socket):
     return (-1)
 
 
+def IsThereItem(socket, requested_item):
+    socket.Look()
+    resp = socket.EmptyCache()
+    resp = resp[:1]
+    if len(resp) > 0 and resp[0] != "ko":
+        resp = resp[0][2:-2].split(',')
+    for tile in range(len(resp)):
+        content = resp[tile].split(' ')
+        for item in content:
+            if item in requested_item:
+            # for req_item in requested_item:
+            #     if item == req_item:
+                return (tile)
+    for tile in range(len(resp)):
+        content = resp[tile].split(' ')
+        for item in content:
+            if item == "food":
+                return (tile)
+    return (-1)
+
+
 def nb_player_here(look_result):
     count = 0
     tile = look_result.split(' ')

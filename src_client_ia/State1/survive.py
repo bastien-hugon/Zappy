@@ -3,7 +3,7 @@
 from General_comportement.inventory import look_inventory
 from General_comportement.inventory import get_food
 from General_comportement.mov_to_tile import mov_to_tile
-from General_comportement.ressources import is_there_food
+from General_comportement.ressources import IsThereItem
 
 
 def enough_food(level, food):
@@ -15,7 +15,7 @@ def enough_food(level, food):
 
 def survive_mode(level, food, socket):
     while (not enough_food(level, food)):
-        food_location = is_there_food(socket)
+        food_location = IsThereItem(socket, ["food"])
         if (food_location >= 0):
             mov_to_tile(food_location, level, socket)
             socket.Take('food')

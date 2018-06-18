@@ -4,7 +4,7 @@ from General_comportement.inventory import look_inventory
 from General_comportement.inventory import get_food
 from General_comportement.inventory import get_linemate
 from General_comportement.mov_to_tile import mov_to_tile
-from General_comportement.ressources import is_there_food
+from General_comportement.ressources import IsThereItem
 from General_comportement.ressources import is_there_linemate
 
 
@@ -17,7 +17,7 @@ def enough_food(level, food):
 
 def search_stone_mode(level, food, linemate, socket):
     while (enough_food(level, food) and linemate < 1):
-        food_location = is_there_food(socket)
+        food_location = IsThereItem(socket, ["food"])
         stone_location = is_there_linemate(socket)
         if (stone_location >= 0):
             mov_to_tile(stone_location, level, socket)
