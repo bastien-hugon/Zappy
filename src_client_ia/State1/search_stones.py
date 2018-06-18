@@ -2,7 +2,6 @@
 
 from General_comportement.inventory import look_inventory
 from General_comportement.inventory import get_food
-from General_comportement.inventory import get_linemate
 from General_comportement.mov_to_tile import mov_to_tile
 from General_comportement.ressources import IsThereItem
 from General_comportement.inventory import GetLeftOverStone

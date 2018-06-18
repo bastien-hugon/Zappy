@@ -6,7 +6,6 @@ from State1.search_stones import search_stone_mode
 from State1.incant import incant
 from General_comportement.inventory import look_inventory
 from General_comportement.inventory import get_food
-# from General_comportement.inventory import get_linemate
 from General_comportement.inventory import GetLeftOverStone
 
 
