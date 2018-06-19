@@ -7,6 +7,7 @@ from State1.incant import incant
 from General_comportement.inventory import look_inventory
 from General_comportement.inventory import get_food
 from General_comportement.inventory import GetLeftOverStone
+from General_comportement.ressources import GetNeededRessources
 
 
 def enough_food(level, food):
@@ -31,24 +32,24 @@ def enough_food_incant(level, food):
 
 
 def base_state(level, socket):
-    actual_level = level
-    while (actual_level == level):
+    needed_stones = GetNeededRessources(level)
+    while (level == 1):
         inventory = look_inventory(socket)
         food = get_food(inventory)
-        left_over = GetLeftOverStone(inventory, ["linemate 1"])
+        left_over = GetLeftOverStone(inventory, needed_stones)
         # linemate = get_linemate(inventory)
         print ("food i got: " + str(food))
         if (not enough_food(level, food)):
             print('MODE: survive')
-            survive_mode(actual_level, food, socket)
+            survive_mode(level, food, socket)
         elif (not enough_food_incant(level, food)):
             print('MODE: search food incant')
-            search_food_incant_mode(actual_level, food, socket)
+            search_food_incant_mode(level, food, socket)
         # elif (not enough_stone(linemate)):
         elif len(left_over) != 0:
             print('MODE: search stone')
-            search_stone_mode(actual_level, food, left_over, socket)
+            search_stone_mode(level, food, left_over, socket)
         else:
             print('MODE: INCANT')
-            actual_level = incant(socket)
-    return (actual_level)
+            level = incant(socket)
+    return (level)

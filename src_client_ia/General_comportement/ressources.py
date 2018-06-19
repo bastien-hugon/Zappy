@@ -1,5 +1,30 @@
 #!/usr/bin/env python3
 
+from General_comportement.broadcast import EmptyCacheIgnoreBroadcast
+
+
+#
+# @brief: Funtion that takes the lvl nbr of the player and returns the list
+# of needed stones for next level
+#
+# @param: lvl [in], the current level of the player
+#
+# @return: needed_stones[lvl], returns the list of the required stones for
+# next level
+#
+def GetNeededRessources(lvl):
+    needed_stones = [
+        [],
+        ['linemate 1'],
+        ['linemate 1', 'deraumere 1', 'sibur 1'],
+        ['linemate 2', 'sibur 1', 'phiras 2'],
+        ['linemate 1', 'deraumere 1', 'sibur 2', 'phiras 1'],
+        ['linemate 1', 'deraumere 2', 'sibur 1', 'mendiane 3'],
+        ['linemate 1', 'deraumere 2', 'sibur 3', 'phiras 1'],
+        ['linemate 2', 'deraumere 2', 'sibur 2', 'mendiane 2', 'phiras 2', 'thystame 1']
+    ]
+    return needed_stones[lvl]
+
 
 #
 # @brief: Function that looks for one of the items demanded by the player.
@@ -15,7 +40,7 @@
 #
 def IsThereItem(socket, requested_item):
     socket.Look()
-    resp = socket.EmptyCache()
+    resp = EmptyCacheIgnoreBroadcast(socket)
     resp = resp[:1]
     if len(resp) > 0 and resp[0] != "ko":
         resp = resp[0][2:-2].split(',')
