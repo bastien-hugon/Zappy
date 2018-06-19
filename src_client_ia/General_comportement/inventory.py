@@ -3,6 +3,14 @@
 from General_comportement.check_dead import check_dead
 
 
+#
+# @brief: Function that demands to the server for the inventory and then
+# parses it
+#
+# @param: inventory [in], the list of the current inventory
+#
+# @return: returns the response of the server
+#
 def look_inventory(socket):
     socket.Inventory()
     resp = socket.EmptyCache()
@@ -11,6 +19,14 @@ def look_inventory(socket):
     return (resp)
 
 
+#
+# @brief: Function that looks in the inventory list and returns the numbe
+# of food in the player inventory
+#
+# @param: inventory [in], the list of the current inventory
+#
+# @return: returns the number of food in the inventory. if error return 0
+#
 def get_food(inventory):
     ret = []
     for i in (inventory[0]):
@@ -46,15 +62,3 @@ def GetLeftOverStone(inventory, stones_needed):
                 if number > 0:
                     left_over.append(item[0] + ' ' + str(number))
     return (left_over)
-
-
-def get_linemate(inventory):
-    ret = []
-    for i in inventory[0]:
-        if (i[:8] == 'linemate'):
-            ret = [int(s) for s in i if s.isdigit()]
-    if len(ret) > 0:
-        return (ret[0])
-    else:
-        return (0)
-        stones_needed_nbr = int(item[1])
