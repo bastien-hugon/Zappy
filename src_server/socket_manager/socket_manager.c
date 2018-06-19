@@ -38,6 +38,7 @@ static void manage_events(server_t *srv, int i)
 		&(srv->srv_epoll.ev)) == -1)
 			close_and_msg(srv, "error: epoll_ctl");
 		list_push(&(srv->game.clients), &user);
+		send_message(user.socket.fd, "WELCOME\n");
 		LOG("New user connected with fd: %d", user.socket.fd);
 	} else {
 		call_worker(srv, srv->srv_epoll.events[i].data.fd);
