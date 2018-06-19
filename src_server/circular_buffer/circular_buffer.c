@@ -66,14 +66,14 @@ bool circular_buffer_read(circular_buffer_t *buffer, int fd)
 		readed = read(fd, buffer->head, buff_end - buffer->head);
 		if (readed == -1 && errno != EAGAIN)
 			return (false);
-		buffer->head += readed;
-		if (buffer->head == buff_end)
-			buffer->head = (char *)&buffer->buffer;
 	} else {
 		readed = read(fd, buffer->buffer, buffer->tail - buffer->head);
 		if (readed == -1 && errno != EAGAIN)
 			return (false);
 	}
+	buffer->head += readed;
+	if (buffer->head == buff_end)
+			buffer->head = (char *)&buffer->buffer;
 	return (true);
 }
 
@@ -120,7 +120,7 @@ char *circular_buffer_get_to(circular_buffer_t *buffer, char *to)
 		buffer->tail = (char *)(str + strlen(to));
 		return (ret);
 	}
-	if (buffer->head < buffer->tail && (str = sstrstr((char *)&buffer->buffer, to, \
+	if (buffer->head <= buffer->tail && (str = sstrstr((char *)&buffer->buffer, to, \
 		buffer->head - (char *)&buffer->buffer)))
 		return (circular_buffer_get_end(buffer, to, buff_end, str));
 	return (CIRCULAR_BUFFER_NOT_FOUND);

@@ -47,8 +47,10 @@ static void start_command_from_queue(client_t *client)
 {
 	command_t *command;
 
-	if (client->cmd_queue[0] == NULL)
+	if (client->cmd_queue[0] == NULL) {
+		client->cmd = NULL;
 		return;
+	}
 	command = get_command_from_str(client->cmd_queue[0]);
 	if (command == NULL)
 		return;
@@ -81,13 +83,13 @@ void exec_clients_actions(server_t *srv)
 	while (client) {
 		if (client->cmd == NULL)
 			start_command_from_queue(client);
-		if (client->cmd != NULL)
-			client->tick_left--;
-		if (client->cmd && client->tick_left <= 0) {
+		while (client->cmd != NULL && client->tick_left <= 0) {
 			client->cmd->func(srv, client);
 			remove_first_command_from_queue(client);
 			start_command_from_queue(client);
 		}
+		if (client->cmd)
+			client->tick_left--;
 		if (false == list_next(&client))
 			break;
 	}

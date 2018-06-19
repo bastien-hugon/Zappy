@@ -109,8 +109,10 @@ void list_delete_item(void **list)
 {
 	list_t *node = ((list_t *)(*list)) - 1;
 
-	node->next->prev = node->prev;
-	node->prev->next = node->next;
+	if (node->next)
+		node->next->prev = node->prev;
+	if (node->prev)
+		node->prev->next = node->next;
 	*list = node->next + 1;
 	free(node);
 }
