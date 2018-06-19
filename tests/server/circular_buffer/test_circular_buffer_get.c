@@ -90,15 +90,14 @@ Test(circular_buffer, get_hard)
 		write(fd[1], (i != (BUFF_SIZE / 2 + 60)) ? "a" : "\n", 1);
 	for (int i = 0; i < (BUFF_SIZE / 2 + 60); i++)
 		write(fd[1], "b", 1);
+	write(fd[1], "\n", 1);
 	circular_buffer_read(&buff, fd[0]);
 	str = circular_buffer_get_to(&buff, "\n");
-	for (int i = 0; i < 1023; i++)
+	for (int i = 0; i < BUFF_SIZE / 2 + 60; i++)
 		cr_assert_eq('a', str[i]);
 	free(str);
 	circular_buffer_read(&buff, fd[0]);
 	str = circular_buffer_get_to(&buff, "\n");
-	for (int i = 0; i < BUFF_SIZE - 1; i++) {
-		ERROR("i: %d", i);
+	for (int i = 0; i < BUFF_SIZE - 1; i++)
 		cr_assert_eq(str[i], (i < (BUFF_SIZE / 2 - 61)) ? 'a' : 'b');
-	}
 }

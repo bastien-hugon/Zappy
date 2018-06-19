@@ -35,4 +35,7 @@
 	#define list_delete(a) list_delete_all((void **)a)
 	void list_delete_all(void **list);
 
+	#define list_remove(a) list_delete_item((void **)a)
+	void list_delete_item(void **list);
+
 #endif /* !LIST_H_ */
