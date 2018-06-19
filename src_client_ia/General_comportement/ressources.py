@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+from General_comportement.broadcast import EmptyCacheIgnoreBroadcast
+
 
 #
 # @brief: Funtion that takes the lvl nbr of the player and returns the list
@@ -38,7 +40,7 @@ def GetNeededRessources(lvl):
 #
 def IsThereItem(socket, requested_item):
     socket.Look()
-    resp = socket.EmptyCache()
+    resp = EmptyCacheIgnoreBroadcast(socket)
     resp = resp[:1]
     if len(resp) > 0 and resp[0] != "ko":
         resp = resp[0][2:-2].split(',')

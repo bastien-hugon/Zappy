@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 from General_comportement.check_dead import check_dead
+from General_comportement.broadcast import EmptyCacheIgnoreBroadcast
 
 
 #
@@ -13,7 +14,7 @@ from General_comportement.check_dead import check_dead
 #
 def look_inventory(socket):
     socket.Inventory()
-    resp = socket.EmptyCache()
+    resp = EmptyCacheIgnoreBroadcast(socket)
     if len(resp) > 0 and resp[0] != "ko":
         resp[0] = resp[0][2:-2].split(', ')
     return (resp)

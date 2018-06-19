@@ -14,6 +14,9 @@ from threading import Thread
 from General_comportement.check_dead import check_dead
 
 
+#
+# @brief: class that handles all the socket interaction with the server
+#
 class Socket:
 
     #
@@ -217,5 +220,5 @@ class Socket:
         while (len(resp) == 0):
             resp = self.ReadSocket()
             check_dead(resp)
-        print(resp)
+        print("resp = " + str(resp))
         return (resp)
