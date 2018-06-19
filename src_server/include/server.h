@@ -39,6 +39,12 @@
 
 	typedef unsigned int uint;
 
+	typedef struct pos_s
+	{
+		int x;
+		int y;
+	} pos_t;
+
 	/**
 	*@brief Socket structure
 	*/
@@ -106,12 +112,15 @@
 		socket_t socket;
 		team_t *team;
 		dir_e dir;
+		pos_t pos;
 		socklen_t size;
 		uint inventory[NB_RESSOURCE];
 		circular_buffer_t buffer;
 		char *cmd_queue[NB_CMD_QUEUE];
 		uint tick_left;
 		command_t *cmd;
+		bool is_gfx;
+		bool is_logged;
 	} client_t;
 
 	/**

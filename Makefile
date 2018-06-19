@@ -45,6 +45,7 @@ SERV_SRCS	=	./src_server/argument_handling/argument_handling.c \
 			./src_server/socket_manager/call_worker.c \
 			./src_server/socket_manager/socket_manager.c \
 			./src_server/client_manager/create_user.c \
+			./src_server/client_manager/join_team.c \
 			./src_server/commands/command_queue.c \
 			./src_server/commands/command.c \
 			./src_server/circular_buffer/circular_buffer.c \
