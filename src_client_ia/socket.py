@@ -14,6 +14,9 @@ from threading import Thread
 from General_comportement.check_dead import check_dead
 
 
+#
+# @brief: Class that handles all the interaction with the server
+#
 class Socket:
 
     #
