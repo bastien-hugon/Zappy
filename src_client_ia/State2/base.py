@@ -11,6 +11,7 @@ from General_comportement.ressources import GetNeededRessources
 
 
 def base_state2(level, socket):
+    #baby
     needed_stones = GetNeededRessources(level)
     while (level != 8):
         inventory = look_inventory(socket)
@@ -21,6 +22,7 @@ def base_state2(level, socket):
         elif food <= level + 3:
             search_food_incant_mode(level, food, socket)
         elif len(left_over) != 0:
+            # listen_message()
             pass
             #search_stone_mode(level, food, left_over, socket)
         else:
