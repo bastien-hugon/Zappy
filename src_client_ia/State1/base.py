@@ -24,12 +24,20 @@ def enough_food_incant(level, food):
         return (False)
 
 
+# def enough_stone(linemate):
+#     if (linemate >= 1):
+#         return (True)
+#     else:
+#         return (False)
+
+
 def base_state(level, socket):
     needed_stones = GetNeededRessources(level)
     while (level == 1):
         inventory = look_inventory(socket)
         food = get_food(inventory)
         left_over = GetLeftOverStone(inventory, needed_stones)
+        # linemate = get_linemate(inventory)
         print ("food i got: " + str(food))
         if (not enough_food(level, food)):
             print('MODE: survive')
@@ -37,6 +45,7 @@ def base_state(level, socket):
         elif (not enough_food_incant(level, food)):
             print('MODE: search food incant')
             search_food_incant_mode(level, food, socket)
+        # elif (not enough_stone(linemate)):
         elif len(left_over) != 0:
             print('MODE: search stone')
             search_stone_mode(level, food, left_over, socket)
