@@ -10,13 +10,9 @@
 
 	#include "server.h"
 
-	bool gfx_map_size(const server_t *srv, const client_t *user, \
-	const char * const *cmd);
-	bool gfx_map_tiles(const server_t *srv, const client_t *user, \
-	const char * const *cmd);
-	bool gfx_map_tile(const server_t *srv, const client_t *user, \
-	const char * const *cmd);
-	bool gfx_ppo(const server_t *srv, const client_t *user, \
-	const char * const *cmd);
+	bool gfx_map_size(server_t *srv, client_t *user);
+	bool gfx_map_tiles(server_t *srv, client_t *user);
+	bool gfx_map_tile(server_t *srv, client_t *user);
+	bool gfx_ppo(server_t *srv, client_t *user);
 
 #endif /* !GFX_PROTOCOLE_H_ */

@@ -20,5 +20,6 @@
 
 	bool register_command(client_t *client, char *command);
 	command_t *get_command_from_str(char *str);
+	char **explode(char *str, char *lim);
 
 #endif /* !COMMANDS_H_ */

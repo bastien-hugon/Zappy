@@ -17,16 +17,13 @@
 /**
 *@brief Send the map's size to the GFX Client
 *
-*@param srv [in] The main server_t struct
-*@param fd [in] The client fd
-*@param cmd [in] The client command
+*@param srv [out] The main server_t struct
+*@param user [out] The client
 *@return true If the message is sent
 *@return false If the message isn't sent
 */
-bool gfx_map_size(const server_t *srv, const client_t *user, \
-const char * const *cmd)
+bool gfx_map_size(server_t *srv, client_t *user)
 {
-	(void)cmd;
 	return (send_message(user->socket.fd, "msz %d %d\n", \
 	srv->game.width, srv->game.height));
 }
@@ -54,17 +51,16 @@ const int x, const int y)
 /**
 *@brief Send a map Tile to the GFX client
 *
-*@param srv [in] The main server_t struct
-*@param fd [in] The client fd
-*@param cmd [in] The client command
+*@param srv [out] The main server_t struct
+*@param user [out] The client
 *@return true If the message is sent
 *@return false If the message isn't sent
 */
-bool gfx_map_tile(const server_t *srv, const client_t *user, \
-const char * const *cmd)
+bool gfx_map_tile(server_t *srv, client_t *user)
 {
 	int x;
 	int y;
+	char **cmd = explode(user->cmd_queue[0], " ");
 
 	if (cmd[1] == NULL || cmd [2] == NULL || atoi(cmd[1]) < 0 || \
 	(uint) atoi(cmd[1]) >= srv->game.width || atoi(cmd[2]) < 0 || \
@@ -78,16 +74,13 @@ const char * const *cmd)
 /**
 *@brief Send all the map Tiles to the GFX client
 *
-*@param srv [in] The main server_t struct
-*@param fd [in] The client fd
-*@param cmd [in] The client command
+*@param srv [out] The main server_t struct
+*@param user [out] The client
 *@return true If the message is sent
 *@return false If the message isn't sent
 */
-bool gfx_map_tiles(const server_t *srv, const client_t *user, \
-const char * const *cmd)
+bool gfx_map_tiles(server_t *srv, client_t *user)
 {
-	(void)cmd;
 	for (uint y = 0; y < srv->game.height; y++)
 		for (uint x = 0; x < srv->game.width; x++)
 			gfx_send_tile(srv, user->socket.fd, x, y);
