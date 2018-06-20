@@ -72,4 +72,4 @@ def get_all_item_here(socket, here):
     for item in tile:
         if (item != 'player'):
             socket.Take(item)
-            socket.EmptyCache()
+            EmptyCacheIgnoreBroadcast(socket)
