@@ -21,7 +21,8 @@
 * @param sound the sound message
 * @param receiver the receiver of the message
 */
-static bool send_sound_to_client(server_t *server, client_t *sender, char *sound, client_t *receiver)
+static int get_absolute_direction_of_sound(server_t *server, client_t *sender,\
+	char *sound, client_t *receiver)
 {
 	int lower_x;
 	int lower_y;
@@ -75,6 +76,56 @@ static bool send_sound_to_client(server_t *server, client_t *sender, char *sound
 }
 
 /**
+* @brief Get the direction of sound
+*
+* @param server the server
+* @param sender the sender of the sound
+* @param sound the sound message
+* @param receiver the receiver of a message
+* @return int the direction
+*/
+static int get_direction_of_sound(server_t *server, client_t *sender, \
+	char *sound, client_t *receiver)
+{
+	int sound_direction = get_absolute_direction_of_sound(server, \
+		sender, sound, receiver);
+	int modifier = 0;
+	int result = -1;
+
+	switch (receiver->dir) {
+		case NORTH:
+			modifier = 6;
+			break;
+		case WEST:
+			modifier = 4;
+			break;
+		case SOUTH:
+			modifier = 2;
+			break;
+	}
+	result = (result - modifier) % 8;
+	return ((result == 0) ? 8 : result);
+}
+
+/**
+* @brief send the sound to a client
+*
+* @param server the server
+* @param sender the sender
+* @param sound the sound message
+* @param receiverthe receiver
+*/
+static bool send_sound_to_client(server_t *server, client_t *sender, \
+	char *sound, client_t *receiver)
+{
+	fprintf(receiver->socket.fd, "message %d, %s\n", \
+		get_direction_of_sound(server, sender, sound, receiver), \
+		sound);
+	return (true);
+}
+
+
+/**
 * @brief send the sound to all the player at a position
 *
 * @param server the server
@@ -82,13 +133,14 @@ static bool send_sound_to_client(server_t *server, client_t *sender, char *sound
 * @param sound the sound message
 * @param pos the position
 */
-bool send_sound_to_tile(server_t *server, client_t *sender, char *sound, pos_t pos)
+bool send_sound_to_tile(server_t *server, client_t *sender, \
+	char *sound, pos_t pos)
 {
 	client_t *client = server->game.clients;
 
 	do {
 		if (client)
-			send_message_to_client(server, sender, sound, client);
+			send_sound_to_client(server, sender, sound, client);
 	} while (list_next(&client));
 }
 
