@@ -44,13 +44,10 @@ static void place_client_on_map(server_t *srv, client_t *client, team_t *team)
 void join_team(server_t *srv, client_t *client, char *str)
 {
 	team_t *list = srv->game.teams;
-	char *toto[2] = {"toto", NULL};
-
 	if (!strcmp(str, "GFX_CLIENT")) {
 		client->is_logged = true;
 		client->is_gfx = true;
 		LOG("GFX Client just logged-in");
-		gfx_map_size(srv, client, toto);
 		return ;
 	}
 	while (list != NULL) {
@@ -63,7 +60,6 @@ void join_team(server_t *srv, client_t *client, char *str)
 		}
 		list_next(&list);
 	}
-	WARN("Cannot connect #%d, the team #%s doesn't exists !", \
-	client->id, str);
+	WARN("Cannot connect #%d, team #%s doesn't exists", client->id, str);
 	send_message(client->socket.fd, "ko\n");
 }

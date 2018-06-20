@@ -95,6 +95,9 @@
 	typedef enum
 	{
 		FORWARD, \
+		GFX_MSZ, \
+		GFX_BCT, \
+		GFX_MCT, \
 		NB_CMDS
 	} cmd_e;
 
@@ -188,5 +191,6 @@
 	#include "client_manager.h"
 	#include "map_manager.h"
 	#include "commands.h"
+	#include "gfx_protocole.h"
 
 #endif /* !SERVER_H_ */

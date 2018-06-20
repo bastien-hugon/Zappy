@@ -24,7 +24,10 @@ bool je_sapelle_forward(server_t *server, client_t *client)
 }
 
 command_t commands[] = {
-	{"forward", FORWARD, 1, je_sapelle_forward}
+	{"forward", FORWARD, 1, je_sapelle_forward},
+	{"msz", GFX_MSZ, 0, gfx_map_size},
+	{"bct", GFX_BCT, 0, gfx_map_tile},
+	{"mct", GFX_MCT, 0, gfx_map_tiles}
 };
 
 /**
