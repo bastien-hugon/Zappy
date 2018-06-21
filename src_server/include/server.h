@@ -98,6 +98,7 @@
 		GFX_MSZ, \
 		GFX_BCT, \
 		GFX_MCT, \
+		BROADCAST, \
 		NB_CMDS
 	} cmd_e;
 

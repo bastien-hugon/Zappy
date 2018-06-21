@@ -11,6 +11,7 @@
 */
 
 #include <math.h>
+#include <stdio.h>
 #include "server.h"
 
 /**
@@ -18,18 +19,17 @@
 *
 * @param server the server
 * @param sender the sender
-* @param sound the sound message
 * @param receiver the receiver of the message
 */
 static int get_absolute_direction_of_sound(server_t *server, client_t *sender,\
-	char *sound, client_t *receiver)
+	client_t *receiver)
 {
 	int lower_x;
 	int lower_y;
 
 	// si le modulo est supérieur a la taille de la map
 	int abs_dist_send_rec_x = abs((int)(receiver->pos.x - sender->pos.x));
-	if (abs_dist_send_rec_x % server->game.width > receiver->pos.x - sender->pos.x) {
+	if ((int)(abs_dist_send_rec_x % server->game.width) > (int)(receiver->pos.x - sender->pos.x)) {
 		lower_x = receiver->pos.x - sender->pos.x % server->game.width;
 	} else {
 		lower_x = receiver->pos.x - sender->pos.x;
@@ -37,7 +37,7 @@ static int get_absolute_direction_of_sound(server_t *server, client_t *sender,\
 
 	// with y
 	int abs_dist_send_rec_y = abs((int)(receiver->pos.y - sender->pos.y));
-	if (abs_dist_send_rec_y % server->game.width > receiver->pos.y - sender->pos.y) {
+	if ((int)(abs_dist_send_rec_y % server->game.width) > (int)(receiver->pos.y - sender->pos.y)) {
 		lower_y = receiver->pos.y - sender->pos.y % server->game.width;
 	} else {
 		lower_y = receiver->pos.y - sender->pos.y;
@@ -80,15 +80,14 @@ static int get_absolute_direction_of_sound(server_t *server, client_t *sender,\
 *
 * @param server the server
 * @param sender the sender of the sound
-* @param sound the sound message
 * @param receiver the receiver of a message
 * @return int the direction
 */
 static int get_direction_of_sound(server_t *server, client_t *sender, \
-	char *sound, client_t *receiver)
+	client_t *receiver)
 {
 	int sound_direction = get_absolute_direction_of_sound(server, \
-		sender, sound, receiver);
+		sender, receiver);
 	int modifier = 0;
 	int result = -1;
 
@@ -102,8 +101,10 @@ static int get_direction_of_sound(server_t *server, client_t *sender, \
 		case SOUTH:
 			modifier = 2;
 			break;
+		default:
+			break;
 	}
-	result = (result - modifier) % 8;
+	result = (sound_direction - modifier) % 8;
 	return ((result == 0) ? 8 : result);
 }
 
@@ -118,8 +119,8 @@ static int get_direction_of_sound(server_t *server, client_t *sender, \
 static bool send_sound_to_client(server_t *server, client_t *sender, \
 	char *sound, client_t *receiver)
 {
-	fprintf(receiver->socket.fd, "message %d, %s\n", \
-		get_direction_of_sound(server, sender, sound, receiver), \
+	send_message(receiver->socket.fd, "message %d, %s\n", \
+		get_direction_of_sound(server, sender, receiver), \
 		sound);
 	return (true);
 }
@@ -136,12 +137,13 @@ static bool send_sound_to_client(server_t *server, client_t *sender, \
 bool send_sound_to_tile(server_t *server, client_t *sender, \
 	char *sound, pos_t pos)
 {
-	client_t *client = server->game.clients;
+	client_t *client = server->game.map[pos.y][pos.x].player;
 
 	do {
 		if (client)
 			send_sound_to_client(server, sender, sound, client);
 	} while (list_next(&client));
+	return (true);
 }
 
 /**
@@ -155,8 +157,8 @@ bool send_sound(server_t *server, client_t *sender, char *sound)
 {
 	pos_t pos = {0, 0};
 
-	for (pos = (pos_t){0, 0}; pos.y < server->game.height; pos.y++) {
-		for ( ; pos.x < server->game.width; pos.x++) {
+	for (pos = (pos_t){0, 0}; (int)pos.y < (int)server->game.height; pos.y++) {
+		for ( ; (int)pos.x < (int)server->game.width; pos.x++) {
 			send_sound_to_tile(server, sender, sound, pos);
 		}
 	}
