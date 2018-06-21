@@ -17,7 +17,7 @@ from General_comportement.foodHandling import enough_food_incant
 #         return (True)
 #     else:
 #         return (False)
-def base_state(level, socket):
+def level1(level, socket):
     needed_stones = GetNeededRessources(level)
     while (level == 1):
         inventory = look_inventory(socket)
