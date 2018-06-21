@@ -42,6 +42,8 @@ class Socket:
         response = []
         while (len(response) == 0):
             response = self.ReadSocket()
+            self.nbplaces = int(response[0])
+        self.id = generate_id(self.name, self.nbplaces)
 
     #
     # @brief: Function that creates the socket and ask for connection
