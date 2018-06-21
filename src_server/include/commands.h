@@ -23,7 +23,9 @@
 	char **explode(char *str, char *lim);
 	void free_wordtab(char **str);
 	bool send_sound(server_t *server, client_t *sender, char *sound);
+	void eggs_loop(server_t *server);
 
 	bool send_message_command(server_t *server, client_t *client);
+	bool drop_egg_command(server_t *server, client_t *client);
 
 #endif /* !COMMANDS_H_ */

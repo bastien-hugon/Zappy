@@ -101,6 +101,7 @@
 		GFX_BCT, \
 		GFX_MCT, \
 		BROADCAST, \
+		FORK, \
 		NB_CMDS
 	} cmd_e;
 
@@ -134,8 +135,7 @@
 	*/
 	typedef struct egg_s
 	{
-		uint tile_x;
-		uint tile_y;
+		pos_t pos;
 		team_t *team;
 		uint tick_left;
 	} egg_t;

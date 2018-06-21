@@ -7,6 +7,29 @@
 
 #include "server.h"
 
+static bool place_with_egg(server_t *server, client_t *client)
+{
+	egg_t *egg = server->game.egg;
+
+	do {
+		if (egg != NULL && egg->team == client->team \
+			&& egg->tick_left == 0) {
+			client->dir = (dir_e) rand() % 4;
+			client->pos = egg->pos;
+			send_message(client->socket.fd, \
+				"%d %d\n", egg->pos.x, egg->pos.y);
+			client->team->free_slots--;
+			INFO("Client #%d just logged-in in team #%s (egg)", \
+			client->id, client->team->name);
+			client->team->free_slots--;
+			list_push(&(server->game.map[egg->pos.y][egg->pos.x]\
+				.player), &client);
+			return (true);
+		}
+	} while (list_next(&egg));
+	return (false);
+}
+
 /**
 *@brief Place a client in the map
 *
@@ -19,6 +42,8 @@ static void place_client_on_map(server_t *srv, client_t *client, team_t *team)
 	int x = rand() % srv->game.width;
 	int y = rand() % srv->game.height;
 
+	if (place_with_egg(srv, client))
+		return ;
 	if (team->free_slots > 0) {
 		client->dir = (dir_e) rand() % 4;
 		list_push(&(srv->game.map[y][x].player), client);
