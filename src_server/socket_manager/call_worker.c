@@ -36,7 +36,7 @@ void call_worker(server_t *srv, int fd)
 	while (true) {
 		str = circular_buffer_get_to(&client->buffer, "\n");
 		if (str == CIRCULAR_BUFFER_NOT_FOUND || \
-			str == CIRCULAR_BUFFER_ALLOCATION_ERROR || str == NULL || !str)
+			str == CIRCULAR_BUFFER_ALLOCATION_ERROR)
 			return ;
 		if (!client->is_logged)
 			join_team(srv, client, str);

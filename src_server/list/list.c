@@ -113,6 +113,9 @@ void list_delete_item(void **list)
 		node->next->prev = node->prev;
 	if (node->prev)
 		node->prev->next = node->next;
-	*list = node->next + 1;
+	if (node->next)
+		*list = node->next + 1;
+	else
+		*list = NULL;
 	free(node);
 }

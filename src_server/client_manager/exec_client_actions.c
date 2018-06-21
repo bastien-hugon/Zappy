@@ -49,11 +49,13 @@ static void start_command_from_queue(client_t *client)
 
 	if (client->cmd_queue[0] == NULL) {
 		client->cmd = NULL;
-		return;
+		return ;
 	}
 	command = get_command_from_str(client->cmd_queue[0]);
-	if (command == NULL)
-		return;
+	if (command == NULL) {
+		send_message(client->socket.fd, "ko\n");
+		return ;
+	}
 	client->cmd = command;
 	client->tick_left = command->time;
 }
