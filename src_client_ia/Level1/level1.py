@@ -8,20 +8,8 @@ from General_comportement.inventory import look_inventory
 from General_comportement.inventory import get_food
 from General_comportement.inventory import GetLeftOverStone
 from General_comportement.ressources import GetNeededRessources
-
-
-def enough_food(level, food):
-    if (food >= (level + 1)):
-        return (True)
-    else:
-        return (False)
-
-
-def enough_food_incant(level, food):
-    if (food >= (level + 3)):
-        return (True)
-    else:
-        return (False)
+from General_comportement.foodHandling import enough_food
+from General_comportement.foodHandling import enough_food_incant
 
 
 # def enough_stone(linemate):
@@ -29,9 +17,7 @@ def enough_food_incant(level, food):
 #         return (True)
 #     else:
 #         return (False)
-
-
-def base_state(level, socket):
+def level1(level, socket):
     needed_stones = GetNeededRessources(level)
     while (level == 1):
         inventory = look_inventory(socket)

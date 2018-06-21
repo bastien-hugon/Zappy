@@ -1,0 +1,14 @@
+#!/usr/bin/env python3
+
+from General_comportement.inventory import look_inventory
+from General_comportement.inventory import get_food
+from General_comportement.foodHandling import enough_food_incant
+from State1.search_food_incant import search_food_incant_mode
+
+
+def layAnEgg(level, socket):
+    inventory = look_inventory(socket)
+    food = get_food(inventory)
+    if (not enough_food_incant(level, food)):
+        search_food_incant_mode(level, food, socket)
+    socket.Fork()
