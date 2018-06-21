@@ -95,6 +95,8 @@
 	typedef enum
 	{
 		FORWARD, \
+		RIGHT, \
+		LEFT, \
 		GFX_MSZ, \
 		GFX_BCT, \
 		GFX_MCT, \
@@ -192,5 +194,6 @@
 	#include "map_manager.h"
 	#include "commands.h"
 	#include "gfx_protocole.h"
+	#include "ia_protocole.h"
 
 #endif /* !SERVER_H_ */

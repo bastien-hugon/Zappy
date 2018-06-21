@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2018
 ** Zappy - Server
 ** File description:
-** 
+** Join a team
 */
 
 #include "server.h"

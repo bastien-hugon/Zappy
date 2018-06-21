@@ -69,8 +69,8 @@ static void loop_manager(server_t *srv)
 	int nfds = 0;
 	long long tick_b = get_time();
 	static long long tick_e = 0;
-	const long long timeout = (tick_e) ? (tick_b + (TICKS - \
-	(tick_e - tick_b))) : (tick_b + TICKS);
+	const long long timeout = (tick_e) ? (tick_b + (srv->game.frequence - \
+	(tick_e - tick_b))) : (tick_b + srv->game.frequence);
 
 	while (get_time() < timeout) {
 		nfds = epoll_wait(srv->srv_epoll.epollfd, \
@@ -92,7 +92,7 @@ static void loop_manager(server_t *srv)
 void socket_manager(server_t *srv)
 {
 	INFO("Server's ready !");
-	generate_map(&(srv->game));
+	generate_map(&(srv->game)); 
 	while (true)
 		loop_manager(srv);
 }
