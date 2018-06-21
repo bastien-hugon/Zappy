@@ -11,6 +11,14 @@
 #include <stdbool.h>
 #include <string.h>
 
+void free_wordtab(char **str)
+{
+	for (int i = 0; str[i] != NULL; i++) {
+		free(str[i]);
+	}
+	free(str);
+}
+
 static bool is_lim(char c, char *lim)
 {
 	for (int i = 0; lim[i]; i++)

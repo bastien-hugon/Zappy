@@ -22,7 +22,8 @@ command_t commands[] = {
  	{"left", LEFT, 7, client_left},
 	{"msz", GFX_MSZ, 0, gfx_map_size},
 	{"bct", GFX_BCT, 0, gfx_map_tile},
-	{"mct", GFX_MCT, 0, gfx_map_tiles}
+	{"mct", GFX_MCT, 0, gfx_map_tiles},
+	{"Broadcast", BROADCAST, 7, send_message_command}
 };
 
 /**
