@@ -13,3 +13,4 @@ def base_state(socket):
             survive_mode(level, food, socket)
         else:
             socket.Forward()
+            socket.EmptyCache()
