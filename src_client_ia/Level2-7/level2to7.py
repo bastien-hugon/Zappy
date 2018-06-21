@@ -10,7 +10,7 @@ from General_comportement.inventory import GetLeftOverStone
 from General_comportement.ressources import GetNeededRessources
 
 
-def base_state2(level, socket):
+def level2to7(level, socket):
     #baby
     needed_stones = GetNeededRessources(level)
     while (level != 8):
