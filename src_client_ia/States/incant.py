@@ -1,21 +1,61 @@
 #!/usr/bin/env python3
 
+import random
+
 from General_comportement.ressources import nb_player_here
 from General_comportement.ressources import get_all_item_here
+from General_comportement.broadcast import EmptyCacheIgnoreBroadcast
+
+
+def verify_incant_message(message):
+    if len(check) >= 3 and check[2][7:] == "INCANT:":
+        return 1
+    else:
+        return -1
+
+
+# message format "message 3, INCANT:3:XXXXXXXXXX"
+def parse_message(message, lvl):
+    message_type = message.split(' ')
+    numbers = re.findall(r"[-+]?\d*\.\d+|\d+", message)
+    if len(numbers >= 2):
+        if numbers[1] == lvl:
+            check = verify_incant_message(message_type)
+            if check == 1:
+                return numbers[0]
+    return -1
+
+
+def EmptyCacheInventoryPlusBroadcast(socket, lvl):
+    store_direction = -1
+    while (len(resp) == 0):
+        resp = socket.ReadSocket()
+        for i in range(len(resp)):
+            if "message" in resp[i]:
+                direction = parse_message(resp[i], lvl)
+                del resp[i]
+                store_direction = direction
+    return direction, resp
+
+
+def SearchAvailaibleBroadcast(socket, lvl):
+    for i in range(random.randint(20, 40)):
+        socket.Inventory()
+        direction, resp = EmptyCacheInventoryPlusBroadcast(socket, lvl)
 
 
 def incant(socket):
     socket.Look()
-    resp = socket.EmptyCache()
+    resp = EmptyCacheIgnoreBroadcast(socket)
     resp = resp[:1]
     if len(resp) > 0 and resp[0] != "ko":
         resp = resp[0][2:-2].split(',')
     if (nb_player_here(resp[0]) == 1):
         get_all_item_here(socket, resp[0])
         socket.Set('linemate')
-        socket.EmptyCache()
+        EmptyCacheIgnoreBroadcast(socket)
         socket.Incantation()
-        resp = socket.EmptyCache()
+        resp = EmptyCacheIgnoreBroadcast(socket)
         if (resp[0] == "Elevation underway"):
             socket.EmptyCache()
             if (resp[0] == "ko"):
@@ -27,3 +67,4 @@ def incant(socket):
     else:
         socket.EmptyCache()
         return (1)
+
