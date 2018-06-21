@@ -20,9 +20,11 @@ command_t commands[] = {
  	{"forward", FORWARD, 7, client_forward},
  	{"right", RIGHT, 7, client_right},
  	{"left", LEFT, 7, client_left},
+	{"inventory", INVENTORY, 1, client_inventory},
 	{"msz", GFX_MSZ, 0, gfx_map_size},
 	{"bct", GFX_BCT, 0, gfx_map_tile},
 	{"mct", GFX_MCT, 0, gfx_map_tiles},
+	{"ppo", GFX_PPO, 0, gfx_ppo},
 	{"Broadcast", BROADCAST, 7, send_message_command}
 };
 

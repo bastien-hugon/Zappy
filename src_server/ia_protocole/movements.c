@@ -15,6 +15,20 @@
 #include "server.h"
 
 /**
+*@brief Send OK to client and PPO command to GFX Client
+*
+*@param srv Main server_t struct
+*@param fd The client fd
+*@return true If the message is sent
+*@return false If the message isn't sent
+*/
+static bool send_to_gfx_ppo(server_t *srv, client_t *client)
+{
+	gfx_send_ppo(srv, client);
+	return (send_message(client->socket.fd, "ok\n"));
+}
+
+/**
 *@brief Move a client forward
 *
 *@param srv [out] The main server_t struct
@@ -43,7 +57,7 @@ bool client_forward(server_t *srv, client_t *client)
 	}
 	list_push(&(srv->game.map[client->pos.y][client->pos.x].player), \
 	&client);
-	return (send_message(client->socket.fd, "ok\n%d %d\n", client->pos.x, client->pos.y));
+	return (send_to_gfx_ppo(srv, client));
 }
 
 /**
@@ -58,7 +72,7 @@ bool client_right(server_t *srv, client_t *client)
 {
 	(void)srv;
 	client->dir = (client->dir + 1) % 4;
-	return (send_message(client->socket.fd, "ok\n%d\n", client->dir));
+	return (send_to_gfx_ppo(srv, client));
 }
 
 /**
@@ -76,5 +90,5 @@ bool client_left(server_t *srv, client_t *client)
 		client->dir = 3;
 	else
 		client->dir--;
-	return (send_message(client->socket.fd, "ok\n%d\n", client->dir));
+	return (send_to_gfx_ppo(srv, client));
 }

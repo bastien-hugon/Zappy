@@ -21,15 +21,14 @@
 *@param tile [in] The tile to check on
 *@return client_t* The client found
 */
-static client_t *gfx_get_usr(const uint uid, const tile_t tile)
+static client_t *gfx_get_usr(uint uid, tile_t tile)
 {
 	client_t *list = tile.player;
 
-	while (list != NULL) {
-		if (list->id == uid)
+	do {
+		if (list != NULL && list->id == uid)
 			return (list);
-		list_next(&list);
-	}
+	} while (list_next(&list));
 	return (NULL);
 }
 
@@ -42,9 +41,9 @@ static client_t *gfx_get_usr(const uint uid, const tile_t tile)
 *@return true If the message is sent
 *@return false If the message isn't sent
 */
-bool gfx_ppo(const server_t *srv, const client_t *user, \
-const char * const *cmd)
+bool gfx_ppo(server_t *srv, client_t *user)
 {
+	char **cmd = explode(user->cmd_queue[0], " ");
 	client_t *player = NULL;
 	uint user_id;
 
@@ -53,10 +52,30 @@ const char * const *cmd)
 	user_id = atoi(cmd[1]);
 	for (uint y = 0; y < srv->game.height && !player; y++) {
 		for (uint x = 0; x < srv->game.width && !player; x++) {
-			player = get_usr(user_id, srv->game.map[y][x]);
-			(player) ? (send_message("ppo %d %d %d %d\n", \
+			player = gfx_get_usr(user_id, srv->game.map[y][x]);
+			(player) ? (send_message(user->socket.fd, \
+			"ppo %d %d %d %d\n", \
 			user_id, x, y, player->dir)) : (player = NULL);
 		}
 	}
 	return (player == NULL);
+}
+
+/**
+*@brief Send the map's size to the GFX Client
+*
+*@param srv [in] The main server_t struct
+*@param fd [in] The client fd
+*@param cmd [in] The client command
+*@return true If the message is sent
+*@return false If the message isn't sent
+*/
+bool gfx_send_ppo(server_t *srv, client_t *user)
+{
+	client_t *player = get_gfx_client(srv);
+
+	if (player)
+		send_message(player->socket.fd, "ppo %d %d %d %d\n", \
+		user->id, user->pos.x, user->pos.y, user->dir);
+	return (player != NULL);
 }

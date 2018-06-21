@@ -10,8 +10,17 @@
 
 	#include "server.h"
 
+	#define N_FOOD ("food")
+	#define N_LINEMATE ("linemate")
+	#define N_DERAUMERE ("deraumere")
+	#define N_SIBUR ("sibur")
+	#define N_MENDIANE ("mendiane")
+	#define N_PHIRAS ("phiras")
+	#define N_THYSTAME ("thystame")
+
 	bool client_forward(server_t *srv, client_t *client);
 	bool client_right(server_t *srv, client_t *client);
 	bool client_left(server_t *srv, client_t *client);
+	bool client_inventory(server_t *srv, client_t *client);
 
 #endif /* !IA_PROTOCOLE_H_ */
