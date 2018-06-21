@@ -91,7 +91,10 @@ static void loop_manager(server_t *srv)
 */
 void socket_manager(server_t *srv)
 {
+	float freq = (float) 1 / (float) srv->game.frequence * 1000;
+
 	INFO("Server's ready !");
+	srv->game.frequence = (int) freq;
 	generate_map(&(srv->game)); 
 	while (true)
 		loop_manager(srv);

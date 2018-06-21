@@ -97,9 +97,11 @@
 		FORWARD, \
 		RIGHT, \
 		LEFT, \
+		INVENTORY, \
 		GFX_MSZ, \
 		GFX_BCT, \
 		GFX_MCT, \
+		GFX_PPO, \
 		BROADCAST, \
 		FORK, \
 		NB_CMDS
