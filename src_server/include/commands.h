@@ -21,5 +21,9 @@
 	bool register_command(client_t *client, char *command);
 	command_t *get_command_from_str(char *str);
 	char **explode(char *str, char *lim);
+	void free_wordtab(char **str);
+	bool send_sound(server_t *server, client_t *sender, char *sound);
+
+	bool send_message_command(server_t *server, client_t *client);
 
 #endif /* !COMMANDS_H_ */

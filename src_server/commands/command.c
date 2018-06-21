@@ -27,7 +27,8 @@ command_t commands[] = {
 	{"forward", FORWARD, 1, je_sapelle_forward},
 	{"msz", GFX_MSZ, 0, gfx_map_size},
 	{"bct", GFX_BCT, 0, gfx_map_tile},
-	{"mct", GFX_MCT, 0, gfx_map_tiles}
+	{"mct", GFX_MCT, 0, gfx_map_tiles},
+	{"Broadcast", BROADCAST, 7, send_message_command}
 };
 
 /**
