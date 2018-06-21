@@ -91,6 +91,7 @@ static char *circular_buffer_get_end(circular_buffer_t *buffer, char *to, \
 	ret[((size_t)((buff_end - buffer->tail) + str - \
 		(((char *)&buffer->buffer))))] = '\0';
 	buffer->tail = str + strlen(to);
+	memset(buffer->tail - strlen(to), 0, strlen(to));
 	return (ret);
 }
 
@@ -110,14 +111,16 @@ char *circular_buffer_get_to(circular_buffer_t *buffer, char *to)
 	char *ret;
 	const char *buff_end = (((char *)&buffer->buffer) + BUFF_SIZE);
 
-	if (buffer->head == NULL)
+	if (buffer->head == NULL) {
 		return (CIRCULAR_BUFFER_NOT_FOUND);
+	}
 	if ((buffer->head > buffer->tail || buffer->head == (char *)&buffer->buffer) && (str = sstrstr(buffer->tail, to, ((int)(((buffer->head == (char *)&buffer->buffer) ? buff_end : buffer->head) - buffer->tail)))) \
 		!= NULL) {
 		ret = strndup(buffer->tail, str - buffer->tail);
 		if (ret == NULL)
 			return (CIRCULAR_BUFFER_ALLOCATION_ERROR);
 		buffer->tail = (char *)(str + strlen(to));
+		memset(buffer->tail - strlen(to), 0, strlen(to));
 		return (ret);
 	}
 	if (buffer->head <= buffer->tail && (str = sstrstr((char *)&buffer->buffer, to, \
