@@ -5,11 +5,11 @@ import getopt
 import time
 
 from socket import Socket
-from State1.base import base_state
+from Level1.level1 import level1
 
 
 def go_in_state(socket):
-    base_state(1, socket)
+    level1(1, socket)
     print ("LEVEL 2: REACHED")
 
 

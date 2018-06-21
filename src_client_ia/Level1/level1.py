@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 
-from State1.survive import survive_mode
-from State1.search_food_incant import search_food_incant_mode
-from State1.search_stones import search_stone_mode
-from State1.incant import incant
+from States.survive import survive_mode
+from States.search_food_incant import search_food_incant_mode
+from States.search_stones import search_stone_mode
+from States.incant import incant
 from General_comportement.inventory import look_inventory
 from General_comportement.inventory import get_food
 from General_comportement.inventory import GetLeftOverStone

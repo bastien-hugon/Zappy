@@ -2,7 +2,7 @@
 
 from General_comportement.inventory import look_inventory
 from General_comportement.inventory import get_food
-from State1.survive import survive_mode
+from States.survive import survive_mode
 
 
 def base_state(socket):
