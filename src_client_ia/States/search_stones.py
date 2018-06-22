@@ -5,6 +5,7 @@ from General_comportement.inventory import get_food
 from General_comportement.mov_to_tile import mov_to_tile
 from General_comportement.ressources import IsThereItem
 from General_comportement.inventory import GetLeftOverStone
+from General_comportement.ressources import GetNeededRessources
 
 
 def enough_food(level, food):
@@ -23,7 +24,7 @@ def search_stone_mode(level, food, left_over, socket):
             socket.EmptyCache()
             inventory = look_inventory(socket)
             food = get_food(inventory)
-            left_over = GetLeftOverStone(inventory, ["linemate 1"])
+            left_over = GetLeftOverStone(inventory, GetNeededRessources(level))
             print ("Stone search: stone i got: " + str(food))
         else:
             socket.Forward()

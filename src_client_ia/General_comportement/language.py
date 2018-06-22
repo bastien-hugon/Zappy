@@ -38,8 +38,8 @@ def SendComingBroadcast(socket, _id):
 #
 # @return: None
 #
-def SendOutBroadcast(socket, _id):
-    socket.Broadcast(socket.id + ":OUT:" + _id)
+def SendOutBroadcast(socket):
+    socket.Broadcast(socket.id + ":OUT:" + socket.target_id[0])
 
 
 #
@@ -77,8 +77,8 @@ def SendIncantrefuseBroadcast(socket, _id):
 #
 # @return: None
 #
-def SendIncanthereBroadcast(socket, _id):
-    socket.Broadcast(socket.id + ":HERE:" + _id)
+def SendIncanthereBroadcast(socket, lvl):
+    socket.Broadcast(socket.id + ":HERE:" + str(lvl))
 
 
 #
