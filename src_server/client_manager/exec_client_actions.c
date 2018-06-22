@@ -82,7 +82,7 @@ void exec_clients_actions(server_t *srv)
 {
 	client_t *client = srv->game.clients;
 
-	//LOG("Exec client actions");
+	LOG("Exec client actions");
 	while (client) {
 		if (client->cmd == NULL)
 			start_command_from_queue(client);
@@ -97,4 +97,5 @@ void exec_clients_actions(server_t *srv)
 			break;
 	}
 	eggs_loop(srv);
+	food_loop(srv);
 }

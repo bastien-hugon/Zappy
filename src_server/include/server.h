@@ -123,6 +123,7 @@
 		dir_e dir;
 		pos_t pos;
 		socklen_t size;
+		uint food_tick;
 		uint inventory[NB_RESSOURCE];
 		circular_buffer_t buffer;
 		char *cmd_queue[NB_CMD_QUEUE];
