@@ -17,7 +17,7 @@ def EmptyCacheIgnoreBroadcast(socket):
     while (len(resp) == 0):
         resp = socket.ReadSocket()
         for i in range(len(resp)):
-            if "message" in resp[i]:
+            if len(resp) > i and "message" in resp[i]:
                 del resp[i]
         check_dead(resp)
     print("resp = " + str(resp))

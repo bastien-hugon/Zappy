@@ -1,20 +1,22 @@
 #!/usr/bin/env python3
 
+from General_comportement.broadcast import EmptyCacheIgnoreBroadcast
+
 
 def go_to_tile(nb_forward, nb_side, socket):
     for i in range(nb_forward):
         socket.Forward()
-        socket.EmptyCache()
+        EmptyCacheIgnoreBroadcast(socket)
     if (nb_side < 0):
         socket.Left()
-        socket.EmptyCache()
+        EmptyCacheIgnoreBroadcast(socket)
     elif (nb_side > 0):
         socket.Right()
-        socket.EmptyCache()
+        EmptyCacheIgnoreBroadcast(socket)
     nb_side = abs(nb_side)
     for i in range(nb_side):
         socket.Forward()
-        socket.EmptyCache()
+        EmptyCacheIgnoreBroadcast(socket)
 
 
 def mov_to_tile(tile, level, socket):
