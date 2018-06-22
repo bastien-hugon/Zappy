@@ -20,7 +20,7 @@ from General_comportement.broadcast import EmptyCacheIgnoreBroadcast
 # @return: None
 #
 def search_food_incant_mode(level, food, socket):
-    while food > level + 4:
+    while food > level + 8:
         location, item = IsThereItem(socket, ["food"])
         if (location >= 0):
             mov_to_tile(location, level, socket)

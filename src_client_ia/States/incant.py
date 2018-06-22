@@ -7,37 +7,6 @@ from General_comportement.ressources import get_all_item_here
 from General_comportement.broadcast import EmptyCacheIgnoreBroadcast
 
 
-def verify_incant_message(message):
-    if len(check) >= 3 and check[2][7:] == "INCANT:":
-        return 1
-    else:
-        return -1
-
-
-# message format "message 3, INCANT:3:XXXXXXXXXX"
-def parse_message(message, lvl):
-    message_type = message.split(' ')
-    numbers = re.findall(r"[-+]?\d*\.\d+|\d+", message)
-    if len(numbers >= 2):
-        if numbers[1] == lvl:
-            check = verify_incant_message(message_type)
-            if check == 1:
-                return numbers[0]
-    return -1
-
-
-def EmptyCacheInventoryPlusBroadcast(socket, lvl):
-    store_direction = -1
-    while (len(resp) == 0):
-        resp = socket.ReadSocket()
-        for i in range(len(resp)):
-            if "message" in resp[i]:
-                direction = parse_message(resp[i], lvl)
-                del resp[i]
-                store_direction = direction
-    return direction, resp
-
-
 def SearchAvailaibleBroadcast(socket, lvl):
     for i in range(random.randint(20, 40)):
         socket.Inventory()
