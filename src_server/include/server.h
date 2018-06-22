@@ -138,6 +138,7 @@
 	*/
 	typedef struct egg_s
 	{
+		uint id;
 		pos_t pos;
 		team_t *team;
 		uint tick_left;
@@ -167,6 +168,7 @@
 		client_t *clients;
 		team_t *teams;
 		egg_t *egg;
+		uint nb_eggs;
 	} game_t;
 
 	/**

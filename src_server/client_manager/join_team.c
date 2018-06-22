@@ -7,6 +7,26 @@
 
 #include "server.h"
 
+static bool egg_hatching(server_t *server, client_t *client, egg_t *egg)
+{
+	bool ret;
+
+	client->dir = (dir_e) rand() % 4;
+	client->pos = egg->pos;
+	send_message(client->socket.fd, \
+		"%d %d\n", egg->pos.x, egg->pos.y);
+	client->team->free_slots--;
+	INFO("Client #%d just logged-in in team #%s (egg)", \
+	client->id, client->team->name);
+	client->team->free_slots--;
+	ret = list_push(&(server->game.map[egg->pos.y][egg->pos.x]\
+		.player), &client);
+	list_remove(&egg);
+	if (server->game.egg == egg || egg == NULL)
+		server->game.egg = NULL;
+	return (ret);
+}
+
 static bool place_with_egg(server_t *server, client_t *client)
 {
 	egg_t *egg = server->game.egg;
@@ -14,17 +34,7 @@ static bool place_with_egg(server_t *server, client_t *client)
 	do {
 		if (egg != NULL && egg->team == client->team \
 			&& egg->tick_left == 0) {
-			client->dir = (dir_e) rand() % 4;
-			client->pos = egg->pos;
-			send_message(client->socket.fd, \
-				"%d %d\n", egg->pos.x, egg->pos.y);
-			client->team->free_slots--;
-			INFO("Client #%d just logged-in in team #%s (egg)", \
-			client->id, client->team->name);
-			client->team->free_slots--;
-			list_push(&(server->game.map[egg->pos.y][egg->pos.x]\
-				.player), &client);
-			return (true);
+			return (egg_hatching(server, client, egg));
 		}
 	} while (list_next(&egg));
 	return (false);
