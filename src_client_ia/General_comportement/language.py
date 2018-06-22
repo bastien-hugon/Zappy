@@ -30,7 +30,7 @@ def SendComingBroadcast(socket, _id):
 
 
 #
-# @brief: Function that configures the message to send to server for COMING
+# @brief: Function that configures the message to send to server for OUT
 # broadcast
 #
 # @param: socket [in], socket class variable to interact with socket class
@@ -43,33 +43,33 @@ def SendOutBroadcast(socket, _id):
 
 
 #
-# @brief: Function that configures the message to send to server for COMING
-# broadcast
+# @brief: Function that configures the message to send to server for
+# INCANTACCEPT broadcast
 #
 # @param: socket [in], socket class variable to interact with socket class
-# @param: id_list [in], string, the _id of the current objectif
+# @param: _id [in], string, the _id of the current objectif
 #
 # @return: None
 #
-def SendIncantacceptBroadcast(socket, id_list):
-    socket.Broadcast(socket.id + ":INCANTACCEPT:" + id_list)
+def SendIncantacceptBroadcast(socket, _id):
+    socket.Broadcast(socket.id + ":INCANTACCEPT:" + _id)
 
 
 #
-# @brief: Function that configures the message to send to server for COMING
-# broadcast
+# @brief: Function that configures the message to send to server for
+# INCANTREFUSE broadcast
 #
 # @param: socket [in], socket class variable to interact with socket class
-# @param: id_list [in], string, the _id of the current objectif
+# @param: _id [in], string, the _id of the current objectif
 #
 # @return: None
 #
-def SendIncantrefuseBroadcast(socket, id_list):
-    socket.Broadcast(socket.id + ":INCANTREFUSE:" + id_list)
+def SendIncantrefuseBroadcast(socket, _id):
+    socket.Broadcast(socket.id + ":INCANTREFUSE:" + _id)
 
 
 #
-# @brief: Function that configures the message to send to server for COMING
+# @brief: Function that configures the message to send to server for HERE
 # broadcast
 #
 # @param: socket [in], socket class variable to interact with socket class
@@ -77,8 +77,34 @@ def SendIncantrefuseBroadcast(socket, id_list):
 #
 # @return: None
 #
-def SendHereBroadcast(socket, _id):
+def SendIncanthereBroadcast(socket, _id):
     socket.Broadcast(socket.id + ":HERE:" + _id)
+
+
+#
+# @brief: Function that parses the broadcast message
+#
+# @param: socket [in], socket class variable to interact with socket class
+# @param: message [in], int, the current level of the player
+# @param: lvl [in], the current level of the player
+#
+# @return: direction, message. The directino is where the message came from,
+# the message is the cut up message to be executed later
+#
+def parse_message(socket, message):
+    possible_messages = [
+        "INCANT",
+        "COMING",
+        "OUT",
+        "INCANTACCEPT",
+        "INCANTREFUSE",
+        "HERE"
+    ]
+    split_message = message.split(' ')
+    message_type = split_message[-1].split(':')
+    if len(message_type) >= 3 and message_type[1] in possible_messages:
+        return (int(split_message[1]), message_type)
+    return -1, [None]
 
 
 #
@@ -88,40 +114,23 @@ def SendHereBroadcast(socket, _id):
 # @param: socket [in], socket class variable to interact with socket class
 # @param: lvl [in], int, the current level of the player
 #
-# @return: None
+# @return: direction, message. The direction is where the message came from,
+# the message is the cut up message to be executed later
 #
-def SendStartingBroadcast(socket, lvl):
-    socket.Broadcast(socket.id + ":STARTING:" + str(lvl))
-
-
-def parse_message(socket, message, lvl):
-    possible_messages = [
-        "INCANT",
-        "COMING",
-        "OUT",
-        "INCANTACCEPT",
-        "INCANTREFUSE",
-        "HERE",
-        "STARTING"
-    ]
-    split_message = message.split(' ')
-    message_type = split_message[-1].split(':')
-    if len(message_type) > 1 and message_type[0] in possible_messages:
-        return (int(split_message[1]), message_type)
-    return -1, [None]
-
-
-def EmptyCacheSearchBroadcast(socket, lvl, what):
+def EmptyCacheSearchBroadcast(socket, lvl):
     message = []
-    direction = 0
+    direction = -1
     keep = 0
     store_direction = -1
     while (len(resp) == 0):
         resp = socket.ReadSocket()
         for i in range(len(resp)):
             if "message" in resp[i] and keep == 0:
-                direction, message = parse_message(socket, resp[i], lvl)
-                if (message[0] == what):
+                direction, message = parse_message(socket, resp[i])
+                if len(socket.target_id) == 0 and len(message) == 3 and
+                message[1] == "INCANT" and int(message[2]) == lvl:
+                    keep = 1
+                elif message[0] in socket.target_id:
                     keep = 1
             del resp[i]
             store_direction = direction
