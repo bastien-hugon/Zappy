@@ -22,4 +22,6 @@ void create_user(client_t *user, server_t *srv)
 	user->id = srv->game.nb_players++;
 	user->is_gfx = false;
 	user->is_logged = false;
+	user->inventory[FOOD] = 10;
+	user->food_tick = 126;
 }
