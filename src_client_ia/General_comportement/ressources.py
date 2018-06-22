@@ -27,6 +27,18 @@ def GetNeededRessources(lvl):
 
 
 #
+# @brief: Function that returns the number of players needed to incant
+#
+# @param: lvl [in], int, the current level of the player
+#
+# @return: the number of players needed for incantation
+#
+def number_of_people_to_incant(lvl):
+    players_needed = [0, 1, 2, 2, 4, 4, 6, 6]
+    return players_needed[lvl]
+
+
+#
 # @brief: Function that looks for one of the items demanded by the player.
 # The smallest index tile where one of the requested item is situated will
 # be returned
