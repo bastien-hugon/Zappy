@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+import re
+
 from General_comportement.check_dead import check_dead
 from General_comportement.broadcast import EmptyCacheIgnoreBroadcast
 
@@ -32,9 +34,9 @@ def get_food(inventory):
     ret = []
     for i in (inventory[0]):
         if (i[:4] == 'food'):
-            ret = [int(s) for s in i if s.isdigit()]
+            ret = re.findall('\d+', i)
     if len(ret) > 0:
-        return (ret[0])
+        return (int(ret[0]))
     else:
         return (0)
 

@@ -9,7 +9,7 @@ def enough_food(level, food):
 
 
 def enough_food_incant(level, food):
-    if (food >= (level + 3)):
+    if (food >= (level + 8)):
         return (True)
     else:
         return (False)
