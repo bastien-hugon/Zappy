@@ -10,6 +10,7 @@
 import sockets
 import time
 from threading import Thread
+import random
 
 from General_comportement.check_dead import check_dead
 
@@ -42,8 +43,10 @@ class Socket:
         response = []
         while (len(response) == 0):
             response = self.ReadSocket()
-            self.nbplaces = int(response[0])
-        self.id = generate_id(self.name, self.nbplaces)
+            # self.nbplaces = int(response[0])
+        # self.id = generate_id(self.name, self.nbplaces)
+        self.id = self.GenerateRandomId()
+        self.target_id = []
 
     #
     # @brief: Function that creates the socket and ask for connection
@@ -224,3 +227,20 @@ class Socket:
             check_dead(resp)
         print("resp = " + str(resp))
         return (resp)
+
+    #
+    # @brief: Function that creates a random id of 10 characters
+    #
+    # @param: self [in], contains class variables
+    #
+    # @return: resp, a string containing the randomly generated id token
+    #
+    def GenerateRandomId(self):
+        string = ""
+        i = 0
+        while i != 10:
+            number = random.randint(33, 125)
+            if number != 92:
+                string += str(chr(number))
+                i += 1
+        return string
