@@ -12,3 +12,4 @@ def layAnEgg(level, socket):
     if (not enough_food_incant(level, food)):
         search_food_incant_mode(level, food, socket)
     socket.Fork()
+    EmptyCacheIgnoreBroadcast(socket)
