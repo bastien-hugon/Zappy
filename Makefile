@@ -51,6 +51,7 @@ SERV_SRCS	=	./src_server/argument_handling/argument_handling.c \
 			./src_server/commands/explode.c \
 			./src_server/commands/command.c \
 			./src_server/ia_protocole/movements.c \
+			./src_server/ia_protocole/inventory.c \
 			./src_server/sounds/sound.c \
 			./src_server/sounds/sound_command.c \
 			./src_server/food/food_loop.c \
@@ -60,6 +61,8 @@ SERV_SRCS	=	./src_server/argument_handling/argument_handling.c \
 			./src_server/client_manager/exec_client_actions.c \
 			./src_server/client_manager/send_message.c \
 			./src_server/gfx_protocole/map_info.c \
+			./src_server/gfx_protocole/players_info.c \
+			./src_server/gfx_protocole/get_gfx_client.c \
 			./src_server/map_manager/generate_map.c \
 			./src_server/map_manager/fill_refill.c \
 			./src_server/map_manager/get_rareness.c \
