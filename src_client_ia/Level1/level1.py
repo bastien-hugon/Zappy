@@ -30,5 +30,5 @@ def level1(level, socket):
             search_stone_mode(level, food, left_over, socket)
         else:
             print('MODE: INCANT')
-            level = incant(socket)
+            level = incant(socket, food, level)
     return (level)

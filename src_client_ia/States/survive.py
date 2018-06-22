@@ -19,7 +19,7 @@ from General_comportement.broadcast import EmptyCacheIgnoreBroadcast
 # @return: None
 #
 def survive_mode(level, food, socket):
-    while food > level + 1:
+    while food < level + 1:
         location, item = IsThereItem(socket, ["food"])
         if (location >= 0):
             mov_to_tile(location, level, socket)
