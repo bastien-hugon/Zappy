@@ -22,9 +22,7 @@ def level2to7(level, socket):
         elif food <= level + 3:
             search_food_incant_mode(level, food, socket)
         elif len(left_over) != 0:
-            # listen_message()
-            pass
-            #search_stone_mode(level, food, left_over, socket)
+            search_stone_mode(level, food, left_over, socket)
         else:
             pass
             #need to create incantation
