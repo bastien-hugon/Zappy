@@ -11,6 +11,7 @@ import sockets
 import time
 from threading import Thread
 import random
+import time
 
 from General_comportement.check_dead import check_dead
 
@@ -43,8 +44,7 @@ class Socket:
         response = []
         while (len(response) == 0):
             response = self.ReadSocket()
-            # self.nbplaces = int(response[0])
-        # self.id = generate_id(self.name, self.nbplaces)
+            self.nbplaces = int(response[0])
         self.id = self.GenerateRandomId()
         self.target_id = []
 
@@ -236,11 +236,8 @@ class Socket:
     # @return: resp, a string containing the randomly generated id token
     #
     def GenerateRandomId(self):
-        string = ""
-        i = 0
-        while i != 10:
-            number = random.randint(33, 125)
-            if number != 92:
-                string += str(chr(number))
-                i += 1
-        return string
+        now = time.time()
+        coeff = str(float(self.nbplaces * now))
+        value = coeff.split('.')
+        final = value[0] + value[1] + str(random.randint(100, 999))
+        return (final)

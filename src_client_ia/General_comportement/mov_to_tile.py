@@ -28,3 +28,37 @@ def mov_to_tile(tile, level, socket):
             nb_forward = x
     nb_side = tile - (nb_forward * (nb_forward + 1))
     go_to_tile(nb_forward, nb_side, socket)
+
+
+def movToBroadcast(direction, socket, level):
+    ListActions = [['wait'],
+                   ['forward'],
+                   ['forward', 'left', 'forward'],
+                   ['left', 'forward'],
+                   ['left', 'forward', 'left', 'forward'],
+                   ['right', 'right', 'forward'],
+                   ['right', 'forward', 'right', 'forward'],
+                   ['right', 'forward'],
+                   ['forward', 'right', 'forward']]
+    for action in ListActions[direction]:
+        if action == 'forward':
+            socket.Forward()
+            _dir, message, resp = EmptyCacheSearchBroadcast(socket, level)
+            if (len(message) >= 3 and message[1] == 'INCANTREFUSE' and
+               message[2] == socket.id):
+                return (-1)
+        elif (action == 'left'):
+            socket.Left()
+            _dir, message, resp = EmptyCacheSearchBroadcast(socket, level)
+            if (len(message) >= 3 and message[1] == 'INCANTREFUSE' and
+               message[2] == socket.id):
+                return (-1)
+        elif (action == 'right'):
+            socket.Right()
+            _dir, message, resp = EmptyCacheSearchBroadcast(socket, level)
+            if (len(message) >= 3 and message[1] == 'INCANTREFUSE' and
+               message[2] == socket.id):
+                return (-1)
+        else:
+            return (1)
+    return (1)
