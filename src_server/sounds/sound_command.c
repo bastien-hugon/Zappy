@@ -14,6 +14,16 @@
 
 bool send_message_command(server_t *server, client_t *client)
 {
-	return send_sound(server, client, client->cmd_queue[0] +
+	bool ret;
+
+	LOG("client #%d broadcasting: %s", client->id, client->cmd_queue[0] +
 		strlen("Broadcast "));
+	ret = send_sound(server, client, client->cmd_queue[0] +
+		strlen("Broadcast "));
+	LOG("Broadcast status: %d", ret);
+	if (ret)
+		send_message(client->socket.fd, "ok\n");
+	else
+		send_message(client->socket.fd, "ko\n");
+	return (ret);
 }

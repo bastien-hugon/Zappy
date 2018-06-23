@@ -14,6 +14,7 @@
 	void create_user(client_t *user, server_t *srv);
 	client_t *get_client_for_fd(server_t *srv, int fd);
 	bool send_message(const int fd, const char *format, ...);
+	bool send_to_gfx(server_t *server, const char *format, ...);
 	bool broadcast(const server_t *srv, const char *format, ...);
 	void join_team(server_t *srv, client_t *client, char *str);
 	void disconnect_client(server_t *srv, client_t *client);

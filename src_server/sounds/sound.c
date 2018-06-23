@@ -120,6 +120,8 @@ static bool send_sound_to_client(server_t *server, client_t *sender, \
 
 	send_message(receiver->socket.fd, "message %d, %s\n", \
 		get_direction_by_player(absolute_direction, receiver), sound);
+	LOG("sended to #%d: message %d, %s\n", receiver->id, \
+		get_direction_by_player(absolute_direction, receiver), sound);
 	return (true);
 }
 
@@ -138,8 +140,10 @@ bool send_sound_to_tile(server_t *server, client_t *sender, \
 	client_t **client = server->game.map[pos.y][pos.x].player;
 
 	do {
-		if (client)
+		if (client) {
 			send_sound_to_client(server, sender, sound, *client);
+			LOG("send sound to client: %d", (*client)->id);
+		}
 	} while (list_next(&client));
 	return (true);
 }
@@ -157,7 +161,7 @@ bool send_sound(server_t *server, client_t *sender, char *sound)
 
 	for (pos = (pos_t){0, 0}; (int)pos.y < (int)server->game.height; pos.y++) {
 		for ( ; (int)pos.x < (int)server->game.width; pos.x++) {
-			send_sound_to_tile(server, sender, sound, pos);
+			LOG("send_sound_to_tile: %d;", send_sound_to_tile(server, sender, sound, pos));
 		}
 	}
 	return (true);

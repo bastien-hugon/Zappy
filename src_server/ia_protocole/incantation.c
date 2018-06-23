@@ -40,10 +40,11 @@ bool check_incantation_conditions(tile_t *tile, int lvl)
 	bool ret = true;
 
 	for (ressource_e res = LINEMATE; res < NB_RESSOURCE; res++)
-		if (tile->inventory[res] < incantation_requirements[lvl][res])
+		if (tile->inventory[res] < incantation_requirements[lvl - 1][res])
 			ret = false;
 	if (get_nb_players_on_tile_of_lvl(tile, lvl) < (int)tile->inventory[0])
 		ret = false;
+	LOG("the incantation comditions was %s", ret ? "ok" : "ko");
 	return (ret);
 }
 
@@ -59,6 +60,7 @@ bool validate_incantation(tile_t *tile, int lvl)
 		(*client)->level++;
 	} while (list_next(&client));
 	for (ressource_e res = LINEMATE; res < NB_RESSOURCE; res++)
-		tile->inventory[res] -= incantation_requirements[lvl][res];
+		tile->inventory[res] -= incantation_requirements[lvl - 1][res];
+	LOG("the incantation was done");
 	return (true);
 }
