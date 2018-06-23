@@ -76,7 +76,7 @@ void refill_map(game_t *game)
 {
 	static int i = 0;
 
-	for (int y = 0; y < (int) game->height && !(i % 10); y++)
+	for (int y = 0; y < (int) game->height && !(i % 100); y++)
 		for (int x = 0; x < (int) game->width; x++)
 			fill_tile(&(game->map[y][x]));
 	i++;

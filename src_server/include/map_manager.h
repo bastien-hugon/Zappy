@@ -10,7 +10,7 @@
 
 	#include "server.h"
 
-	#define R_LINEMATE (50)
+	#define R_LINEMATE (75)
 	#define R_DERAUMERE (44)
 	#define R_SIBUR (56)
 	#define R_MENDIANE (28)

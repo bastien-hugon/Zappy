@@ -93,6 +93,8 @@ void list_delete_all(void **list)
 	list_t *node = ((list_t *)(*list)) - 1;
 	list_t *tmp_node;
 
+	if (list == NULL)
+		return ;
 	while (node) {
 		tmp_node = node;
 		node = node->next;

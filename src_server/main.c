@@ -12,11 +12,18 @@
 #include <stdbool.h>
 #include "server.h"
 
+server_t server_g;
 
 /*!
 ** @brief zappy main function file
 ** @file main.c
 */
+
+void sighandler(int signum)
+{
+	(void)signum;
+	stop_server(&server_g, NULL);
+}
 
 /**
 * @brief the server main function
@@ -27,17 +34,17 @@
 */
 int main(int argc, char **argv)
 {
-	server_t server;
 
 	if (handle_help(argc, argv))
 		return (EXIT_SUCCESS);
-	if (handle_args(&server, argc, argv) == false)
+	if (handle_args(&server_g, argc, argv) == false)
 		return (EXIT_FAILURE);
-	if (check_arguments(&server) == false)
+	if (check_arguments(&server_g) == false)
 		return (EXIT_FAILURE);
 	srand(time(NULL));
-	init_server(&server);
-	init_epoll(&server);
-	socket_manager(&server);
+	init_server(&server_g);
+	init_epoll(&server_g);
+	signal(SIGINT, sighandler);
+	socket_manager(&server_g);
 	return (EXIT_SUCCESS);
 }
