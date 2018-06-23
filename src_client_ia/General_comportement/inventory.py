@@ -51,6 +51,8 @@ def get_food(inventory):
 # @return: left_over [], the list of the stones left to take
 #
 def GetLeftOverStone(inventory, stones_needed):
+    if inventory[0] == "ko":
+        return ["linemate 1"]
     left_over = []
     stones_needed_list = []
     for item in stones_needed:
