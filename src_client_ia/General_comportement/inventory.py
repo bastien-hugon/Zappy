@@ -35,6 +35,7 @@ def get_food(inventory):
     for i in (inventory[0]):
         if (i[:4] == 'food'):
             ret = re.findall('\d+', i)
+    print("FINDALL = " + str(ret) + " RESP = " + str(inventory))
     if len(ret) > 0:
         return (int(ret[0]))
     else:

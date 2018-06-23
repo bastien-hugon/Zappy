@@ -16,11 +16,12 @@ def EmptyCacheIgnoreBroadcast(socket):
     resp = []
     while (len(resp) == 0):
         resp = socket.ReadSocket()
-        for i in range(len(resp)):
-            if len(resp) > i and "message" in resp[i]:
-                del resp[i]
         check_dead(resp)
-    print("resp = " + str(resp))
+        print("CheckLen = " + str(resp))
+        for i in range(len(resp)):
+            if "message" in resp[i]:
+                del resp[i]
+    print("IngnoreBroadcast resp = " + str(resp))
     return (resp)
 
 

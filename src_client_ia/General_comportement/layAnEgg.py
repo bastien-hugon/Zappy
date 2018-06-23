@@ -4,6 +4,7 @@ from General_comportement.inventory import look_inventory
 from General_comportement.inventory import get_food
 from General_comportement.foodHandling import enough_food_incant
 from States.search_food_incant import search_food_incant_mode
+from General_comportement.broadcast import EmptyCacheIgnoreBroadcast
 
 
 def layAnEgg(level, socket):
