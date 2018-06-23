@@ -124,15 +124,19 @@ def EmptyCacheSearchBroadcast(socket, lvl):
     store_direction = -1
     while (len(resp) == 0):
         resp = socket.ReadSocket()
-        for i in range(len(resp)):
-            if "message" in resp[i] and keep == 0:
+        check_dead(resp)
+        i = 0
+        while i < len(resp):
+            if resp[i].find("message") != -1 and keep == 0:
                 direction, message = parse_message(socket, resp[i])
                 if (len(socket.target_id) == 0 and len(message) == 3 and
                     message[1] == "INCANT" and int(message[2]) == lvl):
                     keep = 1
                 elif message[0] in socket.target_id:
                     keep = 1
-                del resp[i]
+                resp.pop(i)
                 store_direction = direction
+            else:
+                i += 1
     print("SEARCHBROADCAST resp = " + str(resp))
     return direction, message, resp
