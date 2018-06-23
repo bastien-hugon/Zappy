@@ -84,7 +84,7 @@ void exec_clients_actions(server_t *srv)
 {
 	client_t *client = srv->game.clients;
 
-	check_end(srv);
+	//check_end(srv);
 	refill_map(&(srv->game));
 	while (client) {
 		if (client->cmd == NULL)
