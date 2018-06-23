@@ -134,11 +134,44 @@ def EmptyCacheSearchBroadcast(socket, lvl):
                     dire = direction
                     mess = message
                     keep = 1
-                # elif message[0] in socket.target_id:
-                #     keep = 1
                 resp.pop(i)
-                # store_direction = direction
             else:
                 i += 1
     print("SEARCHBROADCAST resp = " + str(resp) + " mess = " + str(mess) + " dire = " + str(dire))
+    return dire, mess, resp
+
+
+#
+# @brief: Function that configures the message to send to server for INCANT
+# broadcast
+# This function focuses a scecific id of broadcast message
+#
+# @param: socket [in], socket class variable to interact with socket class
+# @param: lvl [in], int, the current level of the player
+#
+# @return: direction, message. The direction is where the message came from,
+# the message is the cut up message to be executed later
+#
+def EmptyCacheFocusBroadcast(socket, lvl):
+    mess = []
+    dire = -1
+    message = []
+    direction = -1
+    resp = []
+    while (len(resp) == 0):
+        resp = socket.ReadSocket()
+        check_dead(resp)
+        i = 0
+        while i < len(resp):
+            if resp[i].find("message") != -1:
+                direction, message = parse_message(socket, resp[i])
+                print("ID DIFFERENCE " + str(socket.target_id) + " ?= " + str(message[0]))
+                if (len(message) >= 3 and message[1] == "INCANT" and int(message[2]) == lvl and socket.target_id == message[0]):
+                    dire = direction
+                    mess = message
+                    keep = 1
+                resp.pop(i)
+            else:
+                i += 1
+    print("FOCUSBROADCAST resp = " + str(resp) + " mess = " + str(mess) + " dire = " + str(dire))
     return dire, mess, resp

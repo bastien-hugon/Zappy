@@ -18,7 +18,6 @@ def go_in_state(socket):
     while (level < 8):
         level = level1(level, socket)
         print("\n----------------------------------------------------------------------------\nLEVEL " + str(level) + "  REACHED \n----------------------------------------------------------------------------\n")
-        stderr.write("Player: " + str(socket.id) + " got LEVEL == " + str(level))
         # level = level2to7(level, socket)
         layAnEgg(level, socket)
     print("Level7")

@@ -5,6 +5,7 @@ import re
 from General_comportement.check_dead import check_dead
 from General_comportement.broadcast import EmptyCacheIgnoreBroadcast
 from General_comportement.language import EmptyCacheSearchBroadcast
+from General_comportement.language import EmptyCacheFocusBroadcast
 
 
 #
@@ -37,6 +38,26 @@ def look_inventory(socket):
 def look_inventory_search_broadcast(socket, level):
     socket.Inventory()
     dire, mess, resp = EmptyCacheSearchBroadcast(socket, level)
+    if len(resp) > 0 and resp[0] != "ko":
+        resp[0] = resp[0][2:-2].split(', ')
+    return (dire, mess, resp)
+
+
+#
+# @brief: Function that demands to the server for the inventory and then
+# parses it.
+# This function also listens for any wanted broadcast and focuses a specific
+# broadcast id.
+#
+# @param: inventory [in], the list of the current inventory
+# @param: level [in], the current level of the player
+#
+# @return: dire, the direction of where the message came from, -1 if no message
+# @return: mess, the content of the message, empty list if no message
+#
+def look_inventory_focus_broadcast(socket, level):
+    socket.Inventory()
+    dire, mess, resp = EmptyCacheFocusBroadcast(socket, level)
     if len(resp) > 0 and resp[0] != "ko":
         resp[0] = resp[0][2:-2].split(', ')
     return (dire, mess, resp)
