@@ -31,9 +31,10 @@ def level1(lvl, socket):
             search_food_incant_mode(level, food, socket)
         elif (dire != -1 and level != 1):
             print('MODE: go to incant')
-            go_to_incant_state(socket, level, food, dire, mess)
+            level = go_to_incant_state(socket, level, food, dire, mess)
             dire = -1
             mess = []
+            socket.target_id = ""
         elif len(left_over) != 0 and enough_food_incant(level, food):
             print('MODE: search stone')
             dire, mess = search_stone_mode(level, food, left_over, socket)

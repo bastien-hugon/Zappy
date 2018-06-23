@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import random
+import re
 
 from General_comportement.ressources import nb_player_here
 from General_comportement.ressources import get_all_item_here
@@ -11,6 +12,28 @@ from General_comportement.ressources import GetNeededRessources
 from General_comportement.broadcast import EmptyCacheIgnoreBroadcast
 from General_comportement.inventory import look_inventory
 from General_comportement.inventory import get_food
+from General_comportement.mov_to_tile import mov_to_tile
+
+
+def move_to_free_tile(socket):
+    socket.Look()
+    resp = EmptyCacheIgnoreBroadcast(socket)
+    if len(resp) > 0 and resp[0] != "ko":
+        resp = resp[0][2:-2].split(',')
+    for tile in range(len(resp)):
+        if "player" not in resp[tile]:
+            return tile
+    return 0
+
+
+def ko_incant(socket, level):
+    socket.Look()
+    resp = EmptyCacheIgnoreBroadcast(socket)
+    resp = resp[:1]
+    resp = resp[0][2:-2].split(',')
+    get_all_item_here(socket, resp[0])
+    tile = move_to_free_tile(socket)
+    mov_to_tile(tile, level, socket)
 
 
 def set_stones(socket, level):
@@ -46,13 +69,18 @@ def incant(socket, food, level):
             socket.Incantation()
             resp = EmptyCacheIgnoreBroadcast(socket)
             if ("Elevation underway" in resp):
-                if len(resp) < 3:
+                if len(resp) < 2:
                     resp = EmptyCacheIgnoreBroadcast(socket)
-                if ("ko" in resp):
-                    return (level)
-                else:
-                    return (level + 1)
+                for _object in resp:
+                    if ("Current level:" in _object):
+                        ret = re.findall('\d+', _object)
+                        if len(ret) > 0:
+                            if int(ret[0]) != level:
+                                return int(ret[0])
+                ko_incant(socket, level)
+                return level
             else:
+                ko_incant(socket, level)
                 return (level)
         inventory = look_inventory(socket)
         food = get_food(inventory)

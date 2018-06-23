@@ -96,6 +96,7 @@ def mov_to_tile_search_broadcast(tile, level, socket):
 
 
 def movToBroadcast(direction, socket, level):
+    print("MOVE TO INCANT")
     ListActions = [['wait'],
                    ['forward'],
                    ['forward', 'left', 'forward'],
