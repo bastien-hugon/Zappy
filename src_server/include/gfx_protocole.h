@@ -16,5 +16,8 @@
 	bool gfx_map_tile(server_t *srv, client_t *user);
 	bool gfx_ppo(server_t *srv, client_t *user);
 	bool gfx_send_ppo(server_t *srv, client_t *user);
+	bool gfx_pnw(server_t *srv, client_t *user);
+	bool gfx_send_tile(const server_t *srv, const int fd, \
+	const int x, const int y);
 
 #endif /* !GFX_PROTOCOLE_H_ */

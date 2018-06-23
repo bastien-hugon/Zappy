@@ -46,6 +46,7 @@ bool gfx_ppo(server_t *srv, client_t *user)
 	char **cmd = explode(user->cmd_queue[0], " ");
 	client_t *player = NULL;
 	uint user_id;
+	char dir[4][2] = {"1", "2", "3", "4"};
 
 	if (!cmd[1] || atoi(cmd[1]) < 0)
 		return (send_message(user->socket.fd, "ko\n"));
@@ -54,8 +55,8 @@ bool gfx_ppo(server_t *srv, client_t *user)
 		for (uint x = 0; x < srv->game.width && !player; x++) {
 			player = gfx_get_usr(user_id, srv->game.map[y][x]);
 			(player) ? (send_message(user->socket.fd, \
-			"ppo %d %d %d %d\n", \
-			user_id, x, y, player->dir)) : (player = NULL);
+			"ppo %d %d %d %s\n", \
+			user_id, x, y, dir[player->dir])) : (player = NULL);
 		}
 	}
 	return (player == NULL);
@@ -73,9 +74,30 @@ bool gfx_ppo(server_t *srv, client_t *user)
 bool gfx_send_ppo(server_t *srv, client_t *user)
 {
 	client_t *player = get_gfx_client(srv);
+	char *dir[4] = {"1", "2", "3", "4"};
 
 	if (player)
-		send_message(player->socket.fd, "ppo %d %d %d %d\n", \
-		user->id, user->pos.x, user->pos.y, user->dir);
+		send_message(player->socket.fd, "ppo %d %d %d %s\n", \
+		user->id, user->pos.x, user->pos.y, dir[user->dir]);
 	return (player != NULL);
+}
+
+/**
+*@brief Connection of a new user
+*
+*@param srv The main server_t struct
+*@param user The user connected
+*@return true If the message is sent
+*@return false If the message isn't sent
+*/
+bool gfx_pnw(server_t *srv, client_t *user)
+{
+	client_t *gfx = get_gfx_client(srv);
+	char dir[4][2] = {"1", "2", "3", "4"};
+
+	if (gfx == NULL || !user || user->is_gfx)
+		return (false);
+	WARN("toto");
+	return (send_message(gfx->socket.fd, "pnw %d %d %d %s 1 %s\n", \
+	user->id, user->pos.x, user->pos.y, dir[user->dir], user->team->name));
 }

@@ -45,6 +45,7 @@ SERV_SRCS	=	./src_server/argument_handling/argument_handling.c \
 			./src_server/socket_manager/call_worker.c \
 			./src_server/socket_manager/socket_manager.c \
 			./src_server/client_manager/create_user.c \
+			./src_server/client_manager/disconnect_client.c \
 			./src_server/client_manager/join_team.c \
 			./src_server/client_manager/disconnect.c \
 			./src_server/commands/command_queue.c \
@@ -52,6 +53,8 @@ SERV_SRCS	=	./src_server/argument_handling/argument_handling.c \
 			./src_server/commands/command.c \
 			./src_server/ia_protocole/movements.c \
 			./src_server/ia_protocole/inventory.c \
+			./src_server/ia_protocole/get_info.c \
+			./src_server/ia_protocole/take_set_objects.c \
 			./src_server/sounds/sound.c \
 			./src_server/sounds/sound_command.c \
 			./src_server/food/food_loop.c \

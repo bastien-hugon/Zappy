@@ -18,5 +18,6 @@
 	void join_team(server_t *srv, client_t *client, char *str);
 	void disconnect_client(server_t *srv, client_t *client);
 	void kill_client(server_t *srv, client_t *client);
+	bool disconnect_client(server_t *srv, int fd);
 
 #endif /* !CLIENT_MANAGER_H_ */

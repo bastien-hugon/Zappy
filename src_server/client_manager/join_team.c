@@ -24,6 +24,7 @@ static bool place_with_egg(server_t *server, client_t *client)
 			client->team->free_slots--;
 			list_push(&(server->game.map[egg->pos.y][egg->pos.x]\
 				.player), &client);
+			gfx_pnw(server, client);
 			return (true);
 		}
 	} while (list_next(&egg));
@@ -52,6 +53,7 @@ static void place_client_on_map(server_t *srv, client_t *client, team_t *team)
 		INFO("Client #%d just logged-in in team #%s", client->id, \
 		team->name);
 		team->free_slots--;
+		gfx_pnw(srv, client);
 		return ;
 	}
 	send_message(client->socket.fd, "ko\n");
@@ -79,7 +81,8 @@ void join_team(server_t *srv, client_t *client, char *str)
 		if (!strcmp(list->name, str)) {
 			client->team = list;
 			client->is_logged = true;
-			send_message(client->socket.fd, "%d\n", client->id);
+			send_message(client->socket.fd, "%d\n", \
+			client->team->free_slots - 1);
 			place_client_on_map(srv, client, list);
 			return ;
 		}

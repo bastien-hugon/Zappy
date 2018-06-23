@@ -24,7 +24,6 @@
 static void manage_events(server_t *srv, int i)
 {
 	client_t user;
-
 	if (srv->srv_epoll.events[i].data.fd == srv->srv_epoll.socket.fd) {
 		create_user(&user, srv);
 		user.socket.fd = accept(srv->srv_epoll.socket.fd, \

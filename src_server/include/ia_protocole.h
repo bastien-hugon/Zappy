@@ -22,5 +22,8 @@
 	bool client_right(server_t *srv, client_t *client);
 	bool client_left(server_t *srv, client_t *client);
 	bool client_inventory(server_t *srv, client_t *client);
+	bool client_nb_connect(server_t *srv, client_t *client);
+	bool client_take(server_t *srv, client_t *client);
+	bool client_set(server_t *srv, client_t *client);
 
 #endif /* !IA_PROTOCOLE_H_ */
