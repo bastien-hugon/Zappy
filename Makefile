@@ -36,6 +36,7 @@ SRCS_UT_SERV	=	./tests/server/arguments/test_argument_handling.c \
 SRCS_UT_CLIENT  =
 
 SERV_SRCS	=	./src_server/argument_handling/argument_handling.c \
+			./src_server/argument_handling/check_arguments.c \
 			./src_server/argument_handling/help.c \
 			./src_server/list/list.c \
 			./src_server/logs/logs.c \

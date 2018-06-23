@@ -23,6 +23,7 @@
 	char **explode(char *str, char *lim);
 	void free_wordtab(char **str);
 	bool send_sound(server_t *server, client_t *sender, char *sound);
+	int get_direction_by_player(int direction, client_t *receiver);
 	void eggs_loop(server_t *server);
 	void food_loop(server_t *server);
 

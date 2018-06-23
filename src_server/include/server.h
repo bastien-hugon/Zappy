@@ -143,6 +143,7 @@
 	*/
 	typedef struct egg_s
 	{
+		uint id;
 		pos_t pos;
 		team_t *team;
 		uint tick_left;
@@ -153,7 +154,7 @@
 	*/
 	typedef struct tile_s
 	{
-		client_t *player;
+		client_t **player;
 		uint inventory[NB_RESSOURCE];
 		egg_t *egg;
 	} tile_t;
@@ -172,6 +173,7 @@
 		client_t *clients;
 		team_t *teams;
 		egg_t *egg;
+		uint nb_eggs;
 	} game_t;
 
 	/**

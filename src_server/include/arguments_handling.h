@@ -12,5 +12,6 @@
 
 	bool handle_help(int argc, char **argv);
 	bool handle_args(server_t *server, int argc, char **argv);
+	bool check_arguments(server_t *server);
 
 #endif /* !ARGUMENT_HANDLING_H_ */

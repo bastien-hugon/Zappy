@@ -20,12 +20,13 @@
 */
 bool drop_egg_command(server_t *server, client_t *client)
 {
-	egg_t egg = { client->pos, \
+	egg_t egg = { server->game.nb_eggs, client->pos, \
 		client->team, 600};
 	bool ret = (list_push(&server->game.egg, &egg));
 
 	LOG("New Egg at pos: {%d %d}, team: #%s", egg.pos.x, \
 		egg.pos.y, egg.team->name);
+	server->game.nb_eggs++;
 	send_message(client->socket.fd, "ok\n");
 	return (ret);
 }
