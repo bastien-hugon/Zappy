@@ -6,11 +6,19 @@ import time
 
 from socket import Socket
 from Level1.level1 import level1
+from Level8.level8 import level8
+from General_comportement.layAnEgg import layAnEgg
+from Level2to7.level2to7 import level2to7
 
 
 def go_in_state(socket):
-    level1(1, socket)
-    print ("LEVEL 2: REACHED")
+    level = 1
+    level = level1(level, socket)
+    layAnEgg(level, socket)
+    while (level < 8):
+        level = level2to7(level, socket)
+        layAnEgg(level, socket)
+    level8(level, socket)
 
 
 def connection(port, name, machine):
