@@ -5,7 +5,7 @@ from General_comportement.inventory import get_food
 from States.survive import survive_mode
 
 
-def base_state(socket):
+def level8(socket):
     while (1):
         inventory = look_inventory(socket)
         food = get_food(inventory)

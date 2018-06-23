@@ -3,7 +3,7 @@
 from General_comportement.inventory import look_inventory
 from General_comportement.inventory import get_food
 from General_comportement.foodHandling import enough_food_incant
-from State1.search_food_incant import search_food_incant_mode
+from States.search_food_incant import search_food_incant_mode
 
 
 def layAnEgg(level, socket):
