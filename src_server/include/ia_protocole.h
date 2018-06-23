@@ -30,5 +30,8 @@
 	bool look_west(server_t *srv, client_t *client);
 	bool look_south(server_t *srv, client_t *client);
 	bool look_east(server_t *srv, client_t *client);
+	char *add_tile_to_buff(server_t *srv, int x, int y, char *buffer);
+	tile_t get_tile(server_t *srv, int x, int y);
+	char *realloc_concat(char *s1, char *s2);
 
 #endif /* !IA_PROTOCOLE_H_ */

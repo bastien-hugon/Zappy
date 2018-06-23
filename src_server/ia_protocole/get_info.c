@@ -42,4 +42,5 @@ bool client_look(server_t *srv, client_t *client)
 		case WEST:
 			return (look_west(srv, client));
 	}
+	return (false);
 }
