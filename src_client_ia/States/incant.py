@@ -19,14 +19,14 @@ def set_stones(socket, level):
         content = obj.split(' ')
         for i in range(int(content[1])):
             socket.Set(content[0])
-            resp = EmptyCacheIgnoreBroadcast(socket)
+            EmptyCacheIgnoreBroadcast(socket)
 
 
 def incant(socket, food, level):
     while food >= level + 3:
         count = 0
         SendIncantBroadcast(socket, level)
-        resp = EmptyCacheIgnoreBroadcast(socket)
+        EmptyCacheIgnoreBroadcast(socket)
         socket.Look()
         resp = EmptyCacheIgnoreBroadcast(socket)
         resp = resp[:1]
@@ -45,9 +45,10 @@ def incant(socket, food, level):
             set_stones(socket, level)
             socket.Incantation()
             resp = EmptyCacheIgnoreBroadcast(socket)
-            if (resp[0] == "Elevation underway"):
-                resp = EmptyCacheIgnoreBroadcast(socket)
-                if (resp[0] == "ko"):
+            if ("Elevation underway" in resp):
+                if len(resp) < 3:
+                    resp = EmptyCacheIgnoreBroadcast(socket)
+                if ("ko" in resp):
                     return (level)
                 else:
                     return (level + 1)
@@ -55,3 +56,4 @@ def incant(socket, food, level):
                 return (level)
         inventory = look_inventory(socket)
         food = get_food(inventory)
+    return level

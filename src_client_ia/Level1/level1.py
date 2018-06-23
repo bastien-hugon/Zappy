@@ -10,11 +10,15 @@ from General_comportement.inventory import GetLeftOverStone
 from General_comportement.ressources import GetNeededRessources
 from General_comportement.foodHandling import enough_food
 from General_comportement.foodHandling import enough_food_incant
+from States.go_to_incant_state import go_to_incant_state
 
 
-def level1(level, socket):
+def level1(lvl, socket):
+    level = lvl
     needed_stones = GetNeededRessources(level)
-    while (level == 1):
+    dire = -1
+    mess = []
+    while (level == lvl):
         inventory = look_inventory(socket)
         food = get_food(inventory)
         left_over = GetLeftOverStone(inventory, needed_stones)
@@ -25,9 +29,14 @@ def level1(level, socket):
         elif (not enough_food_incant(level, food)):
             print('MODE: search food incant')
             search_food_incant_mode(level, food, socket)
-        elif len(left_over) != 0:
+        elif (dire != -1 and level != 1):
+            print('MODE: go to incant')
+            go_to_incant_state(socket, level, food, dire, mess)
+            dire = -1
+            mess = []
+        elif len(left_over) != 0 and enough_food_incant(level, food):
             print('MODE: search stone')
-            search_stone_mode(level, food, left_over, socket)
+            dire, mess = search_stone_mode(level, food, left_over, socket)
         else:
             print('MODE: INCANT')
             level = incant(socket, food, level)

@@ -1,0 +1,1043 @@
+IngnoreBroadcast resp = ['[ food 9, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['9'] RESP = [['food 9', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+BASE:food i got: 9
+MODE: search stone
+SEARCHBROADCAST resp = ['[ food 9, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]'] mess = [] dire = -1
+FINDALL = ['9'] RESP = [['food 9', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+SEARCHBROADCAST resp = ['[ player food food food food deraumere sibur, food food food linemate deraumere, food food food food food phiras, food food food ]'] mess = [] dire = -1
+PARSE MESSAGE: 3 ['message', '6,', '13767923925380993267:INCANT:1']  ['13767923925380993267', 'INCANT', '1']
+MESSAGE CONFIRMED : 6  ['13767923925380993267', 'INCANT', '1']
+SEARCHBROADCAST resp = ['ok'] mess = ['13767923925380993267', 'INCANT', '1'] dire = 6
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+PARSE MESSAGE: 3 ['message', '3,', '7648846625878523368:INCANT:1']  ['7648846625878523368', 'INCANT', '1']
+MESSAGE CONFIRMED : 3  ['7648846625878523368', 'INCANT', '1']
+PARSE MESSAGE: 3 ['message', '7,', '9178615951049507415:INCANT:1']  ['9178615951049507415', 'INCANT', '1']
+MESSAGE CONFIRMED : 7  ['9178615951049507415', 'INCANT', '1']
+SEARCHBROADCAST resp = ['ok'] mess = ['7648846625878523368', 'INCANT', '1'] dire = 3
+SEARCHBROADCAST resp = ['[ food 9, linemate 1, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]'] mess = [] dire = -1
+Stone search: stone i got: 9
+IngnoreBroadcast resp = ['[ food 9, linemate 1, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['9'] RESP = [['food 9', 'linemate 1', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+BASE:food i got: 9
+MODE: INCANT
+IngnoreBroadcast resp = ['ok']
+IngnoreBroadcast resp = ['[ player food food food deraumere, food food food food food food food food sibur, food food food food food food phiras, food food food food food mendiane ]']
+IngnoreBroadcast resp = ['[ player food food food deraumere, food food food food food food food food food sibur, food food food food food food phiras, food food food food food mendiane ]']
+IngnoreBroadcast resp = ['ok']
+IngnoreBroadcast resp = ['ok']
+IngnoreBroadcast resp = ['ok']
+IngnoreBroadcast resp = ['ok']
+IngnoreBroadcast resp = ['ok']
+IngnoreBroadcast resp = ['Elevation underway']
+IngnoreBroadcast resp = ['Current level: 2']
+
+----------------------------------------------------------------------------
+LEVEL 2  REACHED 
+----------------------------------------------------------------------------
+
+IngnoreBroadcast resp = ['[ food 9, linemate 0, deraumere 1, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['9'] RESP = [['food 9', 'linemate 0', 'deraumere 1', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+IngnoreBroadcast resp = ['[ player linemate, food food food food food food food food food sibur, food food food food food food phiras, food food food food food mendiane, mendiane, food food food food food, food food food food food food, food food food linemate sibur mendiane mendiane, food food food food food food food food food food sibur ]']
+IngnoreBroadcast resp = ['ok']
+IngnoreBroadcast resp = ['ok']
+IngnoreBroadcast resp = ['ok']
+IngnoreBroadcast resp = ['ok']
+IngnoreBroadcast resp = ['[ food 10, linemate 0, deraumere 1, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['10'] RESP = [['food 10', 'linemate 0', 'deraumere 1', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+search food incant: food i got: 10
+IngnoreBroadcast resp = ['ok']
+IngnoreBroadcast resp = ['[ food 10, linemate 0, deraumere 1, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['10'] RESP = [['food 10', 'linemate 0', 'deraumere 1', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+BASE:food i got: 10
+MODE: search stone
+SEARCHBROADCAST resp = ['[ food 10, linemate 0, deraumere 1, sibur 0, mendiane 0, phiras 0, thystame 0 ]'] mess = [] dire = -1
+FINDALL = ['10'] RESP = [['food 10', 'linemate 0', 'deraumere 1', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+SEARCHBROADCAST resp = ['[ player food food food food food food food food sibur, food food food food food food linemate, food food food food food food food, mendiane, food food food food food food, food food food food food mendiane phiras phiras, food food food food food food sibur, food food, food food linemate ]'] mess = [] dire = -1
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+SEARCHBROADCAST resp = ['[ food 10, linemate 0, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]'] mess = [] dire = -1
+Stone search: stone i got: 10
+SEARCHBROADCAST resp = ['[ food 10, linemate 0, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]'] mess = [] dire = -1
+FINDALL = ['10'] RESP = [['food 10', 'linemate 0', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+SEARCHBROADCAST resp = ['[ player food food food food food food food food, food food food food food food linemate, food food food food food food food, mendiane, food food food food food food deraumere, food food food food food mendiane phiras phiras, food food food food food food sibur, food food, food food linemate ]'] mess = [] dire = -1
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+PARSE MESSAGE: 3 ['message', '8,', '13767923925380993267:INCANT:2']  ['13767923925380993267', 'INCANT', '2']
+MESSAGE CONFIRMED : 8  ['13767923925380993267', 'INCANT', '2']
+SEARCHBROADCAST resp = ['ok'] mess = ['13767923925380993267', 'INCANT', '2'] dire = 8
+IngnoreBroadcast resp = ['[ food 9, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['9'] RESP = [['food 9', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+BASE:food i got: 9
+MODE: search food incant
+IngnoreBroadcast resp = ['[ player food food food food food food food, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food ]']
+IngnoreBroadcast resp = ['ok']
+IngnoreBroadcast resp = ['[ food 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['10'] RESP = [['food 10', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+search food incant: food i got: 10
+IngnoreBroadcast resp = ['[ food 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['10'] RESP = [['food 10', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+BASE:food i got: 10
+MODE: go to incant
+SEARCHBROADCAST resp = ['[ food 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]'] mess = [] dire = -1
+FINDALL = ['10'] RESP = [['food 10', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+PARSE MESSAGE: 3 ['message', '7,', '13767923925380993267:INCANT:2']  ['13767923925380993267', 'INCANT', '2']
+MESSAGE CONFIRMED : 7  ['13767923925380993267', 'INCANT', '2']
+SEARCHBROADCAST resp = ['ok'] mess = ['13767923925380993267', 'INCANT', '2'] dire = 7
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+SEARCHBROADCAST resp = ['[ food 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]'] mess = [] dire = -1
+FINDALL = ['10'] RESP = [['food 10', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+PARSE MESSAGE: 3 ['message', '1,', '13767923925380993267:INCANT:2']  ['13767923925380993267', 'INCANT', '2']
+MESSAGE CONFIRMED : 1  ['13767923925380993267', 'INCANT', '2']
+SEARCHBROADCAST resp = ['ok'] mess = ['13767923925380993267', 'INCANT', '2'] dire = 1
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+PARSE MESSAGE: 3 ['message', '4,', '13767923925380993267:INCANT:2']  ['13767923925380993267', 'INCANT', '2']
+MESSAGE CONFIRMED : 4  ['13767923925380993267', 'INCANT', '2']
+SEARCHBROADCAST resp = ['ok'] mess = ['13767923925380993267', 'INCANT', '2'] dire = 4
+SEARCHBROADCAST resp = ['[ food 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]'] mess = [] dire = -1
+FINDALL = ['10'] RESP = [['food 10', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+PARSE MESSAGE: 3 ['message', '4,', '13767923925380993267:INCANT:2']  ['13767923925380993267', 'INCANT', '2']
+MESSAGE CONFIRMED : 4  ['13767923925380993267', 'INCANT', '2']
+SEARCHBROADCAST resp = ['ok'] mess = ['13767923925380993267', 'INCANT', '2'] dire = 4
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+SEARCHBROADCAST resp = ['[ food 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]'] mess = [] dire = -1
+FINDALL = ['10'] RESP = [['food 10', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+PARSE MESSAGE: 3 ['message', '6,', '13767923925380993267:INCANT:2']  ['13767923925380993267', 'INCANT', '2']
+MESSAGE CONFIRMED : 6  ['13767923925380993267', 'INCANT', '2']
+SEARCHBROADCAST resp = ['ok'] mess = ['13767923925380993267', 'INCANT', '2'] dire = 6
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+PARSE MESSAGE: 3 ['message', '8,', '13767923925380993267:INCANT:2']  ['13767923925380993267', 'INCANT', '2']
+MESSAGE CONFIRMED : 8  ['13767923925380993267', 'INCANT', '2']
+SEARCHBROADCAST resp = ['ok'] mess = ['13767923925380993267', 'INCANT', '2'] dire = 8
+SEARCHBROADCAST resp = ['[ food 9, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]'] mess = [] dire = -1
+FINDALL = ['9'] RESP = [['food 9', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+PARSE MESSAGE: 3 ['message', '7,', '13767923925380993267:INCANT:2']  ['13767923925380993267', 'INCANT', '2']
+MESSAGE CONFIRMED : 7  ['13767923925380993267', 'INCANT', '2']
+SEARCHBROADCAST resp = ['ok'] mess = ['13767923925380993267', 'INCANT', '2'] dire = 7
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+SEARCHBROADCAST resp = ['[ food 9, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]'] mess = [] dire = -1
+FINDALL = ['9'] RESP = [['food 9', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+PARSE MESSAGE: 3 ['message', '1,', '13767923925380993267:INCANT:2']  ['13767923925380993267', 'INCANT', '2']
+MESSAGE CONFIRMED : 1  ['13767923925380993267', 'INCANT', '2']
+SEARCHBROADCAST resp = ['ok'] mess = ['13767923925380993267', 'INCANT', '2'] dire = 1
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+PARSE MESSAGE: 3 ['message', '4,', '13767923925380993267:INCANT:2']  ['13767923925380993267', 'INCANT', '2']
+MESSAGE CONFIRMED : 4  ['13767923925380993267', 'INCANT', '2']
+SEARCHBROADCAST resp = ['ok'] mess = ['13767923925380993267', 'INCANT', '2'] dire = 4
+SEARCHBROADCAST resp = ['[ food 9, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]'] mess = [] dire = -1
+FINDALL = ['9'] RESP = [['food 9', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+PARSE MESSAGE: 3 ['message', '4,', '13767923925380993267:INCANT:2']  ['13767923925380993267', 'INCANT', '2']
+MESSAGE CONFIRMED : 4  ['13767923925380993267', 'INCANT', '2']
+SEARCHBROADCAST resp = ['ok'] mess = ['13767923925380993267', 'INCANT', '2'] dire = 4
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+SEARCHBROADCAST resp = ['[ food 9, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]'] mess = [] dire = -1
+FINDALL = ['9'] RESP = [['food 9', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+PARSE MESSAGE: 3 ['message', '6,', '13767923925380993267:INCANT:2']  ['13767923925380993267', 'INCANT', '2']
+MESSAGE CONFIRMED : 6  ['13767923925380993267', 'INCANT', '2']
+SEARCHBROADCAST resp = ['ok'] mess = ['13767923925380993267', 'INCANT', '2'] dire = 6
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+PARSE MESSAGE: 3 ['message', '8,', '13767923925380993267:INCANT:2']  ['13767923925380993267', 'INCANT', '2']
+MESSAGE CONFIRMED : 8  ['13767923925380993267', 'INCANT', '2']
+SEARCHBROADCAST resp = ['ok'] mess = ['13767923925380993267', 'INCANT', '2'] dire = 8
+SEARCHBROADCAST resp = ['[ food 9, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]'] mess = [] dire = -1
+FINDALL = ['9'] RESP = [['food 9', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+PARSE MESSAGE: 3 ['message', '7,', '13767923925380993267:INCANT:2']  ['13767923925380993267', 'INCANT', '2']
+MESSAGE CONFIRMED : 7  ['13767923925380993267', 'INCANT', '2']
+SEARCHBROADCAST resp = ['ok'] mess = ['13767923925380993267', 'INCANT', '2'] dire = 7
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+SEARCHBROADCAST resp = ['[ food 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]'] mess = [] dire = -1
+FINDALL = ['8'] RESP = [['food 8', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+PARSE MESSAGE: 3 ['message', '1,', '13767923925380993267:INCANT:2']  ['13767923925380993267', 'INCANT', '2']
+MESSAGE CONFIRMED : 1  ['13767923925380993267', 'INCANT', '2']
+SEARCHBROADCAST resp = ['ok'] mess = ['13767923925380993267', 'INCANT', '2'] dire = 1
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+PARSE MESSAGE: 3 ['message', '4,', '13767923925380993267:INCANT:2']  ['13767923925380993267', 'INCANT', '2']
+MESSAGE CONFIRMED : 4  ['13767923925380993267', 'INCANT', '2']
+SEARCHBROADCAST resp = ['ok'] mess = ['13767923925380993267', 'INCANT', '2'] dire = 4
+SEARCHBROADCAST resp = ['[ food 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]'] mess = [] dire = -1
+FINDALL = ['8'] RESP = [['food 8', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+PARSE MESSAGE: 3 ['message', '4,', '13767923925380993267:INCANT:2']  ['13767923925380993267', 'INCANT', '2']
+MESSAGE CONFIRMED : 4  ['13767923925380993267', 'INCANT', '2']
+SEARCHBROADCAST resp = ['ok'] mess = ['13767923925380993267', 'INCANT', '2'] dire = 4
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+SEARCHBROADCAST resp = ['[ food 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]'] mess = [] dire = -1
+FINDALL = ['8'] RESP = [['food 8', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+PARSE MESSAGE: 3 ['message', '6,', '13767923925380993267:INCANT:2']  ['13767923925380993267', 'INCANT', '2']
+MESSAGE CONFIRMED : 6  ['13767923925380993267', 'INCANT', '2']
+SEARCHBROADCAST resp = ['ok'] mess = ['13767923925380993267', 'INCANT', '2'] dire = 6
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+PARSE MESSAGE: 3 ['message', '8,', '13767923925380993267:INCANT:2']  ['13767923925380993267', 'INCANT', '2']
+MESSAGE CONFIRMED : 8  ['13767923925380993267', 'INCANT', '2']
+SEARCHBROADCAST resp = ['ok'] mess = ['13767923925380993267', 'INCANT', '2'] dire = 8
+SEARCHBROADCAST resp = ['[ food 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]'] mess = [] dire = -1
+FINDALL = ['8'] RESP = [['food 8', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+PARSE MESSAGE: 3 ['message', '7,', '13767923925380993267:INCANT:2']  ['13767923925380993267', 'INCANT', '2']
+MESSAGE CONFIRMED : 7  ['13767923925380993267', 'INCANT', '2']
+SEARCHBROADCAST resp = ['ok'] mess = ['13767923925380993267', 'INCANT', '2'] dire = 7
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+SEARCHBROADCAST resp = ['[ food 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]'] mess = [] dire = -1
+FINDALL = ['8'] RESP = [['food 8', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+PARSE MESSAGE: 3 ['message', '1,', '13767923925380993267:INCANT:2']  ['13767923925380993267', 'INCANT', '2']
+MESSAGE CONFIRMED : 1  ['13767923925380993267', 'INCANT', '2']
+SEARCHBROADCAST resp = ['ok'] mess = ['13767923925380993267', 'INCANT', '2'] dire = 1
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+PARSE MESSAGE: 3 ['message', '4,', '13767923925380993267:INCANT:2']  ['13767923925380993267', 'INCANT', '2']
+MESSAGE CONFIRMED : 4  ['13767923925380993267', 'INCANT', '2']
+SEARCHBROADCAST resp = ['ok'] mess = ['13767923925380993267', 'INCANT', '2'] dire = 4
+SEARCHBROADCAST resp = ['[ food 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]'] mess = [] dire = -1
+FINDALL = ['8'] RESP = [['food 8', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+PARSE MESSAGE: 3 ['message', '4,', '13767923925380993267:INCANT:2']  ['13767923925380993267', 'INCANT', '2']
+MESSAGE CONFIRMED : 4  ['13767923925380993267', 'INCANT', '2']
+SEARCHBROADCAST resp = ['ok'] mess = ['13767923925380993267', 'INCANT', '2'] dire = 4
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+SEARCHBROADCAST resp = ['[ food 7, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]'] mess = [] dire = -1
+FINDALL = ['7'] RESP = [['food 7', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+PARSE MESSAGE: 3 ['message', '6,', '13767923925380993267:INCANT:2']  ['13767923925380993267', 'INCANT', '2']
+MESSAGE CONFIRMED : 6  ['13767923925380993267', 'INCANT', '2']
+SEARCHBROADCAST resp = ['ok'] mess = ['13767923925380993267', 'INCANT', '2'] dire = 6
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+PARSE MESSAGE: 3 ['message', '8,', '13767923925380993267:INCANT:2']  ['13767923925380993267', 'INCANT', '2']
+MESSAGE CONFIRMED : 8  ['13767923925380993267', 'INCANT', '2']
+SEARCHBROADCAST resp = ['ok'] mess = ['13767923925380993267', 'INCANT', '2'] dire = 8
+SEARCHBROADCAST resp = ['[ food 7, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]'] mess = [] dire = -1
+FINDALL = ['7'] RESP = [['food 7', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+PARSE MESSAGE: 3 ['message', '7,', '13767923925380993267:INCANT:2']  ['13767923925380993267', 'INCANT', '2']
+MESSAGE CONFIRMED : 7  ['13767923925380993267', 'INCANT', '2']
+SEARCHBROADCAST resp = ['ok'] mess = ['13767923925380993267', 'INCANT', '2'] dire = 7
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+SEARCHBROADCAST resp = ['[ food 7, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]'] mess = [] dire = -1
+FINDALL = ['7'] RESP = [['food 7', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+PARSE MESSAGE: 3 ['message', '1,', '13767923925380993267:INCANT:2']  ['13767923925380993267', 'INCANT', '2']
+MESSAGE CONFIRMED : 1  ['13767923925380993267', 'INCANT', '2']
+SEARCHBROADCAST resp = ['ok'] mess = ['13767923925380993267', 'INCANT', '2'] dire = 1
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+PARSE MESSAGE: 3 ['message', '4,', '13767923925380993267:INCANT:2']  ['13767923925380993267', 'INCANT', '2']
+MESSAGE CONFIRMED : 4  ['13767923925380993267', 'INCANT', '2']
+SEARCHBROADCAST resp = ['ok'] mess = ['13767923925380993267', 'INCANT', '2'] dire = 4
+SEARCHBROADCAST resp = ['[ food 7, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]'] mess = [] dire = -1
+FINDALL = ['7'] RESP = [['food 7', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+PARSE MESSAGE: 3 ['message', '4,', '13767923925380993267:INCANT:2']  ['13767923925380993267', 'INCANT', '2']
+MESSAGE CONFIRMED : 4  ['13767923925380993267', 'INCANT', '2']
+SEARCHBROADCAST resp = ['ok'] mess = ['13767923925380993267', 'INCANT', '2'] dire = 4
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+SEARCHBROADCAST resp = ['[ food 7, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]'] mess = [] dire = -1
+FINDALL = ['7'] RESP = [['food 7', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+PARSE MESSAGE: 3 ['message', '6,', '13767923925380993267:INCANT:2']  ['13767923925380993267', 'INCANT', '2']
+MESSAGE CONFIRMED : 6  ['13767923925380993267', 'INCANT', '2']
+SEARCHBROADCAST resp = ['ok'] mess = ['13767923925380993267', 'INCANT', '2'] dire = 6
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+PARSE MESSAGE: 3 ['message', '8,', '13767923925380993267:INCANT:2']  ['13767923925380993267', 'INCANT', '2']
+MESSAGE CONFIRMED : 8  ['13767923925380993267', 'INCANT', '2']
+SEARCHBROADCAST resp = ['ok'] mess = ['13767923925380993267', 'INCANT', '2'] dire = 8
+SEARCHBROADCAST resp = ['[ food 6, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]'] mess = [] dire = -1
+FINDALL = ['6'] RESP = [['food 6', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+PARSE MESSAGE: 3 ['message', '7,', '13767923925380993267:INCANT:2']  ['13767923925380993267', 'INCANT', '2']
+MESSAGE CONFIRMED : 7  ['13767923925380993267', 'INCANT', '2']
+SEARCHBROADCAST resp = ['ok'] mess = ['13767923925380993267', 'INCANT', '2'] dire = 7
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+SEARCHBROADCAST resp = ['[ food 6, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]'] mess = [] dire = -1
+FINDALL = ['6'] RESP = [['food 6', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+PARSE MESSAGE: 3 ['message', '1,', '13767923925380993267:INCANT:2']  ['13767923925380993267', 'INCANT', '2']
+MESSAGE CONFIRMED : 1  ['13767923925380993267', 'INCANT', '2']
+SEARCHBROADCAST resp = ['ok'] mess = ['13767923925380993267', 'INCANT', '2'] dire = 1
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+PARSE MESSAGE: 3 ['message', '4,', '13767923925380993267:INCANT:2']  ['13767923925380993267', 'INCANT', '2']
+MESSAGE CONFIRMED : 4  ['13767923925380993267', 'INCANT', '2']
+SEARCHBROADCAST resp = ['ok'] mess = ['13767923925380993267', 'INCANT', '2'] dire = 4
+SEARCHBROADCAST resp = ['[ food 6, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]'] mess = [] dire = -1
+FINDALL = ['6'] RESP = [['food 6', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+PARSE MESSAGE: 3 ['message', '4,', '13767923925380993267:INCANT:2']  ['13767923925380993267', 'INCANT', '2']
+MESSAGE CONFIRMED : 4  ['13767923925380993267', 'INCANT', '2']
+SEARCHBROADCAST resp = ['ok'] mess = ['13767923925380993267', 'INCANT', '2'] dire = 4
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+SEARCHBROADCAST resp = ['[ food 6, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]'] mess = [] dire = -1
+FINDALL = ['6'] RESP = [['food 6', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+PARSE MESSAGE: 3 ['message', '6,', '13767923925380993267:INCANT:2']  ['13767923925380993267', 'INCANT', '2']
+MESSAGE CONFIRMED : 6  ['13767923925380993267', 'INCANT', '2']
+SEARCHBROADCAST resp = ['ok'] mess = ['13767923925380993267', 'INCANT', '2'] dire = 6
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+PARSE MESSAGE: 3 ['message', '8,', '13767923925380993267:INCANT:2']  ['13767923925380993267', 'INCANT', '2']
+MESSAGE CONFIRMED : 8  ['13767923925380993267', 'INCANT', '2']
+SEARCHBROADCAST resp = ['ok'] mess = ['13767923925380993267', 'INCANT', '2'] dire = 8
+SEARCHBROADCAST resp = ['[ food 6, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]'] mess = [] dire = -1
+FINDALL = ['6'] RESP = [['food 6', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+PARSE MESSAGE: 3 ['message', '7,', '13767923925380993267:INCANT:2']  ['13767923925380993267', 'INCANT', '2']
+MESSAGE CONFIRMED : 7  ['13767923925380993267', 'INCANT', '2']
+SEARCHBROADCAST resp = ['ok'] mess = ['13767923925380993267', 'INCANT', '2'] dire = 7
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+SEARCHBROADCAST resp = ['[ food 6, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]'] mess = [] dire = -1
+FINDALL = ['6'] RESP = [['food 6', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+PARSE MESSAGE: 3 ['message', '1,', '13767923925380993267:INCANT:2']  ['13767923925380993267', 'INCANT', '2']
+MESSAGE CONFIRMED : 1  ['13767923925380993267', 'INCANT', '2']
+SEARCHBROADCAST resp = ['ok'] mess = ['13767923925380993267', 'INCANT', '2'] dire = 1
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+PARSE MESSAGE: 3 ['message', '4,', '13767923925380993267:INCANT:2']  ['13767923925380993267', 'INCANT', '2']
+MESSAGE CONFIRMED : 4  ['13767923925380993267', 'INCANT', '2']
+SEARCHBROADCAST resp = ['ok'] mess = ['13767923925380993267', 'INCANT', '2'] dire = 4
+SEARCHBROADCAST resp = ['[ food 5, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]'] mess = [] dire = -1
+FINDALL = ['5'] RESP = [['food 5', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+PARSE MESSAGE: 3 ['message', '4,', '13767923925380993267:INCANT:2']  ['13767923925380993267', 'INCANT', '2']
+MESSAGE CONFIRMED : 4  ['13767923925380993267', 'INCANT', '2']
+SEARCHBROADCAST resp = ['ok'] mess = ['13767923925380993267', 'INCANT', '2'] dire = 4
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+SEARCHBROADCAST resp = ['[ food 5, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]'] mess = [] dire = -1
+FINDALL = ['5'] RESP = [['food 5', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+PARSE MESSAGE: 3 ['message', '6,', '13767923925380993267:INCANT:2']  ['13767923925380993267', 'INCANT', '2']
+MESSAGE CONFIRMED : 6  ['13767923925380993267', 'INCANT', '2']
+SEARCHBROADCAST resp = ['ok'] mess = ['13767923925380993267', 'INCANT', '2'] dire = 6
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+PARSE MESSAGE: 3 ['message', '8,', '13767923925380993267:INCANT:2']  ['13767923925380993267', 'INCANT', '2']
+MESSAGE CONFIRMED : 8  ['13767923925380993267', 'INCANT', '2']
+SEARCHBROADCAST resp = ['ok'] mess = ['13767923925380993267', 'INCANT', '2'] dire = 8
+SEARCHBROADCAST resp = ['[ food 5, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]'] mess = [] dire = -1
+FINDALL = ['5'] RESP = [['food 5', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+PARSE MESSAGE: 3 ['message', '7,', '13767923925380993267:INCANT:2']  ['13767923925380993267', 'INCANT', '2']
+MESSAGE CONFIRMED : 7  ['13767923925380993267', 'INCANT', '2']
+SEARCHBROADCAST resp = ['ok'] mess = ['13767923925380993267', 'INCANT', '2'] dire = 7
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+SEARCHBROADCAST resp = ['[ food 5, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]'] mess = [] dire = -1
+FINDALL = ['5'] RESP = [['food 5', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+PARSE MESSAGE: 3 ['message', '1,', '13767923925380993267:INCANT:2']  ['13767923925380993267', 'INCANT', '2']
+MESSAGE CONFIRMED : 1  ['13767923925380993267', 'INCANT', '2']
+SEARCHBROADCAST resp = ['ok'] mess = ['13767923925380993267', 'INCANT', '2'] dire = 1
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+PARSE MESSAGE: 3 ['message', '4,', '13767923925380993267:INCANT:2']  ['13767923925380993267', 'INCANT', '2']
+MESSAGE CONFIRMED : 4  ['13767923925380993267', 'INCANT', '2']
+SEARCHBROADCAST resp = ['ok'] mess = ['13767923925380993267', 'INCANT', '2'] dire = 4
+SEARCHBROADCAST resp = ['[ food 5, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]'] mess = [] dire = -1
+FINDALL = ['5'] RESP = [['food 5', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+PARSE MESSAGE: 3 ['message', '4,', '13767923925380993267:INCANT:2']  ['13767923925380993267', 'INCANT', '2']
+MESSAGE CONFIRMED : 4  ['13767923925380993267', 'INCANT', '2']
+SEARCHBROADCAST resp = ['ok'] mess = ['13767923925380993267', 'INCANT', '2'] dire = 4
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+SEARCHBROADCAST resp = ['[ food 4, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]'] mess = [] dire = -1
+FINDALL = ['4'] RESP = [['food 4', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+PARSE MESSAGE: 3 ['message', '6,', '13767923925380993267:INCANT:2']  ['13767923925380993267', 'INCANT', '2']
+MESSAGE CONFIRMED : 6  ['13767923925380993267', 'INCANT', '2']
+SEARCHBROADCAST resp = ['ok'] mess = ['13767923925380993267', 'INCANT', '2'] dire = 6
+SEARCHBROADCAST resp = ['ok'] mess = [] dire = -1
+PARSE MESSAGE: 3 ['message', '8,', '13767923925380993267:INCANT:2']  ['13767923925380993267', 'INCANT', '2']
+MESSAGE CONFIRMED : 8  ['13767923925380993267', 'INCANT', '2']
+SEARCHBROADCAST resp = ['ok'] mess = ['13767923925380993267', 'INCANT', '2'] dire = 8
+IngnoreBroadcast resp = ['[ food 4, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['4'] RESP = [['food 4', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+BASE:food i got: 4
+MODE: search food incant
+IngnoreBroadcast resp = ['[ player food food food food food food, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food ]']
+IngnoreBroadcast resp = ['ok']
+IngnoreBroadcast resp = ['[ food 5, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['5'] RESP = [['food 5', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+search food incant: food i got: 5
+IngnoreBroadcast resp = ['[ player food food food food food, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food ]']
+IngnoreBroadcast resp = ['ok']
+IngnoreBroadcast resp = ['[ food 6, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['6'] RESP = [['food 6', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+search food incant: food i got: 6
+IngnoreBroadcast resp = ['[ player food food food food, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food ]']
+IngnoreBroadcast resp = ['ok']
+IngnoreBroadcast resp = ['[ food 7, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['7'] RESP = [['food 7', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+search food incant: food i got: 7
+IngnoreBroadcast resp = ['[ player food food food, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food ]']
+IngnoreBroadcast resp = ['ok']
+IngnoreBroadcast resp = ['[ food 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['8'] RESP = [['food 8', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+search food incant: food i got: 8
+IngnoreBroadcast resp = ['[ player food food, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food ]']
+IngnoreBroadcast resp = ['ok']
+IngnoreBroadcast resp = ['[ food 9, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['9'] RESP = [['food 9', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+search food incant: food i got: 9
+IngnoreBroadcast resp = ['[ player food, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food ]']COMMAND : Yellow
+COMMAND : Inventory
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Forward
+COMMAND : Left
+COMMAND : Forward
+COMMAND : Take linemate
+COMMAND : Inventory
+COMMAND : Inventory
+COMMAND : Broadcast 30595386503601565690:INCANT:1
+COMMAND : Look
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Take food
+COMMAND : Take food
+COMMAND : Take deraumere
+COMMAND : Set linemate
+COMMAND : Incantation
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Forward
+COMMAND : Left
+COMMAND : Forward
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Fork
+COMMAND : Inventory
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take sibur
+COMMAND : Inventory
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Forward
+COMMAND : Left
+COMMAND : Forward
+COMMAND : Take linemate
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Inventory
+COMMAND : Inventory
+COMMAND : Forward
+COMMAND : Right
+COMMAND : Forward
+COMMAND : Inventory
+COMMAND : Forward
+COMMAND : Right
+COMMAND : Forward
+COMMAND : Inventory
+COMMAND : Forward
+COMMAND : Right
+COMMAND : Forward
+COMMAND : Inventory
+COMMAND : Forward
+COMMAND : Right
+COMMAND : Forward
+COMMAND : Inventory
+COMMAND : Forward
+COMMAND : Right
+COMMAND : Forward
+COMMAND : Inventory
+COMMAND : Forward
+COMMAND : Right
+COMMAND : Forward
+COMMAND : Inventory
+COMMAND : Forward
+COMMAND : Right
+COMMAND : Forward
+COMMAND : Inventory
+COMMAND : Forward
+COMMAND : Right
+COMMAND : Forward
+COMMAND : Inventory
+COMMAND : Forward
+COMMAND : Right
+COMMAND : Forward
+COMMAND : Inventory
+COMMAND : Forward
+COMMAND : Right
+COMMAND : Forward
+COMMAND : Inventory
+COMMAND : Forward
+COMMAND : Right
+COMMAND : Forward
+COMMAND : Inventory
+COMMAND : Forward
+COMMAND : Right
+COMMAND : Forward
+COMMAND : Inventory
+COMMAND : Forward
+COMMAND : Right
+COMMAND : Forward
+COMMAND : Inventory
+COMMAND : Forward
+COMMAND : Right
+COMMAND : Forward
+COMMAND : Inventory
+COMMAND : Forward
+COMMAND : Right
+COMMAND : Forward
+COMMAND : Inventory
+COMMAND : Forward
+COMMAND : Right
+COMMAND : Forward
+COMMAND : Inventory
+COMMAND : Forward
+COMMAND : Right
+COMMAND : Forward
+COMMAND : Inventory
+COMMAND : Forward
+COMMAND : Right
+COMMAND : Forward
+COMMAND : Inventory
+COMMAND : Forward
+COMMAND : Right
+COMMAND : Forward
+COMMAND : Inventory
+COMMAND : Forward
+COMMAND : Right
+COMMAND : Forward
+COMMAND : Inventory
+COMMAND : Forward
+COMMAND : Right
+COMMAND : Forward
+COMMAND : Inventory
+COMMAND : Forward
+COMMAND : Right
+COMMAND : Forward
+COMMAND : Inventory
+COMMAND : Forward
+COMMAND : Right
+COMMAND : Forward
+COMMAND : Inventory
+COMMAND : Forward
+COMMAND : Right
+COMMAND : Forward
+COMMAND : Inventory
+COMMAND : Forward
+COMMAND : Right
+COMMAND : Forward
+COMMAND : Inventory
+COMMAND : Forward
+COMMAND : Right
+COMMAND : Forward
+COMMAND : Inventory
+COMMAND : Forward
+COMMAND : Right
+COMMAND : Forward
+COMMAND : Inventory
+COMMAND : Forward
+COMMAND : Right
+COMMAND : Forward
+COMMAND : Inventory
+COMMAND : Forward
+COMMAND : Right
+COMMAND : Forward
+COMMAND : Inventory
+COMMAND : Forward
+COMMAND : Right
+COMMAND : Forward
+COMMAND : Inventory
+COMMAND : Forward
+COMMAND : Right
+COMMAND : Forward
+COMMAND : Inventory
+COMMAND : Forward
+COMMAND : Right
+COMMAND : Forward
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Inventory
+COMMAND : Broadcast 30595386503601565690:INCANT:2
+COMMAND : Look
+COMMAND : Inventory
+COMMAND : Broadcast 30595386503601565690:INCANT:2
+COMMAND : Look
+COMMAND : Inventory
+COMMAND : Broadcast 30595386503601565690:INCANT:2
+COMMAND : Look
+COMMAND : Inventory
+COMMAND : Broadcast 30595386503601565690:INCANT:2
+COMMAND : Look
+COMMAND : Inventory
+COMMAND : Broadcast 30595386503601565690:INCANT:2
+COMMAND : Look
+COMMAND : Inventory
+COMMAND : Broadcast 30595386503601565690:INCANT:2
+COMMAND : Look
+COMMAND : Inventory
+COMMAND : Broadcast 30595386503601565690:INCANT:2
+COMMAND : Look
+COMMAND 
+IngnoreBroadcast resp = ['ok']
+IngnoreBroadcast resp = ['[ food 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['10'] RESP = [['food 10', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+search food incant: food i got: 10
+IngnoreBroadcast resp = ['[ food 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['10'] RESP = [['food 10', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+BASE:food i got: 10
+MODE: INCANT
+IngnoreBroadcast resp = ['ok']
+IngnoreBroadcast resp = ['[ player, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food ]']
+IngnoreBroadcast resp = ['[ food 9, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['9'] RESP = [['food 9', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+IngnoreBroadcast resp = ['ok']
+IngnoreBroadcast resp = ['[ player, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food ]']
+IngnoreBroadcast resp = ['[ food 9, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['9'] RESP = [['food 9', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+IngnoreBroadcast resp = ['ok']
+IngnoreBroadcast resp = ['[ player, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food ]']
+IngnoreBroadcast resp = ['[ food 9, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['9'] RESP = [['food 9', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+IngnoreBroadcast resp = ['ok']
+IngnoreBroadcast resp = ['[ player, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food ]']
+IngnoreBroadcast resp = ['[ food 9, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['9'] RESP = [['food 9', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+IngnoreBroadcast resp = ['ok']
+IngnoreBroadcast resp = ['[ player, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food ]']
+IngnoreBroadcast resp = ['[ food 9, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['9'] RESP = [['food 9', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+IngnoreBroadcast resp = ['ok']
+IngnoreBroadcast resp = ['[ player, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food ]']
+IngnoreBroadcast resp = ['[ food 9, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['9'] RESP = [['food 9', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+IngnoreBroadcast resp = ['ok']
+IngnoreBroadcast resp = ['[ player, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food ]']
+IngnoreBroadcast resp = ['[ food 9, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['9'] RESP = [['food 9', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+IngnoreBroadcast resp = ['ok']
+IngnoreBroadcast resp = ['[ player, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food ]']
+IngnoreBroadcast resp = ['[ food 9, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['9'] RESP = [['food 9', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+IngnoreBroadcast resp = ['ok']
+IngnoreBroadcast resp = ['[ player, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food ]']
+IngnoreBroadcast resp = ['[ food 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['8'] RESP = [['food 8', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+IngnoreBroadcast resp = ['ok']
+IngnoreBroadcast resp = ['[ player, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food ]']
+IngnoreBroadcast resp = ['[ food 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['8'] RESP = [['food 8', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+IngnoreBroadcast resp = ['ok']
+IngnoreBroadcast resp = ['[ player, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food ]']
+IngnoreBroadcast resp = ['[ food 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['8'] RESP = [['food 8', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+IngnoreBroadcast resp = ['ok']
+IngnoreBroadcast resp = ['[ player, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food ]']
+IngnoreBroadcast resp = ['[ food 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['8'] RESP = [['food 8', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+IngnoreBroadcast resp = ['ok']
+IngnoreBroadcast resp = ['[ player, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food ]']
+IngnoreBroadcast resp = ['[ food 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['8'] RESP = [['food 8', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+IngnoreBroadcast resp = ['ok']
+IngnoreBroadcast resp = ['[ player, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food ]']
+IngnoreBroadcast resp = ['[ food 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['8'] RESP = [['food 8', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+IngnoreBroadcast resp = ['ok']
+IngnoreBroadcast resp = ['[ player, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food food ]']
+IngnoreBroadcast resp = ['[ food 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['8'] RESP = [['food 8', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+IngnoreBroadcast resp = ['ok']
+IngnoreBroadcast resp = ['[ player, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food food ]']
+IngnoreBroadcast resp = ['[ food 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['8'] RESP = [['food 8', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+IngnoreBroadcast resp = ['ok']
+IngnoreBroadcast resp = ['[ player, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food food ]']
+IngnoreBroadcast resp = ['[ food 7, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['7'] RESP = [['food 7', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+IngnoreBroadcast resp = ['ok']
+IngnoreBroadcast resp = ['[ player, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food food ]']
+IngnoreBroadcast resp = ['[ food 7, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['7'] RESP = [['food 7', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+IngnoreBroadcast resp = ['ok']
+IngnoreBroadcast resp = ['[ player, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food food ]']
+IngnoreBroadcast resp = ['[ food 7, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['7'] RESP = [['food 7', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+IngnoreBroadcast resp = ['ok']
+IngnoreBroadcast resp = ['[ player, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food food ]']
+IngnoreBroadcast resp = ['[ food 7, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['7'] RESP = [['food 7', 'linemate 1', 'deraumere 1', 'sibur 1', 'mendiane 0', 'phiras 0', 'thystame 0']]
+IngnoreBroadcast resp = ['ok']
+IngnoreBroadcast resp = ['[ player player, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food food ]']
+IngnoreBroadcast resp = ['[ player, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food food ]']
+IngnoreBroadcast resp = ['ok']
+IngnoreBroadcast resp = ['ok']
+IngnoreBroadcast resp = ['ok']
+IngnoreBroadcast resp = ['ko']
+IngnoreBroadcast resp = ['ko']
+FINDALL = [] RESP = ['ko']
+BASE:food i got: 0
+MODE: survive
+IngnoreBroadcast resp = ['[ food 4, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ player linemate deraumere sibur, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food food ]']
+IngnoreBroadcast resp = ['ko']
+FINDALL = [] RESP = ['ko']
+SURVIVE: food i got: 0
+IngnoreBroadcast resp = ['[ food 4, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ player linemate deraumere sibur, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food food ]']
+IngnoreBroadcast resp = ['ko']
+FINDALL = [] RESP = ['ko']
+SURVIVE: food i got: 0
+IngnoreBroadcast resp = ['[ food 4, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ player linemate deraumere sibur, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food food ]']
+IngnoreBroadcast resp = ['ko']
+FINDALL = [] RESP = ['ko']
+SURVIVE: food i got: 0
+IngnoreBroadcast resp = ['[ food 4, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ player linemate deraumere sibur, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food food ]']
+IngnoreBroadcast resp = ['ko']
+FINDALL = [] RESP = ['ko']
+SURVIVE: food i got: 0
+IngnoreBroadcast resp = ['[ food 4, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ player linemate deraumere sibur, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food food ]']
+IngnoreBroadcast resp = ['ko']
+FINDALL = [] RESP = ['ko']
+SURVIVE: food i got: 0
+IngnoreBroadcast resp = ['[ food 4, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ player linemate deraumere sibur, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food food ]']
+IngnoreBroadcast resp = ['ko']
+FINDALL = [] RESP = ['ko']
+SURVIVE: food i got: 0
+IngnoreBroadcast resp = ['[ food 4, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ player linemate deraumere sibur, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food food ]']
+IngnoreBroadcast resp = ['ko']
+FINDALL = [] RESP = ['ko']
+SURVIVE: food i got: 0
+IngnoreBroadcast resp = ['[ food 3, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ player linemate deraumere sibur, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food food ]']
+IngnoreBroadcast resp = ['ko']
+FINDALL = [] RESP = ['ko']
+SURVIVE: food i got: 0
+IngnoreBroadcast resp = ['[ food 3, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ player linemate deraumere sibur, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food food ]']
+IngnoreBroadcast resp = ['ko']
+FINDALL = [] RESP = ['ko']
+SURVIVE: food i got: 0
+IngnoreBroadcast resp = ['[ food 3, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ player linemate deraumere sibur, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food food ]']
+IngnoreBroadcast resp = ['ko']
+FINDALL = [] RESP = ['ko']
+SURVIVE: food i got: 0
+IngnoreBroadcast resp = ['[ food 3, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ player linemate deraumere sibur, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food food ]']
+IngnoreBroadcast resp = ['ko']
+FINDALL = [] RESP = ['ko']
+SURVIVE: food i got: 0
+IngnoreBroadcast resp = ['[ food 3, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ player linemate deraumere sibur, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food food ]']
+IngnoreBroadcast resp = ['ko']
+FINDALL = [] RESP = ['ko']
+SURVIVE: food i got: 0
+IngnoreBroadcast resp = ['[ food 3, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ player linemate deraumere sibur, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food food ]']
+IngnoreBroadcast resp = ['ko']
+FINDALL = [] RESP = ['ko']
+SURVIVE: food i got: 0
+IngnoreBroadcast resp = ['[ food 3, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ player linemate deraumere sibur, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food food ]']
+IngnoreBroadcast resp = ['ko']
+FINDALL = [] RESP = ['ko']
+SURVIVE: food i got: 0
+IngnoreBroadcast resp = ['[ food 3, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ player linemate deraumere sibur, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food food ]']
+IngnoreBroadcast resp = ['ko']
+FINDALL = [] RESP = ['ko']
+SURVIVE: food i got: 0
+IngnoreBroadcast resp = ['[ food 2, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ player linemate deraumere sibur, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food food ]']
+IngnoreBroadcast resp = ['ko']
+FINDALL = [] RESP = ['ko']
+SURVIVE: food i got: 0
+IngnoreBroadcast resp = ['[ food 2, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ player linemate deraumere sibur, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food food ]']
+IngnoreBroadcast resp = ['ko']
+FINDALL = [] RESP = ['ko']
+SURVIVE: food i got: 0
+IngnoreBroadcast resp = ['[ food 2, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ player linemate deraumere sibur, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food food ]']
+IngnoreBroadcast resp = ['ko']
+FINDALL = [] RESP = ['ko']
+SURVIVE: food i got: 0
+IngnoreBroadcast resp = ['[ food 2, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ player linemate deraumere sibur, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food food ]']
+IngnoreBroadcast resp = ['ko']
+FINDALL = [] RESP = ['ko']
+SURVIVE: food i got: 0
+IngnoreBroadcast resp = ['[ food 2, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ player linemate deraumere sibur, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food food ]']
+IngnoreBroadcast resp = ['ko']
+FINDALL = [] RESP = ['ko']
+SURVIVE: food i got: 0
+IngnoreBroadcast resp = ['[ food 2, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ player linemate deraumere sibur, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food food ]']
+IngnoreBroadcast resp = ['ko']
+FINDALL = [] RESP = ['ko']
+SURVIVE: food i got: 0
+IngnoreBroadcast resp = ['[ food 2, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ player linemate deraumere sibur, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food food ]']
+IngnoreBroadcast resp = ['ko']
+FINDALL = [] RESP = ['ko']
+SURVIVE: food i got: 0
+IngnoreBroadcast resp = ['[ food 2, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ player linemate deraumere sibur, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food food ]']
+IngnoreBroadcast resp = ['ko']
+FINDALL = [] RESP = ['ko']
+SURVIVE: food i got: 0
+IngnoreBroadcast resp = ['[ food 2, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ player linemate deraumere sibur, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food food ]']
+IngnoreBroadcast resp = ['ko']
+FINDALL = [] RESP = ['ko']
+SURVIVE: food i got: 0
+IngnoreBroadcast resp = ['[ food 1, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ player linemate deraumere sibur, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food food ]']
+IngnoreBroadcast resp = ['ko']
+FINDALL = [] RESP = ['ko']
+SURVIVE: food i got: 0
+IngnoreBroadcast resp = ['[ food 1, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ player linemate deraumere sibur, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food food ]']
+IngnoreBroadcast resp = ['ko']
+FINDALL = [] RESP = ['ko']
+SURVIVE: food i got: 0
+IngnoreBroadcast resp = ['[ food 1, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ player linemate deraumere sibur, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food food ]']
+IngnoreBroadcast resp = ['ko']
+FINDALL = [] RESP = ['ko']
+SURVIVE: food i got: 0
+IngnoreBroadcast resp = ['[ food 1, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ player linemate deraumere sibur, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food food ]']
+IngnoreBroadcast resp = ['ko']
+FINDALL = [] RESP = ['ko']
+SURVIVE: food i got: 0
+IngnoreBroadcast resp = ['[ food 1, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ player linemate deraumere sibur, food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food food ]']
+IngnoreBroadcast resp = ['ko']
+FINDALL = [] RESP = ['ko']
+SURVIVE: food i got: 0
+IngnoreBroadcast resp = ['[ food 1, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ player linemate deraumere sibur, food food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food food linemate linemate linemate, food food food food food food food food, food food food food food, food food food food food, food food food food food food food ]']
+IngnoreBroadcast resp = ['ko']
+FINDALL = [] RESP = ['ko']
+SURVIVE: food i got: 0
+IngnoreBroadcast resp = ['[ food 1, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ player linemate deraumere sibur, food food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food food linemate linemate linemate, food food food food food food food food food, food food food food food, food food food food food, food food food food food food food ]']
+IngnoreBroadcast resp = ['ko']
+FINDALL = [] RESP = ['ko']
+SURVIVE: food i got: 0
+IngnoreBroadcast resp = ['[ food 1, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ player linemate deraumere sibur, food food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food food linemate linemate linemate, food food food food food food food food food, food food food food food, food food food food food, food food food food food food food ]']
+IngnoreBroadcast resp = ['ko']
+FINDALL = [] RESP = ['ko']
+SURVIVE: food i got: 0
+IngnoreBroadcast resp = ['[ food 0, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ player linemate deraumere sibur, food food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food food linemate linemate linemate, food food food food food food food food food, food food food food food, food food food food food, food food food food food food food ]']
+IngnoreBroadcast resp = ['ko']
+FINDALL = [] RESP = ['ko']
+SURVIVE: food i got: 0
+IngnoreBroadcast resp = ['[ food 0, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ player linemate deraumere sibur, food food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food food linemate linemate linemate, food food food food food food food food food, food food food food food, food food food food food, food food food food food food food ]']
+IngnoreBroadcast resp = ['ko']
+FINDALL = [] RESP = ['ko']
+SURVIVE: food i got: 0
+IngnoreBroadcast resp = ['[ food 0, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ player linemate deraumere sibur, food food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food food linemate linemate linemate, food food food food food food food food food, food food food food food, food food food food food, food food food food food food food ]']
+IngnoreBroadcast resp = ['ko']
+FINDALL = [] RESP = ['ko']
+SURVIVE: food i got: 0
+IngnoreBroadcast resp = ['[ food 0, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ player linemate deraumere sibur, food food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food food linemate linemate linemate, food food food food food food food food food, food food food food food, food food food food food, food food food food food food food ]']
+IngnoreBroadcast resp = ['ko']
+FINDALL = [] RESP = ['ko']
+SURVIVE: food i got: 0
+IngnoreBroadcast resp = ['[ food 0, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ player linemate deraumere sibur, food food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food food linemate linemate linemate, food food food food food food food food food, food food food food food, food food food food food, food food food food food food food ]']
+IngnoreBroadcast resp = ['ko']
+FINDALL = [] RESP = ['ko']
+SURVIVE: food i got: 0
+IngnoreBroadcast resp = ['[ food 0, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ player linemate deraumere sibur, food food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food food linemate linemate linemate, food food food food food food food food food, food food food food food, food food food food food, food food food food food food food ]']
+IngnoreBroadcast resp = ['ko']
+FINDALL = [] RESP = ['ko']
+SURVIVE: food i got: 0
+IngnoreBroadcast resp = ['[ food 0, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ player linemate deraumere sibur, food food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food food linemate linemate linemate, food food food food food food food food food, food food food food food, food food food food food, food food food food food food food ]']
+IngnoreBroadcast resp = ['ko']
+FINDALL = [] RESP = ['ko']
+SURVIVE: food i got: 0
+IngnoreBroadcast resp = ['[ food 0, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ player linemate deraumere sibur, food food food food food deraumere sibur, food food linemate, food food food food food food deraumere, food food food food linemate linemate linemate, food food food food food food food food food, food food food food food, food food food food food, food food food food food food food ]']
+Dead
+: Inventory
+COMMAND : Broadcast 30595386503601565690:INCANT:2
+COMMAND : Look
+COMMAND : Inventory
+COMMAND : Broadcast 30595386503601565690:INCANT:2
+COMMAND : Look
+COMMAND : Inventory
+COMMAND : Broadcast 30595386503601565690:INCANT:2
+COMMAND : Look
+COMMAND : Inventory
+COMMAND : Broadcast 30595386503601565690:INCANT:2
+COMMAND : Look
+COMMAND : Inventory
+COMMAND : Broadcast 30595386503601565690:INCANT:2
+COMMAND : Look
+COMMAND : Inventory
+COMMAND : Broadcast 30595386503601565690:INCANT:2
+COMMAND : Look
+COMMAND : Inventory
+COMMAND : Broadcast 30595386503601565690:INCANT:2
+COMMAND : Look
+COMMAND : Inventory
+COMMAND : Broadcast 30595386503601565690:INCANT:2
+COMMAND : Look
+COMMAND : Inventory
+COMMAND : Broadcast 30595386503601565690:INCANT:2
+COMMAND : Look
+COMMAND : Inventory
+COMMAND : Broadcast 30595386503601565690:INCANT:2
+COMMAND : Look
+COMMAND : Inventory
+COMMAND : Broadcast 30595386503601565690:INCANT:2
+COMMAND : Look
+COMMAND : Inventory
+COMMAND : Broadcast 30595386503601565690:INCANT:2
+COMMAND : Look
+COMMAND : Inventory
+COMMAND : Broadcast 30595386503601565690:INCANT:2
+COMMAND : Look
+COMMAND : Inventory
+COMMAND : Broadcast 30595386503601565690:INCANT:2
+COMMAND : Look
+COMMAND : Look
+COMMAND : Set linemate
+COMMAND : Set deraumere
+COMMAND : Set sibur
+COMMAND : Incantation
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory

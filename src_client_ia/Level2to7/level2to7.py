@@ -11,7 +11,6 @@ from General_comportement.ressources import GetNeededRessources
 
 
 def level2to7(level, socket):
-    #baby
     needed_stones = GetNeededRessources(level)
     while (level != 8):
         inventory = look_inventory(socket)

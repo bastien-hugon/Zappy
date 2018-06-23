@@ -19,7 +19,7 @@ from General_comportement.check_dead import check_dead
 #
 # @brief: class that handles all the socket interaction with the server
 #
-class Socket:
+class SocketInteraction:
 
     #
     # @brief: Function that inits the class. It inits the C sockets module,
@@ -46,7 +46,7 @@ class Socket:
             response = self.ReadSocket()
             self.nbplaces = int(response[0])
         self.id = self.GenerateRandomId()
-        self.target_id = []
+        self.target_id = ""
 
     #
     # @brief: Function that creates the socket and ask for connection
@@ -210,6 +210,7 @@ class Socket:
     #
     def ReadSocket(self):
         command = sockets.get_fd_activity(self.fd).split('\n')
+        del command[-1]
         return (command)
 
     #
