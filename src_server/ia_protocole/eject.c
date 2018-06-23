@@ -60,8 +60,8 @@ dir_e invert_dir(dir_e dir)
 * @param client [in] the client who eject
 * @param ejected_clients [in] the ejected clients list
 */
-void send_message_to_ejected_clients_and_cancel(client_t *client, \
-	client_t **ejected_clients)
+void send_message_to_ejected_clients_and_cancel(server_t *srv, \
+client_t *client, client_t **ejected_clients)
 {
 	int direction = 0;
 	int absolute_direction = invert_dir(dir_to_absolute_direction( \
@@ -71,9 +71,10 @@ void send_message_to_ejected_clients_and_cancel(client_t *client, \
 		if (ejected_clients != NULL) {
 			direction = get_direction_by_player( \
 				absolute_direction, *ejected_clients);
-			send_message((*ejected_clients)->socket.fd, "Eject %d", \
-				direction);
+			send_message((*ejected_clients)->socket.fd, \
+			"Eject %d", direction);
 			cancel_client_action(*ejected_clients);
+			gfx_send_ppo(srv, *ejected_clients);
 		}
 	} while (list_next(&ejected_clients));
 }
@@ -117,7 +118,7 @@ bool eject_command(server_t *server, client_t *client)
 		send_message(client->socket.fd, "ko\n");
 		return (false);
 	} else {
-		send_message_to_ejected_clients_and_cancel(client, \
+		send_message_to_ejected_clients_and_cancel(server, client, \
 			ejected_client_list);
 		next_tile->player = ejected_client_list;
 		list_delete(ejected_tile->player);

@@ -41,6 +41,7 @@ SERV_SRCS	=	./src_server/argument_handling/argument_handling.c \
 			./src_server/list/list.c \
 			./src_server/logs/logs.c \
 			./src_server/socket_manager/init_epoll.c \
+			./src_server/socket_manager/end_sockets.c \
 			./src_server/socket_manager/init_server.c \
 			./src_server/socket_manager/close_and_msg.c \
 			./src_server/socket_manager/call_worker.c \
@@ -84,7 +85,7 @@ CLIENT_OBJS  = $(CLIENT_SRCS:.c=.o)
 
 CFLAGS = -I ./src_server/include/
 
-CFLAGS += -W -Wall -Wextra -lm
+CFLAGS += -W -Wall -Wextra -lm -g3
 
 TUFLAGS = -lcriterion -lgcov --coverage -DSTESTS -I ./tests/server/include
 

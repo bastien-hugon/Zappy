@@ -22,7 +22,7 @@ void disconnect_client(server_t *server, client_t *client)
 
 void kill_client(server_t *server, client_t *client)
 {
+	WARN("Killing client fd #%d", client->socket.fd);
 	send_message(client->socket.fd, "dead\n");
-	LOG("client %u was killed", client->id);
-	disconnect_client(server, client);
+	disconnect_c_client(server, client->socket.fd);
 }
