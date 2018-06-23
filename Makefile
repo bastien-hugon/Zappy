@@ -60,6 +60,8 @@ SERV_SRCS	=	./src_server/argument_handling/argument_handling.c \
 			./src_server/ia_protocole/tile_info.c \
 			./src_server/ia_protocole/eject.c \
 			./src_server/ia_protocole/take_set_objects.c \
+			./src_server/ia_protocole/incantation_command.c \
+			./src_server/ia_protocole/incantation.c \
 			./src_server/sounds/sound.c \
 			./src_server/sounds/sound_command.c \
 			./src_server/food/food_loop.c \

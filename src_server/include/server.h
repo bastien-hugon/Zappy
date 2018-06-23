@@ -98,17 +98,19 @@
 		RIGHT, \
 		LEFT, \
 		INVENTORY, \
-		NB_CONNECT, \
+		BROADCAST, \
+		FORK, \
 		TAKE, \
 		SET, \
 		LOOK, \
-		GFX_MSZ, \
+		EJECT, \
+		INCANTATION, \
+		INCANTATION_VALIDATE, \
+		NB_CONNECT, \
 		GFX_BCT, \
+		GFX_MSZ, \
 		GFX_MCT, \
 		GFX_PPO, \
-		BROADCAST, \
-		FORK, \
-		EJECT, \
 		NB_CMDS
 	} cmd_e;
 
