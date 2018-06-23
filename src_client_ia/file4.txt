@@ -1,0 +1,19 @@
+CheckLen = ['[ food 9, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 9, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['9'] RESP = [['food 9', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+BASE:food i got: 9
+MODE: search stone
+CheckLen = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere mendiane, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food linemate, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food linemate mendiane, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food phiras ]']
+IngnoreBroadcast resp = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere mendiane, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food linemate, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food linemate mendiane, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food phiras ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['message 6, 12237952610784407726:INCANT:1']
+CheckLen = ['message 5, 10708208534602364161:INCANT:1', 'ok']
+COMMAND : Yellow
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Forward
+COMMAND : Left
+COMMAND : Forward

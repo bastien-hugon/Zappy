@@ -1,0 +1,608 @@
+CheckLen = ['[ food 9, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 9, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['9'] RESP = [['food 9', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+BASE:food i got: 9
+MODE: search stone
+CheckLen = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+IngnoreBroadcast resp = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['[ food 10, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 10, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['10'] RESP = [['food 10', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+Stone search: stone i got: 10
+CheckLen = ['message 3, 12237952610784407726:INCANT:1']
+CheckLen = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]', 'message 7, 10708208534602364161:INCANT:1']
+IngnoreBroadcast resp = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['[ food 11, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 11, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['11'] RESP = [['food 11', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+Stone search: stone i got: 11
+CheckLen = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+IngnoreBroadcast resp = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['message 2, 9178464458235977952:INCANT:1']
+CheckLen = ['[ food 12, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 12, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['12'] RESP = [['food 12', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+Stone search: stone i got: 12
+CheckLen = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+IngnoreBroadcast resp = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['[ food 13, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 13, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['13'] RESP = [['food 13', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+Stone search: stone i got: 13
+CheckLen = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+IngnoreBroadcast resp = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['[ food 14, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 14, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['14'] RESP = [['food 14', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+Stone search: stone i got: 14
+CheckLen = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+IngnoreBroadcast resp = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['[ food 15, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 15, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['15'] RESP = [['food 15', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+Stone search: stone i got: 15
+CheckLen = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+IngnoreBroadcast resp = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['[ food 16, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 16, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['16'] RESP = [['food 16', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+Stone search: stone i got: 16
+CheckLen = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+IngnoreBroadcast resp = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['[ food 16, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 16, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['16'] RESP = [['food 16', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+Stone search: stone i got: 16
+CheckLen = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+IngnoreBroadcast resp = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['[ food 17, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 17, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['17'] RESP = [['food 17', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+Stone search: stone i got: 17
+CheckLen = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+IngnoreBroadcast resp = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['[ food 18, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 18, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['18'] RESP = [['food 18', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+Stone search: stone i got: 18
+CheckLen = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+IngnoreBroadcast resp = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['[ food 19, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 19, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['19'] RESP = [['food 19', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+Stone search: stone i got: 19
+CheckLen = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+IngnoreBroadcast resp = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['[ food 20, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 20, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['20'] RESP = [['food 20', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+Stone search: stone i got: 20
+CheckLen = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+IngnoreBroadcast resp = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['[ food 21, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 21, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['21'] RESP = [['food 21', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+Stone search: stone i got: 21
+CheckLen = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+IngnoreBroadcast resp = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['[ food 22, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 22, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['22'] RESP = [['food 22', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+Stone search: stone i got: 22
+CheckLen = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+IngnoreBroadcast resp = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['[ food 23, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 23, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['23'] RESP = [['food 23', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+Stone search: stone i got: 23
+CheckLen = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+IngnoreBroadcast resp = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['[ food 24, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 24, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['24'] RESP = [['food 24', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+Stone search: stone i got: 24
+CheckLen = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+IngnoreBroadcast resp = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['[ food 24, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 24, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['24'] RESP = [['food 24', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+Stone search: stone i got: 24
+CheckLen = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+IngnoreBroadcast resp = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['[ food 25, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 25, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['25'] RESP = [['food 25', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+Stone search: stone i got: 25
+CheckLen = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+IngnoreBroadcast resp = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['[ food 26, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 26, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['26'] RESP = [['food 26', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+Stone search: stone i got: 26
+CheckLen = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+IngnoreBroadcast resp = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['[ food 27, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 27, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['27'] RESP = [['food 27', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+Stone search: stone i got: 27
+CheckLen = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+IngnoreBroadcast resp = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['[ food 28, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 28, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['28'] RESP = [['food 28', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+Stone search: stone i got: 28
+CheckLen = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+IngnoreBroadcast resp = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['[ food 29, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 29, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['29'] RESP = [['food 29', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+Stone search: stone i got: 29
+CheckLen = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+IngnoreBroadcast resp = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['[ food 30, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 30, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['30'] RESP = [['food 30', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+Stone search: stone i got: 30
+CheckLen = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+IngnoreBroadcast resp = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['[ food 31, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 31, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['31'] RESP = [['food 31', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+Stone search: stone i got: 31
+CheckLen = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+IngnoreBroadcast resp = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['[ food 31, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 31, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['31'] RESP = [['food 31', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+Stone search: stone i got: 31
+CheckLen = ['[ player food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+IngnoreBroadcast resp = ['[ player food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['[ food 32, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 32, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['32'] RESP = [['food 32', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+Stone search: stone i got: 32
+CheckLen = ['[ player food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+IngnoreBroadcast resp = ['[ player food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['[ food 33, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 33, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['33'] RESP = [['food 33', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+Stone search: stone i got: 33
+CheckLen = ['[ player food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+IngnoreBroadcast resp = ['[ player food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['[ food 34, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 34, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['34'] RESP = [['food 34', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+Stone search: stone i got: 34
+CheckLen = ['[ player food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+IngnoreBroadcast resp = ['[ player food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['[ food 35, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 35, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['35'] RESP = [['food 35', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+Stone search: stone i got: 35
+CheckLen = ['[ player food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+IngnoreBroadcast resp = ['[ player food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['[ food 36, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 36, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['36'] RESP = [['food 36', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+Stone search: stone i got: 36
+CheckLen = ['[ player food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+IngnoreBroadcast resp = ['[ player food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['[ food 37, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 37, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['37'] RESP = [['food 37', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+Stone search: stone i got: 37
+CheckLen = ['[ player food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+IngnoreBroadcast resp = ['[ player food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['[ food 38, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 38, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['38'] RESP = [['food 38', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+Stone search: stone i got: 38
+CheckLen = ['[ player food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+IngnoreBroadcast resp = ['[ player food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['[ food 38, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 38, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['38'] RESP = [['food 38', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+Stone search: stone i got: 38
+CheckLen = ['[ player food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+IngnoreBroadcast resp = ['[ player food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['[ food 39, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 39, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['39'] RESP = [['food 39', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+Stone search: stone i got: 39
+CheckLen = ['[ player food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+IngnoreBroadcast resp = ['[ player food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['[ food 40, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 40, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['40'] RESP = [['food 40', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+Stone search: stone i got: 40
+CheckLen = ['[ player food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+IngnoreBroadcast resp = ['[ player food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['[ food 41, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 41, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['41'] RESP = [['food 41', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+Stone search: stone i got: 41
+CheckLen = ['[ player food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+IngnoreBroadcast resp = ['[ player food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['[ food 42, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 42, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['42'] RESP = [['food 42', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+Stone search: stone i got: 42
+CheckLen = ['[ player food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+IngnoreBroadcast resp = ['[ player food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['[ food 43, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 43, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['43'] RESP = [['food 43', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+Stone search: stone i got: 43
+CheckLen = ['[ player food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+IngnoreBroadcast resp = ['[ player food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['[ food 44, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 44, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['44'] RESP = [['food 44', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+Stone search: stone i got: 44
+CheckLen = ['[ player food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+IngnoreBroadcast resp = ['[ player food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['[ food 45, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 45, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['45'] RESP = [['food 45', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+Stone search: stone i got: 45
+CheckLen = ['[ player food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+IngnoreBroadcast resp = ['[ player food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['[ food 45, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 45, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['45'] RESP = [['food 45', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+Stone search: stone i got: 45
+CheckLen = ['[ player food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+IngnoreBroadcast resp = ['[ player food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['[ food 46, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 46, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['46'] RESP = [['food 46', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+Stone search: stone i got: 46
+CheckLen = ['[ player food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+IngnoreBroadcast resp = ['[ player food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['[ food 47, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 47, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['47'] RESP = [['food 47', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+Stone search: stone i got: 47
+CheckLen = ['[ player food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+IngnoreBroadcast resp = ['[ player food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['[ food 48, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 48, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['48'] RESP = [['food 48', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+Stone search: stone i got: 48
+CheckLen = ['[ player food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+IngnoreBroadcast resp = ['[ player food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['[ food 49, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 49, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['49'] RESP = [['food 49', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+Stone search: stone i got: 49
+CheckLen = ['[ player food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+IngnoreBroadcast resp = ['[ player food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['[ food 50, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 50, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['50'] RESP = [['food 50', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+Stone search: stone i got: 50
+CheckLen = ['[ player food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+IngnoreBroadcast resp = ['[ player food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['[ food 51, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 51, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['51'] RESP = [['food 51', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+Stone search: stone i got: 51
+CheckLen = ['[ player food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+IngnoreBroadcast resp = ['[ player food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['[ food 52, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 52, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['52'] RESP = [['food 52', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+Stone search: stone i got: 52
+CheckLen = ['[ player, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+IngnoreBroadcast resp = ['[ player, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['[ food 52, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 52, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['52'] RESP = [['food 52', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+Stone search: stone i got: 52
+CheckLen = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food linemate, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food phiras, food linemate ]']
+IngnoreBroadcast resp = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food linemate, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food phiras, food linemate ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['[ food 52, linemate 1, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 52, linemate 1, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['52'] RESP = [['food 52', 'linemate 1', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+Stone search: stone i got: 52
+CheckLen = ['[ food 52, linemate 1, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 52, linemate 1, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['52'] RESP = [['food 52', 'linemate 1', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+BASE:food i got: 52
+MODE: INCANT
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['[ player food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food linemate thystame, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere sibur mendiane, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food mendiane mendiane mendiane ]']
+IngnoreBroadcast resp = ['[ player food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food linemate thystame, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere sibur mendiane, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food mendiane mendiane mendiane ]']
+CheckLen = ['[ player food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food linemate thystame, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere sibur mendiane, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food mendiane mendiane mendiane ]']
+IngnoreBroadcast resp = ['[ player food, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food linemate thystame, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere sibur mendiane, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food mendiane mendiane mendiane ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['Elevation underway']
+IngnoreBroadcast resp = ['Elevation underway']
+CheckLen = ['Current level: 2']
+IngnoreBroadcast resp = ['Current level: 2']
+CheckLen = ['[ food 50, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 50, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['50'] RESP = [['food 50', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+COMMAND : Yellow
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Forward
+COMMAND : Left
+COMMAND : Forward
+COMMAND : Take food
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Forward
+COMMAND : Left
+COMMAND : Forward
+COMMAND : Take linemate
+COMMAND : Inventory
+COMMAND : Inventory
+COMMAND : Broadcast 6118976305498676928:INCANT:1
+COMMAND : Look
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Set linemate
+COMMAND : Incantation
+COMMAND : Inventory
+COMMAND : Fork
