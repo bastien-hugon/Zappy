@@ -27,8 +27,10 @@
 	void eggs_loop(server_t *server);
 	void food_loop(server_t *server);
 	void cancel_client_action(client_t *client);
+	void force_command_for_client(client_t *client, cmd_e cmd);
 
 	bool send_message_command(server_t *server, client_t *client);
 	bool drop_egg_command(server_t *server, client_t *client);
+	bool validate_incantation_command(server_t *server, client_t *client);
 
 #endif /* !COMMANDS_H_ */
