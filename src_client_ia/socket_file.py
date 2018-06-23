@@ -40,12 +40,23 @@ class SocketInteraction:
         response = []
         while (len(response) == 0):
             response = self.ReadSocket()
+            print("Response = " + str(response))
         self.TeamName()
         response = []
         while (len(response) == 0):
             response = self.ReadSocket()
+            print("Response = " + str(response))
+            for answer in response:
+                if "ko" in answer:
+                    print("Connection failed")
+                    exit(84)
             self.nbplaces = int(response[0])
-        self.id = self.GenerateRandomId()
+        if len(response) == 1:
+            response = []
+            while (len(response) == 0):
+                response = self.ReadSocket()
+                print("Response = " + str(response))
+        self.id = str(self.GenerateRandomId())
         self.target_id = ""
 
     #

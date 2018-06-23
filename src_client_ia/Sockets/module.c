@@ -69,6 +69,7 @@ PyObject *get_fd_activity(PyObject *self, PyObject *args)
 	if (FD_ISSET(fd, &fds)) {
 		while (check_carriage_return(command) != 0)
 		read(fd, command, 4096);
+		//printf("%s\n", command);
 	}
 	return (Py_BuildValue("s" , command));
 }
