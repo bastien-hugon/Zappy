@@ -1,0 +1,180 @@
+CheckLen = ['[ food 9, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 9, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['9'] RESP = [['food 9', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+BASE:food i got: 9
+MODE: search stone
+CheckLen = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food linemate phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food sibur, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food linemate thystame ]']
+IngnoreBroadcast resp = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food linemate phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food sibur, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food linemate thystame ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['[ food 9, linemate 1, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 9, linemate 1, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['9'] RESP = [['food 9', 'linemate 1', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+Stone search: stone i got: 9
+CheckLen = ['[ food 9, linemate 1, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 9, linemate 1, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0 ]']
+FINDALL = ['9'] RESP = [['food 9', 'linemate 1', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 0', 'thystame 0']]
+BASE:food i got: 9
+MODE: INCANT
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['message 5, 10708208534602364161:INCANT:1']
+CheckLen = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food sibur, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food linemate thystame ]']
+IngnoreBroadcast resp = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food sibur, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food linemate thystame ]']
+CheckLen = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food sibur, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food linemate thystame ]']
+IngnoreBroadcast resp = ['[ player food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food deraumere phiras, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food sibur, food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food food linemate thystame ]']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['message 3, 9178464458235977952:INCANT:1']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['ok']
+IngnoreBroadcast resp = ['ok']
+CheckLen = ['Elevation underway']
+IngnoreBroadcast resp = ['Elevation underway']
+CheckLen = ['Current level: 2']
+IngnoreBroadcast resp = ['Current level: 2']
+CheckLen = ['[ food 47, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 1, thystame 0 ]']
+IngnoreBroadcast resp = ['[ food 47, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 1, thystame 0 ]']
+FINDALL = ['47'] RESP = [['food 47', 'linemate 0', 'deraumere 0', 'sibur 0', 'mendiane 0', 'phiras 1', 'thystame 0']]
+COMMAND : Yellow
+COMMAND : Inventory
+COMMAND : Look
+COMMAND : Take linemate
+COMMAND : Inventory
+COMMAND : Inventory
+COMMAND : Broadcast 12237952610784407726:INCANT:1
+COMMAND : Look
+COMMAND : Look
+COMMAND : Take food
+COMMAND : Take food
+COMMAND : Take food
+COMMAND : Take food
+COMMAND : Take food
+COMMAND : Take food
+COMMAND : Take food
+COMMAND : Take food
+COMMAND : Take food
+COMMAND : Take food
+COMMAND : Take food
+COMMAND : Take food
+COMMAND : Take food
+COMMAND : Take food
+COMMAND : Take food
+COMMAND : Take food
+COMMAND : Take food
+COMMAND : Take food
+COMMAND : Take food
+COMMAND : Take food
+COMMAND : Take food
+COMMAND : Take food
+COMMAND : Take food
+COMMAND : Take food
+COMMAND : Take food
+COMMAND : Take food
+COMMAND : Take food
+COMMAND : Take food
+COMMAND : Take food
+COMMAND : Take food
+COMMAND : Take food
+COMMAND : Take food
+COMMAND : Take food
+COMMAND : Take food
+COMMAND : Take food
+COMMAND : Take food
+COMMAND : Take food
+COMMAND : Take food
+COMMAND : Take food
+COMMAND : Take food
+COMMAND : Take food
+COMMAND : Take food
+COMMAND : Take food
+COMMAND : Take phiras
+COMMAND : Set linemate
+COMMAND : Incantation
+COMMAND : Inventory
+COMMAND : Fork
