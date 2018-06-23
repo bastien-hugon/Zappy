@@ -30,6 +30,7 @@ int dir_to_absolute_direction(dir_e dir)
 		case (WEST):
 			return (5);
 	}
+	return (0);
 }
 
 /**
@@ -50,6 +51,7 @@ dir_e invert_dir(dir_e dir)
 		case (WEST):
 			return (EAST);
 	}
+	return (NORTH);
 }
 
 /**
@@ -59,7 +61,7 @@ dir_e invert_dir(dir_e dir)
 * @param ejected_clients [in] the ejected clients list
 */
 void send_message_to_ejected_clients_and_cancel(client_t *client, \
-	client_t *ejected_clients)
+	client_t **ejected_clients)
 {
 	int direction = 0;
 	int absolute_direction = invert_dir(dir_to_absolute_direction( \
@@ -68,10 +70,10 @@ void send_message_to_ejected_clients_and_cancel(client_t *client, \
 	do {
 		if (ejected_clients != NULL) {
 			direction = get_direction_by_player( \
-				absolute_direction, ejected_clients);
-			send_message(ejected_clients->socket.fd, "Eject %d", \
+				absolute_direction, *ejected_clients);
+			send_message((*ejected_clients)->socket.fd, "Eject %d", \
 				direction);
-			cancel_client_action(ejected_clients);
+			cancel_client_action(*ejected_clients);
 		}
 	} while (list_next(&ejected_clients));
 }
@@ -109,13 +111,18 @@ bool eject_command(server_t *server, client_t *client)
 		[client->pos.x]);
 	client_t **ejected_client_list = remove_client_from_list(\
 		ejected_tile->player, client);
+	tile_t *next_tile = get_tile_at_dir(server, client->pos, client->dir);
 
 	if (ejected_client_list == NULL) {
 		send_message(client->socket.fd, "ko\n");
-		return ;
+		return (false);
 	} else {
 		send_message_to_ejected_clients_and_cancel(client, \
 			ejected_client_list);
+		next_tile->player = ejected_client_list;
+		list_delete(ejected_tile->player);
+		list_push(&ejected_tile->player, &client);
 	}
+	send_message(client->socket.fd, "ok\n");
 	return (true);
 }

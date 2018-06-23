@@ -30,7 +30,8 @@ command_t commands[] = {
 	{"bct", GFX_BCT, 0, gfx_map_tile},
 	{"msz", GFX_MSZ, 0, gfx_map_size},
 	{"mct", GFX_MCT, 0, gfx_map_tiles},
-	{"ppo", GFX_PPO, 0, gfx_ppo}
+	{"ppo", GFX_PPO, 0, gfx_ppo},
+	{"Eject", EJECT, 7, eject_command}
 };
 
 /**

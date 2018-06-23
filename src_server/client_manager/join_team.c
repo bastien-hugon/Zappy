@@ -86,8 +86,8 @@ void join_team(server_t *srv, client_t *client, char *str)
 		LOG("GFX Client just logged-in");
 		return ;
 	}
-	while (list != NULL) {
-		if (!strcmp(list->name, str)) {
+	do {
+		if (list != NULL && !strcmp(list->name, str)) {
 			client->team = list;
 			client->is_logged = true;
 			send_message(client->socket.fd, "%d\n", \
@@ -95,8 +95,7 @@ void join_team(server_t *srv, client_t *client, char *str)
 			place_client_on_map(srv, client, list);
 			return ;
 		}
-		list_next(&list);
-	}
+	} while (list_next(&list));
 	WARN("Cannot connect #%d, team #%s doesn't exists", client->id, str);
 	send_message(client->socket.fd, "ko\n");
 }

@@ -119,7 +119,7 @@ static bool send_sound_to_client(server_t *server, client_t *sender, \
 		sender, receiver);
 
 	send_message(receiver->socket.fd, "message %d, %s\n", \
-		get_direction_by_player(absolute_direction, receiver));
+		get_direction_by_player(absolute_direction, receiver), sound);
 	return (true);
 }
 

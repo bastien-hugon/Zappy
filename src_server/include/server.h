@@ -108,6 +108,7 @@
 		GFX_PPO, \
 		BROADCAST, \
 		FORK, \
+		EJECT, \
 		NB_CMDS
 	} cmd_e;
 
