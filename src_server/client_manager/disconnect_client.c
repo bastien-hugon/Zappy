@@ -15,7 +15,7 @@
 *@return true Disconnected
 *@return false Not disconnected
 */
-bool disconnect_client(server_t *srv, int fd)
+bool disconnect_c_client(server_t *srv, int fd)
 {
 	client_t *client = get_client_for_fd(srv, fd);
 	client_t *gfx = get_gfx_client(srv);

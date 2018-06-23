@@ -30,7 +30,7 @@ void call_worker(server_t *srv, int fd)
 		return ;
 	if (circular_buffer_read(&client->buffer, fd) == false) {
 		WARN("Fd #%d disconnected.", fd);
-		disconnect_client(srv, fd);
+		disconnect_c_client(srv, fd);
 		return ;
 	}
 	while (true) {
