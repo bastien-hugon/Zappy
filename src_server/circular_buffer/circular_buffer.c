@@ -64,11 +64,11 @@ bool circular_buffer_read(circular_buffer_t *buffer, int fd)
 		buffer->tail = (char *)&buffer->buffer;
 	if (buffer->tail <= buffer->head) {
 		readed = read(fd, buffer->head, buff_end - buffer->head);
-		if (readed == -1 && errno != EAGAIN)
+		if (readed == 0 || (readed == -1 && errno != EAGAIN))
 			return (false);
 	} else {
 		readed = read(fd, buffer->buffer, buffer->tail - buffer->head);
-		if (readed == -1 && errno != EAGAIN)
+		if (readed == 0 || (readed == -1 && errno != EAGAIN))
 			return (false);
 	}
 	buffer->head += readed;

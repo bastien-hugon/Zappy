@@ -38,7 +38,7 @@ bool gfx_map_size(server_t *srv, client_t *user)
 *@return true If the message is sent
 *@return false If the message isn't sent
 */
-static bool gfx_send_tile(const server_t *srv, const int fd, \
+bool gfx_send_tile(const server_t *srv, const int fd, \
 const int x, const int y)
 {
 	return (send_message(fd, "bct %d %d %d %d %d %d %d %d %d\n", x, y, \
