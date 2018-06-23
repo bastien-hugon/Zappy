@@ -91,8 +91,10 @@ void exec_clients_actions(server_t *srv)
 			start_command_from_queue(client);
 		while (client->cmd != NULL && client->tick_left <= 0) {
 			client->cmd->func(srv, client);
-			remove_first_command_from_queue(client);
-			start_command_from_queue(client);
+			if (client->tick_left <= 0) {
+				remove_first_command_from_queue(client);
+				start_command_from_queue(client);
+			}
 		}
 		if (client->cmd)
 			client->tick_left--;

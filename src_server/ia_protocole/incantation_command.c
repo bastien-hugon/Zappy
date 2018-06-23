@@ -44,14 +44,18 @@ bool validate_incantation_command(server_t *server, client_t *client)
 	bool was_ok = validate_incantation(tile, lvl);
 
 	do {
+
 		if (clients != NULL && *clients != NULL && \
-			(*clients)->level == lvl && was_ok)
+			(*clients)->level == lvl + 1 && was_ok)
 			send_message((*clients)->socket.fd, \
 				"Current level: %d\n", (*clients)->level);
 		if (clients != NULL && *clients != NULL && \
-			(*clients)->level == lvl && was_ok == false)
+			(*clients)->level == lvl + 1 && was_ok == false)
 			send_message((*clients)->socket.fd, "ko\n");
 	} while (list_next(&clients));
+	send_to_gfx(server, "pie %d %d %d %s\n", client->pos.x, \
+		client->pos.y, client->id, was_ok ? "ok" : "ko");
+	LOG("End of incatention ok: %d", was_ok);
 	return (was_ok);
 }
 
@@ -72,6 +76,11 @@ bool incantation_command(server_t *server, client_t *client)
 		return (false);
 	}
 	send_elevation_underway(tile, lvl);
+	LOG("send_elevation_underway done");
 	force_command_for_client(client, INCANTATION_VALIDATE);
+	LOG("force_command_for_client done");
+	send_to_gfx(server, "pic %d %d %d %d\n", client->pos.x, \
+		client->pos.y, client->level, client->id);
+	LOG("Incantation started");
 	return (true);
 }
