@@ -56,3 +56,4 @@ def incant(socket, food, level):
                 return (level)
         inventory = look_inventory(socket)
         food = get_food(inventory)
+    return level

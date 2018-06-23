@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 from General_comportement.broadcast import EmptyCacheIgnoreBroadcast
+from General_comportement.language import EmptyCacheSearchBroadcast
 
 
 #
@@ -68,6 +69,41 @@ def IsThereItem(socket, requested_item):
             if item == "food":
                 return (tile, item)
     return (-1, "None")
+
+
+#
+# @brief: Function that looks for one of the items demanded by the player.
+# The smallest index tile where one of the requested item is situated will
+# be returned. The function also gets the broadcasted messages.
+#
+# @param: socket [in], variable of type class Socket
+# @param: requested_item [in], a list with all the requested item needed by
+# the player
+#
+# @return: tile, the position of the item
+# @return: item, what item it is
+# @return: dire, the directin where the message came from, -1 if no message
+# was found
+# @return: mess, the message that was found, empty list if no message found
+#
+def IsThereItemSearchBroadcast(socket, requested_item, lvl):
+    socket.Look()
+    dire, mess, resp = EmptyCacheSearchBroadcast(socket, lvl)
+    resp = resp[:1]
+    if len(resp) > 0 and resp[0] != "ko":
+        resp = resp[0][2:-2].split(',')
+    for tile in range(len(resp)):
+        content = resp[tile].split(' ')
+        for item in content:
+            for req_item in requested_item:
+                if item in req_item.split(' '):
+                    return (tile, item, dire, mess)
+    for tile in range(len(resp)):
+        content = resp[tile].split(' ')
+        for item in content:
+            if item == "food":
+                return (tile, item, dire, mess)
+    return (-1, "None", dire, mess)
 
 
 def nb_player_here(look_result):
