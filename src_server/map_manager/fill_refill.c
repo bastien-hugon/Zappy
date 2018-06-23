@@ -47,6 +47,8 @@ static void init_map(game_t *game)
 */
 static void fill_tile(tile_t *tile)
 {
+	if (tile->player != NULL)
+		return ;
 	for (int i = 0; i < NB_RESSOURCE; i++)
 		if (is_lucky(i))
 			tile->inventory[i]++;

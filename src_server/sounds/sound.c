@@ -115,9 +115,16 @@ int get_direction_by_player(int direction, client_t *receiver)
 static bool send_sound_to_client(server_t *server, client_t *sender, \
 	char *sound, client_t *receiver)
 {
-	int absolute_direction = get_absolute_direction_of_sound(server, \
-		sender, receiver);
+	int absolute_direction;
 
+	if (sender->pos.y == receiver->pos.y &&
+		sender->pos.x == receiver->pos.x) {
+		send_message(receiver->socket.fd, "message 0, %s\n", sound);	
+		LOG("sended to #%d: message 0, %s\n", receiver->id, sound);
+		return (true);
+	}
+	absolute_direction = get_absolute_direction_of_sound(server, \
+		sender, receiver);
 	send_message(receiver->socket.fd, "message %d, %s\n", \
 		get_direction_by_player(absolute_direction, receiver), sound);
 	LOG("sended to #%d: message %d, %s\n", receiver->id, \

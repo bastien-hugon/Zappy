@@ -46,12 +46,16 @@ bool validate_incantation_command(server_t *server, client_t *client)
 	do {
 
 		if (clients != NULL && *clients != NULL && \
-			(*clients)->level == lvl + 1 && was_ok)
-			send_message((*clients)->socket.fd, \
-				"Current level: %d\n", (*clients)->level);
+			(*clients)->level == lvl + 1 && was_ok) {
+				send_message((*clients)->socket.fd, \
+					"Current level: %d\n", (*clients)->level);
+				LOG("Sended incantation ok to client #%d", client->id);
+			}
 		if (clients != NULL && *clients != NULL && \
-			(*clients)->level == lvl + 1 && was_ok == false)
-			send_message((*clients)->socket.fd, "ko\n");
+			(*clients)->level == lvl && was_ok == false) {
+				LOG("Sended incantation ko to client #%d", client->id);
+				send_message((*clients)->socket.fd, "ko\n");
+			}
 	} while (list_next(&clients));
 	send_to_gfx(server, "pie %d %d %d %s\n", client->pos.x, \
 		client->pos.y, client->id, was_ok ? "ok" : "ko");
