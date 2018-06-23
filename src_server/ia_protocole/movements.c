@@ -47,12 +47,12 @@ bool client_forward(server_t *srv, client_t *client)
 			client->pos.y = (client->pos.y + 1) % srv->game.height;
 			break;
 		case WEST:
-			client->pos.x = (int) (client->pos.x - 1 >= 0) ? \
-			(client->pos.x - 1) : (srv->game.width - 1);
+			client->pos.x = (client->pos.x - 1 >= 0) ? \
+			((uint) client->pos.x - 1) : ((srv->game.width - 1));
 			break;
 		case NORTH:
-			client->pos.y = (int) (client->pos.y - 1 >= 0) ? \
-			(client->pos.y - 1) : (srv->game.height - 1);
+			client->pos.y = (client->pos.y - 1 >= 0) ? \
+			((uint) client->pos.y - 1) : (srv->game.height - 1);
 			break;
 	}
 	list_push(&(srv->game.map[client->pos.y][client->pos.x].player), \
