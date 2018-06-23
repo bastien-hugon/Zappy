@@ -26,6 +26,7 @@
 	int get_direction_by_player(int direction, client_t *receiver);
 	void eggs_loop(server_t *server);
 	void food_loop(server_t *server);
+	void cancel_client_action(client_t *client);
 
 	bool send_message_command(server_t *server, client_t *client);
 	bool drop_egg_command(server_t *server, client_t *client);

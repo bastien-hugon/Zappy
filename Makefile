@@ -57,6 +57,7 @@ SERV_SRCS	=	./src_server/argument_handling/argument_handling.c \
 			./src_server/ia_protocole/get_info.c \
 			./src_server/ia_protocole/look_dir.c \
 			./src_server/ia_protocole/tile_info.c \
+			./src_server/ia_protocole/eject.c \
 			./src_server/ia_protocole/take_set_objects.c \
 			./src_server/sounds/sound.c \
 			./src_server/sounds/sound_command.c \
@@ -72,6 +73,7 @@ SERV_SRCS	=	./src_server/argument_handling/argument_handling.c \
 			./src_server/map_manager/generate_map.c \
 			./src_server/map_manager/fill_refill.c \
 			./src_server/map_manager/get_rareness.c \
+			./src_server/map_manager/get_tile.c \
 			./src_server/main.c
 
 SERV_OBJS  = $(SERV_SRCS:.c=.o)

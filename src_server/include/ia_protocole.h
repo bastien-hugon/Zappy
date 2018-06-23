@@ -33,5 +33,6 @@
 	char *add_tile_to_buff(server_t *srv, int x, int y, char *buffer);
 	tile_t get_tile(server_t *srv, int x, int y);
 	char *realloc_concat(char *s1, char *s2);
+	bool eject_command(server_t *server, client_t *client);
 
 #endif /* !IA_PROTOCOLE_H_ */
