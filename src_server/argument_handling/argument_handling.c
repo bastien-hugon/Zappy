@@ -62,7 +62,7 @@ void handle_teams(server_t *server, int argc, char **argv)
 	team_t team;
 
 	optind--;
-	for (;optind < argc && *argv[optind] != '-'; optind++){
+	for ( ; optind < argc && *argv[optind] != '-'; optind++){
 		team.name = argv[optind];
 		list_push(&server->game.teams, &team);
 	}
@@ -99,6 +99,7 @@ bool handle_args(server_t *server, int argc, char **argv) {
 	uint nb_client_by_team = 0;
 
 	memset(server, 0, sizeof(server_t));
+	server->game.frequence = 100;
 	while ((c = getopt(argc, argv, "p:x:y:n:c:f:")) != -1) {
 		if (c == 'n')
 			handle_teams(server, argc, argv);

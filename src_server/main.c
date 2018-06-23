@@ -33,6 +33,8 @@ int main(int argc, char **argv)
 		return (EXIT_SUCCESS);
 	if (handle_args(&server, argc, argv) == false)
 		return (EXIT_FAILURE);
+	if (check_arguments(&server) == false)
+		return (EXIT_FAILURE);
 	srand(time(NULL));
 	init_server(&server);
 	init_epoll(&server);
