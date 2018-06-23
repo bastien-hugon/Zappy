@@ -27,7 +27,7 @@ static client_t *gfx_get_usr(uint uid, tile_t tile)
 
 	do {
 		if (list != NULL && (*list)->id == uid)
-			return (list);
+			return (*list);
 	} while (list_next(&list));
 	return (NULL);
 }
@@ -56,7 +56,8 @@ bool gfx_ppo(server_t *srv, client_t *user)
 			player = gfx_get_usr(user_id, srv->game.map[y][x]);
 			(player) ? (send_message(user->socket.fd, \
 			"ppo %d %d %d %s\n", \
-			user_id, x, y, dir[player->dir])) : (player = NULL);
+			user_id, x, y, dir[player->dir])) : 0;
+			player = (player) ? (player) : (NULL);
 		}
 	}
 	return (player == NULL);

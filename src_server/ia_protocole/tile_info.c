@@ -56,7 +56,7 @@ tile_t get_tile(server_t *srv, int x, int y)
 char *add_tile_to_buff(server_t *srv, int x, int y, char *buffer)
 {
 	tile_t tile = get_tile(srv, x, y);
-	client_t *client = tile.player;
+	client_t **client = tile.player;
 	bool space = false;
 	char obj[7][10] = {"food", "linemate", "deraumere", "sibur", \
 	"mendiane", "phiras", "thystame"};
