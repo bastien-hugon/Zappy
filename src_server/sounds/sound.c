@@ -76,35 +76,31 @@ static int get_absolute_direction_of_sound(server_t *server, client_t *sender,\
 }
 
 /**
-* @brief Get the direction of sound
+* @brief Get the direction of sound for a player
 *
-* @param server the server
-* @param sender the sender of the sound
+* @param direction the absolute direction
 * @param receiver the receiver of a message
-* @return int the direction
+* @return int the relative direction
 */
-static int get_direction_of_sound(server_t *server, client_t *sender, \
-	client_t *receiver)
+int get_direction_by_player(int direction, client_t *receiver)
 {
-	int sound_direction = get_absolute_direction_of_sound(server, \
-		sender, receiver);
 	int modifier = 0;
 	int result = -1;
 
 	switch (receiver->dir) {
-		case NORTH:
+		case (NORTH):
 			modifier = 6;
 			break;
-		case WEST:
+		case (WEST):
 			modifier = 4;
 			break;
-		case SOUTH:
+		case (SOUTH):
 			modifier = 2;
 			break;
 		default:
 			break;
 	}
-	result = (sound_direction - modifier) % 8;
+	result = (direction - modifier) % 8;
 	return ((result == 0) ? 8 : result);
 }
 
@@ -119,9 +115,11 @@ static int get_direction_of_sound(server_t *server, client_t *sender, \
 static bool send_sound_to_client(server_t *server, client_t *sender, \
 	char *sound, client_t *receiver)
 {
+	int absolute_direction = get_absolute_direction_of_sound(server, \
+		sender, receiver);
+
 	send_message(receiver->socket.fd, "message %d, %s\n", \
-		get_direction_of_sound(server, sender, receiver), \
-		sound);
+		get_direction_by_player(absolute_direction, receiver));
 	return (true);
 }
 
