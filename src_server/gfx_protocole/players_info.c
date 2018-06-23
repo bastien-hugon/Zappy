@@ -23,10 +23,10 @@
 */
 static client_t *gfx_get_usr(uint uid, tile_t tile)
 {
-	client_t *list = tile.player;
+	client_t **list = tile.player;
 
 	do {
-		if (list != NULL && list->id == uid)
+		if (list != NULL && (*list)->id == uid)
 			return (list);
 	} while (list_next(&list));
 	return (NULL);

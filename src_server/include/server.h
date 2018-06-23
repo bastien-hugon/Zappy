@@ -149,7 +149,7 @@
 	*/
 	typedef struct tile_s
 	{
-		client_t *player;
+		client_t **player;
 		uint inventory[NB_RESSOURCE];
 		egg_t *egg;
 	} tile_t;

@@ -135,11 +135,11 @@ static bool send_sound_to_client(server_t *server, client_t *sender, \
 bool send_sound_to_tile(server_t *server, client_t *sender, \
 	char *sound, pos_t pos)
 {
-	client_t *client = server->game.map[pos.y][pos.x].player;
+	client_t **client = server->game.map[pos.y][pos.x].player;
 
 	do {
 		if (client)
-			send_sound_to_client(server, sender, sound, client);
+			send_sound_to_client(server, sender, sound, *client);
 	} while (list_next(&client));
 	return (true);
 }

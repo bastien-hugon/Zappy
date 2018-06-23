@@ -56,7 +56,7 @@ static void place_client_on_map(server_t *srv, client_t *client, team_t *team)
 		return ;
 	if (team->free_slots > 0) {
 		client->dir = (dir_e) rand() % 4;
-		list_push(&(srv->game.map[y][x].player), client);
+		list_push(&(srv->game.map[y][x].player), &client);
 		client->pos = (pos_t) {x, y};
 		send_message(client->socket.fd, "%d %d\n", x, y);
 		INFO("Client #%d just logged-in in team #%s", client->id, \
