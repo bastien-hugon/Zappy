@@ -134,4 +134,5 @@ def EmptyCacheSearchBroadcast(socket, lvl):
                     keep = 1
                 del resp[i]
                 store_direction = direction
+    print("SEARCHBROADCAST resp = " + str(resp))
     return direction, message, resp

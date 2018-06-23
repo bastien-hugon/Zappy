@@ -210,6 +210,7 @@ class Socket:
     #
     def ReadSocket(self):
         command = sockets.get_fd_activity(self.fd).split('\n')
+        del command[-1]
         return (command)
 
     #
