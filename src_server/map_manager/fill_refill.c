@@ -48,7 +48,8 @@ static void init_map(game_t *game)
 static void fill_tile(tile_t *tile)
 {
 	for (int i = 0; i < NB_RESSOURCE; i++)
-		tile->inventory[i] += !is_lucky(i);
+		if (is_lucky(i))
+			tile->inventory[i]++;
 }
 
 /**
@@ -71,7 +72,10 @@ void fill_map(game_t *game)
 */
 void refill_map(game_t *game)
 {
-	for (int y = 0; y < (int) game->height; y++)
+	static int i = 0;
+
+	for (int y = 0; y < (int) game->height && !(i % 10); y++)
 		for (int x = 0; x < (int) game->width; x++)
 			fill_tile(&(game->map[y][x]));
+	i++;
 }

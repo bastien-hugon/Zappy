@@ -21,6 +21,7 @@ void create_user(client_t *user, server_t *srv)
 	user->size = sizeof(user->socket.s_in);
 	user->id = srv->game.nb_players++;
 	user->is_gfx = false;
+	user->level = 1;
 	user->is_logged = false;
 	user->inventory[FOOD] = 10;
 	user->food_tick = 126;

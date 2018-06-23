@@ -86,7 +86,7 @@ CLIENT_OBJS  = $(CLIENT_SRCS:.c=.o)
 
 CFLAGS = -I ./src_server/include/
 
-CFLAGS += -W -Wall -Wextra -lm -g3
+CFLAGS += -W -Wall -Wextra -lm
 
 TUFLAGS = -lcriterion -lgcov --coverage -DSTESTS -I ./tests/server/include
 
