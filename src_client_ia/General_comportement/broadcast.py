@@ -17,10 +17,10 @@ def EmptyCacheIgnoreBroadcast(socket):
     while (len(resp) == 0):
         resp = socket.ReadSocket()
         check_dead(resp)
-        print("CheckLen = " + str(len(resp)) + "  " + str(resp))
+        # print("CheckLen = " + str(len(resp)) + "  " + str(resp))
         i = 0
         while i < len(resp):
-            print("I = " + str(i) + "  " + resp[i])
+            # print("I = " + str(i) + "  " + resp[i])
             if resp[i].find("message") != -1:
                 resp.pop(i)
             else:

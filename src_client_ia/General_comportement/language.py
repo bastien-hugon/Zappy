@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# message format: "message [square], [id]:[keyword]:[argv]"
+from General_comportement.check_dead import check_dead
 
 
 #
@@ -103,8 +103,8 @@ def parse_message(socket, message):
     split_message = message.split(' ')
     message_type = split_message[-1].split(':')
     if len(message_type) >= 3 and message_type[1] in possible_messages:
-        return (int(split_message[1]), message_type)
-    return -1, [None]
+        return (int(split_message[1][:-1]), message_type)
+    return -1, []
 
 
 #
@@ -118,25 +118,27 @@ def parse_message(socket, message):
 # the message is the cut up message to be executed later
 #
 def EmptyCacheSearchBroadcast(socket, lvl):
+    mess = []
+    dire = -1
     message = []
     direction = -1
-    keep = 0
-    store_direction = -1
+    resp = []
     while (len(resp) == 0):
         resp = socket.ReadSocket()
         check_dead(resp)
         i = 0
         while i < len(resp):
-            if resp[i].find("message") != -1 and keep == 0:
+            if resp[i].find("message") != -1:
                 direction, message = parse_message(socket, resp[i])
-                if (len(socket.target_id) == 0 and len(message) == 3 and
-                    message[1] == "INCANT" and int(message[2]) == lvl):
+                if (len(message) >= 3 and message[1] == "INCANT" and int(message[2]) == lvl and dire == -1):
+                    dire = direction
+                    mess = message
                     keep = 1
-                elif message[0] in socket.target_id:
-                    keep = 1
+                # elif message[0] in socket.target_id:
+                #     keep = 1
                 resp.pop(i)
-                store_direction = direction
+                # store_direction = direction
             else:
                 i += 1
-    print("SEARCHBROADCAST resp = " + str(resp))
-    return direction, message, resp
+    print("SEARCHBROADCAST resp = " + str(resp) + " mess = " + str(mess) + " dire = " + str(dire))
+    return dire, mess, resp
