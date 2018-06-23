@@ -18,6 +18,8 @@ client_t *get_client_for_fd(server_t *srv, int fd)
 {
 	client_t *client = srv->game.clients;
 
+	if (!client)
+		return (NULL);
 	do {
 		if (client->socket.fd == fd)
 			return (client);
@@ -82,7 +84,7 @@ void exec_clients_actions(server_t *srv)
 {
 	client_t *client = srv->game.clients;
 
-	//LOG("Exec client actions");
+	refill_map(&(srv->game));
 	while (client) {
 		if (client->cmd == NULL)
 			start_command_from_queue(client);

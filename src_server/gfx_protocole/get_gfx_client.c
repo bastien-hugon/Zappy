@@ -24,10 +24,11 @@ client_t *get_gfx_client(const server_t *srv)
 {
 	client_t *tmp = srv->game.clients;
 
-	while (tmp) {
+	if (!tmp)
+		return (NULL);
+	do {
 		if (tmp->is_gfx)
 			return (tmp);
-		list_next(&tmp);
-	}
+	} while (list_next(&tmp));
 	return (NULL);
 }

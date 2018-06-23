@@ -25,12 +25,12 @@ void call_worker(server_t *srv, int fd)
 {
 	client_t *client = get_client_for_fd(srv, fd);
 	char *str = NULL;
-
 	LOG("Event on fd: %d", fd);
 	if (client == NULL)
 		return ;
 	if (circular_buffer_read(&client->buffer, fd) == false) {
-		WARN("Error while reading in the buffer from fd: %d", fd);
+		WARN("Fd #%d disconnected.", fd);
+		disconnect_client(srv, fd);
 		return ;
 	}
 	while (true) {

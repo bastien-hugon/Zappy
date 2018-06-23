@@ -16,5 +16,6 @@
 	bool send_message(const int fd, const char *format, ...);
 	bool broadcast(const server_t *srv, const char *format, ...);
 	void join_team(server_t *srv, client_t *client, char *str);
+	bool disconnect_client(server_t *srv, int fd);
 
 #endif /* !CLIENT_MANAGER_H_ */

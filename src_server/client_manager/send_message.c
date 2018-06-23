@@ -10,19 +10,22 @@
 /**
 * @brief Send a specific message to an FD
 *
-* @param fd [in] The fd to send the message on it
+* @param fd [out] The fd to send the message on it
 * @param format [in] The message to send
 * @param ... [in] The va args params to send
 * @return true If the message is sent
 * @return false If the message isn't sent
 */
-bool send_message(const int fd, const char *format, ...)
+bool send_message(int fd, const char *format, ...)
 {
 	va_list args;
+	char buffer[1024];
+	int size = 0;
 
 	va_start(args, format);
-	if (vdprintf(fd, format, args) < 0) {
-		WARN("Message to fd `%d` not sent", fd);
+	size = vsprintf(buffer, format, args);
+	if (send(fd, buffer, size + 1, MSG_NOSIGNAL) < 0) {
+		WARN("Message `%s` not transmitted to fd #%d", buffer, fd);
 		return (false);
 	}
 	va_end(args);

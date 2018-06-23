@@ -69,8 +69,8 @@
 	typedef enum
 	{
 		NORTH, \
-		SOUTH, \
 		EAST, \
+		SOUTH, \
 		WEST
 	} dir_e;
 
@@ -98,6 +98,9 @@
 		RIGHT, \
 		LEFT, \
 		INVENTORY, \
+		NB_CONNECT, \
+		TAKE, \
+		SET, \
 		GFX_MSZ, \
 		GFX_BCT, \
 		GFX_MCT, \
