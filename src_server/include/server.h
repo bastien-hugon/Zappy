@@ -101,6 +101,7 @@
 		NB_CONNECT, \
 		TAKE, \
 		SET, \
+		LOOK, \
 		GFX_MSZ, \
 		GFX_BCT, \
 		GFX_MCT, \
@@ -132,6 +133,7 @@
 		char *cmd_queue[NB_CMD_QUEUE];
 		uint tick_left;
 		command_t *cmd;
+		int level;
 		bool is_gfx;
 		bool is_logged;
 	} client_t;

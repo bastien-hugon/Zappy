@@ -84,7 +84,7 @@ void exec_clients_actions(server_t *srv)
 {
 	client_t *client = srv->game.clients;
 
-	refill_map(&(srv->game));
+	//refill_map(&(srv->game));
 	while (client) {
 		if (client->cmd == NULL)
 			start_command_from_queue(client);

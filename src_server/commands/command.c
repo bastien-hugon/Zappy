@@ -25,6 +25,7 @@ command_t commands[] = {
 	{"Fork", FORK, 42, drop_egg_command},
 	{"take", TAKE, 7, client_take},
 	{"set", SET, 7, client_set},
+	{"look", LOOK, 7, client_look},
 	{"Connect_nbr", NB_CONNECT, 0, client_nb_connect},
 	{"bct", GFX_BCT, 0, gfx_map_tile},
 	{"msz", GFX_MSZ, 0, gfx_map_size},

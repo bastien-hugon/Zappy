@@ -19,13 +19,10 @@
 bool send_message(int fd, const char *format, ...)
 {
 	va_list args;
-	char buffer[1024];
-	int size = 0;
 
 	va_start(args, format);
-	size = vsprintf(buffer, format, args);
-	if (send(fd, buffer, size + 1, MSG_NOSIGNAL) < 0) {
-		WARN("Message `%s` not transmitted to fd #%d", buffer, fd);
+	if (vdprintf(fd, format, args) < 0) {
+		WARN("Message not transmitted to fd #%d", fd);
 		return (false);
 	}
 	va_end(args);
