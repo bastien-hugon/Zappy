@@ -114,6 +114,9 @@ fclean: clean
 
 tests_run: $(NAME_UT)
 
+zappy_ia:
+	make -C src_client_ia
+
 $(NAME_UT):
 	gcc -o $(NAME_UT) $(SRCS_UT_IRC) $(SRCS_UT_CLIENT) $(SRCS_UT_SERV) \
 		$(CFLAGS) $(TUFLAGS)
