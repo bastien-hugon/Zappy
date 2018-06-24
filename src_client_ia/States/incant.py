@@ -72,7 +72,7 @@ def search_before_broadcast(socket, food, lvl):
 def incant(socket, food, lvl):
     dire, mess, level = search_before_broadcast(socket, food, lvl)
     if level != lvl:
-        return dire, mess, level
+        return -1, [], level
     if dire != -1 and lvl != 1:
         return dire, mess, lvl
     while food >= lvl + 3:

@@ -20,7 +20,7 @@ def search_stone_mode(lvl, food, left_over, socket):
     while (enough_food(lvl, food) and len(left_over) != 0):
         dire, mess, resp, level = look_inventory_search_broadcast(socket, lvl)
         if level != lvl:
-            return dire, mess, level
+            return -1, [], level
         if dire != -1 and lvl != 1:
             return dire, mess, lvl
         food = get_food(resp)
@@ -28,26 +28,26 @@ def search_stone_mode(lvl, food, left_over, socket):
                                                                        left_over,
                                                                        lvl)
         if level != lvl:
-            return dire, mess, level
+            return -1, [], level
         if dire != -1 and lvl != 1:
             return dire, mess, lvl
         if (location >= 0):
             dire, mess, level = mov_to_tile_search_broadcast(location, lvl,
                                                              socket)
             if level != lvl:
-                return dire, mess, level
+                return -1, [], level
             if dire != -1 and lvl != 1:
                 return dire, mess, lvl
             socket.Take(item)
             dire, mess, resp, level = EmptyCacheSearchBroadcast(socket, lvl)
             if level != lvl:
-                return dire, mess, level
+                return -1, [], level
             if dire != -1 and lvl != 1:
                 return dire, mess, lvl
             dire, mess, resp, level = look_inventory_search_broadcast(socket,
                                                                       lvl)
             if level != lvl:
-                return dire, mess, level
+                return -1, [], level
             if dire != -1 and lvl != 1:
                 return dire, mess, lvl
             left_over = GetLeftOverStone(resp, GetNeededRessources(lvl))
@@ -56,7 +56,7 @@ def search_stone_mode(lvl, food, left_over, socket):
             socket.Forward()
             dire, mess, resp, level = EmptyCacheSearchBroadcast(socket, lvl)
             if level != lvl:
-                return dire, mess, level
+                return -1, [], level
             if dire != -1 and lvl != 1:
                 return dire, mess, lvl
     return -1, [], lvl
