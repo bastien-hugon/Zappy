@@ -12,14 +12,12 @@
 
 #include "server.h"
 
-void disconnect_client(server_t *server, client_t *client)
-{
-	close(client->socket.fd);
-	list_remove(&client);
-	if (client == server->game.clients)
-		server->game.clients = NULL;
-}
-
+/**
+*@brief kill a client
+*
+*@param server [in] the server
+*@param client [in] the client to kill
+*/
 void kill_client(server_t *server, client_t *client)
 {
 	WARN("Killing client fd #%d", client->socket.fd);

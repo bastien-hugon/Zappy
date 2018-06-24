@@ -21,7 +21,7 @@ bool send_message(int fd, const char *format, ...)
 	va_list args;
 
 	va_start(args, format);
-	if (vdprintf(fd, format, args) < 0) {
+	if (vdprintf(fd, format, args) <= 0) {
 		WARN("Message not transmitted to fd #%d", fd);
 		return (false);
 	}

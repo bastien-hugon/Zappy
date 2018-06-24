@@ -17,7 +17,7 @@
 /**
 *@brief Initialise and fill server_t struct
 *
-*@param srv Server's struct
+*@param srv [in] Server's struct
 *@param port The listening port
 */
 void init_server(server_t *srv)

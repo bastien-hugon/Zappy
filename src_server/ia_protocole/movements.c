@@ -17,8 +17,8 @@
 /**
 *@brief Send OK to client and PPO command to GFX Client
 *
-*@param srv Main server_t struct
-*@param fd The client fd
+*@param srv [in] Main server_t struct
+*@param fd [in] The client fd
 *@return true If the message is sent
 *@return false If the message isn't sent
 */

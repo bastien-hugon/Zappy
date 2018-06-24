@@ -21,9 +21,9 @@
 /**
 * @brief handle the options of the program
 *
-* @param server the server to modify
-* @param option the current option
-* @param opt the option
+* @param server [out] the server to modify
+* @param option [in] the current option
+* @param opt [in] the option
 * @return false in case of an error
 */
 bool handle_option(server_t *server, int option, char *opt, uint *nb_players)
@@ -53,9 +53,9 @@ bool handle_option(server_t *server, int option, char *opt, uint *nb_players)
 /**
 *@brief handle the teams option
 *
-*@param server the server to init
-*@param argc the arguments count
-*@param argv the arguments values
+*@param server [out] the server to init
+*@param argc [in] the arguments count
+*@param argv [in] the arguments values
 */
 void handle_teams(server_t *server, int argc, char **argv)
 {
@@ -71,8 +71,8 @@ void handle_teams(server_t *server, int argc, char **argv)
 /**
 *@brief set the free slot of the team to the -c argument
 *
-*@param server the server
-*@param nb_player_by_team the nb of free slot by team
+*@param server [out] the server
+*@param nb_player_by_team [in] the nb of free slot by team
 */
 static void init_nb_client_by_team(server_t *server, uint nb_player_by_team)
 {
@@ -88,9 +88,9 @@ static void init_nb_client_by_team(server_t *server, uint nb_player_by_team)
 /**
 * @brief handle the arguments and fill a server_t struct
 *
-* @param server the server to fill
-* @param argc the arguments count
-* @param argv the arguments values
+* @param server [out] the server to fill
+* @param argc [in] the arguments count
+* @param argv [in] the arguments values
 * @return true if there is no error
 * @return false in case of an error
 */
