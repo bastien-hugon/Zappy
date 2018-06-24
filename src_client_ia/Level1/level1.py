@@ -19,7 +19,9 @@ def level1(lvl, socket):
     dire = -1
     mess = []
     while (level == lvl):
-        inventory = look_inventory(socket)
+        inventory, level = look_inventory(socket, level)
+        if level != lvl:
+            return level
         food = get_food(inventory)
         left_over = GetLeftOverStone(inventory, needed_stones)
         print ("BASE:food i got: " + str(food))
@@ -37,7 +39,10 @@ def level1(lvl, socket):
             socket.target_id = ""
         elif len(left_over) != 0 and enough_food_incant(level, food):
             print('MODE: search stone')
-            dire, mess = search_stone_mode(level, food, left_over, socket)
+            dire, mess, level = search_stone_mode(level, food, left_over,
+                                                  socket)
+            if level != lvl:
+                return lvl
         else:
             print('MODE: INCANT')
             level = incant(socket, food, level)

@@ -2,7 +2,6 @@
 
 import re
 
-from General_comportement.broadcast import EmptyCacheIgnoreBroadcast
 from General_comportement.inventory import look_inventory_focus_broadcast
 from General_comportement.inventory import get_food
 from General_comportement.mov_to_tile import movToBroadcast
@@ -30,14 +29,18 @@ def go_to_incant_state(socket, lvl, food, direction, message):
         movToBroadcast(direction, socket, level)
         dire = -1
         while food >= level + 3 and dire == -1:
-            dire, mess, resp = look_inventory_focus_broadcast(socket, level)
+            dire, mess, resp, lev = look_inventory_focus_broadcast(socket, level)
+            if lev != lvl:
+                return lev
             food = get_food(resp)
             level = waiting_for_incant(socket, resp, level)
             if level != lvl:
                 return level
             if dire == -1:
                 socket.Look()
-                dire, mess, resp = EmptyCacheFocusBroadcast(socket, level)
+                dire, mess, resp, lev = EmptyCacheFocusBroadcast(socket, level)
+                if lev != lvl:
+                    return lev
                 level = waiting_for_incant(socket, resp, level)
                 if level != lvl:
                     return level

@@ -51,9 +51,11 @@ def number_of_people_to_incant(lvl):
 # @return: tile, item [], returns 2 elements, the first one is the position
 # of the tile where the requested item is situated
 #
-def IsThereItem(socket, requested_item):
+def IsThereItem(socket, requested_item, lvl):
     socket.Look()
-    resp = EmptyCacheIgnoreBroadcast(socket)
+    resp, level = EmptyCacheIgnoreBroadcast(socket, lvl)
+    if level != lvl:
+        return -1, "None", level
     resp = resp[:1]
     if len(resp) > 0 and resp[0] != "ko":
         resp = resp[0][2:-2].split(',')
@@ -62,13 +64,13 @@ def IsThereItem(socket, requested_item):
         for item in content:
             for req_item in requested_item:
                 if item in req_item.split(' '):
-                    return (tile, item)
+                    return tile, item, lvl
     for tile in range(len(resp)):
         content = resp[tile].split(' ')
         for item in content:
             if item == "food":
-                return (tile, item)
-    return (-1, "None")
+                return tile, item, lvl
+    return -1, "None", lvl
 
 
 #
@@ -88,7 +90,9 @@ def IsThereItem(socket, requested_item):
 #
 def IsThereItemSearchBroadcast(socket, requested_item, lvl):
     socket.Look()
-    dire, mess, resp = EmptyCacheSearchBroadcast(socket, lvl)
+    dire, mess, resp, level = EmptyCacheSearchBroadcast(socket, lvl)
+    if level != lvl:
+        return -1, "None", dire, mess, level
     resp = resp[:1]
     if len(resp) > 0 and resp[0] != "ko":
         resp = resp[0][2:-2].split(',')
@@ -97,13 +101,13 @@ def IsThereItemSearchBroadcast(socket, requested_item, lvl):
         for item in content:
             for req_item in requested_item:
                 if item in req_item.split(' '):
-                    return (tile, item, dire, mess)
+                    return tile, item, dire, mess, lvl
     for tile in range(len(resp)):
         content = resp[tile].split(' ')
         for item in content:
             if item == "food":
-                return (tile, item, dire, mess)
-    return (-1, "None", dire, mess)
+                return tile, item, dire, mess, lvl
+    return -1, "None", dire, mess, lvl
 
 
 def nb_player_here(look_result):
@@ -115,9 +119,9 @@ def nb_player_here(look_result):
     return (count)
 
 
-def get_all_item_here(socket, here):
+def get_all_item_here(socket, here, lvl):
     tile = here.split(' ')
     for item in tile:
         if (item != 'player'):
             socket.Take(item)
-            EmptyCacheIgnoreBroadcast(socket)
+            EmptyCacheIgnoreBroadcast(socket, lvl)

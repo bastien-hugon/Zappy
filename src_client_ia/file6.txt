@@ -1,9 +1,0 @@
-IngnoreBroadcast resp = ['1 18']
-FINDALL = [] RESP = [['']]
-BASE:food i got: 0
-MODE: survive
-IngnoreBroadcast resp = ['[food 10, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0]']
-COMMAND : Yellow
-COMMAND : Inventory
-COMMAND : Look
-COMMAND : Forward

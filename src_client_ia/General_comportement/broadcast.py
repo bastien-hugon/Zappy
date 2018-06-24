@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+import re
+
 from General_comportement.check_dead import check_dead
 
 
@@ -12,42 +14,74 @@ from General_comportement.check_dead import check_dead
 # @return: resp, a string containing the content of the sever socket fd
 # without the broadcast messages
 #
-def EmptyCacheIgnoreBroadcast(socket):
+def EmptyCacheIgnoreBroadcast(socket, lvl):
     resp = []
+    incant = False
     while (len(resp) == 0):
         resp = socket.ReadSocket()
         check_dead(resp)
-        # print("CheckLen = " + str(len(resp)) + "  " + str(resp))
         i = 0
         while i < len(resp):
-            # print("I = " + str(i) + "  " + resp[i])
             if resp[i].find("message") != -1:
                 resp.pop(i)
+            elif resp[i].find("Elevation underway") != -1:
+                incant = True
+                print("INCANT TRUE : " + str(resp[i]))
+                print("CURRENT LIST : " + str(resp))
+                resp.pop(i)
+            elif resp[i].find("Current level:") != -1:
+                print("FOUND CURRENT LEVEL: " + str(resp))
+                ret = re.findall('\d+', resp[i])
+                if len(ret) > 0:
+                    if int(ret[0]) != lvl:
+                        return resp, int(ret[0])
             else:
                 i += 1
+    if incant is True:
+        print("WAITING FOR INCANT")
+        ret_incant, level = EmptyCacheIgnoreBroadcast(socket, lvl)
+        if (level != lvl):
+            return resp, level
+        for response in ret_incant:
+            if "Current level:" in response:
+                ret = re.findall('\d+', response)
+                if len(ret) > 0:
+                    if int(ret[0]) != lvl:
+                        return resp, int(ret[0])
+        return resp, lvl
     print("IngnoreBroadcast resp = " + str(resp))
-    return (resp)
+    return resp, lvl
 
 
-#
-# @brief: Function that get the message send by broadcast and parse it to see
-# if it can interrest the actual A.I.
-#
-# @param: level [in], actual level of the A.I.
-# @param: message [in], message received
-#
-# @return: Boolean : where the message came from
-# if the message is interresting, -1 otherwise
-#
-def isBroadcastInterresting(level, message):
-    data = message.split(',')
-    broadCast = data[0].split(' ')
-    whereItComeFrom = broadCast[1]
-    message = data[1].split(':')
-    if (broadCast[0] != "message"):
-        return (-1)
-    if (message[0] != " INCANT"):
-        return (-1)
-    if (int(message[1]) != level):
-        return (-1)
-    return (whereItComeFrom)
+def EmptyCacheIgnoreBroadcastIncant(socket, lvl):
+    resp = []
+    incant = False
+    while (len(resp) == 0):
+        resp = socket.ReadSocket()
+        check_dead(resp)
+        i = 0
+        while i < len(resp):
+            if resp[i].find("message") != -1:
+                resp.pop(i)
+            elif resp[i].find("Elevation underway") != -1:
+                incant = True
+                print("INCANT TRUE : " + str(resp[i]))
+                print("CURRENT LIST : " + str(resp))
+                resp.pop(i)
+            elif resp[i].find("Current level:") != -1:
+                print("FOUND CURRENT LEVEL")
+                ret = re.findall('\d+', resp[i])
+                if len(ret) > 0:
+                    if int(ret[0]) != lvl:
+                        return resp, int(ret[0])
+            else:
+                i += 1
+    if incant is True:
+        for response in resp:
+            if "Current level:" in response:
+                ret = re.findall('\d+', response)
+                if len(ret) > 0:
+                    if int(ret[0]) != lvl:
+                        return resp, int(ret[0])
+    print("IngnoreBroadcastIncant resp = " + str(resp))
+    return resp, lvl
