@@ -34,7 +34,6 @@ client_t *get_client_for_fd(server_t *srv, int fd)
 */
 static void remove_first_command_from_queue(client_t *client)
 {
-	free(client->cmd_queue[0]);
 	memmove(&client->cmd_queue[0], &client->cmd_queue[1], \
 		sizeof(NB_CMD_QUEUE - 1) * sizeof(char *));
 	client->cmd_queue[NB_CMD_QUEUE - 1] = NULL;
