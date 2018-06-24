@@ -1,2 +1,6 @@
+*.o
+*.gcov
+*.gcno
+*.gcda
+units
 .vscode
-src_client_gfx/__pycache__
