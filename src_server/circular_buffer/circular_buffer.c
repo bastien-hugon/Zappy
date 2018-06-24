@@ -147,11 +147,10 @@ char *circular_buffer_get_to(circular_buffer_t *buffer, char *to)
 		return (CIRCULAR_BUFFER_NOT_FOUND);
 	}
 	if ((buffer->head > buffer->tail || \
-		buffer->head == (char *)&buffer->buffer) \
-		&& (str = sstrstr(buffer->tail, to, ((int)(((buffer->head == \
+		buffer->head == (char *)&buffer->buffer) && \
+		(str = sstrstr(buffer->tail, to, ((int)(((buffer->head == \
 		(char *)&buffer->buffer) ? buff_end : buffer->head) - \
-		buffer->tail)))) \
-		!= NULL)
+		buffer->tail)))) != NULL)
 		return (circular_buffer_get_standard(buffer, to, str));
 	if (buffer->head <= buffer->tail && (str = sstrstr(\
 		(char *)&buffer->buffer, to, buffer->head - \

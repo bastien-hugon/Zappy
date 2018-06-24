@@ -94,7 +94,7 @@ void socket_manager(server_t *srv)
 
 	INFO("Server's ready !");
 	srv->game.frequence = (int) freq;
-	generate_map(&(srv->game)); 
+	generate_map(&(srv->game));
 	while (true)
 		loop_manager(srv);
 }

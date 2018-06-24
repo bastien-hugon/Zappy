@@ -22,6 +22,8 @@ server_t server_g;
 void sighandler(int signum)
 {
 	(void)signum;
+	if (signum == SIGPIPE)
+		exit(84);
 	stop_server(&server_g, NULL);
 }
 
@@ -45,6 +47,7 @@ int main(int argc, char **argv)
 	init_server(&server_g);
 	init_epoll(&server_g);
 	signal(SIGINT, sighandler);
+	signal(SIGPIPE, sighandler);
 	socket_manager(&server_g);
 	return (EXIT_SUCCESS);
 }

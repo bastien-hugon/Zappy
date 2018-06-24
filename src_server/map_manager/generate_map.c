@@ -23,8 +23,7 @@
 */
 static bool allocate_map(game_t *game)
 {
-	if ((game->map = malloc(sizeof(tile_t *) * (game->height))) \
-	== NULL)
+	if ((game->map = malloc(sizeof(tile_t *) * (game->height))) == NULL)
 		return (false);
 	for (int i = 0; i < (int) game->height; i++)
 		if ((game->map[i] = malloc(sizeof(tile_t) * \

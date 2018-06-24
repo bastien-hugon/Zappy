@@ -20,10 +20,8 @@ bool disconnect_c_client(server_t *srv, int fd)
 	client_t *client = get_client_for_fd(srv, fd);
 	client_t *gfx = get_gfx_client(srv);
 
-	if (gfx && !client->is_gfx) {
-		send_message(gfx->socket.fd, "pdi %d\n", \
-		client->id);
-	}
+	if (gfx && !client->is_gfx)
+		send_message(gfx->socket.fd, "pdi %d\n", client->id);
 	if (client) {
 		close(fd);
 		epoll_ctl(srv->srv_epoll.epollfd, EPOLL_CTL_DEL, \

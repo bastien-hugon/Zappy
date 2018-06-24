@@ -21,6 +21,8 @@ char *realloc_concat(char *s1, char *s2)
 	int ab = a + b + 1;
 
 	s1 = realloc(s1, ab);
+	if (!s1)
+		ERROR("REALLOC FAILED");
 	memcpy(s1 + a, s2, b + 1);
 	return (s1);
 }

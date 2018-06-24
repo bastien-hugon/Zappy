@@ -13,7 +13,7 @@
 #include "server.h"
 
 /**
-*@brief send Elevation underway to all the concerned client on a tile 
+*@brief send Elevation underway to all the concerned client on a tile
 *
 *@param tile [in] the tile
 *@param lvl [in] the level
@@ -37,7 +37,8 @@ void send_elevation_underway(tile_t *tile, int lvl)
 * @param was_ok [in] the status of the incantation
 * @param lvl [in] the level
 */
-void send_incantation_status_to_client(server_t *server, client_t **clients, bool was_ok, int lvl)
+void send_incantation_status_to_client(server_t *server, client_t **clients, \
+bool was_ok, int lvl)
 {
 	if (clients != NULL && *clients != NULL && \
 		(*clients)->level == lvl + 1 && was_ok) {

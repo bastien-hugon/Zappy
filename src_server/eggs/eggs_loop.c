@@ -9,12 +9,10 @@
 ** @file eggs_loop.c
 ** @brief eggs main loop functions
 */
-
 #include "server.h"
 
-
 /**
-*@brief single egg main loop executed each tickg 
+*@brief single egg main loop executed each tickg
 *
 *@param server [in] the server
 *@param egg [out] the egg
