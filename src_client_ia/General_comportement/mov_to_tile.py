@@ -4,20 +4,28 @@ from General_comportement.broadcast import EmptyCacheIgnoreBroadcast
 from General_comportement.language import EmptyCacheSearchBroadcast
 
 
-def go_to_tile(nb_forward, nb_side, socket):
+def go_to_tile(nb_forward, nb_side, socket, lvl):
     for i in range(nb_forward):
         socket.Forward()
-        EmptyCacheIgnoreBroadcast(socket)
+        resp, level = EmptyCacheIgnoreBroadcast(socket, lvl)
+        if level != lvl:
+            return level
     if (nb_side < 0):
         socket.Left()
-        EmptyCacheIgnoreBroadcast(socket)
+        resp, level = EmptyCacheIgnoreBroadcast(socket, lvl)
+        if level != lvl:
+            return level
     elif (nb_side > 0):
         socket.Right()
-        EmptyCacheIgnoreBroadcast(socket)
+        resp, level = EmptyCacheIgnoreBroadcast(socket, lvl)
+        if level != lvl:
+            return level
     nb_side = abs(nb_side)
     for i in range(nb_side):
         socket.Forward()
-        EmptyCacheIgnoreBroadcast(socket)
+        resp, level = EmptyCacheIgnoreBroadcast(socket, lvl)
+        if level != lvl:
+            return level
 
 
 def mov_to_tile(tile, level, socket):
@@ -28,7 +36,7 @@ def mov_to_tile(tile, level, socket):
         if (tile >= (x * (x + 1) - x) and tile <= (x * (x + 1) + x)):
             nb_forward = x
     nb_side = tile - (nb_forward * (nb_forward + 1))
-    go_to_tile(nb_forward, nb_side, socket)
+    lvl = go_to_tile(nb_forward, nb_side, socket, level)
 
 
 #
@@ -43,29 +51,37 @@ def mov_to_tile(tile, level, socket):
 # @return: dire, the direction of where the message came from, -1 if no message
 # @return: mess, the content of the message, empty list if no message
 #
-def go_to_tile_search_broadcast(nb_forward, nb_side, socket, level):
+def go_to_tile_search_broadcast(nb_forward, nb_side, socket, lvl):
     for i in range(nb_forward):
         socket.Forward()
-        dire, mess, resp = EmptyCacheSearchBroadcast(socket, level)
-        if dire != -1 and level != 1:
-            return dire, mess
+        dire, mess, resp, level = EmptyCacheSearchBroadcast(socket, lvl)
+        if level != lvl:
+            return dire, mess, level
+        if dire != -1 and lvl != 1:
+            return dire, mess, lvl
     if (nb_side < 0):
         socket.Left()
-        dire, mess, resp = EmptyCacheSearchBroadcast(socket, level)
-        if dire != -1 and level != 1:
-            return dire, mess
+        dire, mess, resp, level = EmptyCacheSearchBroadcast(socket, lvl)
+        if level != lvl:
+            return dire, mess, level
+        if dire != -1 and lvl != 1:
+            return dire, mess, lvl
     elif (nb_side > 0):
         socket.Right()
-        dire, mess, resp = EmptyCacheSearchBroadcast(socket, level)
-        if dire != -1 and level != 1:
-            return dire, mess
+        dire, mess, resp, level = EmptyCacheSearchBroadcast(socket, lvl)
+        if level != lvl:
+            return dire, mess, level
+        if dire != -1 and lvl != 1:
+            return dire, mess, lvl
     nb_side = abs(nb_side)
     for i in range(nb_side):
         socket.Forward()
-        dire, mess, resp = EmptyCacheSearchBroadcast(socket, level)
-        if dire != -1 and level != 1:
-            return dire, mess
-    return -1, []
+        dire, mess, resp, level = EmptyCacheSearchBroadcast(socket, lvl)
+        if level != lvl:
+            return dire, mess, level
+        if dire != -1 and lvl != 1:
+            return dire, mess, lvl
+    return -1, [], lvl
 
 
 #
@@ -82,20 +98,22 @@ def go_to_tile_search_broadcast(nb_forward, nb_side, socket, level):
 #
 def mov_to_tile_search_broadcast(tile, level, socket):
     if (tile == 0):
-        return -1, []
+        return -1, [], level
     nb_forward = 0
     for x in range(level + 1):
         if (tile >= (x * (x + 1) - x) and tile <= (x * (x + 1) + x)):
             nb_forward = x
     nb_side = tile - (nb_forward * (nb_forward + 1))
-    dire, mess = go_to_tile_search_broadcast(nb_forward, nb_side, socket,
-                                             level)
+    dire, mess, lvl = go_to_tile_search_broadcast(nb_forward, nb_side, socket,
+                                                  level)
+    if level != lvl:
+        return dire, mess, lvl
     if dire != -1 and level != 1:
-        return dire, mess
-    return -1, []
+        return dire, mess, level
+    return -1, [], level
 
 
-def movToBroadcast(direction, socket, level):
+def movToBroadcast(direction, socket, lvl):
     print("MOVE TO INCANT")
     ListActions = [['wait'],
                    ['forward'],
@@ -109,13 +127,19 @@ def movToBroadcast(direction, socket, level):
     for action in ListActions[direction]:
         if action == 'forward':
             socket.Forward()
-            dire, mess, resp = EmptyCacheSearchBroadcast(socket, level)
+            dire, mess, resp, level = EmptyCacheSearchBroadcast(socket, lvl)
+            if level != lvl:
+                return dire, mess, level
         elif (action == 'left'):
             socket.Left()
-            dire, mess, resp = EmptyCacheSearchBroadcast(socket, level)
+            dire, mess, resp, level = EmptyCacheSearchBroadcast(socket, lvl)
+            if level != lvl:
+                return dire, mess, level
         elif (action == 'right'):
             socket.Right()
-            dire, mess, resp = EmptyCacheSearchBroadcast(socket, level)
+            dire, mess, resp, level = EmptyCacheSearchBroadcast(socket, lvl)
+            if level != lvl:
+                return dire, mess, level
         else:
-            return (1)
-    return (1)
+            return -1, [], lvl
+    return -1, [], lvl

@@ -16,12 +16,14 @@ from General_comportement.language import EmptyCacheFocusBroadcast
 #
 # @return: returns the response of the server
 #
-def look_inventory(socket):
+def look_inventory(socket, lvl):
     socket.Inventory()
-    resp = EmptyCacheIgnoreBroadcast(socket)
+    resp, level = EmptyCacheIgnoreBroadcast(socket, lvl)
+    if level != lvl:
+        return resp, level
     if len(resp) > 0 and resp[0] != "ko":
         resp[0] = resp[0][2:-2].split(', ')
-    return (resp)
+    return resp, level
 
 
 #
@@ -35,12 +37,14 @@ def look_inventory(socket):
 # @return: dire, the direction of where the message came from, -1 if no message
 # @return: mess, the content of the message, empty list if no message
 #
-def look_inventory_search_broadcast(socket, level):
+def look_inventory_search_broadcast(socket, lvl):
     socket.Inventory()
-    dire, mess, resp = EmptyCacheSearchBroadcast(socket, level)
+    dire, mess, resp, level = EmptyCacheSearchBroadcast(socket, lvl)
+    if lvl != level:
+        return dire, mess, resp, level
     if len(resp) > 0 and resp[0] != "ko":
         resp[0] = resp[0][2:-2].split(', ')
-    return (dire, mess, resp)
+    return dire, mess, resp, lvl
 
 
 #
@@ -55,12 +59,14 @@ def look_inventory_search_broadcast(socket, level):
 # @return: dire, the direction of where the message came from, -1 if no message
 # @return: mess, the content of the message, empty list if no message
 #
-def look_inventory_focus_broadcast(socket, level):
+def look_inventory_focus_broadcast(socket, lvl):
     socket.Inventory()
-    dire, mess, resp = EmptyCacheFocusBroadcast(socket, level)
+    dire, mess, resp, level = EmptyCacheFocusBroadcast(socket, lvl)
+    if level != lvl:
+        return dire, mess, resp, level
     if len(resp) > 0 and resp[0] != "ko":
         resp[0] = resp[0][2:-2].split(', ')
-    return (dire, mess, resp)
+    return dire, mess, resp, lvl
 
 
 #
@@ -105,6 +111,9 @@ def GetLeftOverStone(inventory, stones_needed):
     for item in stones_needed_list:
         for inv_item in inventory_list:
             if item[0] == inv_item[0]:
+                print("GETLEFTOVERSTONE: " str(inventory) + " " + str(stones_needed) + " " + item[0] + " " + inv_item[0])
+                if not item[1].isdigit() or not inv_item[1].isdigit():
+                    return ["linemate 1"]
                 number = int(item[1]) - int(inv_item[1])
                 if number > 0:
                     left_over.append(item[0] + ' ' + str(number))

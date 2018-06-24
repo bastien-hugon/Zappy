@@ -54,7 +54,7 @@ int check_carriage_return(char *command)
 PyObject *get_fd_activity(PyObject *self, PyObject *args)
 {
 	int fd;
-	char command[4096] = {0};
+	char command[16384] = {0};
 	fd_set fds;
 
 	(void)self;
@@ -68,8 +68,7 @@ PyObject *get_fd_activity(PyObject *self, PyObject *args)
 	}
 	if (FD_ISSET(fd, &fds)) {
 		while (check_carriage_return(command) != 0)
-		read(fd, command, 4096);
-		//printf("%s\n", command);
+			read(fd, command, 16384);
 	}
 	return (Py_BuildValue("s" , command));
 }
