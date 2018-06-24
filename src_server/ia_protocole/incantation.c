@@ -59,7 +59,7 @@ bool check_incantation_conditions(tile_t *tile, int lvl)
 		LOG("Incantation going to failed: Error with %d (required : %d present %d)", res, incantation_requirements[lvl - 1][res], tile->inventory[res]);}
 	}
 	if (get_nb_players_on_tile_of_lvl(tile, lvl) != \
-		incantation_requirements[lvl - 1][0]) {
+		(int)incantation_requirements[lvl - 1][0]) {
 		ret = false;
 		LOG("Incantation going to failed: Error with players nb (required : %d present)", incantation_requirements[lvl - 1][0], get_nb_players_on_tile_of_lvl(tile, lvl));
 		}

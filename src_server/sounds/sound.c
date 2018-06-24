@@ -172,7 +172,7 @@ bool send_sound(server_t *server, client_t *sender, char *sound)
 
 	for (y = 0; y < server->game.height; y++) {
 		for (x = 0; x < server->game.width; x++) {
-			bool sended = send_sound_to_tile(server, sender, \
+			send_sound_to_tile(server, sender, \
 				sound, (pos_t){x, y});
 		}
 	}
