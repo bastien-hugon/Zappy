@@ -50,7 +50,8 @@ class SocketInteraction:
                 if "ko" in answer:
                     print("Connection failed")
                     exit(84)
-            self.nbplaces = int(response[0])
+            if len(response) > 0:
+                self.nbplaces = int(response[0])
         if len(response) == 1:
             response = []
             while (len(response) == 0):
