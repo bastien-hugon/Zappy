@@ -37,10 +37,13 @@ tile_t get_tile(server_t *srv, int x, int y)
 {
 	if (x < 0)
 		x = (srv->game.width - (-1 * (0 - x)));
-	x %= srv->game.width;
+	if ((uint) x >= srv->game.width)
+		x = x % srv->game.width;
 	if (y < 0)
 		x = (srv->game.height - (-1 * (0 - y)));
-	y %= srv->game.height;
+	if ((uint) y >= srv->game.height)
+		y = y % srv->game.height;
+	ERROR("Look x:%d y:%d | Max: x:%d y:%d", x, y, srv->game.width, srv->game.height);
 	return (srv->game.map[y][x]);
 }
 

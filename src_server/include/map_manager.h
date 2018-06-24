@@ -10,14 +10,6 @@
 
 	#include "server.h"
 
-/*	#define R_LINEMATE (40)
-	#define R_DERAUMERE (56)
-	#define R_SIBUR (44)
-	#define R_MENDIANE (72)
-	#define R_PHIRAS (66)
-	#define R_THYSTAME (94)
-	#define R_FOOD (70)
-*/
 	#define R_LINEMATE (90)
 	#define R_DERAUMERE (90)
 	#define R_SIBUR (90)
