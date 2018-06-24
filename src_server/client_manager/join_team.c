@@ -26,7 +26,7 @@ static bool egg_hatching(server_t *server, client_t *client, egg_t *egg)
 	client->team->free_slots--;
 	INFO("Client #%d just logged-in in team #%s (egg)", \
 	client->id, client->team->name);
-	send_to_gfx("egh %d\n", egg->id);
+	send_to_gfx(server, "egh %d\n", egg->id);
 	client->team->free_slots--;
 	ret = list_push(&(server->game.map[egg->pos.y][egg->pos.x]\
 		.player), &client);
