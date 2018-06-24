@@ -9,6 +9,7 @@
 	#define MODULE_H_
 
 #include <Python.h>
+#include <sys/epoll.h>
 #include <netdb.h>
 #include <sys/socket.h>
 #include <arpa/inet.h>
