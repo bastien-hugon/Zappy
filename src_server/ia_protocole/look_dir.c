@@ -27,9 +27,11 @@ bool look_north(server_t *srv, client_t *client)
 		for (uint j = 0; j < (uint) 1 + 2 * i; j++)
 			buffer = add_tile_to_buff(srv, client->pos.x - i + j, \
 			client->pos.y - i, buffer);
- 	buffer[strlen(buffer) - 2] = ' ';
+	buffer[strlen(buffer) - 2] = ' ';
 	buffer[strlen(buffer) - 1] = ']';
-	return (send_message(client->socket.fd, realloc_concat(buffer, "\n")));
+	if (!send_message(client->socket.fd, realloc_concat(buffer, "\n")))
+		return (send_message(client->socket.fd, "ko\n"));
+	return (true);
 }
 
 /**
@@ -53,9 +55,11 @@ bool look_west(server_t *srv, client_t *client)
 			buffer = add_tile_to_buff(srv, client->pos.x + i, \
 			client->pos.y - i + j, buffer);
 		}
- 	buffer[strlen(buffer) - 2] = ' ';
+	buffer[strlen(buffer) - 2] = ' ';
 	buffer[strlen(buffer) - 1] = ']';
-	return (send_message(client->socket.fd, realloc_concat(buffer, "\n")));
+	if (!send_message(client->socket.fd, realloc_concat(buffer, "\n")))
+		return (send_message(client->socket.fd, "ko\n"));
+	return (true);
 }
 
 /**
@@ -78,9 +82,11 @@ bool look_south(server_t *srv, client_t *client)
 		for (int j = 2 * i; j >= 0; j--)
 			buffer = add_tile_to_buff(srv, client->pos.x - i + j, \
 			client->pos.y + i, buffer);
- 	buffer[strlen(buffer) - 2] = ' ';
+	buffer[strlen(buffer) - 2] = ' ';
 	buffer[strlen(buffer) - 1] = ']';
-	return (send_message(client->socket.fd, realloc_concat(buffer, "\n")));
+	if (!send_message(client->socket.fd, realloc_concat(buffer, "\n")))
+		return (send_message(client->socket.fd, "ko\n"));
+	return (true);
 }
 
 /**
@@ -104,7 +110,9 @@ bool look_east(server_t *srv, client_t *client)
 			buffer = add_tile_to_buff(srv, client->pos.x + i, \
 			client->pos.y - i + j, buffer);
 		}
- 	buffer[strlen(buffer) - 2] = ' ';
+	buffer[strlen(buffer) - 2] = ' ';
 	buffer[strlen(buffer) - 1] = ']';
-	return (send_message(client->socket.fd, realloc_concat(buffer, "\n")));
+	if (!send_message(client->socket.fd, realloc_concat(buffer, "\n")))
+		return (send_message(client->socket.fd, "ko\n"));
+	return (true);
 }

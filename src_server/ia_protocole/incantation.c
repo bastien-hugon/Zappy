@@ -13,12 +13,12 @@
 #include "server.h"
 
 static uint incantation_requirements[7][NB_RESSOURCE] = {
-	{1, 1, 0, 0, 0, 0, 0},
-	{2, 1, 1, 1, 0, 0, 0},
-	{2, 2, 0, 1, 0, 2, 0},
-	{4, 1, 1, 2, 0, 1, 0},
-	{4, 1, 2, 1, 3, 0, 0},
-	{6, 1, 2, 3, 0, 1, 0},
+	{1, 1, 0, 0, 0, 0, 0}, \
+	{2, 1, 1, 1, 0, 0, 0}, \
+	{2, 2, 0, 1, 0, 2, 0}, \
+	{4, 1, 1, 2, 0, 1, 0}, \
+	{4, 1, 2, 1, 3, 0, 0}, \
+	{6, 1, 2, 3, 0, 1, 0}, \
 	{6, 2, 2, 2, 2, 2, 1}
 };
 
@@ -77,10 +77,10 @@ bool check_incantation_conditions(tile_t *tile, int lvl)
 */
 bool validate_incantation(tile_t *tile, int lvl)
 {
-	if (check_incantation_conditions(tile, lvl) == false)
-		return (false);
 	client_t **client = tile->player;
 
+	if (check_incantation_conditions(tile, lvl) == false)
+		return (false);
 	do {
 		if (client != NULL && *client != NULL && \
 			(*client)->level == lvl)

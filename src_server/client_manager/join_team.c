@@ -48,8 +48,8 @@ static bool place_with_egg(server_t *server, client_t *client)
 	egg_t *egg = server->game.egg;
 
 	do {
-		if (egg != NULL && egg->team == client->team \
-			&& egg->tick_left == 0) {
+		if (egg != NULL && egg->team == client->team && \
+		egg->tick_left == 0) {
 			return (egg_hatching(server, client, egg));
 		}
 	} while (list_next(&egg));

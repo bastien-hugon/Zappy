@@ -62,8 +62,8 @@ bool client_take(server_t *srv, client_t *user)
 *@param user [in] the user
 *@param map [in] the map
 *@param res [in] the resources
-*@return true on ok 
-*@return false  on ko
+*@return true on ok
+*@return false on ko
 */
 static bool set_object(server_t *srv, client_t *user, tile_t **map, \
 	ressource_e res)
