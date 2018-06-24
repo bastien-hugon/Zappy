@@ -84,7 +84,7 @@ client_t *client, client_t **ejected_clients)
 *
 *@param list [in] the list
 *@param client [in] the client to remove
-*@return client_t** [out] the new list
+*@return client_t **[out] the new list
 */
 static client_t **remove_client_from_list(client_t **list, client_t *client)
 {

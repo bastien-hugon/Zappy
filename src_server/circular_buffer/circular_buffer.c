@@ -37,16 +37,6 @@ char *sstrstr(char *buffer, char *find, size_t length)
 }
 
 /**
-* @brief init a circular buffer
-*
-* @param buffer [out] the buffer to init
-*/
-void circular_buffer_init(circular_buffer_t *buffer)
-{
-	memset(buffer, 0, sizeof(*buffer));
-}
-
-/**
 * @brief read in a circular buffer
 * the caller need to log if there is an error
 *
@@ -87,7 +77,7 @@ bool circular_buffer_read(circular_buffer_t *buffer, int fd)
 * @param to [in] the end of the string
 * @param buff_end [in] the end of the buffer
 * @param str [in] the substring
-* @return char* the string to the delimiter
+* @return char *the string to the delimiter
 */
 static char *circular_buffer_get_end(circular_buffer_t *buffer, char *to, \
 	const char *buff_end, char *str)
@@ -114,7 +104,7 @@ static char *circular_buffer_get_end(circular_buffer_t *buffer, char *to, \
 * @param buffer [in] the buffer
 * @param to [in] the end of the string
 * @param str [the] pointer to the start of to in buffer
-* @return char* the allocated string
+* @return char *the allocated string
 */
 char *circular_buffer_get_standard(circular_buffer_t *buffer, char *to, \
 	char *str)
