@@ -31,9 +31,9 @@ char *sstrstr(char *buffer, char *find, size_t length)
 	for (i = 0; i < length; i++)
 	{
 		if (strncmp(&buffer[i], find, find_length) == 0)
-			return &buffer[i];
+			return (&buffer[i]);
 	}
-	return NULL;
+	return (NULL);
 }
 
 /**
