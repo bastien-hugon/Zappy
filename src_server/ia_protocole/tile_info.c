@@ -12,7 +12,7 @@
 *
 *@param s1 [in] Src str
 *@param s2 [in] Add this
-*@return char* result
+*@return char *result
 */
 char *realloc_concat(char *s1, char *s2)
 {
@@ -58,7 +58,7 @@ tile_t get_tile(server_t *srv, int x, int y)
 *@param x [in] The x tile coord
 *@param y [in] The y tile coord
 *@param buffer [in] The buffer
-*@return char* The buffer changed
+*@return char *The buffer changed
 */
 char *add_tile_to_buff(server_t *srv, int x, int y, char *buffer)
 {

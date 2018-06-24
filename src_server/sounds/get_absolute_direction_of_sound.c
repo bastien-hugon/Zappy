@@ -61,7 +61,7 @@ int calc_lower_y(server_t *server, client_t *sender, client_t *receiver)
 *
 *@param lower_x [in] lower x value
 *@param lower_y [in] lower y value
-*@return int 
+*@return int the direction
 */
 int calc_for_diagonale(int lower_x, int lower_y)
 {
@@ -83,7 +83,7 @@ int calc_for_diagonale(int lower_x, int lower_y)
 *
 *@param lower_x [in] lower x value
 *@param lower_y [in] lower y value
-*@return int 
+*@return int the direction
 */
 int calc_for_others(int lower_x, int lower_y, int coef_directeur)
 {
@@ -109,7 +109,7 @@ int calc_for_others(int lower_x, int lower_y, int coef_directeur)
 * @param sender [in] the sender
 * @param receiver [in] the receiver of the message
 */
-int get_absolute_direction_of_sound(server_t *server, client_t *sender,\
+int get_absolute_direction_of_sound(server_t *server, client_t *sender, \
 	client_t *receiver)
 {
 	int lower_x = calc_lower_x(server, sender, receiver);

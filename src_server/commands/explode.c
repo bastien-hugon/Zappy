@@ -64,7 +64,7 @@ static int word_len(char *str, char *lim)
 *
 *@param str [in] the string
 *@param lim [in] the limiters
-*@return char** the exploded string
+*@return char **the exploded string
 */
 char **explode(char *str, char *lim)
 {

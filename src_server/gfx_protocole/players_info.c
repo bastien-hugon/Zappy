@@ -19,7 +19,7 @@
 *
 *@param uid [in] The uid of an user
 *@param tile [in] The tile to check on
-*@return client_t* The client found
+*@return client_t *The client found
 */
 static client_t *gfx_get_usr(uint uid, tile_t tile)
 {

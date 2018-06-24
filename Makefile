@@ -68,6 +68,7 @@ SERV_SRCS	=	./src_server/argument_handling/argument_handling.c \
 			./src_server/eggs/command.c \
 			./src_server/eggs/eggs_loop.c \
 			./src_server/circular_buffer/circular_buffer.c \
+			./src_server/circular_buffer/circular_buffer_init.c \
 			./src_server/client_manager/exec_client_actions.c \
 			./src_server/client_manager/send_message.c \
 			./src_server/gfx_protocole/map_info.c \

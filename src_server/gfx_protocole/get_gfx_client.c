@@ -18,7 +18,7 @@
 *@brief Get the gfx client object
 *
 *@param srv [in] The main server_t struct
-*@return client_t* The GFX Client found
+*@return client_t *The GFX Client found
 */
 client_t *get_gfx_client(const server_t *srv)
 {
