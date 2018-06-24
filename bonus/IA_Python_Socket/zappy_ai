@@ -1,0 +1,72 @@
+#!/usr/bin/env python3
+
+from sys import *
+import getopt
+import time
+
+from socket_file import SocketInteraction
+from Level1.level1 import level1
+from Level8.level8 import level8
+from General_comportement.layAnEgg import layAnEgg
+from Level2to7.level2to7 import level2to7
+
+
+def go_in_state(socket):
+    level = 1
+    while (level < 8):
+        level = level1(level, socket)
+        print("\n----------------------------------------------------------------------------\nLEVEL " + str(level) + "  REACHED \n----------------------------------------------------------------------------\n")
+        layAnEgg(level, socket)
+    print("Level 8 !")
+    level8(socket)
+
+
+def connection(port, name, machine):
+    return (SocketInteraction(str(machine), port, str(name)))
+
+
+def print_usage():
+    print("USAGE: ./zappy_ai -p port -n name -h machine")
+    print("\tport\tis the port number")
+    print("\tname\tis the name of the team")
+    print("\tmachine\tis the name of the machine; localhost by default")
+
+
+def main():
+    my_argv = argv[1:]
+    port = 0
+    name = ""
+    machine = "127.0.0.1"
+    try:
+        optlist, args = getopt.getopt(my_argv, "p:n:h:", ["help"])
+    except getopt.GetoptError as err:
+        print(err)
+        print_usage()
+        exit(84)
+    if (args != []):
+        print_usage()
+        exit(84)
+    for opt, val in optlist:
+        if opt == "--help":
+            print_usage()
+            exit(0)
+        if opt == "-p":
+            try:
+                port = int(val)
+            except:
+                print_usage()
+                exit(84)
+        elif opt == "-n":
+            name = val
+        elif opt == "-h":
+            machine = val
+        else:
+            assert False, "unhandled option"
+    if (port == 0 or name == ""):
+        print_usage()
+        exit(84)
+    socket = connection(port, name, machine)
+    go_in_state(socket)
+
+if __name__ == '__main__':
+    main()
