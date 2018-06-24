@@ -39,7 +39,7 @@ command_t commands[] = {
 /**
 *@brief transform a str in a command
 *
-*@param str the string
+*@param str [in] the string
 *@return command_t the command
 */
 command_t *get_command_from_str(char *str)

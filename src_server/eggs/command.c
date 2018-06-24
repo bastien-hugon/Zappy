@@ -26,6 +26,8 @@ bool drop_egg_command(server_t *server, client_t *client)
 
 	LOG("New Egg at pos: {%d %d}, team: #%s", egg.pos.x, \
 		egg.pos.y, egg.team->name);
+	send_to_gfx("enw %d %d %d %d", egg.id, client->id, \
+		egg.pos.x, egg.pos.y);
 	server->game.nb_eggs++;
 	send_message(client->socket.fd, "ok\n");
 	return (ret);

@@ -5,18 +5,22 @@
 ** Explode function
 */
 
-//#include "server.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdbool.h>
 #include <string.h>
 
-void free_wordtab(char **str)
+/**
+*@brief free a wordtab
+*
+*@param wt [in] the wordtab
+*/
+void free_wordtab(char **wt)
 {
-	for (int i = 0; str[i] != NULL; i++) {
-		free(str[i]);
+	for (int i = 0; wt[i] != NULL; i++) {
+		free(wt[i]);
 	}
-	free(str);
+	free(wt);
 }
 
 static bool is_lim(char c, char *lim)
@@ -55,6 +59,13 @@ static int word_len(char *str, char *lim)
 	return (len);
 }
 
+/**
+*@brief explode a string
+*
+*@param str [in] the string
+*@param lim [in] the limiters
+*@return char** the exploded string
+*/
 char **explode(char *str, char *lim)
 {
 	int len;

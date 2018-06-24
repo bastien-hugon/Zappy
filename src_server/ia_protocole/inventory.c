@@ -17,8 +17,8 @@
 /**
 *@brief Send the inventory to the client
 *
-*@param srv Main server_t struct
-*@param client The client
+*@param srv [in] Main server_t struct
+*@param client [in] The client
 *@return true If the message was sent
 *@return false The message wasn't sent
 */

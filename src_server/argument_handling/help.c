@@ -32,8 +32,8 @@ void print_help(void)
 /**
 *@brief search if the option -help is used
 *
-* @param argc the arguments count
-* @param argv the arguments values
+* @param argc [in] the arguments count
+* @param argv [in] the arguments values
 * @return true if the option -help was found
 * @return false othwerwise
 */
