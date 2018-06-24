@@ -72,8 +72,10 @@ bool circular_buffer_read(circular_buffer_t *buffer, int fd)
 			return (false);
 	}
 	buffer->head += readed;
-	if (buffer->head == buff_end)
+	if (buffer->head == buff_end) {
 			buffer->head = (char *)&buffer->buffer;
+			circular_buffer_read(buffer, fd);
+	}
 	return (true);
 }
 

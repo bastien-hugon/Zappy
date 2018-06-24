@@ -24,10 +24,10 @@ bool disconnect_c_client(server_t *srv, int fd)
 		send_message(gfx->socket.fd, "pdi %d\n", \
 		client->id);
 	}
-	close(fd);
-	epoll_ctl(srv->srv_epoll.epollfd, EPOLL_CTL_DEL, \
-		fd, &(srv->srv_epoll.ev));
 	if (client) {
+		close(fd);
+		epoll_ctl(srv->srv_epoll.epollfd, EPOLL_CTL_DEL, \
+			fd, &(srv->srv_epoll.ev));
 		if (client->team)
 			client->team->free_slots++;
 		list_remove(&client);

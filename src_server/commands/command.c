@@ -47,8 +47,9 @@ command_t *get_command_from_str(char *str)
 	for (int i = 0; i < NB_CMDS; i++) {
 		if (commands[i].cmd_str[0] != '\0' && \
 			strncasecmp(commands[i].cmd_str, str, \
-			strlen(commands[i].cmd_str)) == 0)
-			return (&commands[i]);
+			strlen(commands[i].cmd_str)) == 0) {
+				return (&commands[i]);
+			}
 	}
 	return (NULL);
 }
