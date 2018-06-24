@@ -85,8 +85,11 @@ class SocketInteractionPython:
     def TeamName(self):
         message = (self.name + '\n').encode('utf-8')
         print(message)
-        self.socket.send(message)
-        # sockets.send_command(self.name, self.fd)
+        try:
+            self.socket.send(message)
+        except socket_error as serr:
+            print("Connection Dropped !")
+            exit(84)
 
     #
     # @brief: Function that sends the command to get the inventory
@@ -98,8 +101,11 @@ class SocketInteractionPython:
     def Inventory(self):
         message = ("Inventory\n").encode('utf-8')
         print(message)
-        self.socket.send(message)
-        # sockets.send_command("Inventory", self.fd)
+        try:
+            self.socket.send(message)
+        except socket_error as serr:
+            print("Connection Dropped !")
+            exit(84)
 
     #
     # @brief: Function that sends the command to go forward
@@ -111,8 +117,11 @@ class SocketInteractionPython:
     def Forward(self):
         message = ("Forward\n").encode('utf-8')
         print(message)
-        self.socket.send(message)
-        # sockets.send_command("Forward", self.fd)
+        try:
+            self.socket.send(message)
+        except socket_error as serr:
+            print("Connection Dropped !")
+            exit(84)
 
     #
     # @brief: Function that sends the command to turn right
@@ -124,8 +133,11 @@ class SocketInteractionPython:
     def Right(self):
         message = ("Right\n").encode('utf-8')
         print(message)
-        self.socket.send(message)
-        # sockets.send_command("Right", self.fd)
+        try:
+            self.socket.send(message)
+        except socket_error as serr:
+            print("Connection Dropped !")
+            exit(84)
 
     #
     # @brief: Function that sends the command to turn left
@@ -137,8 +149,11 @@ class SocketInteractionPython:
     def Left(self):
         message = ("Left\n").encode('utf-8')
         print(message)
-        self.socket.send(message)
-        # sockets.send_command("Left", self.fd)
+        try:
+            self.socket.send(message)
+        except socket_error as serr:
+            print("Connection Dropped !")
+            exit(84)
 
     #
     # @brief: Function that sends the command to look what items are on the
@@ -151,8 +166,11 @@ class SocketInteractionPython:
     def Look(self):
         message = ("Look\n").encode('utf-8')
         print(message)
-        self.socket.send(message)
-        # sockets.send_command("Look", self.fd)
+        try:
+            self.socket.send(message)
+        except socket_error as serr:
+            print("Connection Dropped !")
+            exit(84)
 
     #
     # @brief: Function that sends the command to broadcast a message to every
@@ -167,8 +185,11 @@ class SocketInteractionPython:
     def Broadcast(self, sentence):
         message = ("Broadcast " + sentence + '\n').encode('utf-8')
         print(message)
-        self.socket.send(message)
-        # sockets.send_command(("Broadcast " + sentence), self.fd)
+        try:
+            self.socket.send(message)
+        except socket_error as serr:
+            print("Connection Dropped !")
+            exit(84)
 
     #
     # @brief: Function that sends the command to know how much free slots
@@ -181,8 +202,11 @@ class SocketInteractionPython:
     def Connect_nbr(self):
         message = ("Connect_nbr\n").encode('utf-8')
         print(message)
-        self.socket.send(message)
-        # sockets.send_command("Connect_nbr", self.fd)
+        try:
+            self.socket.send(message)
+        except socket_error as serr:
+            print("Connection Dropped !")
+            exit(84)
 
     #
     # @brief: Function that sends the command create an egg thus in term
@@ -195,8 +219,11 @@ class SocketInteractionPython:
     def Fork(self):
         message = ("Fork\n").encode('utf-8')
         print(message)
-        self.socket.send(message)
-        # sockets.send_command("Fork", self.fd)
+        try:
+            self.socket.send(message)
+        except socket_error as serr:
+            print("Connection Dropped !")
+            exit(84)
 
     #
     # @brief: Function that sends the command to eject all players from a tile
@@ -208,8 +235,11 @@ class SocketInteractionPython:
     def Eject(self):
         message = ("Eject\n").encode('utf-8')
         print(message)
-        self.socket.send(message)
-        # sockets.send_command("Eject", self.fd)
+        try:
+            self.socket.send(message)
+        except socket_error as serr:
+            print("Connection Dropped !")
+            exit(84)
 
     #
     # @brief: Function that sends the command to take a specified object from
@@ -223,8 +253,11 @@ class SocketInteractionPython:
     def Take(self, item):
         message = ("Take " + item + '\n').encode('utf-8')
         print(message)
-        self.socket.send(message)
-        # sockets.send_command(("Take " + item), self.fd)
+        try:
+            self.socket.send(message)
+        except socket_error as serr:
+            print("Connection Dropped !")
+            exit(84)
 
     #
     # @brief: Function that sends the command topick up a specified object from
@@ -238,8 +271,11 @@ class SocketInteractionPython:
     def Set(self, item):
         message = ("Set " + item + '\n').encode('utf-8')
         print(message)
-        self.socket.send(message)
-        # sockets.send_command(("Set " + item), self.fd)
+        try:
+            self.socket.send(message)
+        except socket_error as serr:
+            print("Connection Dropped !")
+            exit(84)
 
     #
     # @brief: Function that sends the command to start leveling up
@@ -251,8 +287,11 @@ class SocketInteractionPython:
     def Incantation(self):
         message = ("Incantation\n").encode('utf-8')
         print(message)
-        self.socket.send(message)
-        # sockets.send_command("Incantation", self.fd)
+        try:
+            self.socket.send(message)
+        except socket_error as serr:
+            print("Connection Dropped !")
+            exit(84)
 
     #
     # @brief: Function that reads the server socket fd and returns the content
@@ -262,7 +301,11 @@ class SocketInteractionPython:
     # @return: command, a string containing what was in the server socket fd
     #
     def ReadSocket(self):
-        command = self.socket.recv(16384).decode('utf-8').split('\n')
+        try:
+            command = self.socket.recv(16384).decode('utf-8').split('\n')
+        except socket_error as serr:
+            print("Connection Dropped !")
+            exit(84)
         del command[-1]
         return (command)
 
