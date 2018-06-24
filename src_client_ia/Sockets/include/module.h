@@ -9,6 +9,7 @@
 	#define MODULE_H_
 
 #include <Python.h>
+#include <sys/epoll.h>
 #include <netdb.h>
 #include <sys/socket.h>
 #include <arpa/inet.h>
@@ -16,7 +17,10 @@
 PyObject *create_socket(PyObject *self, PyObject *args);
 PyObject *get_fd_activity(PyObject *self, PyObject *args);
 PyObject *send_command(PyObject *self, PyObject *args);
-
+PyMODINIT_FUNC PyInit_sockets(void);
+int connection(int fd, struct sockaddr_in *s_in);
+int check_carriage_return(char *command);
+int init_epoll(int fd);
 
 static PyMethodDef SocketMethods[] = {
 	{"create_socket", create_socket, METH_VARARGS, "Socket creation."},
@@ -37,4 +41,5 @@ static struct PyModuleDef sockets =
 	NULL,
 	NULL
 };
+
 #endif /* !MODULE_H_ */

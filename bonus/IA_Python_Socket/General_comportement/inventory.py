@@ -82,6 +82,7 @@ def get_food(inventory):
     for i in (inventory[0]):
         if (i[:4] == 'food'):
             ret = re.findall('\d+', i)
+    print("FINDALL = " + str(ret) + " RESP = " + str(inventory))
     if len(ret) > 0:
         return (int(ret[0]))
     else:
@@ -112,6 +113,7 @@ def GetLeftOverStone(inventory, stones_needed):
     for item in stones_needed_list:
         for inv_item in inventory_list:
             if item[0] == inv_item[0]:
+                print("GETLEFTOVERSTONE: " + str(len(inventory[0])) + '  ' + str(inventory) + " " + str(stones_needed) + " " + item[0] + " " + inv_item[0])
                 if len(inventory[0]) != 7:
                     return ["linemate 1"]
                 number = int(item[1]) - int(inv_item[1])

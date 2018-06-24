@@ -4,31 +4,25 @@ from sys import *
 import getopt
 import time
 
-from Sockets.socket_file import SocketInteractionPython
 from socket_file import SocketInteraction
 from Level1.level1 import level1
 from Level8.level8 import level8
 from General_comportement.layAnEgg import layAnEgg
+from Level2to7.level2to7 import level2to7
 
 
 def go_in_state(socket):
     level = 1
     while (level < 8):
         level = level1(level, socket)
-        print("\n------------------------------------------------------------")
-        print("LEVEL " + str(level) + "  REACHED ")
-        print("------------------------------------------------------------\n")
+        print("\n----------------------------------------------------------------------------\nLEVEL " + str(level) + "  REACHED \n----------------------------------------------------------------------------\n")
         layAnEgg(level, socket)
     print("Level 8 !")
     level8(socket)
 
 
-def connection(port, name, machine, python):
-    if python is True:
-        socket = SocketInteractionPython(str(machine), port, str(name))
-    else:
-        socket = SocketInteraction(str(machine), port, str(name))
-    return (socket)
+def connection(port, name, machine):
+    return (SocketInteraction(str(machine), port, str(name)))
 
 
 def print_usage():
@@ -43,9 +37,8 @@ def main():
     port = 0
     name = ""
     machine = "127.0.0.1"
-    python = False
     try:
-        optlist, args = getopt.getopt(my_argv, "p:n:h:s", ["help"])
+        optlist, args = getopt.getopt(my_argv, "p:n:h:", ["help"])
     except getopt.GetoptError as err:
         print(err)
         print_usage()
@@ -67,14 +60,12 @@ def main():
             name = val
         elif opt == "-h":
             machine = val
-        elif opt == "-s":
-            python = True
         else:
             assert False, "unhandled option"
     if (port == 0 or name == ""):
         print_usage()
         exit(84)
-    socket = connection(port, name, machine, python)
+    socket = connection(port, name, machine)
     go_in_state(socket)
 
 if __name__ == '__main__':

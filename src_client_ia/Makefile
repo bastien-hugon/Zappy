@@ -11,7 +11,8 @@ CC	= 	gcc
 
 RM	= 	rm -f
 
-SOCKET_SRCS	=	Sockets/module.c
+SOCKET_SRCS	=	Sockets/module.c	\
+			Sockets/module2.c
 
 SOCKET_OBJS	=	$(SOCKET_SRCS:.c=.o)
 

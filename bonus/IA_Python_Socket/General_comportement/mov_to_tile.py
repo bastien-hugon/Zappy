@@ -4,16 +4,6 @@ from General_comportement.broadcast import EmptyCacheIgnoreBroadcast
 from General_comportement.language import EmptyCacheSearchBroadcast
 
 
-#
-# @brief: Function that move to the wanted tile
-#
-# @param: nb_forward [in], int, number of forward move you should realize
-# @param: nb_side [in], int, number of side move you should realize
-# @param: socket [in], socket class to ask requests to the server
-# @param: lvl [in], int, the actual level of the A.I.
-#
-# @return: None
-#
 def go_to_tile(nb_forward, nb_side, socket, lvl):
     for i in range(nb_forward):
         socket.Forward()
@@ -38,16 +28,6 @@ def go_to_tile(nb_forward, nb_side, socket, lvl):
             return level
 
 
-#
-# @brief: Function that calculate the number of tiles to go
-# on the sides and on the front
-#
-# @param: tile [in], int, index of the wanted tile returned by look
-# @param: level [in], int, the actual level of the A.I.
-# @param: socket [in], socket class to ask requests to the server
-#
-# @return: None
-#
 def mov_to_tile(tile, level, socket):
     if (tile == 0):
         return
@@ -133,17 +113,6 @@ def mov_to_tile_search_broadcast(tile, level, socket):
     return -1, [], level
 
 
-#
-# @brief: Function that allow an A.I. to follow a broadcast thanks
-# to its direction
-#
-# @param: direction [in], the direction where the broadcast came from
-# @param: socket [in], socket class variable to interact with socket class
-# @param: lvl [in], the current level of the player
-#
-# @return: dire, the direction of where the message came from, -1 if no message
-# @return: mess, the content of the message, empty list if no message
-#
 def movToBroadcast(direction, socket, lvl):
     print("MOVE TO INCANT")
     ListActions = [['wait'],

@@ -19,17 +19,25 @@ from General_comportement.broadcast import EmptyCacheIgnoreBroadcast
 #
 # @return: None
 #
-def search_food_incant_mode(level, food, socket):
-    while food > level + 4:
-        location, item = IsThereItem(socket, ["food"])
+def search_food_incant_mode(lvl, food, socket):
+    while food < lvl + 8:
+        location, item, level = IsThereItem(socket, ["food"], lvl)
+        if level != lvl:
+            return level
         if (location >= 0):
-            mov_to_tile(location, level, socket)
+            mov_to_tile(location, lvl, socket)
             socket.Take(item)
-            EmptyCacheIgnoreBroadcast(socket)
-            inventory = look_inventory(socket)
+            resp, level = EmptyCacheIgnoreBroadcast(socket, lvl)
+            if level != lvl:
+                return level
+            inventory, level = look_inventory(socket, lvl)
+            if level != lvl:
+                return level
             food = get_food(inventory)
             print ("search food incant: food i got: " + str(food))
         else:
-            for i in range(level):
+            for i in range(lvl):
                 socket.Forward()
-                EmptyCacheIgnoreBroadcast(socket)
+                resp, level = EmptyCacheIgnoreBroadcast(socket, lvl)
+                if level != lvl:
+                    return level

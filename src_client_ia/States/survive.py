@@ -18,16 +18,25 @@ from General_comportement.broadcast import EmptyCacheIgnoreBroadcast
 #
 # @return: None
 #
-def survive_mode(level, food, socket):
-    while food > level + 1:
-        location, item = IsThereItem(socket, ["food"])
+def survive_mode(lvl, food, socket):
+    while food < lvl + 1:
+        location, item, level = IsThereItem(socket, ["food"], lvl)
+        if level != lvl:
+            return level
         if (location >= 0):
-            mov_to_tile(location, level, socket)
+            mov_to_tile(location, lvl, socket)
             socket.Take(item)
-            EmptyCacheIgnoreBroadcast(socket)
-            inventory = look_inventory(socket)
+            resp, level = EmptyCacheIgnoreBroadcast(socket, lvl)
+            if level != lvl:
+                return level
+            inventory, level = look_inventory(socket, lvl)
+            if level != lvl:
+                return level
             food = get_food(inventory)
             print ("SURVIVE: food i got: " + str(food))
         else:
             socket.Forward()
-            EmptyCacheIgnoreBroadcast(socket)
+            resp, level = EmptyCacheIgnoreBroadcast(socket, lvl)
+            if level != lvl:
+                return level
+    return lvl
