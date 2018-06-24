@@ -15,70 +15,6 @@
 #include "server.h"
 
 /**
-* @brief send a sound to a client
-*
-* @param server [in] the server
-* @param sender [in] the sender
-* @param receiver [in] the receiver of the message
-*/
-static int get_absolute_direction_of_sound(server_t *server, client_t *sender,\
-	client_t *receiver)
-{
-	int lower_x;
-	int lower_y;
-
-	// si le modulo est supérieur a la taille de la map
-	int abs_dist_send_rec_x = abs((int)(receiver->pos.x - sender->pos.x));
-	if ((int)(abs_dist_send_rec_x % server->game.width) > (int)(receiver->pos.x - sender->pos.x)) {
-		lower_x = receiver->pos.x - sender->pos.x % server->game.width;
-	} else {
-		lower_x = receiver->pos.x - sender->pos.x;
-	}
-
-	// with y
-	int abs_dist_send_rec_y = abs((int)(receiver->pos.y - sender->pos.y));
-	if ((int)(abs_dist_send_rec_y % server->game.width) > (int)(receiver->pos.y - sender->pos.y)) {
-		lower_y = receiver->pos.y - sender->pos.y % server->game.width;
-	} else {
-		lower_y = receiver->pos.y - sender->pos.y;
-	}
-
-	if (lower_x == 0)
-		return (-1);
-
-	int coef_directeur = ( lower_y ) / ( lower_x );
-
-	if (coef_directeur == 1 || coef_directeur == -1) {
-		// DIAGONALE
-		if (lower_y > 0 && lower_x > 0) {
-			return (2);
-		} else {
-			return (6);
-		}
-		if (lower_y < 0) {
-			return (8);
-		} else {
-			return (4);
-		}
-	} else {
-		// AUTRE
-		if (1 < coef_directeur && coef_directeur > -1) {
-			if (lower_x < 0)
-				return (5);
-			else
-				return (1);
-		}
-		if (2 < coef_directeur) {
-			if (lower_y < 0)
-				return (7);
-			else
-				return (3);
-		}
-	}
-	return (-1);
-}
-
-/**
 * @brief Get the direction of sound for a player
 *
 * @param direction [in] the absolute direction
@@ -124,7 +60,7 @@ static bool send_sound_to_client(server_t *server, client_t *sender, \
 	if (sender->pos.y == receiver->pos.y &&
 		sender->pos.x == receiver->pos.x) {
 		send_message(receiver->socket.fd, "message 0, %s\n", sound);	
-		LOG("====> sended to #%d: message 0, %s\n", receiver->id, sound);
+		LOG("sended to #%d: message 0, %s\n", receiver->id, sound);
 		return (true);
 	}
 	absolute_direction = get_absolute_direction_of_sound(server, \
