@@ -9,7 +9,6 @@ from socket_file import SocketInteraction
 from Level1.level1 import level1
 from Level8.level8 import level8
 from General_comportement.layAnEgg import layAnEgg
-from Level2to7.level2to7 import level2to7
 
 
 def go_in_state(socket):

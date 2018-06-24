@@ -22,7 +22,8 @@ def GetNeededRessources(lvl):
         ['linemate 1', 'deraumere 1', 'sibur 2', 'phiras 1'],
         ['linemate 1', 'deraumere 2', 'sibur 1', 'mendiane 3'],
         ['linemate 1', 'deraumere 2', 'sibur 3', 'phiras 1'],
-        ['linemate 2', 'deraumere 2', 'sibur 2', 'mendiane 2', 'phiras 2', 'thystame 1']
+        ['linemate 2', 'deraumere 2', 'sibur 2', 'mendiane 2', 'phiras 2',
+         'thystame 1']
     ]
     return needed_stones[lvl]
 
@@ -119,6 +120,15 @@ def nb_player_here(look_result):
     return (count)
 
 
+#
+# @brief: Function that allow the A.I. to get all item on a tile before incant
+#
+# @param: socket [in], socket class variable to interact with socket class
+# @param: here [in], list, all the items standing on the file
+# @param: lvl [in], the current level of the player
+#
+# @return: None
+#
 def get_all_item_here(socket, here, lvl):
     tile = here.split(' ')
     for item in tile:
