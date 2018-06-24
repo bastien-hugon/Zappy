@@ -53,11 +53,16 @@ bool check_incantation_conditions(tile_t *tile, int lvl)
 {
 	bool ret = true;
 
-	for (ressource_e res = LINEMATE; res < NB_RESSOURCE; res++)
-		if (tile->inventory[res] < incantation_requirements[lvl - 1][res])
+	for (ressource_e res = LINEMATE; res < NB_RESSOURCE; res++) {
+		if (tile->inventory[res] != incantation_requirements[lvl - 1][res]) {
 			ret = false;
-	if (get_nb_players_on_tile_of_lvl(tile, lvl) < (int)tile->inventory[0])
+		LOG("Incantation going to failed: Error with %d (required : %d present %d)", res, incantation_requirements[lvl - 1][res], tile->inventory[res]);}
+	}
+	if (get_nb_players_on_tile_of_lvl(tile, lvl) != \
+		incantation_requirements[lvl - 1][0]) {
 		ret = false;
+		LOG("Incantation going to failed: Error with players nb (required : %d present)", incantation_requirements[lvl - 1][0], get_nb_players_on_tile_of_lvl(tile, lvl));
+		}
 	LOG("the incantation comditions was %s", ret ? "ok" : "ko");
 	return (ret);
 }

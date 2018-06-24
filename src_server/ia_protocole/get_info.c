@@ -32,6 +32,7 @@ bool client_nb_connect(server_t *srv, client_t *client)
 */
 bool client_look(server_t *srv, client_t *client)
 {
+	WARN("LOOK");
 	switch (client->dir) {
 		case NORTH:
 			return (look_north(srv, client));
@@ -42,5 +43,6 @@ bool client_look(server_t *srv, client_t *client)
 		case WEST:
 			return (look_west(srv, client));
 	}
+	send_message(client->socket.fd, "ko\n");
 	return (false);
 }
