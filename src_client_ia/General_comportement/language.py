@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 
+import re
+
 from General_comportement.check_dead import check_dead
+from General_comportement.broadcast import EmptyCacheIgnoreBroadcast
 
 
 #
@@ -122,23 +125,44 @@ def EmptyCacheSearchBroadcast(socket, lvl):
     dire = -1
     message = []
     direction = -1
+    incant = False
     resp = []
     while (len(resp) == 0):
         resp = socket.ReadSocket()
         check_dead(resp)
         i = 0
         while i < len(resp):
-            if resp[i].find("message") != -1:
+            if resp[i].find("message") != -1 or resp[i].find("Elevation underway") != -1:
                 direction, message = parse_message(socket, resp[i])
-                if (len(message) >= 3 and message[1] == "INCANT" and int(message[2]) == lvl and dire == -1):
+                if len(message) >= 3 and message[1] == "INCANT" and int(message[2]) == lvl and dire == -1:
                     dire = direction
                     mess = message
                     keep = 1
                 resp.pop(i)
+            elif resp[i].find("Elevation underway") != -1:
+                incant = True
+                resp.pop(i)
+            elif resp[i].find("Current level:") != -1:
+                print("FOUND CURRENT LEVEL")
+                ret = re.findall('\d+', resp[i])
+                if len(ret) > 0:
+                    if int(ret[0]) != lvl:
+                        return dire, mess, resp, int(ret[0])
             else:
                 i += 1
-    print("SEARCHBROADCAST resp = " + str(resp) + " mess = " + str(mess) + " dire = " + str(dire))
-    return dire, mess, resp
+    if incant is True:
+        ret_incant, level = EmptyCacheIgnoreBroadcast(socket, lvl)
+        if (level != lvl):
+            return dire, mess, resp, level
+        for response in ret_incant:
+            if "Current level:" in response:
+                ret = re.findall('\d+', response)
+                if len(ret) > 0:
+                    if int(ret[0]) != lvl:
+                        return dire, mess, resp, int(ret[0])
+        return dire, mess, resp, lvl
+    print("FOCUSBROADCAST resp = " + str(resp) + " mess = " + str(mess) + " dire = " + str(dire))
+    return dire, mess, resp, lvl
 
 
 #
@@ -157,6 +181,7 @@ def EmptyCacheFocusBroadcast(socket, lvl):
     dire = -1
     message = []
     direction = -1
+    incant = False
     resp = []
     while (len(resp) == 0):
         resp = socket.ReadSocket()
@@ -171,7 +196,27 @@ def EmptyCacheFocusBroadcast(socket, lvl):
                     mess = message
                     keep = 1
                 resp.pop(i)
+            elif resp[i].find("Elevation underway") != -1:
+                incant = True
+                resp.pop(i)
+            elif resp[i].find("Current level:") != -1:
+                print("FOUND CURRENT LEVEL")
+                ret = re.findall('\d+', resp[i])
+                if len(ret) > 0:
+                    if int(ret[0]) != lvl:
+                        return dire, mess, resp, int(ret[0])
             else:
                 i += 1
+    if incant is True:
+        ret_incant, level = EmptyCacheIgnoreBroadcast(socket, lvl)
+        if (level != lvl):
+            return dire, mess, resp, level
+        for response in ret_incant:
+            if "Current level:" in response:
+                ret = re.findall('\d+', response)
+                if len(ret) > 0:
+                    if int(ret[0]) != lvl:
+                        return dire, mess, resp, int(ret[0])
+        return dire, mess, resp, lvl
     print("FOCUSBROADCAST resp = " + str(resp) + " mess = " + str(mess) + " dire = " + str(dire))
-    return dire, mess, resp
+    return dire, mess, resp, lvl

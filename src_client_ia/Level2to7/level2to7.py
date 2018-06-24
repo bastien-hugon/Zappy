@@ -12,17 +12,17 @@ from General_comportement.ressources import GetNeededRessources
 
 def level2to7(level, socket):
     needed_stones = GetNeededRessources(level)
-    while (level != 8):
-        inventory = look_inventory(socket)
-        food = get_food(inventory)
-        left_over = GetLeftOverStone(inventory, needed_stones)
-        if food <= level + 1:
-            survive_mode(level, food, socket)
-        elif food <= level + 3:
-            search_food_incant_mode(level, food, socket)
-        elif len(left_over) != 0:
-            search_stone_mode(level, food, left_over, socket)
-        else:
-            pass
-            #need to create incantation
-    return (level)
+#     while (level != 8):
+#         inventory, level = look_inventory(socket, level)
+#         food = get_food(inventory)
+#         left_over = GetLeftOverStone(inventory, needed_stones)
+#         if food <= level + 1:
+#             survive_mode(level, food, socket)
+#         elif food <= level + 3:
+#             search_food_incant_mode(level, food, socket)
+#         elif len(left_over) != 0:
+#             search_stone_mode(level, food, left_over, socket)
+#         else:
+#             pass
+#             #need to create incantation
+#     return (level)
