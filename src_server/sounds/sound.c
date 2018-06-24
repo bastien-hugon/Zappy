@@ -17,9 +17,9 @@
 /**
 * @brief send a sound to a client
 *
-* @param server the server
-* @param sender the sender
-* @param receiver the receiver of the message
+* @param server [in] the server
+* @param sender [in] the sender
+* @param receiver [in] the receiver of the message
 */
 static int get_absolute_direction_of_sound(server_t *server, client_t *sender,\
 	client_t *receiver)
@@ -42,6 +42,9 @@ static int get_absolute_direction_of_sound(server_t *server, client_t *sender,\
 	} else {
 		lower_y = receiver->pos.y - sender->pos.y;
 	}
+
+	if (lower_x == 0)
+		return (-1);
 
 	int coef_directeur = ( lower_y ) / ( lower_x );
 
@@ -78,8 +81,8 @@ static int get_absolute_direction_of_sound(server_t *server, client_t *sender,\
 /**
 * @brief Get the direction of sound for a player
 *
-* @param direction the absolute direction
-* @param receiver the receiver of a message
+* @param direction [in] the absolute direction
+* @param receiver [in] the receiver of a message
 * @return int the relative direction
 */
 int get_direction_by_player(int direction, client_t *receiver)
@@ -107,10 +110,10 @@ int get_direction_by_player(int direction, client_t *receiver)
 /**
 * @brief send the sound to a client
 *
-* @param server the server
-* @param sender the sender
-* @param sound the sound message
-* @param receiverthe receiver
+* @param server [in] the server
+* @param sender [in] the sender
+* @param sound [in] the sound message
+* @param receiver the receiver
 */
 static bool send_sound_to_client(server_t *server, client_t *sender, \
 	char *sound, client_t *receiver)
@@ -136,9 +139,9 @@ static bool send_sound_to_client(server_t *server, client_t *sender, \
 /**
 * @brief send the sound to all the player at a position
 *
-* @param server the server
-* @param sender the sender
-* @param sound the sound message
+* @param server [in] the server
+* @param sender [in] the sender
+* @param sound [in] the sound message
 * @param pos the position
 */
 bool send_sound_to_tile(server_t *server, client_t *sender, \
@@ -158,9 +161,9 @@ bool send_sound_to_tile(server_t *server, client_t *sender, \
 /**
 *@brief send a sound to all clients
 *
-*@param server the server
-*@param sender the sender
-*@param sound the message
+*@param server [in] the server
+*@param sender [in] the sender
+*@param sound [in] the message
 */
 bool send_sound(server_t *server, client_t *sender, char *sound)
 {

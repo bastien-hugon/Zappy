@@ -10,8 +10,8 @@
 /**
 *@brief Realloc and concat strings
 *
-*@param s1 Src str
-*@param s2 Add this
+*@param s1 [in] Src str
+*@param s2 [in] Add this
 *@return char* result
 */
 char *realloc_concat(char *s1, char *s2)
@@ -28,9 +28,9 @@ char *realloc_concat(char *s1, char *s2)
 /**
 *@brief Get the tile object
 *
-*@param srv Main server_t struct
-*@param x Get this x
-*@param y Get this y
+*@param srv [in] Main server_t struct
+*@param x [in] Get this x
+*@param y [in] Get this y
 *@return tile_t The tile found
 */
 tile_t get_tile(server_t *srv, int x, int y)
@@ -51,10 +51,10 @@ tile_t get_tile(server_t *srv, int x, int y)
 /**
 *@brief Add a tile to the buff.
 *
-*@param srv Main server_t struct
-*@param x The x tile coord
-*@param y The y tile coord
-*@param buffer The buffer
+*@param srv [in] Main server_t struct
+*@param x [in] The x tile coord
+*@param y [in] The y tile coord
+*@param buffer [in] The buffer
 *@return char* The buffer changed
 */
 char *add_tile_to_buff(server_t *srv, int x, int y, char *buffer)

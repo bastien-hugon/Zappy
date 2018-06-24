@@ -10,8 +10,8 @@
 /**
 *@brief Look north
 *
-*@param srv main server_t struct
-*@param client The client to send the vision
+*@param srv [in] main server_t struct
+*@param client [out] The client to send the vision
 *@return true Message sent
 *@return false Message not sent
 */
@@ -35,8 +35,8 @@ bool look_north(server_t *srv, client_t *client)
 /**
 *@brief Look north
 *
-*@param srv main server_t struct
-*@param client The client to send the vision
+*@param srv [in] main server_t struct
+*@param client [in] The client to send the vision
 *@return true Message sent
 *@return false Message not sent
 */
@@ -61,8 +61,8 @@ bool look_west(server_t *srv, client_t *client)
 /**
 *@brief Look north
 *
-*@param srv main server_t struct
-*@param client The client to send the vision
+*@param srv [in] main server_t struct
+*@param client [out] The client to send the vision
 *@return true Message sent
 *@return false Message not sent
 */
@@ -86,8 +86,8 @@ bool look_south(server_t *srv, client_t *client)
 /**
 *@brief Look north
 *
-*@param srv main server_t struct
-*@param client The client to send the vision
+*@param srv [in] main server_t struct
+*@param client [out] The client to send the vision
 *@return true Message sent
 *@return false Message not sent
 */

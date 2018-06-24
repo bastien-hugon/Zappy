@@ -10,8 +10,8 @@
 /**
 *@brief Send the free slot on the client's team
 *
-*@param srv The main server_t struct
-*@param client The client
+*@param srv [in] The main server_t struct
+*@param client [in] The client
 *@return true sent
 *@return false Not sent
 */
@@ -25,8 +25,8 @@ bool client_nb_connect(server_t *srv, client_t *client)
 /**
 *@brief Send look informations
 *
-*@param srv Main server_t struct
-*@param client The client
+*@param srv [in] Main server_t struct
+*@param client [in] The client
 *@return true If message is sent
 *@return false If message isn't sent
 */

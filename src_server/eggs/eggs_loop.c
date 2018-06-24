@@ -16,8 +16,8 @@
 /**
 *@brief single egg main loop executed each tickg 
 *
-*@param server 
-*@param egg 
+*@param server [in] the server
+*@param egg [out] the egg
 */
 void egg_loop(egg_t *egg)
 {

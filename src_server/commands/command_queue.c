@@ -18,8 +18,8 @@
 /**
 * @brief register a command in the client command queue
 *
-* @param client the client
-* @param command the command str
+* @param client [out] the client
+* @param command [in] the command str
 * @return true if the command was added in the queue
 * @return false if the queue is allready full
 */

@@ -18,9 +18,9 @@
 /**
 * @brief add an item the end of a list
 *
-* @param list elem in the list
-* @param data the data to copy for the element
-* @param data_size the size of the data
+* @param list [out] elem in the list
+* @param data [in] the data to copy for the element
+* @param data_size [in] the size of the data
 * @return false in case of an error
 */
 bool list_add_item(void **list, void *data, size_t data_size)
@@ -50,7 +50,7 @@ bool list_add_item(void **list, void *data, size_t data_size)
 /**
 *@brief iterate to the next element in a list
 *
-*@param list an pointer to an element in the list
+*@param list [in] an pointer to an element in the list
 *@return true on success
 *@return false on error (ex: no next element)
 */
@@ -68,7 +68,7 @@ bool list_next_item(void **list) {
 /**
 *@brief iterate to the previous element in a list
 *
-*@param list an pointer to an element in the list
+*@param list [in] an pointer to an element in the list
 *@return true on success
 *@return false on error (ex: no previous element)
 */
@@ -86,7 +86,7 @@ bool list_prev_item(void **list) {
 /**
 * @brief delete a list
 *
-* @param list first element in the list
+* @param list [in] first element in the list
 */
 void list_delete_all(void **list)
 {
@@ -105,7 +105,7 @@ void list_delete_all(void **list)
 /**
 * @brief remove an item from the list
 *
-* @param list item to remove
+* @param list [in] item to remove
 */
 void list_delete_item(void **list)
 {

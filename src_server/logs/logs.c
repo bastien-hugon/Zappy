@@ -10,10 +10,10 @@
 /**
 *@brief Print and format a log line
 *
-*@param fd The fd used to print on it
-*@param file The current filename
-*@param line The current line number
-*@param color The color to use
+*@param fd [in] The fd used to print on it
+*@param file [in] The current filename
+*@param line [in] The current line number
+*@param color [in] The color to use
 */
 static void print_current_info(FILE *fd, char *file, int line, char *color)
 {
@@ -30,9 +30,9 @@ static void print_current_info(FILE *fd, char *file, int line, char *color)
 /**
 *@brief Print an info log
 *
-*@param file The current filename
-*@param line The current line number
-*@param format The format to print
+*@param file [in] The current filename
+*@param line [in] The current line number
+*@param format [in] The format to print
 *@param ... The format params
 */
 bool log_info(char *file, int line, char *format, ...)
@@ -50,9 +50,9 @@ bool log_info(char *file, int line, char *format, ...)
 /**
 *@brief Print an info log
 *
-*@param file The current filename
-*@param line The current line number
-*@param format The format to print
+*@param file [in] The current filename
+*@param line [in] The current line number
+*@param format [in] The format to print
 *@param ... The format params
 */
 bool log_warn(char *file, int line, char *format, ...)
@@ -70,9 +70,9 @@ bool log_warn(char *file, int line, char *format, ...)
 /**
 *@brief Print an error log
 *
-*@param file The current filename
-*@param line The current line number
-*@param format The format to print
+*@param file [in] The current filename
+*@param line [in] The current line number
+*@param format [in] The format to print
 *@param ... The format params
 */
 bool log_error(char *file, int line, char *format, ...)
@@ -91,9 +91,9 @@ bool log_error(char *file, int line, char *format, ...)
 /**
 *@brief Print a perror log
 *
-*@param file The current filename
-*@param line The current line number
-*@param format The format to print
+*@param file [in] The current filename
+*@param line [in] The current line number
+*@param format [in] The format to print
 *@param ... The format params
 */
 bool log_perror(char *file, int line, char *format, ...)
