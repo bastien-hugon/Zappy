@@ -41,6 +41,10 @@ tile_t get_tile(server_t *srv, int x, int y)
 	if (y < 0)
 		x = (srv->game.height - (-1 * (0 - y)));
 	y %= srv->game.height;
+	if (x >= srv->game.width)
+		x = 0;
+	if (y >= srv->game.height)
+		y = 0;
 	return (srv->game.map[y][x]);
 }
 
