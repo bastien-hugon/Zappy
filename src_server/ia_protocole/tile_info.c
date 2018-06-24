@@ -63,7 +63,7 @@ char *add_tile_to_buff(server_t *srv, int x, int y, char *buffer)
 	client_t **client = tile.player;
 	bool space = false;
 	char obj[7][10] = {"food", "linemate", "deraumere", "sibur", \
-	"mendiane", "phiras", "thystame"};
+		"mendiane", "phiras", "thystame"};
 	while (client != NULL) {
 		(space) ? buffer = realloc_concat(buffer, " ") : 0;
 		buffer = realloc_concat(buffer, "player");

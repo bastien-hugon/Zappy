@@ -16,7 +16,7 @@
 #include <strings.h>
 #include "server.h"
 
-command_t commands[] = {
+static command_t commands[] = {
  	{"forward", FORWARD, 7, client_forward},
  	{"right", RIGHT, 7, client_right},
  	{"left", LEFT, 7, client_left},

@@ -89,6 +89,7 @@ client_t *client, client_t **ejected_clients)
 static client_t **remove_client_from_list(client_t **list, client_t *client)
 {
 	client_t **tmp_client = list;
+
 	do {
 		if (tmp_client && *tmp_client == client) {
 			list_remove(&tmp_client);

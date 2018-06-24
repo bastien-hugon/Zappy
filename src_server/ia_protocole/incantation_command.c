@@ -30,6 +30,33 @@ void send_elevation_underway(tile_t *tile, int lvl)
 }
 
 /**
+* @brief send the result of the incantation to the client
+*
+* @param server [in] the server
+* @param clients [in] clients list
+* @param was_ok [in] the status of the incantation
+* @param lvl [in] the level
+*/
+void send_incantation_status_to_client(server_t *server, client_t **clients, bool was_ok, int lvl)
+{
+	if (clients != NULL && *clients != NULL && \
+		(*clients)->level == lvl + 1 && was_ok) {
+		send_message((*clients)->socket.fd, \
+			"Current level: %d\n", (*clients)->level);
+		send_to_gfx(server, "pie %d %d %d %s %d\n", \
+			(*clients)->pos.x, (*clients)->pos.y, was_ok ? lvl \
+			+ 1 : lvl, was_ok ? "ok" : "ko", (*clients)->id);
+	}
+	if (clients != NULL && *clients != NULL && \
+		(*clients)->level == lvl && was_ok == false) {
+		send_message((*clients)->socket.fd, "ko\n");
+		send_to_gfx(server, "pie %d %d %d %s %d\n", \
+			(*clients)->pos.x, (*clients)->pos.y, was_ok ? lvl + \
+			1 : lvl, was_ok ? "ok" : "ko", (*clients)->id);
+	}
+}
+
+/**
 * @brief the command used for terminate an incantation
 *
 * @param server [in] the server
@@ -44,19 +71,8 @@ bool validate_incantation_command(server_t *server, client_t *client)
 	bool was_ok = validate_incantation(tile, lvl);
 
 	do {
-		if (clients != NULL && *clients != NULL && \
-			(*clients)->level == lvl + 1 && was_ok) {
-				send_message((*clients)->socket.fd, \
-					"Current level: %d\n", (*clients)->level);
-				send_to_gfx(server, "pie %d %d %d %s %d\n", \
-					client->pos.x, client->pos.y, was_ok ? lvl + 1 : lvl, was_ok ? "ok" : "ko", client->id);
-			}
-		if (clients != NULL && *clients != NULL && \
-			(*clients)->level == lvl && was_ok == false) {
-				send_message((*clients)->socket.fd, "ko\n");
-				send_to_gfx(server, "pie %d %d %d %s %d\n", \
-					client->pos.x, client->pos.y, was_ok ? lvl + 1 : lvl, was_ok ? "ok" : "ko", client->id);
-			}
+		send_incantation_status_to_client(server, clients, \
+			was_ok, lvl);
 	} while (list_next(&clients));
 	LOG("End of incatention ok: %d", was_ok);
 	return (was_ok);
