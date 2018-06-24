@@ -10,12 +10,12 @@
 
 	#include "server.h"
 
-	#define R_LINEMATE (75)
-	#define R_DERAUMERE (44)
-	#define R_SIBUR (56)
-	#define R_MENDIANE (28)
-	#define R_PHIRAS (33)
-	#define R_THYSTAME (6)
+	#define R_LINEMATE (90)
+	#define R_DERAUMERE (90)
+	#define R_SIBUR (90)
+	#define R_MENDIANE (94)
+	#define R_PHIRAS (95)
+	#define R_THYSTAME (98)
 	#define R_FOOD (75)
 
 	bool generate_map(game_t *game);

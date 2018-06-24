@@ -8,8 +8,16 @@
 #include <strings.h>
 #include "server.h"
 
+/**
+* @brief take an object on a tile
+*
+* @param srv [in] the server
+* @param user [in] the user who is taking an object
+* @param map [in] the map
+* @param res [in] the resource
+*/
 static bool take_object(server_t *srv, client_t *user, tile_t **map, \
-ressource_e res)
+	ressource_e res)
 {
 	client_t *gfx = get_gfx_client(srv);
 
@@ -47,8 +55,18 @@ bool client_take(server_t *srv, client_t *user)
 	return (send_message(user->socket.fd, "%s\n", (take) ? "ok" : "ko"));
 }
 
+/**
+*@brief drop an object on a tile
+*
+*@param srv [in] the server
+*@param user [in] the user
+*@param map [in] the map
+*@param res [in] the resources
+*@return true on ok
+*@return false on ko
+*/
 static bool set_object(server_t *srv, client_t *user, tile_t **map, \
-ressource_e res)
+	ressource_e res)
 {
 	client_t *gfx = get_gfx_client(srv);
 

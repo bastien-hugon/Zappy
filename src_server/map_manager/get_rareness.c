@@ -10,7 +10,7 @@
 /**
 *@brief Get the rareness of a materials
 *
-*@param res The ressource to get the rareness
+*@param res [out] The ressource to get the rareness
 *@return uint The rareness percentage
 */
 uint get_rareness(ressource_e res)
@@ -24,7 +24,7 @@ uint get_rareness(ressource_e res)
 /**
 *@brief Knowing if a ressource can be added to a Tile
 *
-*@param res The ressource
+*@param res [out] The ressource
 *@return true The ressource is lucky
 *@return false The ressource isn't lucky
 */

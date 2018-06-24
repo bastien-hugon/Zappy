@@ -32,12 +32,12 @@ Test(circular_buffer, read)
 
 	circular_buffer_init(&buff);
 	cr_assert_eq(pipe(fd), 0);
-	for (size_t i = 0; i < BUFF_SIZE; i++) {
+	for (size_t i = 0; i < BUFF_SIZE - 1; i++) {
 		c = (char)('a' + i % 26);
 		cr_assert_neq(write(fd[1], &c, 1), -1);
 	}
 	circular_buffer_read(&buff, fd[0]);
-	for (size_t i = 0; i < BUFF_SIZE; i++) {
+	for (size_t i = 0; i < BUFF_SIZE - 1; i++) {
 		c = (char)('a' + i % 26);
 		cr_assert_eq(buff.buffer[i], c);
 	}

@@ -18,7 +18,7 @@
 /**
 *@brief init a tile
 *
-*@param tile The tile to init
+*@param tile [out] The tile to init
 */
 static void init_tile(tile_t *tile)
 {
@@ -31,7 +31,7 @@ static void init_tile(tile_t *tile)
 /**
 *@brief Init the map tiles
 *
-*@param game The game_t struct to init
+*@param game [out] The game_t struct to init
 */
 static void init_map(game_t *game)
 {
@@ -43,10 +43,12 @@ static void init_map(game_t *game)
 /**
 *@brief Fill a tile
 *
-*@param tile The tile to fill
+*@param tile [out] The tile to fill
 */
 static void fill_tile(tile_t *tile)
 {
+	if (tile->player != NULL)
+		return ;
 	for (int i = 0; i < NB_RESSOURCE; i++)
 		if (is_lucky(i))
 			tile->inventory[i]++;
@@ -55,7 +57,7 @@ static void fill_tile(tile_t *tile)
 /**
 *@brief Fill the map
 *
-*@param game The game_t struct
+*@param game [out] The game_t struct
 */
 void fill_map(game_t *game)
 {
@@ -68,7 +70,7 @@ void fill_map(game_t *game)
 /**
 *@brief Reffill the map
 *
-*@param game The game_t struct
+*@param game [out] The game_t struct
 */
 void refill_map(game_t *game)
 {

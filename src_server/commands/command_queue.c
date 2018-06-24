@@ -18,8 +18,8 @@
 /**
 * @brief register a command in the client command queue
 *
-* @param client the client
-* @param command the command str
+* @param client [out] the client
+* @param command [in] the command str
 * @return true if the command was added in the queue
 * @return false if the queue is allready full
 */
@@ -28,7 +28,7 @@ bool register_command(client_t *client, char *command)
 	for (int i = 0; i < NB_CMD_QUEUE; i++) {
 		if (client->cmd_queue[i] == NULL) {
 			client->cmd_queue[i] = command;
-			LOG("Command registered [placement=%d]: %s", \
+			LOG("Command registered [placement = %d]: %s", \
 				i, command);
 			return (true);
 		}

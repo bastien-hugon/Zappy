@@ -18,7 +18,7 @@
 *@param server [in] the server
 *@param pos [in] the position
 *@param dir [in] the direction
-*@return tile_t* the tile
+*@return tile_t *the tile
 */
 tile_t *get_tile_at_dir(server_t *server, pos_t pos, dir_e dir)
 {

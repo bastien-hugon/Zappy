@@ -10,8 +10,8 @@
 /**
 *@brief Disconnect a client from his fd
 *
-*@param srv The main server_t struct
-*@param fd The client fd
+*@param srv [in] The main server_t struct
+*@param fd [in] The client fd
 *@return true Disconnected
 *@return false Not disconnected
 */
@@ -21,15 +21,17 @@ bool disconnect_c_client(server_t *srv, int fd)
 	client_t *gfx = get_gfx_client(srv);
 
 	if (gfx && !client->is_gfx)
-		send_message(gfx->socket.fd, "pdi %d\n", \
-		client->id);
-	close(client->socket.fd);
-	epoll_ctl(srv->srv_epoll.epollfd, EPOLL_CTL_ADD, \
-		fd, &(srv->srv_epoll.ev));
-	if (client->team)
-		client->team->free_slots++;
-	list_remove(&client);
-	if (client == srv->game.clients || client == NULL)
-		srv->game.clients = NULL;
+		send_message(gfx->socket.fd, "pdi %d\n", client->id);
+	if (client) {
+		close(fd);
+		epoll_ctl(srv->srv_epoll.epollfd, EPOLL_CTL_DEL, \
+			fd, &(srv->srv_epoll.ev));
+		if (client->team)
+			client->team->free_slots++;
+		list_remove(&client);
+		if (client == srv->game.clients || client == NULL)
+			srv->game.clients = NULL;
+	}
+	WARN("Client fd #%d cleanly closed", fd);
 	return (true);
 }

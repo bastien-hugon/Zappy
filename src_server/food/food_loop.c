@@ -15,6 +15,12 @@
 
 #include "server.h"
 
+/**
+*@brief the client food loop
+*
+*@param server [in] the server
+*@param client [in] the client
+*/
 void food_loop_client(server_t *server, client_t *client)
 {
 	client->food_tick--;
@@ -23,11 +29,16 @@ void food_loop_client(server_t *server, client_t *client)
 			kill_client(server, client);
 			return ;
 		}
-		client->inventory[FOOD]--;
+		client->inventory[FOOD] -= 1;
 		client->food_tick = 126;
 	}
 }
 
+/**
+* @brief food loop
+*
+* @param server the server
+*/
 void food_loop(server_t *server)
 {
 	client_t *client = server->game.clients;

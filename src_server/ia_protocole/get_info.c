@@ -10,8 +10,8 @@
 /**
 *@brief Send the free slot on the client's team
 *
-*@param srv The main server_t struct
-*@param client The client
+*@param srv [in] The main server_t struct
+*@param client [in] The client
 *@return true sent
 *@return false Not sent
 */
@@ -25,13 +25,14 @@ bool client_nb_connect(server_t *srv, client_t *client)
 /**
 *@brief Send look informations
 *
-*@param srv Main server_t struct
-*@param client The client
+*@param srv [in] Main server_t struct
+*@param client [in] The client
 *@return true If message is sent
 *@return false If message isn't sent
 */
 bool client_look(server_t *srv, client_t *client)
 {
+	WARN("LOOK");
 	switch (client->dir) {
 		case NORTH:
 			return (look_north(srv, client));
@@ -42,5 +43,6 @@ bool client_look(server_t *srv, client_t *client)
 		case WEST:
 			return (look_west(srv, client));
 	}
+	send_message(client->socket.fd, "ko\n");
 	return (false);
 }

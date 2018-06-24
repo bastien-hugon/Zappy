@@ -17,7 +17,7 @@
 /**
 *@brief Init epoll on server_t struct
 *
-*@param srv The main server_t struct
+*@param srv [in] The main server_t struct
 */
 void init_epoll(server_t *srv)
 {

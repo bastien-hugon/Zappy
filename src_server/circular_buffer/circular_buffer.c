@@ -19,9 +19,9 @@
 /**
 *@brief strstr with max len
 *
-* @param buffer the string
-* @param the substring to locate
-* @param length the max len
+* @param buffer [in] the string
+* @param the [in] substring to locate
+* @param length [in] the max len
 */
 char *sstrstr(char *buffer, char *find, size_t length)
 {
@@ -31,27 +31,17 @@ char *sstrstr(char *buffer, char *find, size_t length)
 	for (i = 0; i < length; i++)
 	{
 		if (strncmp(&buffer[i], find, find_length) == 0)
-			return &buffer[i];
+			return (&buffer[i]);
 	}
-	return NULL;
-}
-
-/**
-*@brief init a circular buffer
-*
-* @param buffer the buffer to init
-*/
-void circular_buffer_init(circular_buffer_t *buffer)
-{
-	memset(buffer, 0, sizeof(*buffer));
+	return (NULL);
 }
 
 /**
 * @brief read in a circular buffer
 * the caller need to log if there is an error
 *
-* @param buffer the buffer to init
-* @param fd the file descriptor to read
+* @param buffer [out] the buffer to init
+* @param fd [in] the file descriptor to read
 */
 bool circular_buffer_read(circular_buffer_t *buffer, int fd)
 {
@@ -72,17 +62,30 @@ bool circular_buffer_read(circular_buffer_t *buffer, int fd)
 			return (false);
 	}
 	buffer->head += readed;
-	if (buffer->head == buff_end)
+	if (buffer->head == buff_end) {
 			buffer->head = (char *)&buffer->buffer;
+			circular_buffer_read(buffer, fd);
+	}
 	return (true);
 }
 
+/**
+* @brief get the data if the data is between the end \
+*	and the start of the buffer
+*
+* @param buffer [in] the buffer
+* @param to [in] the end of the string
+* @param buff_end [in] the end of the buffer
+* @param str [in] the substring
+* @return char *the string to the delimiter
+*/
 static char *circular_buffer_get_end(circular_buffer_t *buffer, char *to, \
 	const char *buff_end, char *str)
 {
 	char *ret = malloc((size_t)(buff_end - buffer->tail + \
 		(size_t)((buff_end - buffer->tail) + str - \
 		(((char *)&buffer->buffer)) + 1)));
+
 	if (ret == NULL)
 		return (CIRCULAR_BUFFER_ALLOCATION_ERROR);
 	memcpy(ret, buffer->tail, (buff_end - buffer->tail));
@@ -96,11 +99,31 @@ static char *circular_buffer_get_end(circular_buffer_t *buffer, char *to, \
 }
 
 /**
+* @brief get a standard string between tail and end
+*
+* @param buffer [in] the buffer
+* @param to [in] the end of the string
+* @param str [the] pointer to the start of to in buffer
+* @return char *the allocated string
+*/
+char *circular_buffer_get_standard(circular_buffer_t *buffer, char *to, \
+	char *str)
+{
+	char *ret = strndup(buffer->tail, str - buffer->tail);
+
+	if (ret == NULL)
+		return (CIRCULAR_BUFFER_ALLOCATION_ERROR);
+	buffer->tail = (char *)(str + strlen(to));
+	memset(buffer->tail - strlen(to), 0, strlen(to));
+	return (ret);
+}
+
+/**
 * @brief retrieve string from buffer
 * the caller need to log if there is an error
 *
-* @param buffer the buffer to init
-* @param to the end of the string to retrieve
+* @param buffer [in] the buffer
+* @param to [in] the end of the string to retrieve
 * @return a string to free after use
 * @error can return CIRCULAR_BUFFER_NOT_FOUND and
 *	CIRCULAR_BUFFER_ALLOCATION_ERROR
@@ -108,23 +131,20 @@ static char *circular_buffer_get_end(circular_buffer_t *buffer, char *to, \
 char *circular_buffer_get_to(circular_buffer_t *buffer, char *to)
 {
 	char *str;
-	char *ret;
 	const char *buff_end = (((char *)&buffer->buffer) + BUFF_SIZE);
 
 	if (buffer->head == NULL) {
 		return (CIRCULAR_BUFFER_NOT_FOUND);
 	}
-	if ((buffer->head > buffer->tail || buffer->head == (char *)&buffer->buffer) && (str = sstrstr(buffer->tail, to, ((int)(((buffer->head == (char *)&buffer->buffer) ? buff_end : buffer->head) - buffer->tail)))) \
-		!= NULL) {
-		ret = strndup(buffer->tail, str - buffer->tail);
-		if (ret == NULL)
-			return (CIRCULAR_BUFFER_ALLOCATION_ERROR);
-		buffer->tail = (char *)(str + strlen(to));
-		memset(buffer->tail - strlen(to), 0, strlen(to));
-		return (ret);
-	}
-	if (buffer->head <= buffer->tail && (str = sstrstr((char *)&buffer->buffer, to, \
-		buffer->head - (char *)&buffer->buffer)))
+	if ((buffer->head > buffer->tail || \
+		buffer->head == (char *)&buffer->buffer) && \
+		(str = sstrstr(buffer->tail, to, ((int)(((buffer->head == \
+		(char *)&buffer->buffer) ? buff_end : buffer->head) - \
+		buffer->tail)))) != NULL)
+		return (circular_buffer_get_standard(buffer, to, str));
+	if (buffer->head <= buffer->tail && (str = sstrstr(\
+		(char *)&buffer->buffer, to, buffer->head - \
+		(char *)&buffer->buffer)))
 		return (circular_buffer_get_end(buffer, to, buff_end, str));
 	return (CIRCULAR_BUFFER_NOT_FOUND);
 }

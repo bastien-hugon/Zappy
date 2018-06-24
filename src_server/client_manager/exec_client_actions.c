@@ -10,8 +10,8 @@
 /**
 * @brief Get the associated client for a socket fd
 *
-* @param srv the server
-* @param fd the client file descriptor
+* @param srv [in] the server
+* @param fd [in] the client file descriptor
 * @return client_t * the client
 */
 client_t *get_client_for_fd(server_t *srv, int fd)
@@ -30,7 +30,7 @@ client_t *get_client_for_fd(server_t *srv, int fd)
 /**
 *@brief remove the first command in the client cmd_queue
 *
-*@param client the client
+*@param client [out] the client
 */
 static void remove_first_command_from_queue(client_t *client)
 {
@@ -43,7 +43,7 @@ static void remove_first_command_from_queue(client_t *client)
 /**
 * @brief start a command from the command queue
 *
-* @param client the client
+* @param client [out] the client
 */
 static void start_command_from_queue(client_t *client)
 {
@@ -66,7 +66,7 @@ static void start_command_from_queue(client_t *client)
 /**
 *@brief cancel the current command exectution of a client
 *
-*@param client the client
+*@param client [out] the client
 */
 void cancel_client_action(client_t *client)
 {
@@ -78,13 +78,11 @@ void cancel_client_action(client_t *client)
 /**
 *@brief exec the actions of all the client
 *
-*@param srv the server
+*@param srv [out] the server
 */
 void exec_clients_actions(server_t *srv)
 {
 	client_t *client = srv->game.clients;
-
-	//check_end(srv);
 	refill_map(&(srv->game));
 	while (client) {
 		if (client->cmd == NULL)

@@ -19,7 +19,7 @@
 *
 *@param uid [in] The uid of an user
 *@param tile [in] The tile to check on
-*@return client_t* The client found
+*@return client_t *The client found
 */
 static client_t *gfx_get_usr(uint uid, tile_t tile)
 {
@@ -86,8 +86,8 @@ bool gfx_send_ppo(server_t *srv, client_t *user)
 /**
 *@brief Connection of a new user
 *
-*@param srv The main server_t struct
-*@param user The user connected
+*@param srv [in] The main server_t struct
+*@param user [in] The user connected
 *@return true If the message is sent
 *@return false If the message isn't sent
 */

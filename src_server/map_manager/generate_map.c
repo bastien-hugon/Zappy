@@ -17,14 +17,13 @@
 /**
 *@brief Allocate memory for the map
 *
-*@param game The game_t struct
+*@param game [out] The game_t struct
 *@return true If the map is well allocated
 *@return false If the allocation failed
 */
 static bool allocate_map(game_t *game)
 {
-	if ((game->map = malloc(sizeof(tile_t *) * (game->height))) \
-	== NULL)
+	if ((game->map = malloc(sizeof(tile_t *) * (game->height))) == NULL)
 		return (false);
 	for (int i = 0; i < (int) game->height; i++)
 		if ((game->map[i] = malloc(sizeof(tile_t) * \
@@ -36,7 +35,7 @@ static bool allocate_map(game_t *game)
 /**
 *@brief Generate the Tiled Map
 *
-*@param game The game_t struct
+*@param game [out] The game_t struct
 *@return true If the map is well generated
 *@return false If the generation failed
 */

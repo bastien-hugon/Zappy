@@ -22,15 +22,17 @@ server_t server_g;
 void sighandler(int signum)
 {
 	(void)signum;
+	if (signum == SIGPIPE)
+		exit(84);
 	stop_server(&server_g, NULL);
 }
 
 /**
 * @brief the server main function
 *
-* @param argc argc the arguments count
-* @param argv argv the arguments values
-* @return int 0 onn success 84 on failure
+* @param argc [in] argc the arguments count
+* @param argv [in] argv the arguments values
+* @return int 0 on success 84 on failure
 */
 int main(int argc, char **argv)
 {
@@ -45,6 +47,7 @@ int main(int argc, char **argv)
 	init_server(&server_g);
 	init_epoll(&server_g);
 	signal(SIGINT, sighandler);
+	signal(SIGPIPE, sighandler);
 	socket_manager(&server_g);
 	return (EXIT_SUCCESS);
 }

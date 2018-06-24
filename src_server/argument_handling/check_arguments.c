@@ -12,30 +12,36 @@
 
 #include "server.h"
 
+static int check_map_size(server_t *server)
+{
+	if (server->game.height <= 0 || \
+		server->game.width <= 0) {
+		ERROR("Invalid map size");
+		return (1);
+	}
+	if (server->game.height > 30 || \
+		server->game.width > 30) {
+		ERROR("The map size too large");
+		return (1);
+	}
+	return (0);
+}
+
+
 /**
 *@brief check the basic arguments
 *
 *@param server [in] the server
 *@return int 1 in case of an invalid argument
 */
-int check_base_arguments(server_t *server)
+static int check_base_arguments(server_t *server)
 {
-	if (server->srv_epoll.port == 0) {
-		ERROR("Invalid -port argument");
-		return (1);
-	}
-	if (server->game.height <= 0 ||
-		server->game.width <= 0) {
-		ERROR("Invalid map size");
-		return (1);
-	}
-	if (server->game.height <= 0 ||
-		server->game.width <= 0) {
-		ERROR("Invalid map size");
-		return (1);
-	}
 	if (server->game.frequence <= 0) {
 		ERROR("Invalid -f option");
+		return (1);
+	}
+	if (server->srv_epoll.port == 0) {
+		ERROR("Invalid -port argument");
 		return (1);
 	}
 	return (0);
@@ -47,19 +53,19 @@ int check_base_arguments(server_t *server)
 *@param server [in] the server
 *@return int 1 in case of an invalid argument
 */
-int check_team_arguments(server_t *server)
+static int check_team_arguments(server_t *server)
 {
 	team_t *team = server->game.teams;
 
-	if (team == NULL ||
+	if (team == NULL || \
 		team->free_slots == 0) {
 		ERROR("Invalid teams");
-		return (-1);
+		return (1);
 	}
 	do {
 		if (team->name == NULL || team->free_slots <= 0) {
 			ERROR("Invalid teams");
-			return (-1);
+			return (1);
 		}
 	} while (list_next(&team));
 	return (0);
@@ -77,6 +83,7 @@ bool check_arguments(server_t *server)
 
 	ret += check_base_arguments(server);
 	ret += check_team_arguments(server);
+	ret += check_map_size(server);
 	if (ret == 0)
 		return (true);
 	else
