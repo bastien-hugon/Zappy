@@ -37,7 +37,8 @@ tile_t get_tile(server_t *srv, int x, int y)
 {
 	if (x < 0)
 		x = (srv->game.width - (-1 * (0 - x)));
-	x %= srv->game.width;
+	if ((uint) x >= srv->game.width)
+		x = x % srv->game.width;
 	if (y < 0)
 		x = (srv->game.height - (-1 * (0 - y)));
 	y %= srv->game.height;
