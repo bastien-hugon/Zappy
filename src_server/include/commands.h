@@ -28,6 +28,8 @@
 	void food_loop(server_t *server);
 	void cancel_client_action(client_t *client);
 	void force_command_for_client(client_t *client, cmd_e cmd);
+	int get_absolute_direction_of_sound(server_t *server, \
+		client_t *sender, client_t *receiver);
 
 	bool send_message_command(server_t *server, client_t *client);
 	bool drop_egg_command(server_t *server, client_t *client);
