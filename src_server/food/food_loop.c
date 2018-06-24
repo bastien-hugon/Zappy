@@ -29,7 +29,7 @@ void food_loop_client(server_t *server, client_t *client)
 			kill_client(server, client);
 			return ;
 		}
-		client->inventory[FOOD]--;
+		client->inventory[FOOD] -= 1;
 		client->food_tick = 126;
 	}
 }
