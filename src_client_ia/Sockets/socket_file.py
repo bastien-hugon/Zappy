@@ -7,9 +7,12 @@
 # socket
 #
 
-import sockets
+import socket
+from socket import error as socket_error
 import time
 from threading import Thread
+import random
+import time
 
 from General_comportement.check_dead import check_dead
 
@@ -17,7 +20,7 @@ from General_comportement.check_dead import check_dead
 #
 # @brief: class that handles all the socket interaction with the server
 #
-class Socket:
+class SocketInteractionPython:
 
     #
     # @brief: Function that inits the class. It inits the C sockets module,
@@ -38,10 +41,24 @@ class Socket:
         response = []
         while (len(response) == 0):
             response = self.ReadSocket()
+            print("Response = " + str(response))
         self.TeamName()
         response = []
         while (len(response) == 0):
             response = self.ReadSocket()
+            print("Response = " + str(response))
+            for answer in response:
+                if "ko" in answer:
+                    print("Connection failed")
+                    exit(84)
+            self.nbplaces = int(response[0])
+        if len(response) == 1:
+            response = []
+            while (len(response) == 0):
+                response = self.ReadSocket()
+                print("Response = " + str(response))
+        self.id = str(self.GenerateRandomId())
+        self.target_id = ""
 
     #
     # @brief: Function that creates the socket and ask for connection
@@ -51,9 +68,11 @@ class Socket:
     # @return: EXIT(84) if there is an error
     #
     def init_socket(self):
-        self.fd = sockets.create_socket(self.host, self.port)
-        if (self.fd == -1):
-            print("Bad socket init")
+        self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        try:
+            self.socket.connect((self.host, self.port))
+        except socket_error as serr:
+            print("Connection Refused !")
             exit(84)
 
     #
@@ -64,7 +83,13 @@ class Socket:
     # @return: None
     #
     def TeamName(self):
-        sockets.send_command(self.name, self.fd)
+        message = (self.name + '\n').encode('utf-8')
+        print(message)
+        try:
+            self.socket.send(message)
+        except socket_error as serr:
+            print("Connection Dropped !")
+            exit(84)
 
     #
     # @brief: Function that sends the command to get the inventory
@@ -74,7 +99,13 @@ class Socket:
     # @return: None
     #
     def Inventory(self):
-        sockets.send_command("Inventory", self.fd)
+        message = ("Inventory\n").encode('utf-8')
+        print(message)
+        try:
+            self.socket.send(message)
+        except socket_error as serr:
+            print("Connection Dropped !")
+            exit(84)
 
     #
     # @brief: Function that sends the command to go forward
@@ -84,7 +115,13 @@ class Socket:
     # @return: None
     #
     def Forward(self):
-        sockets.send_command("Forward", self.fd)
+        message = ("Forward\n").encode('utf-8')
+        print(message)
+        try:
+            self.socket.send(message)
+        except socket_error as serr:
+            print("Connection Dropped !")
+            exit(84)
 
     #
     # @brief: Function that sends the command to turn right
@@ -94,7 +131,13 @@ class Socket:
     # @return: None
     #
     def Right(self):
-        sockets.send_command("Right", self.fd)
+        message = ("Right\n").encode('utf-8')
+        print(message)
+        try:
+            self.socket.send(message)
+        except socket_error as serr:
+            print("Connection Dropped !")
+            exit(84)
 
     #
     # @brief: Function that sends the command to turn left
@@ -104,7 +147,13 @@ class Socket:
     # @return: None
     #
     def Left(self):
-        sockets.send_command("Left", self.fd)
+        message = ("Left\n").encode('utf-8')
+        print(message)
+        try:
+            self.socket.send(message)
+        except socket_error as serr:
+            print("Connection Dropped !")
+            exit(84)
 
     #
     # @brief: Function that sends the command to look what items are on the
@@ -115,7 +164,13 @@ class Socket:
     # @return: None
     #
     def Look(self):
-        sockets.send_command("Look", self.fd)
+        message = ("Look\n").encode('utf-8')
+        print(message)
+        try:
+            self.socket.send(message)
+        except socket_error as serr:
+            print("Connection Dropped !")
+            exit(84)
 
     #
     # @brief: Function that sends the command to broadcast a message to every
@@ -128,7 +183,13 @@ class Socket:
     # @return: None
     #
     def Broadcast(self, sentence):
-        sockets.send_command(("Broadcast " + sentence), self.fd)
+        message = ("Broadcast " + sentence + '\n').encode('utf-8')
+        print(message)
+        try:
+            self.socket.send(message)
+        except socket_error as serr:
+            print("Connection Dropped !")
+            exit(84)
 
     #
     # @brief: Function that sends the command to know how much free slots
@@ -139,7 +200,13 @@ class Socket:
     # @return: None
     #
     def Connect_nbr(self):
-        sockets.send_command("Connect_nbr", self.fd)
+        message = ("Connect_nbr\n").encode('utf-8')
+        print(message)
+        try:
+            self.socket.send(message)
+        except socket_error as serr:
+            print("Connection Dropped !")
+            exit(84)
 
     #
     # @brief: Function that sends the command create an egg thus in term
@@ -150,7 +217,13 @@ class Socket:
     # @return: None
     #
     def Fork(self):
-        sockets.send_command("Fork", self.fd)
+        message = ("Fork\n").encode('utf-8')
+        print(message)
+        try:
+            self.socket.send(message)
+        except socket_error as serr:
+            print("Connection Dropped !")
+            exit(84)
 
     #
     # @brief: Function that sends the command to eject all players from a tile
@@ -160,7 +233,13 @@ class Socket:
     # @return: None
     #
     def Eject(self):
-        sockets.send_command("Eject", self.fd)
+        message = ("Eject\n").encode('utf-8')
+        print(message)
+        try:
+            self.socket.send(message)
+        except socket_error as serr:
+            print("Connection Dropped !")
+            exit(84)
 
     #
     # @brief: Function that sends the command to take a specified object from
@@ -172,7 +251,13 @@ class Socket:
     # @return: None
     #
     def Take(self, item):
-        sockets.send_command(("Take " + item), self.fd)
+        message = ("Take " + item + '\n').encode('utf-8')
+        print(message)
+        try:
+            self.socket.send(message)
+        except socket_error as serr:
+            print("Connection Dropped !")
+            exit(84)
 
     #
     # @brief: Function that sends the command topick up a specified object from
@@ -184,7 +269,13 @@ class Socket:
     # @return: None
     #
     def Set(self, item):
-        sockets.send_command(("Set " + item), self.fd)
+        message = ("Set " + item + '\n').encode('utf-8')
+        print(message)
+        try:
+            self.socket.send(message)
+        except socket_error as serr:
+            print("Connection Dropped !")
+            exit(84)
 
     #
     # @brief: Function that sends the command to start leveling up
@@ -194,7 +285,13 @@ class Socket:
     # @return: None
     #
     def Incantation(self):
-        sockets.send_command("Incantation", self.fd)
+        message = ("Incantation\n").encode('utf-8')
+        print(message)
+        try:
+            self.socket.send(message)
+        except socket_error as serr:
+            print("Connection Dropped !")
+            exit(84)
 
     #
     # @brief: Function that reads the server socket fd and returns the content
@@ -204,7 +301,12 @@ class Socket:
     # @return: command, a string containing what was in the server socket fd
     #
     def ReadSocket(self):
-        command = sockets.get_fd_activity(self.fd).split('\n')
+        try:
+            command = self.socket.recv(16384).decode('utf-8').split('\n')
+        except socket_error as serr:
+            print("Connection Dropped !")
+            exit(84)
+        del command[-1]
         return (command)
 
     #
@@ -222,3 +324,17 @@ class Socket:
             check_dead(resp)
         print("resp = " + str(resp))
         return (resp)
+
+    #
+    # @brief: Function that creates a random id of 10 characters
+    #
+    # @param: self [in], contains class variables
+    #
+    # @return: resp, a string containing the randomly generated id token
+    #
+    def GenerateRandomId(self):
+        now = time.time()
+        coeff = str(float(self.nbplaces * now))
+        value = coeff.split('.')
+        final = value[0] + value[1] + str(random.randint(100, 999))
+        return (final)

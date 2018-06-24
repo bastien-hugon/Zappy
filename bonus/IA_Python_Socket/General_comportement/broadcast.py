@@ -10,11 +10,9 @@ from General_comportement.check_dead import check_dead
 # return value does not contain any broadcast message
 #
 # @param: socket [in], socket class variable to interact with socket class
-# @param: lvl [in], int, level of the A.I.
 #
 # @return: resp, a string containing the content of the sever socket fd
 # without the broadcast messages
-# @return: lvl, the level of the ia at the end of the function
 #
 def EmptyCacheIgnoreBroadcast(socket, lvl):
     resp = []
@@ -55,18 +53,6 @@ def EmptyCacheIgnoreBroadcast(socket, lvl):
     return resp, lvl
 
 
-#
-# @brief: Function that calls for server response and parses it so that the
-# return value does not contain any broadcast message. It should be used
-# to incant
-#
-# @param: socket [in], socket class variable to interact with socket class
-# @param: lvl [in], int, level of the A.I.
-#
-# @return: resp, a string containing the content of the sever socket fd
-# without the broadcast messages
-# @return: lvl, the level of the ia at the end of the function
-#
 def EmptyCacheIgnoreBroadcastIncant(socket, lvl):
     resp = []
     incant = False
