@@ -107,12 +107,14 @@ def GetLeftOverStone(inventory, stones_needed):
         stones_needed_list.append(item.split(' '))
     inventory_list = []
     for item in inventory[0]:
+        if len(inventory[0]) != 7 or item[-1] == ',':
+            return ["linemate 1"]
         inventory_list.append(item.split(' '))
     for item in stones_needed_list:
         for inv_item in inventory_list:
             if item[0] == inv_item[0]:
-                print("GETLEFTOVERSTONE: " + str(inventory) + " " + str(stones_needed) + " " + item[0] + " " + inv_item[0])
-                if not item[1].isdigit() or not inv_item[1].isdigit():
+                print("GETLEFTOVERSTONE: " + str(len(inventory[0])) + '  ' + str(inventory) + " " + str(stones_needed) + " " + item[0] + " " + inv_item[0])
+                if len(inventory[0]) != 7:
                     return ["linemate 1"]
                 number = int(item[1]) - int(inv_item[1])
                 if number > 0:

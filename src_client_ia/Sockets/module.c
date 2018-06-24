@@ -64,7 +64,7 @@ PyObject *get_fd_activity(PyObject *self, PyObject *args)
 	(void)self;
 	if (!PyArg_ParseTuple(args, "i", &fd))
 		return (Py_BuildValue("i" , -1));
-	printf("Before epoll_wait\n");
+	//printf("Before epoll_wait\n");
 	nb_fds = epoll_wait(epollfd, events, 1024, 0);
 	for (int n = 0; n < nb_fds; ++n) {
 		while (check_carriage_return(command) != 0)
