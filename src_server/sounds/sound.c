@@ -57,9 +57,9 @@ static bool send_sound_to_client(server_t *server, client_t *sender, \
 {
 	int absolute_direction;
 
-	if (sender->pos.y == receiver->pos.y &&
+	if (sender->pos.y == receiver->pos.y && \
 		sender->pos.x == receiver->pos.x) {
-		send_message(receiver->socket.fd, "message 0, %s\n", sound);	
+		send_message(receiver->socket.fd, "message 0, %s\n", sound);
 		LOG("sended to #%d: message 0, %s\n", receiver->id, sound);
 		return (true);
 	}
@@ -67,11 +67,10 @@ static bool send_sound_to_client(server_t *server, client_t *sender, \
 		sender, receiver);
 	send_message(receiver->socket.fd, "message %d, %s\n", \
 		get_direction_by_player(absolute_direction, receiver), sound);
-	LOG("====> sended to #%d: message %d, %s\n", receiver->id, \
+	LOG("sended to #%d: message %d, %s\n", receiver->id, \
 		get_direction_by_player(absolute_direction, receiver), sound);
 	return (true);
 }
-
 
 /**
 * @brief send the sound to all the player at a position
