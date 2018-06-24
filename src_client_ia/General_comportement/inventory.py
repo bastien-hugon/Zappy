@@ -111,7 +111,7 @@ def GetLeftOverStone(inventory, stones_needed):
     for item in stones_needed_list:
         for inv_item in inventory_list:
             if item[0] == inv_item[0]:
-                print("GETLEFTOVERSTONE: " str(inventory) + " " + str(stones_needed) + " " + item[0] + " " + inv_item[0])
+                print("GETLEFTOVERSTONE: " + str(inventory) + " " + str(stones_needed) + " " + item[0] + " " + inv_item[0])
                 if not item[1].isdigit() or not inv_item[1].isdigit():
                     return ["linemate 1"]
                 number = int(item[1]) - int(inv_item[1])

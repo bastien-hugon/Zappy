@@ -45,5 +45,7 @@ def level1(lvl, socket):
                 return lvl
         else:
             print('MODE: INCANT')
-            level = incant(socket, food, level)
+            dire, mess, level = incant(socket, food, level)
+            if level != lvl:
+                return level
     return (level)

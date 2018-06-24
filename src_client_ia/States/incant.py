@@ -13,6 +13,7 @@ from General_comportement.broadcast import EmptyCacheIgnoreBroadcastIncant
 from General_comportement.inventory import look_inventory
 from General_comportement.inventory import get_food
 from General_comportement.mov_to_tile import mov_to_tile
+from General_comportement.inventory import look_inventory_search_broadcast
 
 
 def move_to_free_tile(socket, lvl):
@@ -55,17 +56,35 @@ def set_stones(socket, lvl):
     return lvl
 
 
+def search_before_broadcast(socket, food, lvl):
+    i = 0
+    while i < 40 and food >= lvl + 3:
+        dire, mess, resp, level = look_inventory_search_broadcast(socket, lvl)
+        if level != lvl:
+            return dire, mess, level
+        if dire != -1 and lvl != 1:
+            return dire, mess, lvl
+        food = get_food(resp)
+        i += 1
+    return -1, [], lvl
+
+
 def incant(socket, food, lvl):
+    dire, mess, level = search_before_broadcast(socket, food, lvl)
+    if level != lvl:
+        return dire, mess, level
+    if dire != -1 and lvl != 1:
+        return dire, mess, lvl
     while food >= lvl + 3:
         count = 0
         SendIncantBroadcast(socket, lvl)
         resp, level = EmptyCacheIgnoreBroadcast(socket, lvl)
         if level != lvl:
-            return level
+            return dire, mess, level
         socket.Look()
         resp, level = EmptyCacheIgnoreBroadcast(socket, lvl)
         if level != lvl:
-            return level
+            return dire, mess, level
         resp = resp[:1]
         if len(resp) > 0 and resp[0] != "ko":
             resp = resp[0][2:-2].split(',')
@@ -77,7 +96,7 @@ def incant(socket, food, lvl):
             socket.Look()
             resp, level = EmptyCacheIgnoreBroadcast(socket, lvl)
             if level != lvl:
-                return level
+                return dire, mess, level
             resp = resp[:1]
             resp = resp[0][2:-2].split(',')
             get_all_item_here(socket, resp[0], lvl)
@@ -85,25 +104,12 @@ def incant(socket, food, lvl):
             socket.Incantation()
             resp, level = EmptyCacheIgnoreBroadcastIncant(socket, lvl)
             if level != lvl:
-                return level
-            # if ("Elevation underway" in resp):
-            #     if len(resp) < 2:
-            #         resp, level = EmptyCacheIgnoreBroadcast(socket, lvl)
-            #         if level != lvl:
-            #             return level
-            #     for _object in resp:
-            #         if ("Current level:" in _object):
-            #             ret = re.findall('\d+', _object)
-            #             if len(ret) > 0:
-            #                 if int(ret[0]) != lvl:
-            #                     return int(ret[0])
-            #     ko_incant(socket, lvl)
-            #     return lvl
+                return dire, mess, level
             else:
                 ko_incant(socket, lvl)
-                return (lvl)
+                return dire, mess, lvl
         inventory, level = look_inventory(socket, lvl)
         if level != lvl:
-            return level
+            return dire, mess, level
         food = get_food(inventory)
-    return lvl
+    return dire, mess, lvl
