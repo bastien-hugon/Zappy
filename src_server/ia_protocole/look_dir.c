@@ -23,7 +23,7 @@ bool look_north(server_t *srv, client_t *client)
 		return (false);
 	buffer[0] = '\0';
 	buffer = (realloc_concat(buffer, "[ "));
-	for (int i = 0; i < client->level; i++)
+	for (int i = 0; i <= client->level; i++)
 		for (uint j = 0; j < (uint) 1 + 2 * i; j++)
 			buffer = add_tile_to_buff(srv, client->pos.x - i + j, \
 			client->pos.y - i, buffer);
@@ -48,7 +48,7 @@ bool look_west(server_t *srv, client_t *client)
 		return (false);
 	buffer[0] = '\0';
 	buffer = (realloc_concat(buffer, "[ "));
-	for (int i = 0; i < client->level; i++)
+	for (int i = 0; i <= client->level; i++)
 		for (int j = 2 * i; j >= 0; j--) {
 			buffer = add_tile_to_buff(srv, client->pos.x + i, \
 			client->pos.y - i + j, buffer);
@@ -74,7 +74,7 @@ bool look_south(server_t *srv, client_t *client)
 		return (false);
 	buffer[0] = '\0';
 	buffer = (realloc_concat(buffer, "[ "));
-	for (int i = 0; i < client->level; i++)
+	for (int i = 0; i <= client->level; i++)
 		for (int j = 2 * i; j >= 0; j--)
 			buffer = add_tile_to_buff(srv, client->pos.x - i + j, \
 			client->pos.y + i, buffer);
@@ -99,7 +99,7 @@ bool look_east(server_t *srv, client_t *client)
 		return (false);
 	buffer[0] = '\0';
 	buffer = (realloc_concat(buffer, "[ "));
-	for (int i = 0; i < client->level; i++)
+	for (int i = 0; i <= client->level; i++)
 		for (uint j = 0; j < (uint) 1 + 2 * i; j++) {
 			buffer = add_tile_to_buff(srv, client->pos.x + i, \
 			client->pos.y - i + j, buffer);
