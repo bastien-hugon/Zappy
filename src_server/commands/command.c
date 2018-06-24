@@ -17,9 +17,9 @@
 #include "server.h"
 
 static command_t commands[] = {
- 	{"forward", FORWARD, 7, client_forward}, \
- 	{"right", RIGHT, 7, client_right}, \
- 	{"left", LEFT, 7, client_left}, \
+	{"forward", FORWARD, 7, client_forward}, \
+	{"right", RIGHT, 7, client_right}, \
+	{"left", LEFT, 7, client_left}, \
 	{"inventory", INVENTORY, 1, client_inventory}, \
 	{"Broadcast", BROADCAST, 7, send_message_command}, \
 	{"Fork", FORK, 42, drop_egg_command}, \
