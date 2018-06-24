@@ -17,8 +17,8 @@
 /**
 * @brief Close the server's fd and display a message on error output
 *
-* @param srv Current server structure to close the server fd
-* @param msg The message to print
+* @param srv [in] Current server structure to close the server fd
+* @param msg [in] The message to print
 * @return int Return EXIT_FAILURE (84)
 */
 int close_and_msg(server_t *srv, char *msg)

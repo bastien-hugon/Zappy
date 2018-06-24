@@ -19,9 +19,9 @@
 /**
 *@brief strstr with max len
 *
-* @param buffer the string
-* @param the substring to locate
-* @param length the max len
+* @param buffer [in] the string
+* @param the [in] substring to locate
+* @param length [in] the max len
 */
 char *sstrstr(char *buffer, char *find, size_t length)
 {
@@ -37,9 +37,9 @@ char *sstrstr(char *buffer, char *find, size_t length)
 }
 
 /**
-*@brief init a circular buffer
+* @brief init a circular buffer
 *
-* @param buffer the buffer to init
+* @param buffer [out] the buffer to init
 */
 void circular_buffer_init(circular_buffer_t *buffer)
 {
@@ -50,8 +50,8 @@ void circular_buffer_init(circular_buffer_t *buffer)
 * @brief read in a circular buffer
 * the caller need to log if there is an error
 *
-* @param buffer the buffer to init
-* @param fd the file descriptor to read
+* @param buffer [out] the buffer to init
+* @param fd [in] the file descriptor to read
 */
 bool circular_buffer_read(circular_buffer_t *buffer, int fd)
 {
@@ -77,6 +77,16 @@ bool circular_buffer_read(circular_buffer_t *buffer, int fd)
 	return (true);
 }
 
+/**
+* @brief get the data if the data is between the end \
+*	and the start of the buffer
+*
+* @param buffer [in] the buffer
+* @param to [in] the end of the string
+* @param buff_end [in] the end of the buffer
+* @param str [in] the substring
+* @return char* the string to the delimiter
+*/
 static char *circular_buffer_get_end(circular_buffer_t *buffer, char *to, \
 	const char *buff_end, char *str)
 {
@@ -99,8 +109,8 @@ static char *circular_buffer_get_end(circular_buffer_t *buffer, char *to, \
 * @brief retrieve string from buffer
 * the caller need to log if there is an error
 *
-* @param buffer the buffer to init
-* @param to the end of the string to retrieve
+* @param buffer [in] the buffer
+* @param to [in] the end of the string to retrieve
 * @return a string to free after use
 * @error can return CIRCULAR_BUFFER_NOT_FOUND and
 *	CIRCULAR_BUFFER_ALLOCATION_ERROR

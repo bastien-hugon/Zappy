@@ -18,8 +18,8 @@
 /**
 *@brief Manage each events to distribute data or create new user
 *
-*@param srv Main server_t struct
-*@param i Event index
+*@param srv [in] Main server_t struct
+*@param i [out] Event index
 */
 static void manage_events(server_t *srv, int i)
 {
@@ -61,7 +61,7 @@ static long long get_time(void) {
 /**
 *@brief Manage the execution loop and the timeout ticks
 *
-*@param srv The main server_t struct
+*@param srv [in] The main server_t struct
 */
 static void loop_manager(server_t *srv)
 {
@@ -86,7 +86,7 @@ static void loop_manager(server_t *srv)
 /**
 *@brief Manage all socket and redistribute data to wanted fd
 *
-*@param srv Main server_t struct
+*@param srv [in] Main server_t struct
 */
 void socket_manager(server_t *srv)
 {

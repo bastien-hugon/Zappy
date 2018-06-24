@@ -18,8 +18,8 @@
 /**
 *@brief Parse message and call functions
 *
-*@param srv Main server_t struct
-*@param fd The client's fd who sent a message
+*@param [out] srv Main server_t struct
+*@param [out] fd The client's fd who sent a message
 */
 void call_worker(server_t *srv, int fd)
 {

@@ -10,8 +10,8 @@
 /**
 *@brief Disconnect a client from his fd
 *
-*@param srv The main server_t struct
-*@param fd The client fd
+*@param srv [in] The main server_t struct
+*@param fd [in] The client fd
 *@return true Disconnected
 *@return false Not disconnected
 */

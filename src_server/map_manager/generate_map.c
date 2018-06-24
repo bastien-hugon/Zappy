@@ -17,7 +17,7 @@
 /**
 *@brief Allocate memory for the map
 *
-*@param game The game_t struct
+*@param game [out] The game_t struct
 *@return true If the map is well allocated
 *@return false If the allocation failed
 */
@@ -36,7 +36,7 @@ static bool allocate_map(game_t *game)
 /**
 *@brief Generate the Tiled Map
 *
-*@param game The game_t struct
+*@param game [out] The game_t struct
 *@return true If the map is well generated
 *@return false If the generation failed
 */

@@ -12,6 +12,12 @@
 
 #include "server.h"
 
+/**
+* @brief the function for send message
+*
+* @param server [in] the server
+* @param client [in] the client
+*/
 bool send_message_command(server_t *server, client_t *client)
 {
 	bool ret;
