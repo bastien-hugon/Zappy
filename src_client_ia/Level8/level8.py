@@ -3,6 +3,7 @@
 from General_comportement.inventory import look_inventory
 from General_comportement.inventory import get_food
 from States.survive import survive_mode
+from General_comportement.language import EmptyCacheSearchBroadcast
 
 
 def level8(socket):
@@ -10,8 +11,8 @@ def level8(socket):
     while (1):
         inventory, level = look_inventory(socket, level)
         food = get_food(inventory)
-        if (not enough_food(level, food)):
-            survive_mode(level, food, socket)
+        if (food < level + 1):
+            level = survive_mode(level, food, socket)
         else:
             socket.Forward()
-            socket.EmptyCache()
+            dire, mess, resp, level = EmptyCacheSearchBroadcast(socket, lvl)
