@@ -46,13 +46,18 @@ bool client_take(server_t *srv, client_t *user)
 	"mendiane", "phiras", "thystame"};
 	char **cmd = explode(user->cmd_queue[0], " ");
 	bool take = false;
+	bool val;
 
 	if (!cmd[1])
 		return (send_message(user->socket.fd, "ko\n"));
 	for (int i = 0; i < 7; i++)
 		if (!strcasecmp(obj[i], cmd[1]))
 			take = take_object(srv, user, srv->game.map, i);
-	return (send_message(user->socket.fd, "%s\n", (take) ? "ok" : "ko"));
+	val = send_message(user->socket.fd, "%s\n", (take) ? "ok" : "ko");
+	if (!val)
+		send_message(user->socket.fd, "ko\n");
+	WARN("%d", val);
+	return (true);
 }
 
 /**
@@ -95,11 +100,16 @@ bool client_set(server_t *srv, client_t *user)
 	"mendiane", "phiras", "thystame"};
 	char **cmd = explode(user->cmd_queue[0], " ");
 	bool set = false;
+	bool val;
 
 	if (!cmd[1])
 		return (send_message(user->socket.fd, "ko\n"));
 	for (int i = 0; i < 7; i++)
 		if (!strcasecmp(obj[i], cmd[1]))
 			set = set_object(srv, user, srv->game.map, i);
-	return (send_message(user->socket.fd, "%s\n", (set) ? "ok" : "ko"));
+	val = send_message(user->socket.fd, "%s\n", (set) ? "ok" : "ko");
+	if (!val)
+		send_message(user->socket.fd, "ko\n");
+	WARN("%d", val);
+	return (true);
 }
