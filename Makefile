@@ -11,13 +11,9 @@ RM	= rm -f
 
 DOC_NAME	= zappy.html
 
-NAME_SERVER	= "server"
-
-NAME_CLIENT	= "client"
+NAME_SERVER	= "zappy_server"
 
 NAME_UT	= units
-
-SRCS_UT_IRC =
 
 SRCS_UT_SERV	=	./tests/server/arguments/test_argument_handling.c \
 			./tests/server/list/test_list_create.c \
@@ -80,11 +76,9 @@ SERV_SRCS	=	./src_server/argument_handling/argument_handling.c \
 			./src_server/map_manager/get_tile.c \
 			./src_server/main.c
 
-SERV_OBJS  = $(SERV_SRCS:.c=.o)
+SERV_OBJS = $(SERV_SRCS:.c=.o)
 
-CLIENT_SRCS  =
-
-CLIENT_OBJS  = $(CLIENT_SRCS:.c=.o)
+CLIENT_OBJS = $(CLIENT_SRCS:.c=.o)
 
 CFLAGS = -I ./src_server/include/
 
@@ -92,7 +86,7 @@ CFLAGS += -W -Wall -Wextra -lm
 
 TUFLAGS = -lcriterion -lgcov --coverage -DSTESTS -I ./tests/server/include
 
-all: server
+all: server zappy_ia
 
 server: $(NAME_SERVER)
 
